@@ -1,0 +1,368 @@
+\chapter{李导数、Killing场和超曲面}
+\begin{xiti}
+	\item 试证由式(4-1-1)定义的$\tensor{\left(\phi_* v\right)}{^a}$满足\S 2.2定义2对矢量的两个要求，从而的确是$\phi(p)$点的矢量。
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item $\left(\phi_* v\right) (f+g)= v(\phi^*(f+g))=v(\phi^* f)+ v(\phi^* g)= \left(\phi_* v\right)(f)+ \left(\phi_* v\right)(g) $；
+			\item $\left(\phi_* v\right)(fg)= v(\phi^*(fg))= v(\phi^*(f)\phi^*(g))= \left.\phi^*(f)\right|_p v(\phi^* g)+ \left.\phi^*(g)\right|_p v(\phi^* f)= \left. f \right|_{\phi(p)}\left(\phi_* v\right)(g)+ \left. g \right|_{\phi(p)}\left(\phi_* v\right)(f) $。
+		\end{enumerate}
+	\end{zm}
+	
+	\item 试证定理4-1-1、4-1-2和4-1-3.
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item[(1)] 定理4-1-1如下：
+			\begin{yl}{Thm}
+				\hypertarget{thm4.1.1}{}$\phi_* \colon V_p \rightarrow V_{\phi(p)} $是线性映射，即\[ \phi_* (\alpha \tensor{u}{^a} + \beta \tensor{v}{^a})= \alpha \phi_* \tensor{u}{^a} + \beta \phi_* \tensor{v}{^a} ,\quad \forall \tensor{u}{^a},\tensor{v}{^a}\in V_p\qc \alpha, \beta \in \mathbb{R}. \]
+			\end{yl}
+		    \begin{yl}{Prf}
+			    $\forall f\in \F_N $，
+			    \begin{align*}
+			    \left[\phi_*(\alpha u+\beta v)\right](f)&=(\alpha u+\beta v)(\phi^* f)\\
+			    &=\alpha u(\phi^* f)+ \beta v (\phi^* f)\\
+			    &=\alpha \left(\phi_* u\right)(f)+ \beta \left(\phi_* v\right) (f)\\
+			    &=\left(\alpha \phi_* u+ \beta \phi_* v \right)(f)
+			    \end{align*}
+		    \end{yl}
+	        \item[(2)] 定理4-1-2如下：
+	        \begin{yl}{Thm}
+	        	设$C(t)$是$M$中的曲线，$\tensor{T}{^a}$为曲线在$C(t_0)$的切矢，则$\phi_* \tensor{T}{^a}\in V_{\phi(C(t_0))}$是曲线$\phi(C(t))$在$\phi(C(t_0))$点的切矢（曲线切矢的像是曲线像的切矢）。
+	        \end{yl}
+            \begin{yl}{Prf}
+            	$\forall f\in \F_N$，
+            	\begin{align*}
+            	\displaybreak[1] \left(\phi_* T\right)(f)&= T (\phi^* f)\\\displaybreak[1]
+            	&=\left. \dv{t}(\left(\phi^* f\right)\circ C(t)) \right|_{t_0}\\
+            	&=\left. \dv{t}(f\circ \phi \circ C(t)) \right|_{t_0}\\
+            	&=T^\prime(f),
+            	\end{align*}
+            	其中$\tensor{{T^\prime}}{^a}$是曲线$\phi(C(t))$在$\phi(C(t_0))$的切矢。于是$\tensor{T}{^a}= \tensor{{T^\prime}}{^a}$。
+            \end{yl}
+            \item[(3)] 定理4-1-3如下：
+            \begin{yl}{Thm}
+            	$\left. \tensor{\left(\phi_*T\right) }{^{\mu_1 \cdots \mu_k}_{\nu_1 \cdots \nu_l }}\right|_{\phi(p)}= \left. \tensor{{T^\prime}}{^{\mu_1 \cdots \mu_k}_{\nu_1 \cdots \nu_l}} \right|_p\qc \forall T\in \F_M(k,l), $\\式中左边是新点$\phi(p)$的新张量$\phi_* T$在老坐标系$\{y^\mu\}$的分量，右边是老点$p$的老张量$T$在新坐标系$\{{x^\prime}^\mu \}$的分量。
+            \end{yl}
+            \begin{yl}{Prf}
+            	由定理4-1-2，坐标基矢作为坐标线的切矢，满足\[ \phi_* \left[ \left. \tensor{\left(\pdv{{x^\prime}^\mu}\right)}{^a} \right|_p \right]=\left. \tensor{\left(\pdv{y^\mu}\right)}{^a} \right|_{\phi(p)}, \]于是$\forall \tensor{v}{^a}\in V_{\phi(p)}$，
+            	\begin{align*}
+            	\phi_* \left[ \left. \tensor{\left(\dd{{x^\prime}^\mu}\right)}{_a} \right|_p \right]\tensor{v}{^a}&= \left. \tensor{ \left( \dd{{x^\prime}^\mu}\right)}{_a} \right|_{p} \tensor{\left(\phi^* v\right)}{^a}\\
+            	&=\left(\phi^* v\right) ({x^\prime}^\mu)\\
+            	&=v(\phi_* {x^\prime}^\mu)\\
+            	&=v(y^\mu)\\
+            	&=\left.\tensor{\left(\dd{y^\mu}\right)}{_a} \right|_{\phi(p)} \tensor{v}{^a} 
+            	\end{align*}
+            	故\[ \phi_* \left[ \left. \tensor{\left(\dd{{x^\prime}^\mu}\right)}{_a} \right|_p \right]=\left.\tensor{\left(\dd{y^\mu}\right)}{_a} \right|_{\phi(p)}, \]于是对任意张量场$T\in\F_M(k,l) $，
+            	\begin{align*}
+            	&\left. \tensor{\left(\phi_*T\right) }{^{\mu_1 \cdots \mu_k}_{\nu_1 \cdots \nu_l }}\right|_{\phi(p)}\\
+            	=&\mspace{2mu}\left. \tensor{\left(\phi_*T\right) }{^{a_1 \cdots a_k}_{b_1 \cdots b_l }}\right|_{\phi(p)} \left. \tensor{ \left( \dd{y^{\mu_1}} \right)}{_{a_1}} \right|_{\phi(p)} \cdots \left. \tensor{ \left( \dd{y^{\mu_k}} \right)}{_{a_k}} \right|_{\phi(p)} \left. \tensor{ \left( \pdv{y^{\nu_1}} \right)}{^{b_1}} \right|_{\phi(p)} \cdots \left. \tensor{ \left( \pdv{y^{\nu_l}} \right)}{^{b_l}} \right|_{\phi(p)}\\ \displaybreak[1]
+            	=&\; \left. \tensor{T}{^{a_1 \cdots a_k}_{b_1 \cdots b_l}} \right|_p \left. \tensor{ \left( \dd{{x^\prime}^{\mu_1}} \right)}{_{a_1}} \right|_p \cdots \left. \tensor{ \left( \dd{{x^\prime}^{\mu_k}} \right)}{_{a_k}} \right|_p \left. \tensor{ \left( \pdv{{x^\prime}^{\nu_1}} \right)}{^{b_1}} \right|_p \cdots \left. \tensor{ \left( \pdv{{x^\prime}^{\nu_l}} \right)}{^{b_l}} \right|_p \\ \displaybreak[1]
+            	=&\; \left. \tensor{{T^\prime}}{^{\mu_1 \cdots \mu_k}_{\nu_1 \cdots \nu_l}} \right|_p.
+            	\end{align*}
+            \end{yl}
+		\end{enumerate}
+	\end{zm}
+	
+	\item 设$\phi\colon M\rightarrow N$ 为光滑映射，$p \in M $，$\{ y^\mu \}$是$\phi(p)$点某邻域上的坐标，试证
+	\begin{displaymath}
+	\tensor{\left(\phi_* v\right)}{^a}= v \left( \phi^* y^\mu \right) \tensor{\left(\pd{y^\mu}\right)}{^a}\qc \forall \tensor{v}{^a} \in V_p.
+	\end{displaymath}
+	
+	\begin{zm}
+		\begin{align*}
+		\tensor{\left(\phi_* v\right)}{^a}&= \left(\phi_* v\right) (y^\mu) \tensor{\left(\pdv{y^\mu}\right)}{^a}\\
+		&=v \left(\phi^* y^\mu\right) \tensor{\left(\pdv{y^\mu}\right)}{^a}
+		\end{align*}
+	\end{zm}
+	
+	\item 设$M$，$N$是流形，$\phi\colon M\rightarrow N$是微分同胚，$p\in M$，$q\equiv \phi(p)$，试证推前映射$\phi_* \colon V_p \rightarrow V_q $是同构映射。
+	
+	\begin{zm}
+	由定理~\hyperlink{thm4.1.1}{4-1-1}~知$\phi_*$为线性映射，又知其有逆映射$\phi^*$，故为线性同构。
+	\end{zm}
+	
+	\item 设$M$，$N$，$Q$是流形，$\phi\colon M \rightarrow N $和$\psi \colon N \rightarrow Q $是光滑映射。
+	\begin{enumerate}
+		\item[(a)] 试证$\left( \psi \circ \phi \right)^* f= \left(\phi^* \circ \psi^* \right) f $，$\forall f\in \F_Q $。
+		\item[(b)] 试证$\left(\psi \circ \phi \right)_* \tensor{v}{^a}= \psi_*\left( \phi_* \tensor{v}{^a} \right) \qc \forall p\in M,\tensor{v}{^a}\in V_p $。
+		\item[(c)] \hypertarget{4.5.c}{}把$\left( \psi \circ \phi \right)^* $和$\phi^* \circ \psi^* $都看作由$\F_Q(0,l) $到$\F_M(0,l) $的映射，试证\[ \left( \psi \circ \phi \right)^*= \phi^* \circ \psi^*. \]
+	\end{enumerate}
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item[(a)] 按照拉回映射的定义，
+			\begin{displaymath}
+			\left( \psi \circ \phi \right)^* f= f \circ \psi \circ \phi = \left( \phi^* \circ \psi^*\right) f.
+			\end{displaymath}
+			\item[(b)] 按照推前映射的定义，$\forall f\in \F_M $，
+			\begin{align*}
+			\left[\left(\psi\circ\phi\right)_* v \right] (f) &= v \left[ \left( \psi \circ \phi \right)^* f \right]\\
+			&= v \left[\phi^*\left( \psi^* f \right) \right]\\
+			&= \left( \phi^* v \right) \left( \psi^* f \right)\\
+			&= \left[ \psi^* \left(\phi^* v\right) \right] (f).
+			\end{align*}
+			\item[(c)] $\forall p\in M, v_1,\cdots,v_l \in V_p ,T\in \F_Q(0,l)$，
+			\begin{align*}
+			&\left. \tensor{\left[\left(\psi\circ\phi\right)^* T\right]  }{_{a_1\cdots a_l}} \right|_p \tensor{\left(v_1\right)}{^{a_1}} \cdots \tensor{\left(v_l\right)}{^{a_l}}\\
+			=&\; \left. \tensor{T}{_{a_1 \cdots a_l}} \right|_{\psi(\phi(p))} \left[\left(\psi\circ\phi \right)_* \tensor{\left(v_1\right)}{^{a_1}}\right] \cdots \left[\left(\psi\circ\phi \right)_* \tensor{\left(v_l\right)}{^{a_l}}\right]\\
+			=&\; \left. \tensor{T}{_{a_1 \cdots a_l}} \right|_{\psi(\phi(p))} \psi_* \left[\phi_* \tensor{\left(v_1\right)}{^{a_1}}\right] \cdots \psi_* \left[\phi_* \tensor{\left(v_l\right)}{^{a_l}}\right]\\
+			=&\tmu \left. \tensor{\left( \psi^* T \right)}{_{a_1\cdots a_l}} \right|_{\phi(p)} \tensor{\left( \phi_* v_1 \right)}{^{a_1}} \cdots \tensor{\left( \phi_* v_l \right)}{^{a_l}}\\
+			=&\tmu \left. \tensor{\left[\left( \phi^* \circ \psi^* \right) T\right]  }{_{a_1\cdots a_l}} \right|_p \tensor{\left(v_1\right)}{^{a_1}} \cdots \tensor{\left(v_l\right)}{^{a_l}}
+			\end{align*}
+		\end{enumerate}
+	\end{zm}
+	
+	\item 设$\phi\colon M \rightarrow N $是微分同胚，$\tensor{v}{^a}$，$\tensor{u}{^a}$是$M$上的矢量场，试证$\phi_*\left( \tensor{\left[ v,u \right]}{^a} \right)= \tensor{\left[\phi_* v,\phi_* u \right]}{^a}$，其中$\tensor{\left[v,u \right]}{^a}$代表对易子。
+	
+	\begin{zm}
+		首先验证一个等式：$\forall v \in \F_M(1,0),f\in \F_N $，有$v(\phi^* f)=\phi^*\left[ (\phi_* v)f \right] $（即把逐点定义的切矢的推前映射表述成场的形式）。$\forall p \in M $，
+		\begin{align*}
+		\left. \phi^*\left[ (\phi_* v)f \right] \right|_p &= \left. (\phi_* v)f \right|_{\phi(p)} \\
+		&= \left. (\phi_* v) \right|_{\phi(p)}(f)\\
+		&= \left. v \right|_p \left( \phi^* f \right)\\
+		&= \left. v \left( \phi^* f \right) \right|_p.
+		\end{align*}
+		$\forall f\in \F_N,p\in M $，
+		\begin{align*}
+		\left. \left(\phi_*\left[v,u\right]\right) \right|_{\phi(p)} (f) &= \left. \left[v,u\right] \right|_p \left(\phi^* f \right)\\
+		&= \left. v\right|_p [u(\phi^* f)]- \left. u \right|_p [v(\phi^* f)]\\
+		&= \left. v \right|_p \left\{ \phi^* \left[ \left( \phi_* u \right) f \right] \right\} - \left. u \right|_p \left\{ \phi^* \left[ \left( \phi_* v \right) f \right] \right\}\\
+		&= \left. \phi_* v \right|_{\phi(p)} \left[ \left( \phi_* u \right) f \right] - \left. \phi_* u \right|_{\phi(p)} \left[ \left( \phi_* v \right) f \right]\\
+		&= \left. \left[\phi_* v,\phi_* u\right] \right|_{\phi(p)} (f).
+		\end{align*}
+	\end{zm}
+	
+	\item 试证定理4-2-4.
+	
+	\begin{zm}
+		定理4-2-4如下：
+		\begin{yl}{Thm}
+			\hypertarget{thm4.2.4}{}$\Ld{v} \tensor{\omega}{_a}= \tensor{v}{^b} \Nabla{b} \tensor{\omega}{_a} + \tensor{\omega}{_b} \Nabla{a} \tensor{v}{^b}\qc \forall \tensor{v}{^a} \in \F(1,0),\omega\in \F(0,1), $\\其中$\Nabla{a}$为任意无挠导数算符。
+		\end{yl}
+	    \begin{yl}{Prf}
+	    	由于李导数与缩并可交换顺序，为利用定理4-2-3，向李导数内插入$\tensor{u}{^a}$，计算$\Ld{v}\left(\tensor{\omega}{_a} \tensor{u}{^a} \right) $。$\forall \tensor{u}{^a} \in \F(1,0) $，利用与缩并交换及莱布尼兹律，
+	    	\begin{align*}
+	    	\Ld{v} \left( \tensor{\omega}{_a} \tensor{u}{^a} \right)&= \tensor{\omega}{_a} \Ld{v} \tensor{u}{^a} + \tensor{u}{^a} \Ld{v} \tensor{\omega}{_a}\\
+	    	&=\tensor{\omega}{_a} \tensor{\left[v,u\right]}{^a} + \tensor{u}{^a} \Ld{v} \tensor{\omega}{_a}\\
+	    	&= \tensor{\omega}{_a} \left( \tensor{v}{^b} \Nabla{b} \tensor{u}{^a} - \tensor{u}{^b} \Nabla{b} \tensor{v}{^a} \right) + \tensor{u}{^a} \Ld{v} \tensor{\omega}{_a},
+	    	\end{align*}
+	    	另一方面，根据$\Ld{v}(f)=v(f)$，有
+	    	\begin{align*}
+	    	\Ld{v} \left( \tensor{\omega}{_a} \tensor{u}{^a} \right) &= \tensor{v}{^b} \Nabla{a} \left( \tensor{\omega}{_b} \tensor{u}{^a} \right)\\
+	    	&= \tensor{v}{^b} \tensor{\omega}{_a} \Nabla{b} \tensor{u}{^a} + \tensor{v}{^b} \tensor{u}{^a} \Nabla{b} \tensor{\omega}{_a},
+	    	\end{align*}
+	    	于是
+	    	\begin{gather*}
+	    	\displaybreak[1] \cancel{\tensor{\omega}{_a} \tensor{v}{^b} \Nabla{b} \tensor{u}{^a}} - \tensor{\omega}{_a} \tensor{u}{^b} \Nabla{b} \tensor{v}{^a} + \tensor{u}{^a} \Ld{v} \tensor{\omega}{_a}=\cancel{\tensor{v}{^b} \tensor{\omega}{_a} \Nabla{b} \tensor{u}{^a}} + \tensor{v}{^b} \tensor{u}{^a} \Nabla{b} \tensor{\omega}{_a},\\ \displaybreak[1]
+	    	\tensor{u}{^a} \Ld{v} \tensor{\omega}{_a} = \tensor{\omega}{_{\cancel{a}b}} \tensor{u}{^{\cancel{b}a}} \Nabla{\cancel{b}a} \tensor{v}{^{\cancel{a}b}} + \tensor{v}{^b} \tensor{u}{^a} \Nabla{b} \tensor{\omega}{_a},\\
+	    	\Ld{v} \tensor{\omega}{_a}= \tensor{\omega}{_b} \Nabla{a} \tensor{v}{^b} + \tensor{v}{^b} \Nabla{b} \tensor{\omega}{_a}.
+	    	\end{gather*}
+	    \end{yl}
+	\end{zm}
+	
+	\item 设$\tensor{v}{^a} \in \F_M(1,0) $，$\tensor{\omega}{_a} \in \F_M(0,1) $，试证对任一坐标系$\{x^\mu \}$有\[ \tensor{\left(\Ld{v} \omega \right)}{_\mu} = \tensor{v}{^\nu} \pdv*{\tensor{\omega}{_\mu}}{x^\nu} + \tensor{\omega}{_\nu} \pdv*{\tensor{v}{^\nu}}{x^\mu}. \]提示：用式(4-2-7)并令其$\Nabla{a}$为$\Partial{a}$。
+	
+	\begin{zm}
+		式(4-2-7)为（也就是定理~\hyperlink{thm4.2.4}{4-2-4}）：\[\Ld{v} \tensor{\omega}{_a}= \tensor{v}{^b} \Nabla{b} \tensor{\omega}{_a} + \tensor{\omega}{_b} \Nabla{a} \tensor{v}{^b}\qc \forall \tensor{v}{^a} \in \F(1,0),\omega\in \F(0,1)\]于是
+		\begin{align*}
+		\tensor{\left( \Ld{v} \omega \right)}{_\mu}&= \tensor{\left(\pdv{x^\mu}\right)}{^a} \Ld{v} \tensor{\omega}{_a}\\
+		&= \tensor{\left(\pdv{x^\mu}\right)}{^a} \left( \tensor{v}{^b} \Partial{b} \tensor{\omega}{_a} + \tensor{\omega}{_b} \Partial{a} \tensor{v}{^b} \right)\\
+		&= \tensor{v}{^\nu} \pdv{\tensor{\omega}{_\mu}}{x^\nu}+ \tensor{\omega}{_\nu} \pdv{\tensor{v}{^\nu}}{x^\mu}.
+		\end{align*}
+	\end{zm}
+
+	\item \hypertarget{4.9}{}设$\tensor{u}{^a},\tensor{v}{^a} \in \F_M(1,0) $，则下式作用于任意张量场都成立\[ \left[ \Ld{v},\Ld{u} \right]= \Ld{\left[v,u\right]}\qq{（其中$\left[ \Ld{v},\Ld{u} \right] \equiv \Ld{v}\Ld{u}-\Ld{u}\Ld{v} $）.} \]试就作用对象为$f \in \F_M $和$\tensor{w}{^a}\in \F_M(1,0) $的情况给出证明。提示：当作用对象为$\tensor{w}{^a}$时可用雅可比恒等式（第2章习题~\hyperlink{ykb}{8}）。
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item 作用于标量场：
+			\begin{align*}
+			\left[\Ld{v},\Ld{u} \right](f)&= \Ld{v}\left(\Ld{u} f \right) - \Ld{u} \left( \Ld{v} f \right)\\
+			&=v(u(f))-u(v(f))\\
+			&=\left[v,u\right](f)\\
+			&= \Ld{\left[v,u\right]}(f).
+			\end{align*}
+			\item 作用于矢量场：
+			\begin{align*}
+			\left[ \Ld{v},\Ld{u} \right]w&= \Ld{v} \left( \Ld{u} w \right) - \Ld{u} \left( \Ld{v} w \right)\\
+			&=[v,[u,w]]-[u,[v,w]]\\
+			&=-\left( \cancel{[u,[w,v]]}+[w,[v,u]] \right)- \cancel{[u,[v,w]]} \\
+			&=[[v,u],w]\\
+			&=\Ld{[v,u]}w.
+			\end{align*}
+		\end{enumerate}
+	\end{zm}
+	
+	\item 设$\tensor{F}{_a_b}$是4维闵氏空间上的反称张量场，其在洛伦兹坐标系$\{t,x,y,z \}$的分量为$\tensor{F}{_0_1}=-\tensor{F}{_1_3}=x \rho^{-1} $，$\tensor{F}{_0_2}=-\tensor{F}{_2_3}=y \rho^{-1} $，$\tensor{F}{_0_3}=\tensor{F}{_1_2}=0 $，其中$\rho\equiv \left(x^2+y^2\right)^{1/2} $。试证$\tensor{F}{_a_b}$有旋转对称性，即$\Ld{v} \tensor{F}{_a_b}=0 $，其中$\tensor{v}{^a}=-y \tensor{\left(\pd{x}\right)}{^a}+x \tensor{\left(\pd{y}\right)}{^a} $。
+	
+	\begin{zm}
+		由\[\Ld{v} \tensor{F}{_a_b} = \tensor{v}{^c} \Nabla{c} \tensor{F}{_a_b} + \tensor{F}{_a_c} \Nabla{b} \tensor{v}{^c} + \tensor{F}{_c_b} \Nabla{a} \tensor{v}{^c},\]取$\Nabla{a}$为$\Partial{a}$，有\[  \tensor{\left(\Ld{v} F\right)}{_\mu_\nu} = \tensor{v}{^\sigma} \Partial{\sigma} \tensor{F}{_\mu_\nu} + \tensor{F}{_\mu_\sigma} \Partial{\nu} \tensor{v}{^\sigma} + \tensor{F}{_\sigma_\nu} \Partial{\mu} \tensor{v}{^\sigma}  \]其中第一项求和只对$\sigma=1,2$取，第二三项求和只对$\sigma=1,2$且$\sigma\neq\mu,\nu$取，且$\nu\neq1,2$时第二项不存在，$\mu\neq1,2$时第三项不存在。又易看出$\Ld{v} \tensor{F}{_a_b} $反称，于是
+		\begin{align*}
+		\tensor{\left(\Ld{v} F\right)}{_0_1} &= \tensor{v}{^1} \Partial{1} \tensor{F}{_0_1} + \tensor{v}{^2} \Partial{2} \tensor{F}{_0_1} + \tensor{F}{_0_2} \Partial{1} \tensor{v}{^2}\\
+		&= -y \cdot \frac{y^2}{\rho^3} + x \cdot \left( - \frac{xy}{\rho^3} \right) +\frac{y}{\rho} \cdot (-1) \\
+		&=0\\
+		\tensor{\left(\Ld{v} F\right)}{_0_2} &= \tensor{v}{^1} \Partial{1} \tensor{F}{_0_2} + \tensor{v}{^2} \Partial{2} \tensor{F}{_0_2} + \tensor{F}{_0_1} \Partial{2} \tensor{v}{^1} \\
+		&= -y \cdot \left( - \frac{xy}{\rho^3} \right) + x \cdot \frac{x^2}{\rho^3} + \frac{x}{\rho} \cdot (-1)\\
+		&=0\\
+		\tensor{\left(\Ld{v} F\right)}{_0_3} &= \tensor{v}{^1} \Partial{1} \tensor{F}{_0_3} + \tensor{v}{^2} \Partial{2} \tensor{F}{_0_3} \\
+		&=0\\
+		\tensor{\left(\Ld{v} F\right)}{_1_2} &= \tensor{v}{^1} \Partial{1} \tensor{F}{_1_2} + \tensor{v}{^2} \Partial{2} \tensor{F}{_1_2} \\
+		&=0\\
+		\tensor{\left(\Ld{v} F\right)}{_1_3} &= \tensor{v}{^1} \Partial{1} \tensor{F}{_1_3} + \tensor{v}{^2} \Partial{2} \tensor{F}{_1_3} + \tensor{F}{_2_3} \Partial{1} \tensor{v}{^2} \\
+		&=-y \cdot \left( -\frac{y^2}{\rho^3} \right) + x \cdot \frac{xy}{\rho^3} -\frac{y}{\rho} \cdot 1\\
+		&=0\\
+		\tensor{\left(\Ld{v} F\right)}{_2_3} &= \tensor{v}{^1} \Partial{1} \tensor{F}{_2_3} + \tensor{v}{^2} \Partial{2} \tensor{F}{_2_3} + \tensor{F}{_1_3} \Partial{2} \tensor{v}{^1} \\
+		&=-y\cdot \frac{xy}{\rho^3} + x \cdot \left( - \frac{x^2}{\rho^3} \right) - \frac{x}{\rho} \cdot (-1)\\
+		&=0.
+		\end{align*}
+		故$\Ld{v} \tensor{F}{_a_b}=0 $。
+	\end{zm}
+	
+	\item 设$ \tensor{\xi}{^a} $是$\left( M,\tensor{g}{_a_b} \right)$中的 Killing 矢量场，$\Nabla{a}$与$\tensor{g}{_a_b}$相适配，试证$\Nabla{a} \tensor{\xi}{^a}=0 $。
+	
+	\begin{zm}
+		由 Killing 方程，
+		\begin{align*}
+		\displaybreak[1] \Nabla{a} \tensor{\xi}{^a} &= \tensor{g}{^a^b} \Nabla{a} \tensor{\xi}{_b}\\
+		\displaybreak[1] &= \tensor{g}{^a^b} \Nabla{(a} \tensor{\xi}{_{b)}}\\
+		&=0.
+		\end{align*}
+	\end{zm}
+	
+	\item 设$\tensor{\xi}{^a}$是$\left(M,\tensor{g}{_a_b} \right)$中的 Killing 矢量场，$\phi\colon M\rightarrow M $是等度规映射，试证$\phi_* \tensor{\xi}{^a} $也是$\left( M,\tensor{g}{_a_b} \right) $中的 Killing 矢量场。提示：利用习题~\hyperlink{4.5.c}{5(c)}~中的结论。
+	
+	\begin{zm}
+		记$\tensor{\xi}{^a}$的积分曲线为$C(t)$，它诱导出的单参微分同胚群为$\{\psi_t\}$，则$\phi_* \tensor{\xi}{^a} $的积分曲线是$\phi\circ C(t)$，其诱导出的单参微分同胚群为$\psi^\prime_t=\phi\circ\psi_t \circ \phi^{-1} $。由定义，
+		\begin{align*}
+		\Ld{\phi_* \xi} \tensor{g}{_a_b} &= \lim\limits_{t\rightarrow 0} \frac{1}{t} \left( {\psi^\prime_t}^* \tensor{g}{_a_b} - \tensor{g}{_a_b} \right)\\
+		&= \lim\limits_{t\rightarrow 0} \frac{1}{t}\left[ \left( \phi\circ\psi_t \circ \phi^{-1} \right)^* \tensor{g}{_a_b} - \tensor{g}{_a_b} \right]\\
+		&= \lim\limits_{t\rightarrow 0} \frac{1}{t} \left\{\left[ \left(\psi_t\circ\phi^{-1}\right)^* \circ \phi^*\right] \tensor{g}{_a_b} - \tensor{g}{_a_b} \right\}\\
+		&= \lim\limits_{t\rightarrow 0} \frac{1}{t}\left[ \left( {\phi^{-1}}^* \circ {\psi_t}^*\right) \tensor{g}{_a_b} - \tensor{g}{_a_b} \right]\\
+		&= 0.
+		\end{align*}
+	\end{zm}
+
+    \item 设$\tensor{\xi}{^a}$，$\tensor{\eta}{^a}$是$\left( M , \tensor{g}{_a_b}\right)$的 Killing 矢量场，试证其对易子$\tensor{\left[ \xi,\eta \right]}{^a}$也是 Killing 矢量场。注：此结论使得$M$上全体 Killing 矢量场的集合不但是矢量空间，而且是李代数（详见中册附录G）。
+
+    \begin{zm}
+    	由第~\hyperlink{4.9}{9}~题，知
+    	\begin{align*}
+    	\Ld{\left[\xi,\eta\right]} \tensor{g}{_a_b} &= \Ld{\xi} \Ld{\eta} \tensor{g}{_a_b} -\Ld{\eta} \Ld{\xi} \tensor{g}{_a_b} \\
+    	&=0.
+    	\end{align*}
+    \end{zm}
+	
+	\item 设$\tensor{\xi}{^a}$是广义黎曼空间$\left(M, \tensor{g}{_a_b} \right)$的 Killing 矢量场，$\tensor{R}{_a_b_c^d}$是$\tensor{g}{_a_b}$的黎曼曲率张量。
+	\begin{enumerate}
+		\item[(a)] 试证$\Nabla{a}\Nabla{b}\tensor{\xi}{_c} = - \tensor{R}{_b_c_a^d}\tensor{\xi}{_d} $。注：此式对证明定理4-3-4有重要用处。提示：由$\tensor{R}{_a_b_c^d}$的定义以及 Killing 方程(4-3-1)可知$\Nabla{a} \Nabla{b} \tensor{\xi}{_c} + \Nabla{b} \Nabla{c} \tensor{\xi}{_a} = \tensor{R}{_a_b_c^d} \tensor{\xi}{_d} $。此式称为第一式。作指标替换$a\mapsto b$，$b\mapsto c$，$c\mapsto a$得第二式，再替换一次得第三式。以第一、第二式之和减第三式并利用(3-4-7)便得证。
+		\item[(b)] 利用(a)的结果证明$\tensor{\nabla}{^a} \Nabla{a} \tensor{\xi}{_c} = - \tensor{R}{_c_d} \tensor{\xi}{^d} $，其中$\tensor{R}{_c_d}$是里奇张量。
+	\end{enumerate}
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item[(a)] 由黎曼张量的定义，
+			\begin{equation*}
+			\left(\Nabla{a}\Nabla{b} - \Nabla{b}\Nabla{a} \right) \tensor{\xi}{_c} = \tensor{R}{_a_b_c^d} \tensor{\xi}{_d}
+			\end{equation*}
+			由 Killing 方程，$\Nabla{a}\tensor{\xi}{_c} = - \Nabla{c} \tensor{\xi}{_a} $，于是得
+			\begin{equation}
+			\Nabla{a}\Nabla{b}\tensor{\xi}{_c} + \Nabla{b}\Nabla{c}\tensor{\xi}{_a}= \tensor{R}{_a_b_c^d} \tensor{\xi}{_d}\label{4eq1}
+			\end{equation}
+			对指标$a,b,c$轮换，得
+			\begin{gather}
+			\Nabla{b}\Nabla{c}\tensor{\xi}{_a} + \Nabla{c}\Nabla{a}\tensor{\xi}{_b}= \tensor{R}{_b_c_a^d} \tensor{\xi}{_d}\label{4eq2}\\
+			\Nabla{c}\Nabla{a}\tensor{\xi}{_b} + \Nabla{a}\Nabla{b}\tensor{\xi}{_c}= \tensor{R}{_c_a_b^d} \tensor{\xi}{_d}\label{4eq3}
+			\end{gather}
+			$\eqref{4eq1}+\eqref{4eq2}-\eqref{4eq3}$得
+			\begin{displaymath}
+			2\Nabla{b}\Nabla{c}\tensor{\xi}{_a}=\left( \tensor{R}{_a_b_c^d} + \tensor{R}{_b_c_a^d} - \tensor{R}{_c_a_b^d} \right) \tensor{\xi}{_d}=-2 \tensor{R}{_c_a_b^d} \tensor{\xi}{_d}
+			\end{displaymath}
+			于是$\Nabla{a}\Nabla{b}\tensor{\xi}{_c} = - \tensor{R}{_b_c_a^d} \tensor{\xi}{_d} $。
+			\item[(b)] 由(a)，
+			\begin{displaymath}
+			\tensor{\nabla}{^a}\Nabla{a} \tensor{\xi}{_c} = \tensor{g}{^a^b} \Nabla{b} \Nabla{a} \tensor{\xi}{_c} = -\tensor{g}{^a^b} \tensor{R}{_a_c_b^d} \tensor{\xi}{_d}=- \tensor{R}{_c_d} \tensor{\xi}{^d}.
+			\end{displaymath}
+		\end{enumerate}
+	\end{zm}
+	
+	\item 验证式(4-3-3)中的$ \tensor{\left(\pd{\eta}\right)}{^a}$的确满足 Killing 方程(4-3-1)。
+	
+	\begin{zm}
+		由$\displaystyle \tensor{\left(\pdv{\eta}\right)}{^a} = x \tensor{\left(\pdv{t}\right)}{^a} + t\tensor{\left(\pdv{x}\right)}{^a} $升指标得
+		\begin{displaymath}
+		\tensor{\left(\pdv{\eta}\right)}{_a}= \tensor{g}{_a_b} \tensor{\left(\pdv{\eta}\right)}{^b} = - x \tensor{\left(\dd{t}\right)}{_a} + t \tensor{\left(\dd{x}\right)}{_a},
+		\end{displaymath}
+		于是
+		\begin{displaymath}
+		\Partial{a}\tensor{\left(\pdv{\eta}\right)}{_b}= - \tensor{\left(\dd{x}\right)}{_a} \tensor{\left(\dd{t}\right)}{_b} + \tensor{\left(\dd{t}\right)}{_a} \tensor{\left(\dd{x}\right)}{_b}=\tensor{\left(\dd{t}\right)}{_{[a}} \tensor{\left(\dd{x}\right)}{_{b]}},
+		\end{displaymath}
+		这是一个反称张量，故满足$\displaystyle \Nabla{(a} \tensor{\left(\pd{\eta}\right)}{_{b)}}=0 $。
+	\end{zm}
+	
+	\item 找出2维欧氏空间中由$\tensor{R}{^a} = x \tensor{\left(\pd{y}\right)}{^a} - y \tensor{\left(\pd{x}\right)}{^a} $生出的单参等度规群的任一元素$\phi_\alpha$诱导的坐标变换。
+	
+	\begin{zm}
+		积分曲线的参数式满足微分方程
+		\begin{displaymath}
+		\left\{
+		\begin{aligned}
+		\dv{x}{t} &= \tensor{R}{^x} = -y,\\
+		\dv{y}{t} &= \tensor{R}{^y} = x ,
+		\end{aligned}
+		\right.
+		\end{displaymath}
+		并有边界条件
+		\begin{displaymath}
+		\left\{
+		\begin{aligned}
+		x(0) &= x_p,\\
+		y(0) &= y_p ,
+		\end{aligned}
+		\right.
+		\end{displaymath}
+		解得过$p$点的积分曲线的参数式为
+		\begin{displaymath}
+		\left\{
+		\begin{aligned}
+		x(t) &= x_p \cos t - y_p \sin t ,\\
+		y(t) &= x_p \sin t + y_p \cos t ,
+		\end{aligned}
+		\right.
+		\end{displaymath}
+		于是$\phi_\alpha$诱导的坐标变换为
+		\begin{displaymath}
+		\left\{
+		\begin{aligned}
+		x^\prime &= x \cos \alpha - y \sin \alpha ,\\
+		y^\prime &= x \sin \alpha + y \cos \alpha .
+		\end{aligned}
+		\right.
+		\end{displaymath}
+	\end{zm}
+	
+	\item 设时空$\left(M,\tensor{g}{_a_b}\right)$中的超曲面$\phi[S]$上每点都有类光切矢而无类时切矢（“切矢”指切于$\phi[S]$），试证它必为类光超曲面。提示：\circled{1}证明与类时矢量$\tensor{t}{^a}$正交的矢量必类空[选正交归一基底$\{ \tensor{\left(e_\mu\right)}{^a} \}$使$ \tensor{\left(e_0\right)}{^a}= \tensor{t}{^a} $]；\circled{2}证明类时超曲面上每点都有类时切矢；\circled{3}由以上两点证明本命题。
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item[\circled{1}] 设$\tensor{t}{^a} $为类时矢量，选一组正交归一基$ \{ \tensor{\left(e_\mu\right)}{^a} \} $使得$ \tensor{\left(e_0\right)}{^a}=\tensor{t}{^a} $，则$\tensor{g}{_a_b} $在这组基下被对角化且$\tensor{g}{_0_0}= \tensor{g}{_a_b} \tensor{(e_0)}{^a} \tensor{(e_0)}{^b} <0 $，由惯性定理知$\tensor{g}{_1_1},\tensor{g}{_2_2} , \tensor{g}{_3_3}>0 $。设$\tensor{v}{^a} $与$ \tensor{t}{^a} $正交，则
+			\begin{align*}
+			\tensor{g}{_a_b} \tensor{t}{^a} \tensor{v}{^b} &= \tensor{g}{_0_0} \tensor{v}{^0}\\
+			&=0,
+			\end{align*}
+			于是
+			\begin{equation*}
+			\tensor{g}{_a_b} \tensor{v}{^a} \tensor{v}{^b} = \sum_{i=1}^{3} \tensor{g}{_i_i} \left(\tensor{v}{^i}\right)^2>0
+			\end{equation*}
+			\item[\circled{2}] 根据定义，类时超曲面的每一点的法矢类空。在超曲面任意一点$p$的切空间$W_p $取一组正交基，则连同法矢一起得到$M$上$p$点切空间$V_p$的一组正交基，其中类空法矢不属于$W_p$，根据惯性定理这组基中有一个类时矢量，且它属于$W_p$。
+			\item[\circled{3}] 若$\phi[S] $为类空超曲面，则其切矢与类时法矢正交，由\circled{1}知所有切矢类空，矛盾；若$\phi[S] $为类时超曲面，由\circled{2}知每一点都有类时切矢，矛盾。故$\phi[S] $为类光超曲面。
+		\end{enumerate}
+		
+	\end{zm}
+	
+	
+	
+	
+	
+	
+\end{xiti}

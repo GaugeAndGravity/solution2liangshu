@@ -1,0 +1,43 @@
+\newcounter{xiti}[chapter]
+\setcounter{xiti}{0}
+\newcounter{subxiti}[xiti]
+\setcounter{subxiti}{0}
+\renewcommand{\thesubxiti}{\alph{subxiti}}
+%\renewcommand{\thexiti}{\arabic{xiti}}
+%\newcommand{\xit}{\stepcounter{xiti}\ensuremath{\mathbf{\thexiti}}\ }
+
+\newenvironment{xiti}[1][0em]{%
+\heiti\section*{习题}\begin{list}{\stepcounter{xiti}\textbf{\thexiti .}}{%
+\itemindent=#1 \listparindent=\itemindent%
+\leftmargin=0em \rightmargin=0pt%
+\parsep=0pt}\normalfont}{\end{list}}
+
+%\newenvironment{subxiti}{%
+%\begin{list}{\stepcounter{subxiti}\textbf{(\thesubxiti)}}{\itemindent=0em \listparindent=2em%
+%\parsep=0em \leftmargin=2em \rightmargin=0em}%
+%\itemsep=0em \topsep=0em \parskip=0em%
+%}{\end{list}}
+
+\newenvironment{zm}{%
+\begin{list}{\textbf{证明}}{%
+\itemindent=0em \listparindent=2em%
+\leftmargin=2.5em \rightmargin=0em%
+\parsep=0pt \labelwidth=2em}\item \kaishu}{ \end{list}}
+		
+\newenvironment{jie}{%
+\begin{list}{\textbf{解}}{%
+\itemindent=0em \listparindent=2em%
+\leftmargin=2em \rightmargin=0em%
+\parsep=0pt \labelwidth=1em}\item \kaishu}{\end{list}}
+
+\newenvironment{da}{%
+\begin{list}{\textbf{答}}{%
+\itemindent=0em \listparindent=2em%
+\leftmargin=2em \rightmargin=0em%
+\parsep=0pt \labelwidth=1em}\item \kaishu}{\end{list}}
+
+\newenvironment{yl}[1]{%
+\begin{list}{\textbf{#1}}{%
+\itemindent=0em \listparindent=2em%
+\leftmargin=2em \rightmargin=1em%
+\parsep=0pt \labelwidth=3em}\item }{ \end{list}}

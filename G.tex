@@ -1,0 +1,235 @@
+\chapter*{附录G \quad 李群和李代数}
+\addcontentsline{toc}{chapter}{附录G\quad 李群和李代数}
+\setcounter{xiti}{0}
+\begin{xiti}
+	\item 验证由式(G-1-1)定义的$I_g \colon G\rightarrow G$确为自同构映射。
+	
+	\begin{zm}
+		$I_g $定义为
+		\[I_g(h) := g h g^{-1}\qc \forall g\in G, \]
+		首先验证它是同态：
+		\begin{displaymath}
+		I_g (h_1 h_2) = g h_1 g^{-1} g h_2 g^{-1}= g h_1 h_2 g^{-1} = I_g (h_1 h_2),
+		\end{displaymath}
+		而
+		\begin{displaymath}
+		I_{g^{-1}} (I_g (h) )= g^{-1} \left( g h g^{-1} \right) g=h
+		\end{displaymath}
+		故$I_g $有逆映射$I_{g_{-1}} $，于是$I_g $是自同构映射。
+	\end{zm}
+	
+	\item 验证由式(G-1-2)定义的乘法满足群乘法的要求。
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item 结合律：
+			\begin{displaymath}
+			\left( \left(g_1,g^\prime_1\right) \left(g_2,g^\prime_2\right) \right) \left(g_3,g^\prime_3\right) = \left( g_1 g_2 g_3 , g^\prime_1 g^\prime_2 g^\prime_3 \right)= \left( g_1,g^\prime_1 \right) \left( \left( g_2,g^\prime_2 \right) \left( g_3,g^\prime_3 \right) \right) 
+			\end{displaymath}
+			\item 含幺：
+			\begin{displaymath}
+			\left( e,e^\prime \right) \left( g,g^\prime \right) = \left( g,g^\prime \right) = \left( g,g^\prime \right)
+			\end{displaymath}
+			\item 有逆：
+			\begin{displaymath}
+			\left( g,g^\prime \right) \left( g^{-1}, {g^\prime}{_1} \right)= \left( e,e^\prime \right)
+			\end{displaymath}
+		\end{enumerate}
+	\end{zm}
+
+    \item 验证由\S G.1 定义 8 所定义的 $A(G) $是群。
+    
+    \begin{zm}
+    	\begin{enumerate}
+    		\item 先验证复合确实是$A(G) $上的运算$\circ\colon A(G)\times A(G) \rightarrow A(G) $，即$\forall \mu,\nu \in A(G) $，验证$\mu \circ \nu \in A(G) $：
+    		首先验证$\mu\circ \nu $是同态：\[ \mu\circ \nu (gh)=\mu\left( \nu(g) \nu(h) \right) =\mu\circ \nu (g) \mu\circ \nu(h), \]
+    		再验证$\mu\circ \nu $一一到上（有逆映射）：\[ \left(\mu\circ \nu\right) \circ \left(\nu^{-1} \circ \mu^{-1}\right) = \operatorname{Id}_G, \]
+    		故$\mu\circ\nu $有逆映射$\nu^{-1} \circ \mu^{-1} $，于是$\mu\circ\nu$为同构映射，故复合是$A(G)$上的运算。
+    		\item 验证$\circ$为群乘法：
+    		\begin{enumerate}
+    			\item 结合律：\[ \mu \circ \left( \nu \circ \sigma \right) =\mu \circ \nu \circ \sigma = \left( \mu \circ \nu \right) \circ \sigma\qc \forall \mu,\nu,\sigma \in A(G). \]
+    			\item 含幺：易知$\operatorname{Id}_G \in A(G) $，\[ \operatorname{Id}_G \circ \mu = \mu \circ \operatorname{Id}_{G} = \mu\qc \forall \mu \in A(G) \]
+    			\item 有逆：$\forall \mu \in A(G) $，$\mu^{-1}$也是自同构，于是\[ \mu \circ \mu^{-1} = \mu^{-1} \circ \mu = \operatorname{Id}_G. \]
+    		\end{enumerate}
+    	\end{enumerate}
+    \end{zm}
+
+    \item 试证定理G-1-2，即$A_I(G)$是群$A(G)$的正规子群。
+    
+    \begin{zm}
+    	$\forall \mu \in A(G),I_g\in A_I(G),h\in G $，\[ \mu\circ I_g \circ \mu^{-1} (h) =\mu \left( g (\mu^{-1} h) g^{-1} \right) = \mu(g) h \mu(g)^{-1} = I_{\mu(g)}(h) . \]
+    \end{zm}
+    
+    \item 验证由\S G.1 定义9所定义的$H \otimes_S K $是群。
+    
+    \begin{zm}
+    	\begin{enumerate}
+    		\item 结合律：$\forall h_1 , h_2 , h_3 \in H , k_1 , k_2 , k_3 \in K $，
+    		\begin{align*}
+    		\left( (h_1,k_1) (h_2,k_2) \right) (h_3 , k_3) &= \left(h_1 \mu_{k_1}(h_2), k_1 k_2 \right) (h_3,k_3)\\
+    		&= \left( h_1 \mu_{k_1}(h_2) \mu_{k_1 k_2}(h_3) , k_1 k_2 k_3 \right)\\
+    		&= \left( h_1 \mu_{k_1}(h_2) \mu_{k_1}\left( \mu_{k_2}(h_3) \right)  , k_1 k_2 k_3 \right)\\
+    		&= \left( h_1 \mu_{k_1}(h_2 \mu_{k_2}(h_3)) , k_1 k_2 k_3 \right)\\
+    		&= (h_1,k_1) \left( h_2 \mu_{k_2}(h_3) , k_2 k_3 \right)\\
+    		&= (h_1,k_1) \left( (h_2,k_2) (h_3,k_3) \right)
+    		\end{align*}
+    		\item 含幺：$\forall h \in H, k\in K $，
+    		\[ (e_H,e_K) (h,k) = (h,k) = (h,k) (e_H,e_K) \]
+    		\item 有逆：$\forall h \in H,k \in K $，
+    		\[ (h,k) (h^{-1},k^{-1}) = (e_H,e_K) = (h^{-1} ,k^{-1}) (h,k) \]
+    	\end{enumerate}
+    \end{zm}
+	
+	\item 设$L_g \colon G \rightarrow G $是由$g\in G $生成的左平移，${L_g}^{-1} $是$L_g$的逆映射，试证\[ L_{g^{-1}} = {L_g}^{-1}\qc \forall g\in G. \]
+	
+	\begin{zm}
+		$\forall h\in G $，
+		\[ L_{g^{-1}} \left(L_g(h)\right) = g^{-1} gh=h, \]
+		故$L_{g^{-1}} \circ L_{g} =\operatorname{Id}_G $。
+	\end{zm}
+	
+	\item $\forall g \in G $定义右平移$ R_g \colon h \mapsto hg \qc{\forall h \in G} $，试证$R_{gh} = R_{h} \circ R_g $。
+	
+	\begin{zm}
+		$\forall g,h,k\in G$，\[ R_{gh}(k) = kgh=R_{h}\circ R_g (k) \]
+	\end{zm}
+    
+    \item 试证$[\myvec{v},\myvec{u}]:= \myvec{v} \cp \myvec{u} \qc \forall \myvec{v} ,\myvec{u} \in \mathbb{R}^3 $满足李括号的条件（见\textsection G.3 例 1 ）。
+    
+    \begin{zm}
+    	线性性、反称性易知。验证雅可比恒等式：
+    	\begin{align*}
+    	&\tmu \left[\myvec{u},\left[\myvec{v},\myvec{w}\right]\right] + \left[\myvec{v},\left[\myvec{w},\myvec{u}\right]\right] + \left[\myvec{w},\left[\myvec{u},\myvec{v}\right]\right]\\
+    	=&\;\myvec{u} \cp \left( \myvec{v} \cp \myvec{w} \right) + \myvec{v} \cp \left( \myvec{w} \cp \myvec{u} \right) + \myvec{w} \cp \left( \myvec{u} \cp \myvec{v} \right)\\
+    	=&\tmu\left(\myvec{u} \vdot \myvec{w}\right) \myvec{v} - \left(\myvec{u} \vdot \myvec{v}\right) \myvec{w} + \left(\myvec{v} \vdot \myvec{u}\right) \myvec{w} - \left(\myvec{v} \vdot \myvec{w}\right) \myvec{u} + \left(\myvec{w} \vdot \myvec{u}\right) \myvec{v} - \left(\myvec{w} \vdot \myvec{v}\right) \myvec{u}\\
+    	=&\;0,
+    	\end{align*}
+    	其中三矢量叉乘可以这样得到：叉乘 $\tensor[^*]{\left(\bm{u}\wedge\bm{v}\right)}{}$ 用体元表达为 $\tensor{\varepsilon}{_a_b_c} \tensor{u}{^a} \tensor{v}{^b}$ ，于是
+    	\begin{displaymath}
+    	\tensor{\varepsilon}{_a_b_c} \tensor{u}{^a} \tensor{\varepsilon}{^d^e^b} \tensor{v}{_d} \tensor{w}{_e} = 2 \tensor{\delta}{^{[a}_e} \tensor{\delta}{^{c]}_d} \tensor{u}{^a} \tensor{v}{_d} \tensor{w}{_e} = \tensor{u}{^a} \tensor{w}{_a} \tensor{v}{_c} - \tensor{u}{^a} \tensor{v}{_a} \tensor{w}{_c}.
+    	\end{displaymath}
+    \end{zm}
+
+    \item 试证 $\left[A,B\right] := AB-BA$ 满足李括号的条件（见 \S G.3 例2）。
+    
+    \begin{zm}
+    	线性性、反称性易知，验证雅可比恒等式：
+    	\begin{align*}
+    	&\tmu\left[A,\left[B,C\right]\right] + \left[B,\left[C,A\right]\right] + \left[C,\left[A,B\right]\right]\\
+    	=&\;A \left(BC-CB\right) - \left(BC-CB\right) A \\
+    	&+ B \left(CA-AC\right) - \left(CA-AC\right) B \\
+    	&+ C \left(AB-BA\right) - \left(AB-BA\right) C\\
+    	=&\;ABC-ACB-BCA+CBA\\
+    	&+ BCA-BAC-CAB+ACB\\
+    	&+CAB-CBA-ABC+BAC\\
+    	=&\;0.
+    	\end{align*}
+    \end{zm}
+    
+    \item 设 $\mathscr{G}$ 和 $\hat{\mathscr{G}}$ 依次是李群 $G$ 和 $\hat{G}$ 的李代数，$\rho_* \colon \mathscr{G} \rightarrow \hat{\mathscr{G}}$ 是同态映射 $\rho\colon G\rightarrow \hat{G}$ 在 $e\in G$ 诱导的推前映射，试证 $\rho \left(\exp A\right) = \exp(\rho_* A) \quad \forall A \in \mathscr{G}$。提示：先用同态性证明 $\rho \left(\exp tA\right)$ 是单参子群。
+    
+    \begin{zm}
+    	由同态性，
+    	\begin{displaymath}
+    	\rho \left(\exp sA\right) \rho \left(\exp tA\right) = \rho \left(\left(\exp sA\right)\left(\exp tA\right)\right) = \rho \left(\exp((s+t)A)\right)
+    	\end{displaymath}
+    	故 $\rho \left(\exp tA\right)$ 为 $\hat{G}$ 上的单参子群。它在恒等元的切矢为
+    	\begin{displaymath}
+    	\left.\dv{t} \rho \left(\exp t A\right) \right|_e = \rho_* \left. \dv{t} \exp(tA) \right|_e = \rho_* A
+    	\end{displaymath}
+    	故 $\rho\left(\exp tA\right)$ 是 $\rho_* A$ 生成的单参子群，即 $\rho\left(\exp tA\right)=\exp(t\rho_* A)$ ， 取 $t=1$ 即得要证的等式。
+    \end{zm}
+	
+	\item 试证式 (G-5-10) 可由式 (G-5-10') 推出。提示：把式(G-5-10)的 $\tensor{v}{^a},\tensor{u}{^a}$ 之和作为式 (G-5-10') 的 $\tensor{v}{^a}$ 。
+	
+	\begin{zm}
+		由式(G-5-10')，即
+		\begin{displaymath}
+		\tensor{g}{_a_b} \left( \tensor{Z}{^a_c} \tensor{v}{^c} \right) \left( \tensor{Z}{^b_d} \tensor{v}{^d} \right) = \tensor{g}{_c_d} \tensor{v}{^c} \tensor{v}{^d} \qc \forall \tensor{v}{^c} \in V
+		\end{displaymath}
+		则任取 $\tensor{u}{^a},\tensor{v}{^a}\in V$，有
+		\begin{displaymath}
+		\tensor{g}{_a_b} \left( \tensor{Z}{^a_c} \left( \tensor{u}{^c} + \tensor{v}{^c} \right) \right) \left( \tensor{Z}{^b_d} \left( \tensor{u}{^d} + \tensor{v}{^d} \right) \right) = \tensor{g}{_c_d} \left( \tensor{u}{^c} + \tensor{v}{^c} \right) \left( \tensor{u}{^d} + \tensor{v}{^d} \right)
+		\end{displaymath}
+		左边展开为
+		\begin{align*}
+		&\;\tensor{g}{_a_b} \left( \tensor{Z}{^a_c} \tensor{u}{^c} \right) \left( \tensor{Z}{^b_d} \tensor{u}{^d} \right) + \tensor{g}{_a_b} \left( \tensor{Z}{^a_c} \tensor{v}{^c} \right) \left( \tensor{Z}{^b_d} \tensor{v}{^d} \right) + 2 \tensor{g}{_a_b} \left( \tensor{Z}{^a_c} \tensor{u}{^c} \right) \left( \tensor{Z}{^b_d} \tensor{v}{^d} \right)\\
+		=&\;\tensor{g}{_c_d} \tensor{u}{^c} \tensor{u}{^d} +  \tensor{g}{_c_d} \tensor{v}{^c} \tensor{v}{^d} + \color{blue} 2 \tensor{g}{_a_b} \left( \tensor{Z}{^a_c} \tensor{u}{^c} \right) \left( \tensor{Z}{^b_d} \tensor{v}{^d} \right)
+		\end{align*}
+		右边展开为
+		\begin{align*}
+		 \tensor{g}{_c_d} \tensor{u}{^c} \tensor{u}{^d} + \tensor{g}{_c_d} \tensor{v}{^c} \tensor{v}{^d} + \color{blue} 2 \tensor{g}{_c_d} \tensor{u}{^c} \tensor{v}{^d}
+		\end{align*}
+		蓝色部分相等即给出式(G-5-10)。
+	\end{zm}
+	
+	\item $\mathrm{SO}(2)$ 是阿贝尔群吗？$\mathrm{O}(2)$ 是阿贝尔群吗？
+	
+	\begin{da}
+		是；不是。
+	\end{da}
+	
+	\item 李群 $\mathrm{SL}(m)$ [ $\mathrm{GL}(m)$ 满足 $\det T=+1$ 的子群 ] 的李代数记作 $\mathscr{S\!\!L}(m)$ 。试证
+	\begin{displaymath}
+	\text{(a)}\;\mathscr{S\!\!L}(m)=\{ m\times m \text{无迹实矩阵} \} \qc\quad \text{(b)}\;\dim \mathrm{SL}(m)=m^2-1.
+	\end{displaymath}
+    
+    \begin{zm}
+    	\begin{enumerate}
+    		\item[(a)] 回忆引理(G-5-12)，
+    		\begin{yl}{Lm}
+    			$\det(\Exp A)=\e{\tr A}\qc \forall A\in \mathscr{M}(m)$
+    		\end{yl}
+    	    设 $T(t)$ 是 $\mathrm{SL}(m)$ 上的曲线，且 $T(0)=I$ 为恒等映射。其在 $I$ 的切矢的分量为
+    	    \begin{displaymath}
+    	    \tensor{A}{^\mu_\nu} = \left. \dv{t} \tensor{T}{^\mu_\nu}(t) \right|_0
+    	    \end{displaymath}
+    	    或者写成矩阵等式\footnote{注意分量形式中左边 $\tensor{A}{^\mu_\nu}$ 是切矢在坐标基下的分量，而右边的 $\tensor{T}{^\mu_\nu}$ 却是流形上点的坐标，从分量写成矩阵配的并不是同一组基，这样看来写成矩阵等式显得很令人困惑。不过，如果将矩阵和线性变换严格区分，从而认为矩阵不过是一堆数，那么只要声明了矩阵是在哪个基下的矩阵（比如这里是不言自明的），那么将切矢写作矩阵求导就一点问题也没有。}
+    	    \begin{displaymath}
+    	    A=\left. \dv{t} T(t) \right|_0
+    	    \end{displaymath}
+    	    \begin{enumerate}[leftmargin=2em]
+    	    	\item[i.] $\forall A\in \mathscr{S\!\!L}(m)$ ，有 $\Exp(A) = \exp(A) \in \mathrm{SL}(m)$ ，取行列式即有
+    	    	\begin{align*}
+    	    	\e{\tr A} = \det(\Exp A) = 1 \implies \tr A=0.
+    	    	\end{align*}
+    	    	\item[ii.] $\forall A\in \mathscr{M}(m)$ 且 $\tr A=0$ ，要证明 $A\in \mathscr{S\!\!L}(m)$ ，只需考虑 $\Exp(tA)$ ，由于
+    	    	\begin{displaymath}
+    	    	\det(\Exp(tA)) = \e{t\tr A} = 1,
+    	    	\end{displaymath}
+    	    	故 $\forall t\in \mathbb{R}\qc \Exp(tA) \in \mathrm{SL}(m)$，而
+    	    	\begin{displaymath}
+    	    	A=\left. \dv{t} \Exp(tA) \right|_0
+    	    	\end{displaymath}
+    	    	故 $A$ 是曲线 $\Exp(tA)$ 在 $I$ 的切矢，它是 $\mathscr{S\!\!L}(m)$ 中的元素。
+    	    \end{enumerate}
+            \item[(b)] 由 $\dim \mathrm{SL}(m) = \dim \mathscr{S\!\!L}(m)$ ，$\mathscr{S\!\!L}(m)$ 中的矩阵有 $m^2$ 个矩阵元，迹为零给出一个方程，则共有 $m^2-1$ 个独立参数，故 \[\dim \mathrm{SL}(m) = \dim \mathscr{S\!\!L}(m)=m^2-1.\]
+    	\end{enumerate}
+    \end{zm}
+	
+	\item \begin{enumerate}
+		\item[(1)] 试证明存在连续曲线 $\mu \colon [0,1] \rightarrow \mathrm{GL}(2)$ 使 $\mu(0)=I$，$\mu(1)=\mqty(-1 & 1 \\ 0 & -1)$。
+		\item[(2)] 试证 $T\equiv \mqty(-1 & 1 \\ 0 & -1) \in \mathrm{GL}(2)$ 不属于李群 $\mathrm{GL}(2)$ 的任一单参子群。提示：假定存在矩阵 $A=\mqty(a&b\\c&d)$ 使 $T=\Exp(A)$，(a) 证明 $c\neq 0$，(b) 把 $A^n$ （$A$ 的 $n$ 次方）记作 $A^n \equiv \mqty(a_n & b_n \\ c_n & d_n)$ ，证明 $\exists r_n\in \mathbb{R}$ 使 $b_n = b r_n$ ， $c_n=c r_n$。(c) 由 (b) 推出矛盾。
+	\end{enumerate}
+    
+    \begin{zm}
+    	\begin{enumerate}
+    		\item[(1)] 令
+    		\begin{displaymath}
+    		\mu(t) := \mqty(1-2t & t \\ 0 & 1-2t)\qc \forall t\in [0,1]
+    		\end{displaymath}
+    		则
+    		\begin{displaymath}
+    		\det \mu(t) = \left(1-2t\right)^2 -0 \neq 0 \implies \mu(t) \in \mathrm{GL}(2).
+    		\end{displaymath}
+    		$\mu(t)$是满足要求的曲线。
+			\item[(2)] 假设存在 $A=\mqty(a & b \\ c & d)$ 使得 $T=\Exp(A)$，则若 $c=0$，我们用数学归纳法证明 $A^n=\mqty(a^n & x_n \\ 0 & d^n)$，其中 $x_n$ 是含 $a,b,d$ 的多项式：
+			\begin{enumerate}
+				\item $n=1$ 时，命题成立；
+				\item 设 $n=k$ 时命题成立，则 $A^{k+1}=A A^k= \mqty(a^{k+1} & a x_k + b d^k \\ 0 & d^{k+1})$，故命题成立。
+			\end{enumerate}
+			于是 $A^n=\mqty(a^n & x_n \\ 0 & d^n)$ 得证。由此易得 $\Exp(A)=\mqty(\exp(a) & x \\ 0 & \exp{d})$ ，而$\exp(a)=-1$ 无实数解，矛盾。
+    	\end{enumerate}
+    \end{zm}
+	
+\end{xiti}

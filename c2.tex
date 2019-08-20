@@ -1,0 +1,663 @@
+\chapter{流形和张量场}
+\begin{xiti}
+	\item 试证 \S 2.1例2定义的拓扑同胚映射$\psi_i^{\pm}$在$O_i^{\pm}$的所有交叠区域上满足相容性条件，从而证实$S^1$确是1维流形。
+	
+	\begin{zm}
+		首先，易知$O_i^+ \cap O_i^- =\varnothing$，故只需考虑$O_1^+\cap O_2^+ $及$O_i^+ \cap O_j^- $。
+		以$$O_1^+ \cap O_2^+ =\left\lbrace \left(x^1,x^2\right)\in S^1 \mid x^1>0,x^2>0 \right\rbrace  $$为例，根据定义，
+		\begin{equation*}
+		\psi_2^+ \circ \left(\psi_1^+\right)^{-1}(t)=\psi_2^+\left(\left(\sqrt{1-t^2},t\right)\right)=\sqrt{1-t^2},
+		\end{equation*}
+		这的确是$C^\infty$的函数。
+	\end{zm}
+
+	\item 说明$n$维矢量空间可看作$n$维平庸流形。
+	
+	\begin{zm}
+		为$n$维矢量空间$V$任取拓扑，再取定一组基$\mathcal{B}= \{ e_i \}_{i=1}^n $ ，则在基$\mathcal{B}$下，$\forall v \in V$，$v$可展开为
+		\begin{equation*}
+		v=\sum_{i=1}^{n} v^i e_i,
+		\end{equation*}
+		令映射$\psi \colon V\rightarrow \mathbb{R}^n$定义为：
+		\begin{equation*}
+		\psi\colon v\mapsto\left(v^1,v^2,\cdots,v^n\right),
+		\end{equation*}
+		则取图册$\{(V,\psi)\} $，即可令$V$成为$n$维平庸流形。
+	\end{zm}
+
+    \item 设$X$和$Y$是拓扑空间，$f\colon X\rightarrow Y$是同胚。若$X$还是个流形，试给$Y$定义一个微分结构使$f\colon X\rightarrow Y$升格为微分同胚。
+    \begin{zm}
+    	记$X$的图册为$\left\{ \left(O_\alpha,\psi_\alpha\right) \right\}$，对每个$\alpha$，由于$f$是拓扑同胚，$$O_{\alpha}^{\prime}:=f(O_{\alpha})\in \TT_Y,$$在$O_\alpha^\prime$上定义映射$$\psi_\alpha^\prime:=\psi_\alpha\circ f^{-1},$$则
+    	\begin{equation*}
+    	\begin{split}
+    	\psi_\alpha^{\prime}\circ f\circ \psi_\alpha^{-1} &=\psi_\alpha\circ f^{-1} \circ f \circ \psi_\alpha^{-1}\\
+    	&=\operatorname{Id}_{V_\alpha}\in C^\infty(V_\alpha),
+    	\end{split}
+    	\end{equation*}
+    	 于是在给$Y$定义图册$\{(O_\alpha^{\prime} ,\psi_\alpha^{\prime})\} $后，$f$成为一个微分同胚。
+    \end{zm}
+
+    \item 设$(x,y)$是$\mathbb{R}^2$的自然坐标，$C(t)$是曲线，参数表达式为$x=\cos t,\quad y=\sin t,\quad t\in (0,\pi)$。若$p=C(\pi/3)$，写出曲线在$p$的切矢在自然坐标基的分量，并画图表示出该曲线及该切矢。
+    
+    \begin{jie}
+    	记$p$点切矢为$T$，则
+    	\begin{align*}
+    	T_x&=\eval{\dv{t}(x\circ C(t))}_{t=\frac{\pi}{3}}=-\frac{\sqrt{3}}{2}\\
+    	T_y&=\eval{\dv{t}(y\circ C(t))}_{t=\frac{\pi}{3}}=\frac{1}{2}
+    	\end{align*}
+    	如下图：
+    	\begin{figure}[htb]
+    		\centering
+    		\begin{tikzpicture}[scale=0.7]
+    		\draw[-latex] (-4,0) -- (4,0);
+    		\draw[-latex] (0,-1) -- (0,4);
+    		\draw (2,0) arc (0:180:2);
+    		\node[below left] (O) at (0,0) {$O$};
+    		\node[below] (x) at (3.8,0) {$x$};
+    		\node[left] (y) at (0,3.7) {$y$};
+    		\node[below] (r) at (2,0) {$1$};
+    		\node[below] (rr) at (-2,0) {$-1$};
+    		\coordinate[label=above right:$p$] (p) at (60:2);
+    		\coordinate[label=left:$T$] (T) at (-0.732,2.732);
+    		\draw[very thick,-latex] (p) -- (T);
+    		\draw[dashed] (0,0) -- (p);
+    		\draw[->] (0.5,0) arc (0:60:0.5);
+    		\node (j) at (30:0.9) {$\frac{\pi}{3}$};
+    		\end{tikzpicture}
+    		\caption{曲线$C(t)$及其在$p$点的切矢}
+    	\end{figure}
+    \end{jie}
+
+    \item 设曲线$C(t)$和$C^{\prime}(t)\equiv C(2t_0-t) $在$ C(t_0)=C^\prime(t_0) $点的切矢分别为$v$和$v^\prime$，试证$v+v^\prime=0$。
+    
+    \begin{zm}
+    	记$t^\prime=2t_0-t$，依定义，$\forall f\in \F_M$，
+    	\begin{equation*}
+    	\begin{split}
+    	v(f)&=\eval{\dv{(f\circ C(t))}{t}}_{t=t_0},\\
+    	v^\prime(f)&=\eval{\dv{(f\circ C^{\prime}(t))}{t}}_{t=t_0}\\
+    	&=\eval{\dv{(f\circ C(t^{\prime}))}{t}}_{t=t_0}\\
+    	&=\eval{\dv{t^{\prime}}{t}}_{t=t_0} \times \eval{\dv{(f\circ C(t^{\prime}))}{t^{\prime}}}_{t=t_0,\text{即}t^{\prime}=2t_0-t=t_0}\\
+    	&=-\eval{\dv{(f\circ C(t^{\prime}))}{t^{\prime}}}_{t^{\prime}=t_0}\\
+    	&=-v(f)
+    	\end{split}
+    	\end{equation*}
+    	$\therefore v^{\prime}=-v,\quad v+v^{\prime}=0$
+    \end{zm}
+    
+    \item 设$O$为坐标系$\{x^{\mu}\}$的坐标域，$p\in O$，$v\in V_p$，$v^\mu$是$v$的坐标分量，把坐标$x^\mu$看作$O$上的$C^\infty$函数，试证$v^\mu=v(x^\mu)$。提示：用$v=v^\nu X_\nu $两边作用于函数$x^\mu$。
+    
+    \begin{zm}
+    	由$v=v^\nu X_\nu$，
+    	\begin{equation*}
+    	v(x^\mu)=v^\nu X_\nu(x^\mu)=v^\nu \eval{\pdv{x^\mu}{x^\nu}}_p=v^\nu \tensor{\delta}{^\mu_\nu}=v^\mu.
+    	\end{equation*}
+    \end{zm}
+    
+    \item 设$M$是二维流形，$(O,\psi)$和$(O^\prime,\psi^\prime)$是$M$上的两个坐标系，坐标分别为$\{x,y\}$和$\{x^\prime,y^\prime\}$，在$O\cap O^\prime$上的坐标变换为$x^\prime=x\qc y^\prime=y-\Omega x(\Omega=\text{常数})$，试分别写出坐标基矢$\pd{x},\pd{y}$用坐标基矢$\pd{x^\prime},\pd{y^\prime}$的展开式。
+    
+    \begin{jie}
+    	坐标基矢逐点的变换关系为$\displaystyle  X_\mu=\eval{\pdv{x^{\prime\nu}}{x^\mu}}_p X_\nu $，故
+    	\begin{equation*}
+    	\begin{split}
+    	\pdv{x}&=\pdv{x^\prime}{x}\pdv{x^\prime}+\pdv{y^\prime}{x}\pdv{y^\prime}\\
+    	&=\pdv{x^\prime}-\Omega\pdv{y^\prime};\\
+    	\pdv{y}&=\pdv{x^\prime}{y}\pdv{x^\prime}+\pdv{y^\prime}{y}\pdv{y^\prime}\\
+    	&=\pdv{y^\prime}.
+    	\end{split}
+    	\end{equation*}
+    \end{jie}
+    
+    \item \begin{enumerate}
+    	\item[(a)] 试证式(2-2-9)的$[u,v]$在每点满足矢量定义（\S2.2定义2）的两个条件，从而的确是矢量场。
+    	\item[(b)] 设$u,v,w$为流形$M$上的光滑矢量场，试证$$ \left[\left[u,v\right],w\right]+\left[\left[w,u\right],v\right]+\left[\left[v,w\right],u\right]=0 $$\hypertarget{ykb}{}（此式称为\textbf{雅可比恒等式}）。
+    \end{enumerate}
+
+    \begin{zm}
+    	\begin{enumerate}
+    		\item[(a)] 
+    		\begin{enumerate}
+    			\item[(i)] 线性性：显然；
+    			\item[(ii)] 莱布尼兹律：显然。证毕\footnote{皮这一下非常开心\textasciitilde \hj{11}}。
+    		\end{enumerate}
+    	    \item[(b)] 由定义，逐次展开有：
+    	    \begin{equation*}
+    	    \begin{split}
+    	    &[[u,v],w]+[[w,u],v]+[[v,w],u]\\
+    	    =&\;[u,v]\circ w-w \circ [u,v]+[w,u]\circ v\\
+    	    &-v \circ [w,u]+[v,w]\circ u -u\circ [v,w]\\
+    	    =&\;u\circ v\circ w-v\circ u\circ w-w\circ u\circ v+w\circ v\circ u\\
+    	    &+w\circ u\circ v-u\circ w\circ v-v\circ w\circ u+v\circ u\circ w\\
+    	    &+v\circ w\circ u-w\circ v\circ u-u\circ v\circ w+u\circ w\circ v\\
+    	    =&\;0.
+    	    \end{split}
+    	    \end{equation*}
+    	\end{enumerate}
+    \end{zm}
+    
+    \item 设$\{r,\phi\}$为$\mathbb{R}^n$中某开集（坐标域）上的极坐标，$\{x,y\}$为自然坐标，
+    \begin{enumerate}
+    	\item[(a)] 写出极坐标系的坐标基矢$\pd{r}$和$\pd{\phi}$（作为坐标域上的矢量场）用$\pd{x},\ \pd{y}$展开的表达式。
+    	\item[(b)] 求矢量场$[\pd{r},\pd{x}]$用$\pd{x},\pd{y}$展开的表达式。
+    	\item[(c)] 令$\hat{e}_r\equiv\pd{r},\hat{e}_\phi=r^{-1}\pd{\phi}$，求$[\hat{e}_r,\hat{e}_\phi]$用$\pd{x},\pd{y}$展开的表达式。
+    \end{enumerate}
+    
+    \begin{jie}
+    	\begin{enumerate}
+    		\item[(a)] 坐标变换为
+    		\begin{equation*}
+    		\Bigg\{
+    		\begin{aligned}
+    		x&=r \cos \phi,\\
+    		y&=r \sin \phi.
+    		\end{aligned}
+    		\Bigg.
+    		\end{equation*}
+    		于是
+    		\begin{align*}
+    		\allowdisplaybreaks
+    		\pdv{r}&=\pdv{x}{r}\pdv{x}+\pdv{y}{r}\pdv{y}\\
+    		&=\cos \phi \pdv{x}+\sin \phi \pdv{y}\\
+    		&=\frac{x}{\sqrt{x^2+y^2}} \pdv{x}+\frac{y}{\sqrt{x^2+y^2}}\pdv{y},\\
+    		\pdv{\phi}&=\pdv{x}{\phi}\pdv{\phi}+\pdv{y}{\phi}\pdv{\phi}\\
+    		&=-r\sin \phi \pdv{x}+r\cos \phi \pdv{y}\\
+    		&=-y\pdv{x}+x\pdv{y}.
+    		\end{align*}
+    		\item[(b)] $\forall f\in \F_M,$
+    		\begin{align*}
+    		\allowdisplaybreaks
+    		\left[\pdv{r},\pdv{x}\right](f)=&\;\left(\frac{x}{\sqrt{x^2+y^2}}\pdv{x}+\frac{y}{\sqrt{x^2+y^2}}\pdv{y}\right)\pdv{x}(f)\\
+    		&-\pdv{x}\left(\frac{x}{\sqrt{x^2+y^2}}\pdv{x}+\frac{y}{\sqrt{x^2+y^2}}\pdv{y}\right)(f)\\
+    		=&\;\frac{x}{\sqrt{x^2+y^2}}\pdv[2]{F}{x}+\frac{y}{\sqrt{x^2+y^2}}\pdv{F}{y}{x}\\
+    		&-\pdv{x}(\frac{x}{\sqrt{x^2+y^2}}\pdv{F}{x})-\pdv{x}(\frac{y}{\sqrt{x^2+y^2}}\pdv{F}{y})\\
+    		=&-\pdv{x}(\frac{x}{\sqrt{x^2+y^2}})\pdv{F}{x}-\pdv{x}(\frac{y}{\sqrt{x^2+y^2}})\pdv{F}{y}\\
+    		=&-\frac{y^2}{\left(x^2+y^2\right)^{\frac{3}{2}}}\pdv{F}{x}+\frac{x y}{\left(x^2+y^2\right)^\frac{3}{2}}\pdv{F}{y}\\
+    		=&\;\left(-\frac{y^2}{\left(x^2+y^2\right)^\frac{3}{2}}\pdv{x}+\frac{x y}{\left(x^2+y^2\right)^\frac{3}{2}}\pdv{y}\right)(f),
+    		\end{align*}
+    		$\therefore $在基$\pdv{x},\pdv{y}$下，
+    		\begin{equation*}
+    		\left[\pdv{r},\pdv{x}\right]=-\frac{y^2}{\left(x^2+y^2\right)^\frac{3}{2}}\pdv{x}+\frac{x y}{\left(x^2+y^2\right)^\frac{3}{2}}\pdv{y}.
+    		\end{equation*}
+    		\item[(c)] 由(a)，
+    		\begin{align*}
+    		\hat{e}_r&=\pdv{r}=\frac{x}{\sqrt{x^2+y^2}}\pdv{x}+\frac{y}{\sqrt{x^2+y^2}}\pdv{y},\\
+    		\hat{e}_\phi&=\frac{1}{r}\pdv{\phi}=-\frac{y}{\sqrt{x^2+y^2}}\pdv{x}+\frac{x}{\sqrt{x^2+y^2}}\pdv{y},
+    		\end{align*}
+    		于是有$\forall f\in \F_M$，
+    		\begin{align*}
+    		\allowdisplaybreaks
+    		&\;[\hat{e}_r,\hat{e}_\phi](f)\\
+    		=&\;\left(\frac{x}{\sqrt{x^2+y^2}}\pdv{x}+\frac{y}{\sqrt{x^2+y^2}}\pdv{y}\right)\left(-\frac{y}{\sqrt{x^2+y^2}}\pdv{x}+\frac{x}{\sqrt{x^2+y^2}}\pdv{y}\right)(f)\\\displaybreak[2]
+    		&-\left(-\frac{y}{\sqrt{x^2+y^2}}\pdv{x}+\frac{x}{\sqrt{x^2+y^2}}\pdv{y}\right)\left(\frac{x}{\sqrt{x^2+y^2}}\pdv{x}+\frac{y}{\sqrt{x^2+y^2}}\pdv{y}\right)(f)\\
+    		=&\;\frac{x}{\sqrt{x^2+y^2}}\pdv{x}(-\frac{y}{\sqrt{x^2+y^2}}\pdv{F}{x})+\frac{x}{\sqrt{x^2+y^2}}\pdv{x}(\frac{x}{\sqrt{x^2+y^2}}\pdv{F}{y})\\
+    		&+\frac{y}{\sqrt{x^2+y^2}}\pdv{y}(-\frac{y}{\sqrt{x^2+y^2}}\pdv{F}{x})+\frac{y}{\sqrt{x^2+y^2}}\pdv{y}(\frac{x}{\sqrt{x^2+y^2}}\pdv{F}{y})\\
+    		&+\frac{y}{\sqrt{x^2+y^2}}\pdv{x}(\frac{x}{\sqrt{x^2+y^2}}\pdv{F}{x})+\frac{y}{\sqrt{x^2+y^2}}\pdv{x}(\frac{y}{\sqrt{x^2+y^2}}\pdv{F}{y})\\
+    		&-\frac{x}{\sqrt{x^2+y^2}}\pdv{y}(\frac{x}{\sqrt{x^2+y^2}}\pdv{F}{x})-\frac{x}{\sqrt{x^2+y^2}}\pdv{y}(\frac{y}{\sqrt{x^2+y^2}}\pdv{F}{y})\\
+    		=&-\frac{x}{\sqrt{x^2+y^2}}\pdv{x}(\frac{y}{\sqrt{x^2+y^2}})\pdv{F}{x}-\cancel{\frac{xy}{x^2+y^2}\pdv[2]{F}{x}}\\
+    		&+\frac{x}{\sqrt{x^2+y^2}}\pdv{x}(\frac{x}{\sqrt{x^2+y^2}})\pdv{F}{y}+\cancel{\frac{x^2}{x^2+y^2}\pdv{F}{x}{y}}\\
+    		&-\frac{y}{\sqrt{x^2+y^2}}\pdv{y}(\frac{y}{\sqrt{x^2+y^2}})\pdv{F}{x}-\cancel{\frac{y^2}{x^2+y^2}\pdv{F}{y}{x}}\\
+    		&+\frac{y}{\sqrt{x^2+y^2}}\pdv{y}(\frac{x}{\sqrt{x^2+y^2}})\pdv{F}{y}+\cancel{\frac{xy}{x^2+y^2}\pdv[2]{F}{y}}\\
+    		&+\frac{y}{\sqrt{x^2+y^2}}\pdv{x}(\frac{x}{\sqrt{x^2+y^2}})\pdv{F}{x}+\cancel{\frac{xy}{x^2+y^2}\pdv[2]{F}{x}}\\
+    		&+\frac{y}{\sqrt{x^2+y^2}}\pdv{x}(\frac{y}{\sqrt{x^2+y^2}})\pdv{F}{y}+\cancel{\frac{y^2}{x^2+y^2}\pdv{F}{y}{x}}\\
+    		&-\frac{x}{\sqrt{x^2+y^2}}\pdv{y}(\frac{x}{\sqrt{x^2+y^2}})\pdv{F}{x}-\cancel{\frac{x^2}{x^2+y^2}\pdv{F}{y}{x}}\\
+    		&-\frac{x}{\sqrt{x^2+y^2}}\pdv{y}(\frac{y}{\sqrt{x^2+y^2}})\pdv{F}{y}-\cancel{\frac{xy}{x^2+y^2}\pdv[2]{F}{y}}
+    		\end{align*}
+    		……好了算到这里我受够了，我选择直接丢进Mathematica让麦酱来算\yahei{(￣$\upomega$￣;)}\kaishu 麦酱报告说结果是酱紫：
+    		\begin{equation*}
+    		\frac{y}{x^2+y^2}\pdv{F}{x}-\frac{x}{x^2+y^2}\pdv{F}{y}
+    		\end{equation*}
+    		于是得到
+    		\begin{equation*}
+    		[\hat{e}_r,\hat{e}_\phi]=\frac{y}{x^2+y^2}\pdv{x}-\frac{x}{x^2+y^2}\pdv{y}
+    		\end{equation*}
+    	\end{enumerate}
+    \end{jie}
+
+    \item 设$u$，$v$为$M$上的矢量场，试证$[u,v]$在任何坐标基底的分量满足$$[u,v]^\mu = v^\nu \pdv*{v^\mu}{x^\nu}-v^\nu \pdv*{u^\mu}{x^\nu} .\quad \text{提示：用式(2-2-$3'$)和(2-2-3)} $$
+    
+    \begin{zm}
+    	$\forall f \in \F_M$，
+    	\begin{align*}
+    	[u,v](f)=&\;\left[u^\mu \pdv{x^\mu} ,v^\nu \pdv{x^\nu} \right](f)\\
+    	=&\;u^\mu \pdv{x^\mu}(v^\nu \pdv{F}{x^\nu})-v^\nu \pdv{x^\nu}(u^\mu \pdv{F}{x^\nu})\\
+    	=&\;u^\mu \pdv{v^\nu}{x^\mu} \pdv{F}{x^\nu}-v^\nu \pdv{u^\mu}{x^\nu}\pdv{F}{x^\mu}\\
+    	=&\;\left(u^\nu \pdv{v^\mu}{x^\nu}-v^\nu \pdv{u^\mu}{x^\nu} \right)\pdv{F}{x^\mu}
+    	\end{align*}
+    	故
+    	\begin{align*}
+    	&[u,v]=\left(u^\nu \pdv{v^\mu}{x^\nu}-v^\nu \pdv{u^\mu}{x^\nu} \right)\pdv{x^\mu},\\
+    	&[u,v]^\mu=\left(u^\nu \pdv{v^\mu}{x^\nu}-v^\nu \pdv{u^\mu}{x^\nu} \right).
+    	\end{align*}
+    \end{zm}
+    
+    \item 设$\{e_{\mu}\}$为$V$的基底，$\{e^{\mu*}\}$为其对偶基底，$v\in V$，$\omega\in V^*$，试证$$ \omega=\omega(e_\mu)e^{\mu*}\qc v=e^{\mu*}(v)e_\mu. $$
+    
+    \begin{zm}
+    	设$\omega=\tensor{\omega}{_\mu} e^{\mu *}$，则
+    	\begin{align*}
+    	\omega(e_\nu)=&\;\tensor{\omega}{_\mu} e^{\mu*}(e_\nu)\\
+    	=&\;\tensor{\omega}{_\mu} \tensor{\delta}{^{\mu}_\nu}\\
+    	=&\;\tensor{\omega}{_\nu},
+    	\end{align*}
+    	$\therefore \omega=\omega(e_mu)e^{\mu*}.$同理设$v=v^\mu e_\mu $，
+    	\begin{align*}
+    	e^{\nu*}(v)=&\; v^\mu e^{\nu*}(e_\mu)\\
+    	=&\; v^\mu \tensor{\delta}{^\nu_\mu}\\
+    	=&\; v^\nu,
+    	\end{align*}
+    	$\therefore v=e^{\mu*}e_\mu .$
+    \end{zm}
+    
+    \item 试证$\displaystyle\tensor{{\omega^\prime}}{_\mu} =\pdv{x^\mu}{x^{\prime \nu}} \tensor{\omega}{_\mu} $（定理2-3-4）。
+    
+    \begin{zm}
+    	由上题，
+    	\begin{align*}
+    	\allowdisplaybreaks
+    	\tensor{{\omega^\prime}}{_\nu} &= \omega\left(\pdv{x^{\prime\nu}}\right)\\
+    	\displaybreak[1]
+    	&=\omega\left(\pdv{x^\mu}{x^{\prime\nu}}\pdv{x^\mu}\right)\\
+    	\displaybreak[1]
+    	&=\pdv{x^\mu}{x^{\prime\nu}}\omega\left(\pdv{x^\mu}\right)\\
+    	\displaybreak[1]
+    	&=\pdv{x^\mu}{x^{\prime\nu}}\tensor{\omega}{_\mu}.
+    	\end{align*}
+    \end{zm}
+    
+    \item 试证由式(2-3-5)定义的映射$v\mapsto v^{**}$是同构映射。提示：可利用线性代数的结论，即同维矢量空间之间的一一线性映射必到上。
+    
+    \begin{zm}
+    	留作习题答案略，读者自证不难（逃$-\!=\equiv $Σ(((つ \!\!\! •̀ω$\upomega$•́) \!\!\! つ）
+    \end{zm}
+    
+    \item 设$C^1_1 T$和$(C^1_1 T)^\prime$分别是$(2,1)$型张量$T$借两个基底$\{e_\mu\}$和$\{ {e^\prime}_\mu \}$定义的缩并，试证$\left(C_1^1 T\right)^{\prime}=C_1^1 T$。
+    
+    \begin{zm}
+    	记基$ \{{e^\prime}_\mu \} $在基$\{e_\mu \}$下的展开式为${e^\prime}_\mu = \tensor{A}{^{\nu}_{\mu}}e_\nu $ ，则$${e^\prime}^{\mu*}=\tensor{\left(\tilde{A}^{-1} \right)}{_{\nu}^{\mu} } e^{\nu *} ,$$于是$\forall \omega\in V^* $，
+    	\begin{align*}
+    	\left(C_1^1 T\right)^\prime (\omega)=&\;  T({e^\prime}^{\mu*},\omega;{e^\prime}_\mu)\\
+    	=&\; T\left(\tensor{\left(\tilde{A}^{-1} \right)}{_{\nu}^{\mu} } e^{\nu*},\omega;\tensor{A}{ ^{\sigma}_{\mu} } e_{\sigma} \right)\\
+    	=&\;\tensor{\left(\tilde{A}^{-1} \right)}{_{\nu}^{\mu} } \tensor{A}{^{\sigma}_{\mu}} T\left( e^{\nu*},\omega;e_\sigma \right)\\
+    	=&\;\tensor{\left(\tilde{A}^{-1} \right)}{_{\nu}^{\mu} } \tensor{\left( \tilde{A} \right)}{ _{\mu}^{\sigma} } T(e^{\nu*},\omega;e_\sigma)\\
+    	=&\; \tensor{\delta}{_{\nu}^{\sigma}} T(e^{\nu*},\omega;e_\sigma)\\
+    	=&\; T(e^{\nu*},\omega;e_\nu)\\
+    	=&\; C_1^1 T(\omega).
+    	\end{align*}
+    \end{zm}
+
+    \item 设$g$为$V$的度规，试证$ g\colon V\rightarrow V^* $是同构映射（可参见第13题的提示）。
+    
+    \begin{zm}
+    	线性空间的同构映射指的是可逆线性映射。这里证一个更普遍的结论，首先我们定义一个线性映射$T\colon V\rightarrow W $的kernel为$$ \ker T:=\{ v\in V\mid T(v)=0 \}, $$我们有如下claim：
+    	\begin{yl}{claim}
+    		$T$是单射当且仅当$\ker T=\{0\}$。
+    	\end{yl}
+        \begin{yl}{proof}
+        	若$T$是单射，由于$\forall v\in V$，$T(0\cdot v)=0T(v)=0\qc \therefore \ker T=\{0\} $；
+        	若$\ker T=\{0\}$，假设存在$u,v\in V$，使得$T(u)=T(v)$，则由于$T$是线性映射，$T(u-v)=T(u)-T(v)=0$，于是$u-v \in \ker T $，即$u=v $，于是$T$是单射。
+        \end{yl}
+        易证任取一组基$e_i\in V $， $T(e_i)\in W$线性无关当且仅当$\ker T=\{0\} $，若$\dim V=\dim W $，则这告诉我们$T(e_i) $构成$W$的基，于是$T(v^i e_i)=v^i T(e_i)$将取遍整个$W$。于是我们证明了，若$\dim V=\dim W$，则线性映射$T\colon V\rightarrow W$为一一到上的（等价于可逆）当且仅当$\ker T=\{0\}$。
+        
+        对于度规$g$，由于非退化性，知$\ker g=\{0\}$，故$g$为线性同构。
+    \end{zm}
+    
+    \item 试证线长与曲线的参数化无关。
+    
+    \begin{zm}
+    	设有重参数化$C^\prime(t^\prime)=C(t)$，线长为
+    	\begin{align*}
+    	\allowdisplaybreaks
+    	l^\prime=&\;\int_{\alpha^\prime}^{\beta^\prime} \sqrt{\tensor{g}{_\mu_\nu} \dv{x^\mu}{t^\prime}\dv{x^\nu}{t^\prime} }\dd{t^\prime}\\
+    	=&\;\int_{\alpha}^{\beta} \sqrt{\tensor{g}{_\mu_\nu} \left(\dv{t}{t^\prime}\dvt{x^\mu} \right)\left( \dv{t}{t^\prime}\dvt{x^\nu} \right) }\left| \dvt{t^\prime} \right|\dd{t}\\
+    	=&\;\int_{\alpha}^{\beta} \sqrt{\tensor{g}{_\mu_\nu}\dvt{x^\mu}\dvt{x^\nu} }\dd{t}\\
+    	=&\;l.
+    	\end{align*}
+    \end{zm}
+    
+    \item 设$(x,y)$是二维欧氏空间的笛卡尔坐标系，试证由式(2-5-14)定义的$\{x^\prime,y^\prime \}$也是笛卡尔系。
+    
+    \begin{zm}
+    	式(2-5-14)为
+    	\begin{equation*}
+    	\left\{
+    	\begin{aligned}
+    	x^\prime &=x \cos \alpha +y \sin \alpha,\\
+    	y^\prime&=-x \sin \alpha+y \cos \alpha.
+    	\end{aligned}
+    	\right.
+    	\end{equation*}
+    	其逆为：
+    	\begin{displaymath}
+    	\left\{
+    	\begin{aligned}
+    	x=x^\prime \cos \alpha-y^\prime \sin \alpha,\\
+    	y=x^\prime \sin \alpha+y^\prime \cos \alpha.
+    	\end{aligned}\right.
+    	\end{displaymath}
+    	于是坐标基矢的变换为：
+    	\begin{align*}
+    	\pdv{x^\prime}=&\;\pdv{x}{x^\prime}\pdv{x}+\pdv{y}{x^\prime}\pdv{y}\\
+    	=&\;\cos \alpha \pdv{x}+\sin \alpha \pdv{y},\\
+    	\pdv{y^\prime}=&\;\pdv{x}{y^\prime}\pdv{x}+\pdv{y}{y^\prime}\pdv{y}\\
+    	=&-\sin \alpha \pdv{x}+\cos \alpha \pdv{y}.
+    	\end{align*}
+    	故
+    	\begin{align*}
+    	\displaybreak[1]
+    	\delta\left( \pdv{x^\prime},\pdv{x^\prime} \right)=&\tmu\cos^2 \alpha\ \delta\left(\pdv{x},\pdv{x}\right)+2\cos \alpha \sin \alpha\ \delta \left(\pdv{x},\pdv{y}\right)\\
+    	&+\sin^2 \alpha\ \delta \left(\pdv{y},\pdv{y}\right) \\
+    	\displaybreak[1]=&\;1;\\
+    	\delta\left(\pdv{y^\prime},\pdv{y^\prime}\right)=&\tmu\sin^2 \alpha\ \delta\left(\pdv{x},\pdv{x}\right)-2\cos \alpha \sin \alpha\ \delta \left(\pdv{x},\pdv{y}\right)\\
+    	&\mspace{1mu}+\cos^2 \alpha\ \delta \left(\pdv{y},\pdv{y}\right) \\
+    	\displaybreak[1]=&\;1;\\
+    	\delta\left(\pdv{x^\prime},\pdv{y^\prime}\right)=&\;\delta\left(\pdv{y^\prime},\pdv{x^\prime}\right)\\
+    	=&\mspace{1mu}-\mspace{-1mu}\cos \alpha \sin \alpha\ \delta\left(\pdv{x},\pdv{x}\right)+\cos 2\alpha\ \delta\left( \pdv{x},\pdv{y} \right)\\
+    	&\mspace{1mu}+\cos \alpha \sin \alpha\ \delta\left(\pdv{y},\pdv{y}\right)\\
+    	=&\;0.
+    	\end{align*}
+    	$\therefore \{x^\prime,y^\prime\}$是笛卡尔系。
+    \end{zm}
+    
+    \item 设$\{t,x\}$是二维闵氏空间的洛伦兹坐标系，试证由式(2-5-20)定义的$\left\{t^\prime,x^\prime \right\}$也是洛伦兹系。
+    
+    \begin{zm}
+    	式(2-5-20)为
+    	\begin{equation*}
+    	\left\{
+    	\begin{aligned}
+    	t^\prime &=t \cosh \lambda +x \sinh \lambda,\\
+    	x^\prime&=t \sinh \lambda+x \cosh \lambda.
+    	\end{aligned}
+    	\right.
+    	\end{equation*}
+    	其逆为：
+    	\begin{displaymath}
+    	\left\{
+    	\begin{aligned}
+    	t&=t^\prime \cosh \lambda-x^\prime \sinh \lambda,\\
+    	x&=-t^\prime \sinh \lambda+x^\prime \cosh \lambda.
+    	\end{aligned}\right.
+    	\end{displaymath}
+    	于是坐标基矢的变换为：
+    	\begin{align*}
+    	\pdv{t^\prime}=&\;\pdv{t}{t^\prime}\pdv{t}+\pdv{x}{t^\prime}\pdv{x}\\
+    	=&\tmu\cosh \lambda \pdv{t}-\sinh \lambda \pdv{x},\\
+    	\pdv{x^\prime}=&\;\pdv{t}{x^\prime}\pdv{t}+\pdv{x}{x^\prime}\pdv{x}\\
+    	=&\mspace{1mu}-\mspace{-1mu}\sinh \lambda \pdv{t}+\cosh \lambda \pdv{x}.
+    	\end{align*}
+    	故
+    	\begin{align*}
+    	\eta \left( \pdv{t^\prime},\pdv{t^\prime} \right)=&\tmu\cosh^2 \lambda\ \eta\left(\pdv{t},\pdv{t}\right)-2\cosh \lambda \sinh \lambda\ \eta \left(\pdv{t},\pdv{x}\right)\\
+    	&+\sinh^2 \lambda\ \eta \left(\pdv{x},\pdv{x}\right) \\
+    	\displaybreak[1]=&\mspace{1mu}-\mspace{-4mu}1;\\
+    	\eta\left(\pdv{x^\prime},\pdv{x^\prime}\right)=&\tmu\sinh^2 \lambda\ \eta\left(\pdv{t},\pdv{t}\right)-2\cosh \lambda \sinh \lambda\ \eta \left(\pdv{t},\pdv{x}\right)\\
+    	&+\cosh^2 \lambda\ \eta \left(\pdv{x},\pdv{x}\right) \\
+    	\displaybreak[1]=&\;1;\\
+    	\eta\left(\pdv{t^\prime},\pdv{x^\prime}\right)=&\;\eta\left(\pdv{x^\prime},\pdv{t^\prime}\right)\\
+    	=&\mspace{1mu}-\mspace{-1mu}\cosh \lambda \sinh \lambda\ \eta\left(\pdv{t},\pdv{t}\right)+\cosh 2\lambda\ \eta\left(\pdv{t},\pdv{x}\right)\\
+    	&-\cosh \lambda \sinh \lambda\ \eta\left(\pdv{x},\pdv{x}\right)\\
+    	=&\;0.
+    	\end{align*}
+    	$\therefore \{t^\prime,x^\prime\}$是洛伦兹系。
+    \end{zm}
+    
+    \item \begin{enumerate}
+    	\item[(a)] \hypertarget{2.19a}{} 用张量变换律求出3维欧氏度规在球坐标系中的全部分量$\tensor{{g^\prime}}{_{\mu\nu}}$。
+    	\item[(b)] 已知4维闵氏度规$g$在洛伦兹系中的线元表达式为$\dd{s}^2=-\dd{t}^2+\dd{x}^2+\dd{y}^2+\dd{z}^2 $，求$g$及其逆$g^{-1}$在新坐标系$\{t^\prime,x^\prime,y^\prime,z^\prime\}$的全部分量$\tensor{{g^\prime}}{_{\mu\nu}}$以及$\tensor{{g^\prime}}{^{\mu\nu}} $，该新坐标系定义如下：
+    	\begin{gather*}
+    	t^\prime=t\qc z^\prime=z\qc x^\prime=(x^2+y^2)^{1/2}\cos(\phi-\omega t),\\
+    	y^\prime=(x^2+y^2)^{1/2}\sin(\phi-\omega t)\qc \omega=\text{常数},
+    	\end{gather*}
+    	其中$\phi$满足$\cos \phi=y(x^2+y^2)^{1/2}\qc \sin \phi=x(x^2+y^2)^{1/2}$。提示：先求$\tensor{{g^\prime}}{_{\mu\nu}}$再求$\tensor{{g^\prime}}{^{\mu\nu}}$。
+    \end{enumerate}
+    
+    \begin{jie}
+    	\begin{enumerate}
+    		\item[(a)] 球坐标与笛卡尔系的变换关系为：
+    		\begin{displaymath}
+    		\left\{
+    		\begin{aligned}
+    		x&=r\sin \theta \cos \phi,\\
+    		y&=r\sin \theta \sin \phi,\\
+    		z&=r\cos \theta.
+    		\end{aligned}
+    		\right.
+    		\end{displaymath}
+    		则
+    		\begin{align*}
+    		\tensor{{g^\prime}}{_{rr}}&=\pdv{x^\mu}{r}\pdv{x^\nu}{r} \tensor{g}{_{\mu\nu}}\\
+    		&=\left(\sin \theta \cos \phi \right)^2+\left( \sin \theta \sin \phi \right)^2+\cos^2 \theta\\
+    		\displaybreak[1]&=1;\\
+    		\tensor{{g^\prime}}{_{r\theta}}&=\pdv{x^\mu}{r}\pdv{x^\nu}{\theta} \tensor{g}{_{\mu\nu}}\\
+    		&=\sin \theta\cos\phi\cdot r\cos\theta\cos\phi+\sin\theta\sin\phi\cdot r\cos\theta\sin\phi-\cos\theta\cdot r\sin\theta\\
+    		\displaybreak[1]&=0;\\
+    		\tensor{{g^\prime}}{_{r\phi}}&=\pdv{x^\mu}{r}\pdv{x^\nu}{\phi} \tensor{g}{_{\mu\nu}}\\
+    		&=-\sin\theta\cos\phi\cdot r\sin\theta\sin\phi+\sin\theta\sin\phi\cdot r\sin\theta\cos\phi+0\\
+    		\displaybreak[1]&=0;\\
+    		\tensor{{g^\prime}}{_{\theta\theta}}&=\pdv{x^\mu}{\theta}\pdv{x^\nu}{\theta} \tensor{g}{_{\mu\nu}}\\
+    		&=(r\cos\theta\cos\phi)^2+(r\cos\theta\sin\phi)^2+(-r\sin\theta)^2\\
+    		\displaybreak[1]&=r^2;\\
+    		\tensor{{g^\prime}}{_{\theta\phi}}&=\pdv{x^\mu}{\theta}\pdv{x^\nu}{\phi} \tensor{g}{_{\mu\nu}}\\
+    		&=-r\cos\theta\cos\phi\cdot r\sin\theta\sin\phi+r\cos\theta\sin\phi\cdot r\sin\theta\cos\phi+0\\
+    		\displaybreak[1]&=0;\\
+    		\tensor{{g^\prime}}{_{\phi\phi}}&=\pdv{x^\mu}{\phi}\pdv{x^\nu}{\phi} \tensor{g}{_{\mu\nu}}\\
+    		&=(-r\sin\theta\sin\phi)^2+(r\sin\theta\cos\phi)^2+0\\
+    		&=r^2\sin^2\theta.
+    		\end{align*}
+    		\item[(b)] 先求偏导数：
+    		\begin{gather*}
+    		\displaybreak[1]
+    		\sin \phi=\frac{x}{\sqrt{x^2+y^2}}\\\displaybreak[1]
+    		\implies \cos \phi \dd{\phi}=\frac{y^2}{\left(x^2+y^2\right)^{\frac{3}{2}}}\dd{x}-\frac{xy}{\left(x^2+y^2\right)^{\frac{3}{2}}}\dd{y}\\
+    		\displaybreak[1]
+    		\implies \frac{y}{\sqrt{x^2+y^2}}\dd{\phi}=\frac{y^2}{\left(x^2+y^2\right)^{\frac{3}{2}}}\dd{x}-\frac{xy}{\left(x^2+y^2\right)^{\frac{3}{2}}}\dd{y}\\
+    		\implies \pdv{\phi}{x}=\frac{y}{x^2+y^2} \qc \pdv{\phi}{y}=-\frac{x}{x^2+y^2}.
+    		\end{gather*}
+    		进而有：
+    		\begin{align*}
+    		\displaybreak[1]
+    		\pdv{x^\prime}{t}&=\omega\sqrt{x^2+y^2}\sin(\phi-\omega t)\\
+    		\pdv{x^\prime}{x}&=\frac{x}{\sqrt{x^2+y^2}}\cos(\phi-\omega t)-\sqrt{x^2+y^2}\sin(\phi-\omega t)\pdv{\phi}{x}\\
+    		&=\frac{x}{\sqrt{x^2+y^2}}\cos(\phi-\omega t)-\frac{y}{\sqrt{x^2+y^2}}\sin(\phi-\omega t)\\
+    		&=\frac{x}{x^2+y^2}\left( y\cos\omega t+x\sin\omega t \right)-\frac{y}{x^2+y^2}(x\cos\omega t-y\sin\omega t)\\\displaybreak[1]
+    		&=\sin\omega t\\
+    		\pdv{x^\prime}{y}&=\frac{y}{\sqrt{x^2+y^2}}\cos(\phi-\omega t)-\sqrt{x^2+y^2}\sin(\phi-\omega t)\pdv{\phi}{y}\\
+    		&=\frac{y}{\sqrt{x^2+y^2}}\cos(\phi-\omega t)+\frac{x}{\sqrt{x^2+y^2}}\sin(\phi-\omega t)\\
+    		&=\frac{y}{x^2+y^2}\left( y\cos\omega t+x\sin\omega t \right)+\frac{x}{x^2+y^2}(x\cos\omega t-y\sin\omega t)\\\displaybreak[1]
+    		&=\cos\omega t\\\displaybreak[1]
+    		\pdv{y^\prime}{t}&=-\omega\sqrt{x^2+y^2}\cos(\phi-\omega t)\\
+    		\pdv{y^\prime}{x}&=\frac{x}{\sqrt{x^2+y^2}}\sin(\phi-\omega t)+\sqrt{x^2+y^2}\cos(\phi-\omega t)\pdv{\phi}{x}\\
+    		&=\frac{x}{\sqrt{x^2+y^2}}\sin(\phi-\omega t)+\frac{y}{\sqrt{x^2+y^2}}\cos(\phi-\omega t)\\
+    		&=\frac{x}{x^2+y^2}(x\cos\omega t-y\sin\omega t)+\frac{y}{x^2+y^2}(y\cos\omega t+x\sin\omega t)\\\displaybreak[1]
+    		&=\cos\omega t\\
+    		\pdv{y^\prime}{y}&=\frac{y}{\sqrt{x^2+y^2}}\sin(\phi-\omega t)+\sqrt{x^2+y^2}\cos(\phi-\omega t)\pdv{\phi}{y}\\
+    		&=\frac{y}{\sqrt{x^2+y^2}}\sin(\phi-\omega t)-\frac{x}{\sqrt{x^2+y^2}}\sin(\phi-\omega t)\\
+    		&=\frac{y}{x^2+y^2}(x\cos\omega t-y\sin\omega t)-\frac{x}{x^2+y^2}(y\cos\omega t+x\sin\omega t)\\
+    		&=-\sin\omega t
+    		\end{align*}
+    		于是由张量变换律，
+    		\begin{align*}
+    		\tensor{{g^\prime}}{^{00}}=&\;\pdv{t^\prime}{x^\mu}\pdv{t^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\
+    		=&\mspace{1mu}-\mspace{-4mu}1^2+0^2+0^2+0^2\\\displaybreak[1]
+    		=&\mspace{1mu}-\mspace{-4mu}1\\
+    		\tensor{{g^\prime}}{^{01}}=&\;\pdv{t^\prime}{x^\mu}\pdv{x^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\\displaybreak[1]
+    		=&\mspace{1mu}-\mspace{-4mu}1\cdot \omega\sqrt{x^2+y^2}\sin(\phi-\omega t)+0+0+0\\\displaybreak[1]
+    		=&\mspace{1mu}-\mspace{-4mu}\omega\sqrt{x^2+y^2}\sin(\phi-\omega t)\\\displaybreak[1]
+    		\tensor{{g^\prime}}{^{02}}=&\;\pdv{t^\prime}{x^\mu}\pdv{y^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\\displaybreak[1]
+    		=&\mspace{1mu}-\mspace{-4mu}1\cdot \left(-\omega\sqrt{x^2+y^2}\cos(\phi-\omega t)\right)+0+0+0\\\displaybreak[1]
+    		=&\;\omega\sqrt{x^2+y^2}\cos(\phi-\omega t)\\
+    		\tensor{{g^\prime}}{^{03}}=&\;\pdv{t^\prime}{x^\mu}\pdv{z^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\
+    		=&\mspace{1mu}-\mspace{-4mu}0+0+0+0\\\displaybreak[1]
+    		=&\;0\\
+    		\tensor{{g^\prime}}{^{11}}=&\;\pdv{x^\prime}{x^\mu}\pdv{x^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\
+    		=&\mspace{1mu}-\mspace{-1mu}\left(\omega\sqrt{x^2+y^2}\sin(\phi-\omega t) \right)^2+\left(\sin\omega t \right)^2+\left(\cos\omega t\right)^2+0^2\\\displaybreak[1]
+    		=&\;1-\left(x^2+y^2\right)\omega^2\sin[2](\phi-\omega t)\\
+    		\tensor{{g^\prime}}{^{12}}=&\;\pdv{x^\prime}{x^\mu}\pdv{y^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\
+    		=&\mspace{1mu}-\mspace{-1mu}\left(\omega\sqrt{x^2+y^2}\sin(\phi-\omega t)\right)\cdot\left(-\omega\sqrt{x^2+y^2}\cos(\phi-\omega t)\right)\\&+\sin \omega t\cdot\cos\omega t+\cos\omega t\cdot\left(-\sin\omega t\right)+0\\\displaybreak[1]
+    		=&\tmu\left(x^2+y^2\right)\omega^2\sin(\phi-\omega t)\cos(\phi-\omega t)\\
+    		\tensor{{g^\prime}}{^{13}}=&\;\pdv{x^\prime}{x^\mu}\pdv{z^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\
+    		=&\mspace{1mu}-\mspace{-4mu}0+0+0+0\\\displaybreak[1]
+    		=&\;0\\
+    		\tensor{{g^\prime}}{^{22}}=&\;\pdv{y^\prime}{x^\mu}\pdv{y^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\
+    		=&\mspace{1mu}-\mspace{-1mu}\left(-\omega\sqrt{x^2+y^2}\cos(\phi-\omega t)\right)^2+\left(\cos\omega t\right)^2+\left(-\sin\omega t\right)^2+0^2\\\displaybreak[1]
+    		=&\;1-\left(x^2+y^2\right)\omega^2\cos[2](\phi-\omega t)\\
+    		\tensor{{g^\prime}}{^{23}}=&\;\pdv{y^\prime}{x^\mu}\pdv{z^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\
+    		=&\mspace{1mu}-\mspace{-4mu}0+0+0+0\\\displaybreak[1]
+    		=&\;0\\
+    		\tensor{{g^\prime}}{^{33}}=&\;\pdv{z^\prime}{x^\mu}\pdv{z^\prime}{x^\nu}\tensor{g}{^{\mu\nu}}\\
+    		=&\mspace{1mu}-\mspace{-4mu}0^2+0^2+0^2+1^2\\
+    		=&\;1.
+    		\end{align*}
+    		于是$g^{-1}$在带撇坐标系下的分量矩阵为：
+    		\begin{displaymath}
+    		\left[g^\prime\right]^{-1}=\left(
+    		\begin{array}{cccc}
+    		-1&-r\omega \sin\psi&r\omega \cos\psi&0\\
+    		-r\omega \sin\psi&1-r^2\omega^2\sin^2 \psi&r^2\omega^2\sin\psi\cos\psi&0\\
+    		-r\omega \sin\psi&r^2\omega^2\cos\psi\sin\psi&1-r^2\omega^2\cos^2\psi&0\\
+    		0&0&0&1
+    		\end{array}
+    		\right),
+    		\end{displaymath}
+    		其中$r=\sqrt{x^2+y^2}$，$\psi=\phi-\omega t$。其逆矩阵为
+    		\begin{displaymath}
+    		\left[g^\prime\right]=\left(
+    		\begin{array}{cccc}
+    		r^2\omega^2-1&-r\omega \sin\psi&r\omega \cos\psi&0\\
+    		-r\omega \sin\psi&1&0&0\\
+    		r\omega \cos\psi&0&1&0\\
+    		0&0&0&1
+    		\end{array}
+    		\right),
+    		\end{displaymath}
+    		此即$g$在带撇坐标系下的分量$\tensor{{g^\prime}}{_{\mu\nu}} $排成的矩阵。
+    	\end{enumerate}
+    \end{jie}
+    
+    \item 试证3维欧氏空间中球坐标基矢$\pd{r},\pd{\theta},\pd{\phi}$的长度依次为$1,r,	r\sin\theta$。
+    
+    \begin{zm}
+    	由~\hyperlink{2.19a}{19(a)}~知，
+    	\begin{align*}
+    	\norm{\pdv{r}}&=\sqrt{\abs{\tensor{{g^\prime}}{_{rr}}}}=1,\\
+    	\norm{\pdv{\theta}}&=\sqrt{\abs{\tensor{{g^\prime}}{_{\theta\theta}}}}=r,\\
+    	\norm{\pdv{\phi}}&=\sqrt{\abs{\tensor{{g^\prime}}{_{\phi\phi}}}}=r\sin\theta.
+    	\end{align*}
+    \end{zm}
+    
+    \item 用抽象指标记号证明$\displaystyle\tensor{{T^\prime}}{^\mu_\nu}=\pdv{{x^\prime}^\mu}{x^\rho}\pdv{x^\sigma}{{x^\prime}^\nu}\tensor{T}{^\rho_\sigma} $。
+    
+    \begin{zm}
+    	\begin{align*}
+    	\tensor{{T^\prime}}{^\mu_\nu}=&\;\tensor{T}{^a_b}\tensor{\left(\dd{{x^\prime}^\mu}\right)}{_a}\left(\pdv{{x^\prime}^\nu}\right)^b\\
+    	=&\;\tensor{T}{^a_b}\pdv{{x^\prime}^\mu}{x^\rho}\tensor{\left(\dd{{x^\prime}^\rho}\right)}{_a}\pdv{x^\sigma}{{x^\prime}^\nu}\left(\pdv{{x^\prime}^\sigma}\right)^b\\
+    	=&\;\pdv{{x^\prime}^\mu}{x^\rho}\pdv{x^\sigma}{{x^\prime}^\nu}\tensor{T}{^\rho_\sigma}.
+    	\end{align*}
+    \end{zm}
+    
+    \item 以$g$和$g^\prime$分别代表度规$\tensor{g}{_{ab}}$在坐标系$\{x^\mu\}$和$\{{x^\prime}^\mu\}$的分量$\tensor{g}{_{\mu\nu}}$和$\tensor{{g^\prime}}{_{\mu\nu}}$组成的两个$n\times n$矩阵的行列式，试证$g^\prime=\abs{\pdv*{x^\rho}{{x^\prime}^\sigma}}^2 g$，其中$\abs{\pdv*{x^\rho}{{x^\prime}^\sigma}}$是坐标变换$\{x^\mu\}\mapsto \{{x^\prime}^\mu \} $的雅可比行列式，即由$\pdv*{x^\rho}{{x^\prime}^\sigma} $组成的$n\times n$行列式。注：本题表明度规的行列式在坐标变换下不是不变量。提示：取等式$\tensor{{g^\prime}}{_{\rho\sigma}}=\left( \pdv*{x^\mu}{{x^\prime}^\rho}\right)\left(\pdv*{x^\nu}{{x^\prime}^\sigma} \right)\tensor{g}{_{\mu\nu}}  $的行列式。
+    
+    \begin{zm}
+    	……梁爷爷你提示都把题写完了我还写啥(˘•$\upomega$•˘)
+    \end{zm}
+    
+    \item 设$\{x^\mu \}$是流形上的任一局域坐标系，试判断下列等式的是非：
+    \begin{enumerate}
+    	\item[(1)] $\left(\pd{x^\mu} \right)^a\tensor{\left(\pd{x^\nu} \right)}{_a}=\tensor{g}{_\mu_\nu} $，其中$\tensor{\left(\pd{x^\mu} \right)}{_a} \equiv \tensor{g}{_a_b}\left(\pd{x^\nu} \right)^a $；
+    	\item[(2)] $\left(\dd{x^\mu}\right)^a\tensor{\left(\dd{x^\nu}\right)}{_a}=\tensor{g}{^\mu^\nu} $，其中$\left(\dd{x^\mu}\right)^a\equiv \tensor{g}{^a^b}\tensor{\left(\dd{x^\mu} \right)}{_b} $；
+    	\item[(3)] \hypertarget{2.23.3}{}$\tensor{\left(\pd{x^\mu}\right)}{_a}=\tensor{\left(\dd{x^\mu} \right)}{_a} $；
+    	\item[(4)] $\left(\dd{x^\mu} \right)^a=\tensor{{\left(\pd{x^\mu} \right)}}{^a} $；
+    	\item[(5)] $v^\mu\tensor{\omega}{_\mu}=\tensor{v}{_\mu}\omega^\mu $；
+    	\item[(6)] $\tensor{g}{_\mu_\nu}\tensor{T}{^\nu^\rho}\tensor{S}{_\rho^\sigma}=\tensor{T}{_\mu_\rho}\tensor{S}{^\rho^\sigma} $；
+    	\item[(7)] $v^au^b=v^bu^a$；
+    	\item[(8)] $v^au^b=u^bv^a$。
+    \end{enumerate}
+    
+    \begin{jie}
+    	\begin{enumerate}
+    		\item[(1)] 正确。这是标量等式。根据(0,2)型张量分量的定义即知正确。
+    		\item[(2)] 正确。这是标量等式。根据(2,0)型张量分量的定义即知正确。
+    		\item[(3)] 不正确。这是对偶矢量等式。对其验证只需作用在坐标基矢上：
+    		\begin{align*}
+    		\tensor{\left(\pdv{x^\mu}\right)}{_a} \left(\pdv{x^\nu}\right)^a& =\tensor{g}{_\mu_\nu};\\
+    		\tensor{\left(\dd{x^\mu}\right)}{_a}\left(\pdv{x^\nu}\right)^a& =\tensor{\delta}{_\mu_\nu},
+    		\end{align*}
+    		故 metric dual of basis 等于 dual basis 的条件为该坐标系是局域的笛卡尔系。
+    		\item[(4)] 不正确。这是矢量等式。对其验证只需用对偶坐标基矢作用：
+    		\begin{align*}
+    		\tensor{\left(\dd{x^\mu}\right)}{^a}\tensor{\left(\dd{x^\nu}\right)}{_a} &=\tensor{g}{^\mu^\nu};\\
+    		\tensor{\left(\pdv{x^\mu} \right)}{^a}\tensor{\left(\dd{x^\nu}\right)}{_a} &=\tensor{\delta}{^\mu^\nu}.
+    		\end{align*}
+    		故此式成立的条件为该坐标系为局域的笛卡尔系。或者可以这样得到：此式与~\hyperlink{2.23.3}{(3)}~中的表达式互为 metric dual，故它们是等价的。
+    		\item[(5)] 正确。这是数量等式。
+    		\begin{align*}
+    		\tensor{v}{_\mu} \omega^\mu&=\tensor{g}{_\rho_\mu}v^\rho \tensor{g}{^\sigma^\mu}\omega_\mu\\
+    		&=v^\rho \tensor{\omega}{_\rho}.
+    		\end{align*}
+    		\item[(6)] 正确。这是数量等式。
+    		\begin{align*}
+    		\tensor{g}{_\mu_\nu}\tensor{T}{^\nu^\rho}\tensor{S}{_\rho^\sigma}&=\tensor{g}{_\mu_\nu}\tensor{g}{^\nu^\alpha}\tensor{g}{^\rho^\beta}\tensor{T}{_\alpha_\beta}\tensor{g}{_\rho_\gamma}\tensor{S}{^\gamma^\sigma}\\
+    		&=\tensor{\delta}{_\mu^\alpha}\tensor{\delta}{_\gamma^\beta}\tensor{T}{_\alpha_\beta}\tensor{S}{^\gamma^\sigma}\\
+    		&=\tensor{T}{_\mu_\beta}\tensor{S}{^\beta^\sigma}.
+    		\end{align*}
+    		\item[(7)] 不正确。这是(2,0)型张量等式。对其验证只需作用在对偶坐标基矢上：
+    		\begin{align*}
+    		\tensor{v}{^a} \tensor{u}{^b} \tensor{\left(\dd{x^\mu}\right)}{_a} \tensor{\left(\dd{x^\nu}\right)}{_b}&=\tensor{v}{^\mu} \tensor{u}{^\nu};\\
+    		\tensor{v}{^b} \tensor{u}{^a} \tensor{\left(\dd{x^\mu}\right)}{_a} \tensor{\left(\dd{x^\nu}\right)}{_b}&=\tensor{v}{^\nu} \tensor{u}{^\mu}.
+    		\end{align*}
+    		$\therefore$该式成立的条件是$v^\mu u^\nu=u^\mu v^\nu\qc \forall \mu,\nu $，这是不一定能满足的。
+    		\item[(8)] 正确。这是(2,0)型张量等式，对其验证只需作用在对偶坐标基底上：
+    		\begin{align*}
+    		v^a u^b \tensor{\left(\dd{x^\mu}\right)}{_a} \tensor{\left(\dd{x^\nu}\right)}{_b}&=v^\mu u^\nu;\\
+    		u^b v^a \tensor{\left(\dd{x^\mu}\right)}{_a} \tensor{\left(\dd{x^\nu}\right)}{_b}&=v^\mu u^\nu.
+    		\end{align*}
+    		$\therefore$该式恒成立。
+    	\end{enumerate}
+    \end{jie}
+    
+    \item 设$\tensor{T}{_a_b}$是矢量空间$V$上的(0,2)型张量，试证$\tensor{T}{_a_b}v^a v^b=0\qc \forall v^a \in V\implies \tensor{T}{_a_b}=\tensor{T}{_{[ab]}} $。提示：把$v^a$表为任意两个矢量$u^a $和$w^a$之和。
+    
+    \begin{zm}
+    	做任意拆分$v^a=u^a+w^a$，注意到$\tensor{T}{_a_b}u^a u^b=0 $以及$\tensor{T}{_a_b}w^a w^b=0$，有：
+    	\begin{align*}
+    	\tensor{T}{_a_b}v^a v^b&=\tensor{T}{_a_b}u^a u^b+\tensor{T}{_a_b} w^a w^b+\tensor{T}{_a_b} u^a w^b +\tensor{T}{_a_b}w^a u^b\\
+    	&=\tensor{T}{_a_b} u^a w^b +\tensor{T}{_a_b}w^a u^b\\
+    	&=\left(\tensor{T}{_{\left(ab\right)}}u^a w^b+\tensor{T}{_{\left(ab\right)}}u^b w^a\right)+\left(\tensor{T}{_{\left[ab\right]}}u^a w^b+\tensor{T}{_{\left[ab\right]}}u^b w^a \right)\\
+    	&=\tensor{T}{_{\left(ab\right)}}u^a w^b+\tensor{T}{_{\left(ab\right)}}u^b w^a\\
+    	&=0
+    	\end{align*}
+    	于是
+    	\begin{displaymath}
+    	\tensor{T}{_{\left(ab\right)}}=0\qc \tensor{T}{_a_b}=\tensor{T}{_{\left[ab\right]}}.
+    	\end{displaymath}
+    \end{zm}
+    
+    \item 试证$\tensor{T}{_a_b_c_d}=\tensor{T}{_{a\left[bc\right]d}}=\tensor{T}{_{ab\left[cd\right]}}\implies \tensor{T}{_{abcd}}=\tensor{T}{_{a\left[bcd\right]}} $。
+    
+    \begin{yl}{注}
+    	\begin{enumerate}
+    		\item[(1)] 推广至一般的结论是
+    		\begin{displaymath}
+    		\tensor{T}{_{\cdots a \cdots b \cdots c \cdots}}=\tensor{T}{_{\cdots\left[a\cdots b\right]\cdots c\cdots}}=\tensor{T}{_{\cdots a\cdots \left[b\cdots c\right]\cdots}}\implies \tensor{T}{_{\cdots a \cdots b \cdots c \cdots}}=\tensor{T}{_{\cdots\left[a\cdots b\cdots c\right]\cdots}}.
+    		\end{displaymath}
+    		上式的前提中只有两个等号，关键是$\tensor{T}{_{\cdots\left[a\cdots b\right]\cdots c\cdots}}$和$\tensor{T}{_{\cdots a\cdots \left[b\cdots c\right]\cdots}} $中的指标$b$都在方括号内。
+    		\item[(2)] 把前提和结论中的方括号改为圆括号，则推广前后的命题仍成立。
+    	\end{enumerate}
+    \end{yl}
+    
+    \begin{zm}
+    	此命题等价于$\tensor{T}{_{a\left(bc\right)d}}=\tensor{T}{_{ab\left(cd\right)}}=0\implies \tensor{T}{_{a\left(bcd\right)}}=0 $。反正只有四阶，不妨暴力展开\raisebox{-1bp}{\includegraphics[height=11bp]{hj}}
+    	\begin{align*}
+    	6\tensor{T}{_a_{\left(bcd\right)}}=&\; \tensor{T}{_{abcd}}+\tensor{T}{_{abdc}}+\tensor{T}{_{acbd}}+\tensor{T}{_{acdb}}+\tensor{T}{_{adbc}}+\tensor{T}{_{adcb}}\\
+    	{\color{blue}=}&\; \tensor{T}{_{abcd}}+\tensor{T}{_{abdc}}-\tensor{T}{_{abcd}}+\tensor{T}{_{acdb}}-\tensor{T}{_{abdc}}-\tensor{T}{_{acdb}}\\
+    	{\color{green} =}&\; \tensor{T}{_{abcd}}-\tensor{T}{_{abcd}}-\tensor{T}{_{abcd}}-\tensor{T}{_{acbd}}+\tensor{T}{_{abcd}}+\tensor{T}{_{acbd}}\\
+    	{\color{blue}=}&\; \tensor{T}{_{abcd}}-\tensor{T}{_{abcd}}-\tensor{T}{_{abcd}}+\tensor{T}{_{abcd}}+\tensor{T}{_{abcd}}-\tensor{T}{_{abcd}}\\
+    	=&\; 0.
+    	\end{align*}
+    	其中${\color{blue}=} $表示根据$\tensor{T}{_{a\left(bc\right)d}}=0$交换指标次序，${\color{green}=}$表示根据$\tensor{T}{_{ab\left(cd\right)}}=0$交换指标次序。
+    \end{zm}
+    
+    
+    
+    
+\end{xiti}

@@ -1,0 +1,45 @@
+\chapter{时空的整体因果结构}
+
+\begin{xiti}
+    \item 试证命题 11-1-10.
+
+    \begin{zm}
+        \begin{enumerate}
+            \item $\subset$ 的证明：设 $p \in \I^+[\I^+(S)]$，则存在 $q \in \I^+[S] $，使得 $p \in \I^+(q)$；而 $q \in \I^+ [S]$ 意味着存在 $r \in S$ 使得 $q \in \I^+ (r)$，根据“$I+I=I$”，知 $p \in \I^+(r)$，于是 $p \in \I^+(S)$。
+            \item $\supset$ 的证明：设 $p \in \I^+(S)$，则存在 $q \in S$ 使得 $p \in \I^+(q)$ ，于是在 $pq$ 间存在一条类时曲线，在其上任取 $r$ ，于是 $r \in \I^+(q)$ 且 $p \in \I^+(r)$，于是 $p \in \I^+[\I^+(S)]$。
+        \end{enumerate}
+    \end{zm}
+
+    \item 试证命题 11-1-11(c)。提示：利用 $A \subset B \implies \ii{A} \subset \ii{B}$。
+
+    \begin{zm}
+        \begin{enumerate}
+            \item $\subset$ 的证明：由定义，$\I^+(S) \subset \J^+ (S)$，于是 $\I^+(S) = \ii{\I^+ (S)} \subset \ii{\J^+(S)}$。
+            \item $\supset$ 的证明：设 $p \in \ii{\J^+(S)}$，则意味着存在 $p$ 的邻域 $O$ 使 $O \subset \J^+(S)$。取 $q \in O \cap \I^-(p)$ ，则 $O \subset \J^+(S)$ 意味着存在 $r \in S$ 使得 $q\in \J^+(r)$ ，于是由“$J + I = I$” 知 $p \in \I^+(r)$，故 $p \in \I^+(S)$ 。
+        \end{enumerate}
+
+        \paragraph{注} 可能会以为利用命题 11-1-11(b) 两边取内部可以直接推出命题 11-1-11(c)。（至少我这么以为过……）然而 $\ii{A}$ 和 $\ii{\bar{A}}$ 未必相同。例如，一个极端的例子是取 $A$ 为 $\left(\mathbb{R}^n,\TT_u\right)$ 中全体有理点的集合（即 $\mathbb{Q}^n$），则 $\ii{A}= \varnothing$，而 $\bar{A}$ 和 $\ii{\bar{A}}$ 是整个 $\mathbb{R}^n$！即使限制 $A$ 为开集也无济于事，例如在 $(\mathbb{R},\TT_u)$ 中令 $A = (a,b) \cup (b,c)$，则 $\bar{A} = [a,c]$，显然它们的内部不相同。
+    \end{zm}
+
+    \item 由时空背景流形的 $T_2$ 性出发按 \S 11.2 定义1证明任一指向未来因果线最多有一个未来端点。
+
+    \begin{zm}
+        设指向未来因果线 $\gamma(t) \colon I \rightarrow M$ 有两个未来端点 $p$ 和 $q$，则由于时空的 $T_2$ 性，存在 $p$ 的一个邻域 $A$ 和 $q$ 的一个邻域 $B$ 使得 $A\cap B = \varnothing$。而根据未来端点的定义，存在 $t_1 \in I$ 使得 $\forall t \in I,t > t_1$ 有 $\gamma(t) \in A$；以及存在 $t_2 \in I$ 使得 $\forall t \in I,t > t_2$ 有 $\gamma(t) \in B$。于是若取 $t_3 \in I , t>\max\{t_1,t_2\}$，则 $\gamma(t_3)\in A \cap B$，矛盾。于是未来端点最多有一个。
+    \end{zm}
+
+    \item 下列5个都是貌似正确的伪命题。试用对闵氏时空挖空和认同的手法各举一反例以否定之[见 Geroch and Horowize(1979)]。
+    \begin{enumerate}
+        \item[(a)] $q\in \dot{\I}^-(p) \implies $ 从 $q$ 出发的躺在 $\dot{\I}^-(p)$ 上的指向未来类光测地线必到达 $p$。
+        \item[(b)] $\I^-(q) \subset \I^-(p) \implies \I^+(p) \implies \I^+(q) $。提示：从2维闵氏时空挖去 $x$ 轴的一段使 $\I^+(q)$ “小”到连与$\I^+(p)$ 相交都不可能。
+        \item[(c)] $\I^-(p) = \I^-(q) \implies p = q$。提示：借用图 11-4.
+        \item[(d)] $q \notin \I^-(p) \implies \exists $ 起自 $q$ 的永不进入 $\I^-(p)$ 的过去不可延因果线。[提示：从2维闵氏时空挖去一直线段使 $q \in \dot{\I}^-(p)$。]
+        \item[(e)] $q \in \dot{\I}^+(p) \cap \dot{\I}^-(p) \implies q=p$。提示：见 Geroch and Horowize(1979) 。
+    \end{enumerate}
+
+    \begin{jie}
+        \begin{enumerate}
+            \item[(a)] 在连接 $pq$ 的直线段（这是一条类光测地线）上挖去一点即可。
+            \item[(b)] 如图
+        \end{enumerate}
+    \end{jie}
+\end{xiti}

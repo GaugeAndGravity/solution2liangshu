@@ -1,0 +1,192 @@
+\chapter{拓扑空间简简介}
+
+\begin{xiti}
+	\item 试证$\displaystyle A-B=A\cap (X-B)$，$\displaystyle \forall A,B\subset X$。
+	
+	\begin{zm}
+			$  x\in A-B \iff x\in A \wedge x\notin B\iff x\in A\cap (X-B) $。 
+	\end{zm}
+	
+	\item 试证$X-(B-A)=(X-B)\cup A$，$ \forall A,B\subset X$。
+	
+	\begin{zm}
+		$ x\in X-(B-A) \iff x\notin B-A \iff x\notin B \vee x\in A \iff x\in (X-B)\cup A $。
+	\end{zm}
+	
+	\item 用“对”或“错”在下表中填空：
+	\begin{table}[htb]
+		\begin{tabularx}{\textwidth}{YYY}
+			\toprule
+			$f\colon \mathbb{R}\rightarrow \mathbb{R} $&是一一的&是到上的\\
+			\midrule
+			$f(x)=x^3 $& & \\
+			$f(x)=x^2$& &\\
+			$f(x)=\e{x}$&&\\
+			$f(x)=\cos x$&&\\
+			$f(x)=5,\forall x\in \mathbb{R}$&&\\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
+	\begin{jie}
+		如下表：
+		\begin{table}[htb]
+			\begin{tabularx}{\textwidth}{YYY}
+				\toprule
+				$f\colon \mathbb{R}\rightarrow \mathbb{R} $&是一一的&是到上的\\
+				\midrule
+				$f(x)=x^3$&\textit{对} &\textit{对}\\
+				$f(x)=x^2 $&\textit{错} &\textit{错}\\
+				$f(x)=\e{x}$&\textit{对}&\textit{错}\\
+				$f(x)=\cos x$&\textit{错}&\textit{错}\\
+				$f(x)=5,\forall x\in \mathbb{R}$&\textit{错}&\textit{错}\\
+				\bottomrule
+			\end{tabularx}
+		\end{table}
+	\end{jie}
+	
+	\item 判断下列说法的是非并简述理由：
+	\begin{enumerate}
+		\item[(a)] 正切函数是由$\mathbb{R}$到$\mathbb{R}$的映射；
+		\item[(b)] 对数函数是由$\mathbb{R}$到$\mathbb{R}$的映射；
+		\item[(c)] $\left(a,b\right]\subset \mathbb{R}$用$\TT_u$衡量是开集；
+		\item[(d)] $\left[a,b\right]\subset \mathbb{R}$用$\TT_u$衡量是闭集。
+	\end{enumerate}
+	
+	\begin{jie}
+		\begin{enumerate}
+			\item[(a)] 错，定义域不是$\mathbb{R}$；
+			\item[(b)] 错，定义域不是$\mathbb{R}$；
+			\item[(c)] 错，任意包含于$\left(a,b\right]$的开区间都不会含有$b$，故$\left(a,b\right]$不能写为开区间之并；
+			\item[(d)] 对，其补集$(-\infty,a)\cup (b,\infty)$是开集。
+		\end{enumerate}
+	\end{jie}
+
+	
+	\item 举一反例证明命题“$\left(\mathbb{R},\TT_u\right)$的无限个开子集之交为开“不真。
+	
+	\begin{zm}
+		记$\displaystyle O_n=\left(-\frac{1}{n},\frac{1}{n}\right)$，则$\displaystyle\bigcap_{n=1}^{\infty} O_n=\{0\}$为闭集。
+	\end{zm}
+	
+	\item 试证\S 1.2例5中定义的诱导拓扑满足定义1的3个条件。
+	
+	\begin{zm}
+		拓扑空间$(X,\TT)$的子集$A$上的诱导拓扑按照定义为
+		$$ \mathscr{S}:=\left\{ V\subset A\mid \exists O\in \TT, \qq{s.t.}V=A\cap O \right\}, $$
+		\begin{enumerate}
+			\item[(a)] $A,\varnothing \in \mathscr{S}$：取$O=X$即知$A\in\mathscr{S}$，取$O=\varnothing$即知$A\in \mathscr{S}$；
+			\item[(b)] 有限交：设$V_i=A\cap O_i\in \mathscr{S}$，其中$O_i\in\TT $，$i=1,2,\cdots,n$。则
+			\begin{equation*}
+			\bigcap_{i=1}^n V_i =A\cap \left(\bigcap_{i=1}^n O_i \right)\in \mathscr{S};
+			\end{equation*}
+			\item[(c)] 无限并：设$V_\alpha=A\cap O_\alpha \in \mathscr{S}$，其中$O_\alpha\in\TT $，$\alpha\in \text{某个指标集} I$。则
+			\begin{equation*}
+			\bigcup_{\alpha\in I} V_\alpha =A\cap \left(\bigcup_{\alpha\in I} O_\alpha \right)\in \mathscr{S}.
+			\end{equation*}
+		\end{enumerate}
+	\end{zm}
+
+	\item 举例说明$(\mathbb{R}^3,\TT_u)$中存在不开不闭的子集。
+	
+	\begin{jie}
+		令$A=\left(0,1 \right]^3 $，任何包含于$A$的开球$B_{r}(x_0,y_0,z_0) $的$z$坐标的范围为开区间$(z_0-r,z_0+r)\in (0,1]$，故$(x,y,1)$不能属于此开球，于是$A$不能由一族开球之并得到，故$A$不是开集。其补集中$(x,y,0)$不能属于开球，故补集不是开集，故$A$不是闭集。
+	\end{jie}
+	
+	\item \hypertarget{1.8}{} 常值映射$f\colon \left(X,\TT\right)\rightarrow\left(Y,\mathscr{S}\right) $是否连续？为什么？
+	
+	\begin{jie}
+		连续。证明如下：设$f[X]=\{y\}\subset Y$，$\forall O\in \mathscr{S} $，若$y\in O$，则$f^{-1}[O]=X\in \TT$；若$y\notin O$，则$f^{-1}[O]=\varnothing \in\TT $。故$f$连续。
+	\end{jie}
+
+	\item 设$\TT$为集$X$上的离散拓扑，$\mathscr{S}$为集$Y$上的凝聚拓扑，
+	\begin{enumerate}
+		\item[(a)] 找出从$\left(X,\TT\right)$到$\left(Y,\mathscr{S}\right)$的全部连续映射；
+		\item[(b)] 找出从$\left(Y,\mathscr{S}\right)$到$\left(X,\mathscr{T}\right)$的全部连续映射。
+	\end{enumerate}
+	
+	\begin{jie}
+		\begin{enumerate}
+			\item[(a)] 设$f\colon X\rightarrow Y$，则由于$\mathscr{S}=\{Y,\varnothing\}$，$f$连续当且仅当$f^{-1}[Y]=X\in \TT \wedge f^{-1}[\varnothing]=\varnothing\in \TT$，可是这是必然满足的，于是所有映射$f\colon \left(X,\TT\right)\rightarrow\left(Y,\mathscr{S}\right) $均连续。
+			\item[(b)] 设$g\colon Y\rightarrow X$，则由于$\mathscr{T}=2^X$，$g$连续当且仅当$\forall O\subset X $，$g^{-1}[O]=X \vee g^{-1}[O]=\varnothing $。假设存在$x,y\in g[Y]$，$x\neq y$，则取$O={x} $，有$g^{-1}[O]=g^[-1](x)\notin \mathscr{S} $，故$g$不是连续的。于是连续映射$g$的像只能有一个，即为常值映射。又~\hyperlink{1.8}{8}~中已证明常值映射为连续，故$g\colon \left(Y,\mathscr{S}\right)\rightarrow\left(X,\TT\right) $连续当且仅当其为常值映射。
+		\end{enumerate}
+	\end{jie}
+	
+	\item 试证明定义3a与3b的等价性。
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item[(1)] 3a推导3b。设$f\colon \left(X,\TT \right)\rightarrow\left(Y,\mathscr{S}\right) $连续，按照定义3a即满足$\forall O\in\mathscr{S} $，$f^{-1}[O]\in\TT $。则$\forall x\in X$，任取$G^\prime\in\mathscr{S} $使得$f(x)\in G^\prime $，则只需取$G=f^{-1}[G^\prime] $，即有$G\in\TT $并且$f[G]=G^\prime \subset G^\prime $，于是按照定义3b，$f$也连续。
+			\item[(2)] 3b推导3a。设$f\colon \left(X,\TT \right)\rightarrow\left(Y,\mathscr{S}\right) $连续，按照定义3b即满足$\forall x\in X $，$\forall G^\prime\in \mathscr{S} $且$f(x)\in G^\prime $，$\exists G\in \TT $使得$f[G]\subset G^\prime $。于是任取$O\in \mathscr{S} $，令$x$跑遍$f^{-1}[O]$，对每一个$x$存在$G_x\in \TT$使得$f[G_x]\subset O $，考虑$\displaystyle G=\bigcup_{x\in f^{-1}[O]} G_x $，显然$G\in\TT $。由于$x\in f^{-1}[O] $，$x\in G_x $因而$x\in G $，于是$f^{-1}[O]\subset G $；而$\forall x\in G $，不妨设$x\in G_{x_0}$，则由于$f[G_{x_0}]\subset O $，知$x\in f^{-1}[O] $，故又有$G\subset f^{-1}[O] $，于是$G$正是$f^{-1}[O] $，也就是$f^{-1}[O]=G\in \TT $，按照定义3a，$f$也是连续的。
+			
+		\end{enumerate}
+	\end{zm}
+	
+	\item 试证任一开区间$(a,b)\subset \mathbb{R} $与$\mathbb{R} $同胚。
+	
+	\begin{zm}
+		只需找到一个同胚映射。函数$f\colon (a,b)\rightarrow \mathbb{R} $定义为$\displaystyle f(x)=\tan(\pi\frac{x-a}{b-a}-\frac{\pi}{2}) $即满足要求。
+	\end{zm}
+	
+	\item 设$X_1 $和$X_2$是$\mathbb{R}$的子集，$X_1\equiv(1,2)\cup(2,3) $，$X_2\equiv(1,2)\cup[2,3)$。以$\TT_1$和$\TT_2$分别代表由$\mathbb{R}$的通常拓扑在$X_1$和$X_2$上的诱导拓扑。拓扑空间$(X_1,\TT_1)$和$(X_2,\TT_2)$是否连通？
+	
+	\begin{jie}
+		\begin{enumerate}
+			\item[(1)] $(X_1,\TT_1) $不连通。考虑$O=(1,2)\subset X_1$，$O=X_1\cap (1,2)\in\TT_1 $，故$O$为开集；而$X-O=(2,3)$同样为开集，于是$O$即开又闭，故$(X_1,\TT_1)$不连通。
+			\item[(2)] $(X_2,\TT_2)$连通。假设$\exists O\neq X_2 ,O\neq\varnothing$，$O\in \TT$且$X-O\in\TT_2$，任取$a\in O$，$b\in X-O$，不妨设$a<b$，于是$[a,b]\subset X_2 $，记$A=[a,b]\cap O$，$B=[a,b]\cap (X-O) $，$c=\sup A$，我们来证明$O$和$X-O$都是开集将导致$c\notin A$并且$c\notin (X-O)$，从而矛盾。
+			\begin{enumerate}
+				\item \hypertarget{1.12.2.a}{}若$c\in B$，由于$X-O$是开集，且由于$X_2=(1,3)\in\TT_u \implies \TT_2=\TT_u\cap 2^{X_2}$，$X-O$可以写作一系列开区间之并，于是$B=(X-O)\cap[a,b]$是一系列形如$[a,y),(x,y)$或$(x,b]$的区间之并，现在$c\neq a$，故包含$c$的区间属后两种，则一定存在$d\in B$，使$(d,c]\subset B$，
+				\begin{enumerate}
+					\item 若$c=b$，则$(d,b]\subset B$；
+					\item 若$a<c<b$，则$(d,b]=(d,c]\cup(c,b]\subset B $，
+				\end{enumerate}
+			    于是$d$是$A$的上界，然而却小于上确界$c$，矛盾。
+			    \item 若$c\in A$，同\hyperlink{1.12.2.a}{(a)}有$O$是开集将导致$\exists e\in A$，使得$[c,e)\subset A$，与$c$是$A$的上确界矛盾。
+			\end{enumerate}
+		    至此$c\in A$与$c\in B$均导致矛盾，然而$c\notin A \wedge c\notin B$又与$A$和$B$的定义矛盾，故$O$与$X-O$均为非空开集是不可能的。故${X_2,\TT_2}$连通。
+		\end{enumerate}
+	\end{jie}
+	
+	\item 任意集合$X$配以离散拓扑$\TT$所得的拓扑空间是否连通？
+	
+	\begin{jie}
+		不连通。$\forall O\in X $，$O\in \TT \wedge X-O\in\TT \implies X\text{不连通}$。
+	\end{jie}
+	
+	\item 设$A\subset B$，试证
+	\begin{enumerate}
+		\item[(a)] $\bar{A}\subset\bar{B}$；提示：$A\subset B$表明$\bar{B}$是含$A$的闭集。
+		\item[(b)] $\mathrm{i}(A)\subset \mathrm{i}(B)$。
+	\end{enumerate}
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item[(a)] $A\subset B\subset\bar{B} $，根据闭包定义有$\bar{A}\subset\bar{B} $；
+			\item[(b)] $\ii{A}\subset A\subset B $，根据内部定义有$\ii{A}\subset \ii{B} $。
+		\end{enumerate}
+	\end{zm}
+	
+	\item 试证$x\in \bar{A}\iff x $的任一邻域与$A$之交非空。对$\implies$证明的提示：设$O\in \TT$且$O\cap A=\varnothing$，先证$A\subset X-O$，再证（利用闭包定义）$\bar{A}\subset X-O$。
+	
+	\begin{zm}
+		\begin{enumerate}
+			\item[(1)] $\implies$：不妨设$O$是$x$的开邻域。假设$O\cap A=\varnothing$，于是$\forall a\in A$，$a\neq A $，于是$a\in X-O$，$A\subset X-O$，而$X-O$为闭集，于是$\bar{A}\subset X-O$，故知$x\notin\bar{A} $，矛盾；
+			\item[(2)] $\impliedby$：设$\forall O\in \TT$使得$x\in O$，都有$O\cap A\neq \varnothing$。假设$x\notin \bar{A}$，根据定义，$\exists B$为闭集，$A\subset B$且$x\notin B$。于是$x\in X-B \in\TT$，于是$X-B$是$x$的一个与$A$无交的开邻域，矛盾。
+		\end{enumerate}
+	\end{zm}
+	
+	\item 试证$\mathbb{R}$不是紧致的。
+	
+	\begin{zm}
+		记$O_i=(i-1,i+1)$，显然$\{O_i\}_{i\in\mathbb{Z}}$是$\mathbb{R}$的开覆盖。现挑出其中任意$n$个$O_{i_k}\qc k=1,2,\cdots,n$，则$\displaystyle\max_{k=1,2,\cdots,n} i_k+1$即为$\displaystyle\bigcup_{k=1,2,\cdots,n}O_{i_k} $的一个上界，故有限个元素不能覆盖$\mathbb{R}$，于是$\mathbb{R}$不是紧致的。
+	\end{zm}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{xiti}
