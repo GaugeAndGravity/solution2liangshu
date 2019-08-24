@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.26)  23 AUG 2019 14:05
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.7.26)  24 AUG 2019 13:58
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1265,8 +1265,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [10]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7.52812> on input line 121.
-File: hj.jpg Graphic file (type bmp)
-<hj.jpg>
+File: pictures/hj.jpg Graphic file (type bmp)
+<pictures/hj.jpg>
  [11] [12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1306,8 +1306,8 @@ Missing character: There is no ω in font [lmroman10-regular]:mapping=tex-text;!
 Underfull \vbox (badness 1400) has occurred while \output is active []
 
  [21] [22] [23] [24]
-File: hj.jpg Graphic file (type bmp)
-<hj.jpg>
+File: pictures/hj.jpg Graphic file (type bmp)
+<pictures/hj.jpg>
 ) [25]
 \openout2 = `chapters/c3.aux'.
 
@@ -1329,8 +1329,8 @@ LaTeX Font Warning: Font shape `TU/SimHei(0)/bx/n' undefined
 (Font)              using `TU/SimHei(0)/m/n' instead on input line 239.
 
 [32] [33] [34] [35]
-File: wulian.jpg Graphic file (type bmp)
-<wulian.jpg>
+File: pictures/wulian.jpg Graphic file (type bmp)
+<pictures/wulian.jpg>
  (c:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 ) (c:/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1363,14 +1363,14 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-File: chapters/1.jpg Graphic file (type bmp)
-<chapters/1.jpg>
+File: pictures/1.jpg Graphic file (type bmp)
+<pictures/1.jpg>
  [36] [37]
-File: chapters/2.jpg Graphic file (type bmp)
-<chapters/2.jpg>
+File: pictures/2.jpg Graphic file (type bmp)
+<pictures/2.jpg>
  [38] [39] [40] [41] [42]
-File: chapters/3.jpg Graphic file (type bmp)
-<chapters/3.jpg>
+File: pictures/3.jpg Graphic file (type bmp)
+<pictures/3.jpg>
  [43]) [44]
 \openout2 = `chapters/c4.aux'.
 
@@ -1405,8 +1405,8 @@ Overfull \hbox (6.41525pt too wide) detected at line 101
  []
 
 [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70]
-File: wulian.jpg Graphic file (type bmp)
-<wulian.jpg>
+File: pictures/wulian.jpg Graphic file (type bmp)
+<pictures/wulian.jpg>
  [71] [72]) [73]
 \openout2 = `chapters/c6.aux'.
 
@@ -1512,9 +1512,9 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 162.
  ) 
 Here is how much of TeX's memory you used:
- 50348 strings out of 494821
- 1061243 string characters out of 6174905
- 2043039 words of memory out of 5000000
+ 50349 strings out of 494821
+ 1061306 string characters out of 6174905
+ 2043066 words of memory out of 5000000
  53501 multiletter control sequences out of 15000+600000
  615532 words of font info for 200 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
