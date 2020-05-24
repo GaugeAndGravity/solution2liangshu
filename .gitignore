@@ -1,0 +1,9 @@
+*.aux
+*.log
+*.out
+*.toc
+
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
