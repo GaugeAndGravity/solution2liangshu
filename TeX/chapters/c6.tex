@@ -5,9 +5,9 @@
 	\item 惯性 观者$G$和$G^\prime$相对 速率 为$u=0.6 c$，相遇 时 把 时钟 都 调为 零。用 时空图 讨论：(a) 在$G$所属的惯性参考系看来（以其同时观判断），当$G$钟读数为$\SI{5}{\micro\second} $时，$G^\prime$钟的读数是多少？(b)当$G$钟读数为$\SI{5}{\micro\second} $时，他实际看见$G^\prime$钟的读数是多少？
 	
 	\begin{jie}
-		如图，其中$a$点$G$的固有时为$\tau=\SI{5}{\micro\second}$。
+		如图~\ref{pic-6.1}，其中$a$点$G$的固有时为$\tau=\SI{5}{\micro\second}$。
 		
-		\begin{figure}[htb]
+		\begin{figure}[htb!]
 			\centering
 			\begin{tikzpicture}[scale=1.3]
 			\node[below] (x) at (2.5,0) {$x$};
@@ -25,7 +25,7 @@
 			\draw (-0.5,2.5) -- (2,2.5);
 			\draw[semithick,blue,\myarrow] (0.938,1.562) -- (0,2.5);
 			\end{tikzpicture}
-			\caption{题1解答图}
+			\caption{题1解答图}\label{pic-6.1}
 		\end{figure}
 	
 	    \begin{enumerate}
@@ -37,9 +37,8 @@
 	\item 远方星体以$0.8 c $的速率（匀速直线地）离开我们，我们测得它辐射来的闪光按$5$昼夜的周期变化。用时空图求星上观者测得的闪光周期。
 	
 	\begin{jie}
-		如图:
-		
-		\begin{figure}[htb]
+		如图~\ref{pic-6.2}，
+		\begin{figure}[htb!]
 			\centering
 			\begin{tikzpicture}
 			\node[below] (x) at (5,0) {$x$};
@@ -60,15 +59,14 @@
 			\draw[semithick,blue,\myarrow] (3.6667,3.3333) node[below right,black] {$b_4$} -- (2,5);
 			\draw[semithick,blue,\myarrow] (4.5556,4.4444) node[below right,black] {$b_5$} -- (4,5);
 			\end{tikzpicture}
-			\caption{题2解答图}
+			\caption{题2解答图}\label{pic-6.2}
 		\end{figure}
-	
 	    记$c$点坐标为$\left(0,\tau\right)$，其中$\tau=\SI{5}{\day}$，则可算得$b_2$点坐标为 $\displaystyle \left(\frac{4}{9},\frac{5}{9}\right) \tau$，于是$b_1$到$b_2$星上观者经过的固有时$\displaystyle \tau^{\prime} = \sqrt{5^2-4^2} \frac{\tau}{9} = \frac{\tau}{3} = \frac{5}{3} \,\si{\day}.$
 	\end{jie}
 	
-	\item 把~\hyperlink{6-20}{图6-20}~的 $oa$ 段和 $oe$ 段线长分别记作 $\tau$ 和 $\tau^\prime$ 。(a) 用两钟的相对速率 $u$ 表出 $\tau^\prime/\tau$ ；(b) 在 $u=0.6c$ 和 $u=0.8c$ 两种情况下求出 $\tau^\prime/\tau$ 的数值。
+	\item 把图~\hyperlink{6-20}{6-20}~的 $oa$ 段和 $oe$ 段线长分别记作 $\tau$ 和 $\tau^\prime$ 。(a) 用两钟的相对速率 $u$ 表出 $\tau^\prime/\tau$ ；(b) 在 $u=0.6c$ 和 $u=0.8c$ 两种情况下求出 $\tau^\prime/\tau$ 的数值。
 	
-	\begin{figure}[htb]
+	\begin{figure}[htb!]
 		\centering
 		\begin{tikzpicture}
 		\draw[very thick,purple] (0,0) node[left,black] {$o$} -- (0,-5);
@@ -76,7 +74,7 @@
 		\node[above left] (a) at (0,-2) {$a$};
 		\draw[semithick,domain=-1.732:1.732,variable=\t,range=0:4, smooth] plot ({2*\t},{-2*sqrt(\t*\t+1)});
 		\draw[semithick,blue,\myarrow] (1.333,-3.333) node[below right,black] {$e$} -- (0,-2);
-		\node (jz) at (-2,-3) {\colorbox{white}{校准曲线}};
+		\node (jz) at (-2.15,-3) {\colorbox{white}{校准曲线}};
 		\node[above,rotate=90] (c) at (0,-3.5) {$C$钟(观者$G$)};
 		\node (cc) at (1,-0.9) {$C'$钟};
 		\end{tikzpicture}
@@ -85,12 +83,12 @@
     
     \begin{jie}
     	\begin{enumerate}
-    		\item[(a)] 如图，记 $t=of$，
+    		\item[(a)] 如图~\ref{pic-6.3}，记 $t=of$，
     		\begin{equation}
     		\frac{\tau'}{\tau} = \frac{\sqrt{t^2-u^2 t^2}}{t-ut} = \sqrt{\frac{1+u}{1-u}}.
     		\end{equation}
     		
-    		\begin{figure}[htb]
+    		\begin{figure}[htb!]
     			\centering
     			\begin{tikzpicture}
     			\draw[very thick,purple] (0,0) node[left,black] {$o$} -- (0,-5);
@@ -99,11 +97,11 @@
     			\draw[semithick,domain=-1.732:1.732,variable=\t,range=0:4, smooth] plot ({2*\t},{-2*sqrt(\t*\t+1)});
     			\draw[semithick,blue,\myarrow] (1.333,-3.333) node[below right,black] {$e$} -- (0,-2);
     			\draw[semithick] (1.333,-3.333) -- (0,-3.333) node[below right] {$f$} ;
-    			\node (jz) at (-2,-3) {\colorbox{white}{校准曲线}};
+    			\node (jz) at (-2.15,-3) {\colorbox{white}{校准曲线}};
     			\node[above,rotate=90] (c) at (0,-3.5) {$C$钟(观者$G$)};
     			\node (cc) at (1,-0.9) {$C'$钟};
     			\end{tikzpicture}
-    			\caption{题3解答图}\hypertarget{t4}{}
+    			\caption{题3解答图}\label{pic-6.3}
     		\end{figure}
     	
     	    \item[(b)] 将 $u=0.6$ 和 $u=0.8$ 代入，分别得 $\dfrac{\tau'}{\tau}$ 为 $2$ 和 $3$。
@@ -112,7 +110,7 @@
     
     \item 惯性质点 $A,B,C$ 排成一条直线并沿此线相对运动（见~\hyperlink{t5}{图 6.5}），相对速率 $u_{BA}=0.6 c$ ， $u_{CA}=0.8 c$ ，$A,B$ 所在惯性系各为 $\mathscr{R}_A$ 和 $\mathscr{R}_B$。设 $\mathscr{R}_B$ 系认为（测得）$C$ 走了 $\SI{60}{m}$，画出时空图并求 $\mathscr{R}_A$ 认为（测得）这一过程的时间。
     
-    \begin{figure}[htb]
+    \begin{figure}[htb!]
     	\centering
     	\begin{tikzpicture}[scale=1.5]
     	\filldraw (0,0) circle (0.02cm);
@@ -126,9 +124,8 @@
     \end{figure}
     
     \begin{jie}
-    	如图
-    	
-    	\begin{figure}[htb]
+    	如图~\ref{pic-6.4}，
+    	\begin{figure}[htb!]
     		\centering
     		\begin{tikzpicture}
     		\draw[semithick,\myarrow] (0,0) -- (4,0);
@@ -150,15 +147,60 @@
 			\node[below] (c) at (2.4,3) {$c$};
 			\node[below] (D) at (0.9375,0.5625) {$a$};
 			\end{tikzpicture}
-			\caption{题4解答图}
-    	\end{figure}
+			\caption{题4解答图}\label{pic-6.4}
+		\end{figure}
+		$oa$ 段长 $\displaystyle l=\SI{60}{\meter}$，则可算得 $a$ 的坐标为 $\displaystyle \left( \frac{5}{4} , \frac{3}{4} \right) l$，由 $ac$ 的斜率为 $\displaystyle \frac{1}{0.6 c}$，$oc$ 的斜率为 $\displaystyle \frac{1}{0.8c}$ 可求得 $c$ 点坐标为 $\displaystyle \left(\frac{16}{5},\frac{4}{c} \right) l$，即 $oc$ 在 $\mathscr{R}_A$ 看来的时间为 $\displaystyle \frac{4l}{c} = \frac{240}{299792458} \si{\second}$。
 	\end{jie}
 	
-	$oa$ 段长 $\displaystyle l=\SI{60}{\meter}$，则可算得 $a$ 的坐标为 $\displaystyle \left( \frac{5}{4} , \frac{3}{4} \right) l$，由 $ac$ 的斜率为 $\displaystyle \frac{1}{0.6 c}$，$oc$ 的斜率为 $\displaystyle \frac{1}{0.8c}$ 可求得 $c$ 点坐标为 $\displaystyle \left(\frac{16}{5},\frac{4}{c} \right) l$，即 $oc$ 在 $\mathscr{R}_A$ 看来的时间为 $\displaystyle \frac{4l}{c} = \frac{240}{299792458} \mathrm{m}$。
+	\item $A,B$ 是同一惯性系的两个惯性观者，他们互相发射中子，每一中子以相对速率 $0.6 c$ 离开中子枪。设 $B$ 测得 $B$ 枪的中子发射速率为 $\SI{e4}{s^{-1}}$ （即每秒发射 $10^4$ 个），求 $A$ 所发中子（根据中子自己的标准钟）测得的 $B$ 枪的中子发射率（要求画时空图求解）。
+	
+	\begin{jie}
+		如图~\ref{pic-6.5}，$oa$长为 $\Delta\tau_B$，则由对称性易知 $ob=ab=\frac{\Delta\tau_B}{2}$，则 $bc=0.3\Delta\tau_B$，故算得 $\Delta\tau=ac=0.4\Delta\tau_B$，因此 $A$ 发射的中子测得的 $B$ 的发射率为 $f=\frac{1}{\Delta\tau}=2.5f_B=\SI{2.5e4}{\per\second}$。
+		\begin{figure}[htb!]
+			\centering
+			\begin{tikzpicture}
+				\draw[semithick,\myarrow] (0,0) -- (0,4);
+				\draw[semithick,\myarrow] (0,0) -- (4,0);
+				\draw[very thick,purple] (0,0) -- (0,3.5);
+				\draw[very thick,purple] (3,0) -- (3,3.5);
+				\node[left] (o) at (0,0) {$o$};
+				\node[left] (t) at (0,4) {$t$};
+				\node[below] (x) at (4,0) {$x$};
+				\node[left] (A) at (3,3.5) {$A$};
+				\node[left] (B) at (0,3.5) {$B$};
+				\draw[blue,\myarrow] (3,0) -- (0.6,4);
+				\draw[blue,\myarrow] (0,0) -- (1.5,2.5);
+				\draw[blue,\myarrow] (0,2) -- (0.9,3.5);
+				\draw[semithick,green] (0.9,3.5) -- (1.5,2.5);
+				\draw[semithick,green] (0,2) -- (0.6,1);
+				\node[above right,green] (tau) at (1.3,3) {$\Delta \tau$};
+				\node[above right,green] (tau2) at (0.3,1.5) {$\Delta \tau$};
+				\node[left] (a) at (0,2) {$a$};
+				\node[left] (b) at (0,1) {$b$};
+				\node[below right] (c) at (0.6,1) {$c$};
+				\draw (0,1) -- (0.6,1);
+			\end{tikzpicture}
+			\caption{题5解答图}\label{pic-6.5}
+		\end{figure}
+	\end{jie}
 
-	\item $A,B$ 是同一惯性系的两个惯性观者，他们互相发射中子，每一中子以相对速率 $0.6 c$ 离开中子枪。设 $B$ 测得 $B$ 枪的中子发射速率为 $\SI{e4}{s^{-1}}$ （即每秒发射 $10^4$ 个），求 $A$ 所发中子（根据中子自己的标准钟）
-
-	\item 暂略。
+	\item 静止 $\mu$ 子的平均寿命为 $\tau_0=\SI{2e-6}{s}$。宇宙线产生的 $\mu$ 子相对于地球以 $0.995c$ 的速率匀速直线下落，用时空图求地球观者测得的(a)$\mu$子的平均寿命；(b)$\mu$子在其平均寿命内所走过的距离。
+	
+		\begin{jie}
+			如图
+			\begin{figure}[htb!]
+				\centering
+				\begin{tikzpicture}
+					\draw[semithick,\myarrow] (0,0) -- (0,3);
+					\draw[semithick,\myarrow] (0,0) -- (4,0);
+					\node[left] (o) at (0,0) {$o$};
+					\node[left] (t) at (0,3) {$t$};
+					\node[below] (x) at (4,0) {$x$};
+					\draw[blue,\myarrow] (3,0) -- (1.01,2);
+					\draw[very thick,purple] (0,0) -- (0,2.5);
+				\end{tikzpicture}
+			\end{figure}
+		\end{jie}
 
 	\item 暂略。
 
