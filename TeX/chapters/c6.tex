@@ -211,7 +211,35 @@
 			\end{figure}
 		\end{jie}
 
-	\item 暂略。
+	\item 从惯性系 $\mathscr{R}$ 看来（认为，测得），位于某地 $A$ 的两标准钟甲、乙指零时开始以速率 $v=0.6c$ 一同做匀速直线运动，两钟指 $\SI{1}{\second}$ 时到达某地 $B$。甲钟在到达 $B$ 地时立即以速率 $v$ 向 $A$ 地匀速返回，乙钟在 $B$ 地停留 $\SI{1}{\second}$ （按他的钟）后以速率 $v$ 向 $A$ 的匀速返回。另有一丙钟一直呆在 $A$ 地，且当甲、乙离开 $A$ 地时也指零，(a) 画出甲、乙、丙的世界线；(b) 求乙钟返回 $A$ 地时三钟的读数 $\tau_{\text{甲}}$，$\tau_{\text{乙}}$ 和 $\tau_{\text{丙}}$。
+	
+		\begin{jie}
+			如图~\ref{pic-6.7}，设$A$ 地位于 $x=0$，$B$ 地位于 $x=s$。
+			\begin{figure}[htb!]
+				\centering
+				\begin{tikzpicture}
+					\draw[semithick,\myarrow] (0,0) -- (0,7.5);
+					\draw[semithick,\myarrow] (0,0) -- (3,0);
+					\node[below left] (o) at (0,0) {$o$};
+					\node[left] (t) at (0,7.3) {$t$};
+					\node[below left] (x) at (3,0) {$x$};
+					\draw[gray] (1.5,0) -- (1.5,2.5);
+					\node[below] (s) at (1.5,0) {$x=s$};
+					\draw[very thick,purple] (0,0) -- (1.5,2.5) -- (0,5) -- (0,7);
+					\draw[very thick,purple] (0,0) -- (1.5,2.5) -- (1.5,4.5) -- (0,7);
+					\draw [very thick,purple] (0,0) -- (0,7);
+					\node[right] (a) at (1.5,2.5) {$a$};
+					\node[left] (b) at (0,5) {$b$};
+					\node[right] (c) at (1.5,4.5) {$c$};
+					\node[left] (d) at (0,7) {$d$};
+				\end{tikzpicture}
+				\caption{题7解答图}\label{pic-6.7}
+			\end{figure}
+			\begin{enumerate}[label=(\alph*)]
+				\item 甲的世界线为 $oabd$；乙的世界线为 $oacd$；丙的世界线为 $obd$。
+				\item 由题干知线长 $oa=ac=ab=bd=cd$ 都是 $\tau=\SI{1}{\second}$，故 $\tau_{\text{甲}}=\tau_{\text{乙}}=\SI{3}{\second}$。$a$ 点位于 $(\frac{5}{3}s,s)$，$oa=\frac{4}{3}s$，故 $s=\frac{3}{4}\tau$，则 $ob=2\times \frac{5}{3}s = \frac{5}{2} \tau$，于是 $\tau_{\text{丙}}=\frac{7}{2}\tau=\SI{3.5}{\second}$。
+			\end{enumerate}
+		\end{jie}
 
 	\item 暂略。
 
