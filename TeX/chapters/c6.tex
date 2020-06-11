@@ -187,7 +187,11 @@
 	\item 静止 $\mu$ 子的平均寿命为 $\tau_0=\SI{2e-6}{s}$。宇宙线产生的 $\mu$ 子相对于地球以 $0.995c$ 的速率匀速直线下落，用时空图求地球观者测得的(a)$\mu$子的平均寿命；(b)$\mu$子在其平均寿命内所走过的距离。
 	
 		\begin{jie}
-			如图
+			如图~\ref{pic-6.6}，$ac=\tau_0$，$bc=t$ 为地球看来的平均寿命。则 $ab=0.995t$，有
+			\begin{equation*}
+				\tau_0=ac=\sqrt{\abs{-t^2+(0.995t)^2}}\approx 0.09987 t,
+			\end{equation*}
+			故 $t\approx 10.0125 \tau_0 = \SI{2.0025e-5}{\second}$，而走过的距离为 $ab=vt\approx\SI{5.9733}{\kilo\metre}$。 
 			\begin{figure}[htb!]
 				\centering
 				\begin{tikzpicture}
@@ -198,7 +202,12 @@
 					\node[below] (x) at (4,0) {$x$};
 					\draw[blue,\myarrow] (3,0) -- (1.01,2);
 					\draw[very thick,purple] (0,0) -- (0,2.5);
+					\draw[gray] (1.01,0) -- (1.01,2);
+					\node[below] (a) at (3,0) {$a$};
+					\node[below left] (b) at (1.01,0) {$b$};
+					\node[left] (c) at (1.01,2) {$c$};
 				\end{tikzpicture}
+				\caption{图6解答图}\label{pic-6.6}
 			\end{figure}
 		\end{jie}
 
