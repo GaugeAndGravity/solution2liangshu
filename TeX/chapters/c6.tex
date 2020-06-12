@@ -322,7 +322,41 @@
 			\end{enumerate}
 		\end{jie}
 
-	\item 暂略。
+	\item 静长 $l=\SI{5}{\metre}$ 的汽车以 $u=0.6c$ 的速率匀速进库，库有坚硬后墙。为简化问题，假定车头撞墙的信息以光速传播，车身任一点接到信息立即停下。(a) 设司库测得在车头撞墙的同时车尾的钟 $\mathrm{C_w}$ 指零，求车尾“获悉”车头撞墙这一信息时 $\mathrm{C_w}$ 的读数；(b) 求车完全停下后的静长 $\hat{l}$；(c) 用 $u$ 表示新旧静长比 $\hat{l}/l$。
+	
+		\begin{jie}
+			如图~\ref{pic-6.11}，
+			\begin{figure}[htb!]
+				\centering
+				\begin{tikzpicture}[scale=0.7]
+					\draw[semithick,\myarrow] (0,0) -- (0,7);
+					\draw[semithick,\myarrow] (0,0) -- (7,0);
+					\node[below left] (o) at (0,0) {$o$};
+					\node[below left] (t) at (0,7) {$t$};
+					\node[below left] (x) at (7,0) {$x$};
+					\filldraw[fill=gray!50!white] (0,0) -- (3,5) -- (3,6) -- (6,6) -- (6,2) -- (4.8,0) -- cycle;
+					\draw[blue,\myarrow] (6,2) node[right,black]{$a$} -- (3,5);
+					\draw[thick] (6,0) -- (6,6.5);
+					\draw[dashed] (1.2,2) node[left]{$b$} -- (6,2);
+					\draw[dashed] (3,2) node[below]{$c$} -- (3,5) node[left]{$d$};
+				\end{tikzpicture}
+				\caption{题11解答图}\label{pic-6.11}
+			\end{figure}
+			$ac=cd=\hat{l}$，则 $bc=u\hat{l}$，$ab=(1+u)\hat{l}$，而由尺缩公式知 $ab=\sqrt{1-u^2}l$，故
+			\begin{equation*}
+				(1+u)\hat{l} = \sqrt{1-u^2} l, \implies \hat{l} = \sqrt{\frac{1-u}{1+u}}l,
+			\end{equation*}
+			则
+			\begin{equation*}
+				bd=\sqrt{cd^2-bc^2} = \sqrt{1-u^2} \hat{l} = l,
+			\end{equation*}
+			故
+			\begin{enumerate}[label=(\alph*)]
+				\item $\mathrm{C_w}$ 的读数为 $bd=l$，恢复$c$ 即 $\displaystyle \frac{l}{c}=\frac{5}{299792458}\si{\second} \approx \SI{1.66782e-8}{\second}$。
+				\item 代入 $u=0.6c$ 知 $\displaystyle \hat{l}=\frac{l}{2}=\SI{2.5}{\metre}$。
+				\item $\displaystyle \frac{\hat{l}}{l} = \sqrt{\frac{1-u}{1+u}}$。
+			\end{enumerate}
+		\end{jie}
 
 	\item 试证命题 6-3-4.
 
@@ -342,7 +376,7 @@
 		\end{yl}
 	\end{zm}
 
-	\item 设观者世界线为 $t\sim x$ 面内的双曲线 $G$ （见\hyperlink{t6}{图 6.7}），图中 $K$ 为已知，$\tensor{A}{^a}$ 为观者的 4 加速，求 $\tensor{A}{^a} \tensor{A}{_a}$（结论是 $\tensor{A}{^a} \tensor{A}{_a}$ 为常数，因此 $G$ 称为匀加速运动观者\footnote{或称 Rindler 观者——笔者注}。请注意这指的是4加速。）
+	\item 设观者世界线为 $t\sim x$ 面内的双曲线 $G$ （见\hyperlink{t6}{图 6-43}），图中 $K$ 为已知，$\tensor{A}{^a}$ 为观者的 4 加速，求 $\tensor{A}{^a} \tensor{A}{_a}$（结论是 $\tensor{A}{^a} \tensor{A}{_a}$ 为常数，因此 $G$ 称为匀加速运动观者\footnote{或称 Rindler 观者——笔者注}。请注意这指的是4加速。）
 
 	\begin{figure}[htb]
 		\centering
@@ -358,7 +392,7 @@
 			\node (K) at (0.75,-0.7) {\colorbox{white}{$K$}};
 			\draw[decorate] (1.5,0) -- (0,0);
 		\end{tikzpicture}
-		\caption{习题13用图}\hypertarget{t6}{}
+		\caption{原书图 6-43}\hypertarget{t6}{}
 	\end{figure}
 
 	\begin{jie}
