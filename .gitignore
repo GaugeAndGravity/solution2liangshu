@@ -3,6 +3,12 @@
 *.out
 *.toc
 
+*.bbl
+*.bcf
+*.blg
+
+*.run.xml
+
 *.synctex
 *.synctex(busy)
 *.synctex.gz

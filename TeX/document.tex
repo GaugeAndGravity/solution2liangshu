@@ -11,7 +11,6 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{tabularx}
-\usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{enumitem}
@@ -26,6 +25,9 @@
 \usepackage{bm}
 \usepackage{lmodern}
 \usepackage{anyfontsize}
+\usepackage{babel}
+\usepackage[backref=true,style=authoryear]{biblatex}
+\usepackage{hyperref}
 
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{decorations.pathreplacing}
@@ -120,6 +122,8 @@
 \title{《微分几何入门与广义相对论》\\部分习题参考解答}
 \author{by 薛定谔的大喵\thanks{\href{mailto:wyj1234@mail.ustc.edu.cn}{wyj1234@mail.ustc.edu.cn}}}
 
+\addbibresource{ref.bib}
+
 \includeonly{chapters/c6}
 
 \begin{document}
@@ -127,19 +131,19 @@
 	\maketitle
 	
 	
-	\begin{jianjie}
-		本文档虽今天重新编译生成，但是内容是我数月前初学时所写，所有习题解答没有多次复核，仅供参考。若有错误之处请多多谅解，也可与我联系指出。
+	% \begin{jianjie}
+	% 	本文档虽今天重新编译生成，但是内容是我数月前初学时所写，所有习题解答没有多次复核，仅供参考。若有错误之处请多多谅解，也可与我联系指出。
 
-		前五章是18年寒假时所写，之后春季学期断断续续写了些后面的，第六章所需作图很多，当时我尚未熟悉使用 Ti\textit{k}Z 作图，感到比较吃力，后来就鸽了……之后读其他章节时陆续写了点。
+	% 	前五章是18年寒假时所写，之后春季学期断断续续写了些后面的，第六章所需作图很多，当时我尚未熟悉使用 Ti\textit{k}Z 作图，感到比较吃力，后来就鸽了……之后读其他章节时陆续写了点。
 
-		我一向觉得初学一个领域需要一些练习的积累，而苦于很多书上的练习题没有解答，做来又不知道对不对。梁先生的《微分几何入门与广义相对论》三卷在中文教材中可谓精品，我很希望梁书能流行起来，希望我以后能有空将这份答案补全（Flag立下……）
+	% 	我一向觉得初学一个领域需要一些练习的积累，而苦于很多书上的练习题没有解答，做来又不知道对不对。梁先生的《微分几何入门与广义相对论》三卷在中文教材中可谓精品，我很希望梁书能流行起来，希望我以后能有空将这份答案补全（Flag立下……）
 
-		\vspace{12pt}
-		\begin{tabularx}{0.8\textwidth}{cXc}
-			&&薛定谔的大喵\\
-			&&\itshape 2018.11.3
-		\end{tabularx}
-	\end{jianjie}
+	% 	\vspace{12pt}
+	% 	\begin{tabularx}{0.8\textwidth}{cXc}
+	% 		&&薛定谔的大喵\\
+	% 		&&\itshape 2018.11.3
+	% 	\end{tabularx}
+	% \end{jianjie}
 	
 	
 	
@@ -160,4 +164,6 @@
 	\include{chapters/c11}
 	\include{chapters/B}
 	\include{chapters/G}
+
+	\printbibliography
 \end{document}
