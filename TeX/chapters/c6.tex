@@ -278,6 +278,49 @@
 		\end{jie}
 
 	\item 地球自转线速率在赤道之值约为每小时 $\SI{1600}{\kilo\metre}$。甲、乙为赤道上的一对孪生子。甲坐飞机以每小时 $\SI{1600}{\kilo\metre}$ 的速率向西绕赤道飞行一圈后回家与乙重逢（忽略地球和太阳引力场的影响。由第7章可知引力的存在对应于时空的弯曲。）。(a) 画出地球表面的世界面和甲、乙的世界线（甲相对于地面的运动抵消了地球自转的效应，所以甲是惯性观者。）；(b) 甲与乙中谁更年轻？(c) 两者年龄相差多少？（答：约为$\SI{e-7}{\second}$。）注：本实验已于 1971 年完成，当然不是对人而是对铯原子钟。见\cite{Hafele166}。
+	
+		\begin{jie}
+			如图~\ref{pic-6.10}。
+			\begin{figure}[htb!]
+				\centering
+				% \begin{tikzpicture}
+				% 	\begin{axis}[view={60}{30}]
+				% 	\addplot3 [
+				% 	mesh,
+				% 	z buffer=sort,
+				% 	samples=20,
+				% 	domain=-1:0,
+				% 	y domain=0:2*pi,
+				% 	] (
+				% 	{cos(deg(y))},
+				% 	{sin(deg(y))},
+				% 	x
+				% 	);
+				% 	\end{axis}
+				% \end{tikzpicture}
+				\begin{tikzpicture}
+					\draw (-2,-2) rectangle (2,2);
+					\node (emm) at (0,0) {图暂略……};
+				\end{tikzpicture}
+				\caption{题10解答图}\label{pic-6.10}
+			\end{figure}
+			\begin{enumerate}[label=(\alph*)]
+				\item 233
+				\item 乙更年轻。
+				\item 以坐标时 $t$ 为参数，乙的世界线切矢模长为
+				\begin{equation*}
+					\norm{\tensor{\left( \pdv{t} \right)}{^a}} = \sqrt{1-u^2},
+				\end{equation*}
+				其中 $u$ 是自转的3-速率，则乙经过的线长为
+				\begin{equation*}
+					\tau = \int_0^T \norm{\tensor{\left( \pdv{t} \right)}{^a}} \dd{t} = \sqrt{1-u^2} T,
+				\end{equation*}
+				代入 $u$ 和 $T=\SI{1}{\day}$ 知
+				\begin{equation*}
+					T-\tau=\left( 1- \sqrt{1-u^2} \right) T = \SI{9.49449e-8}{\second}.
+				\end{equation*}
+			\end{enumerate}
+		\end{jie}
 
 	\item 暂略。
 
