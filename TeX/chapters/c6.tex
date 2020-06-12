@@ -30,7 +30,7 @@
 	
 	    \begin{enumerate}
 	    	\item[(a)] 易知 $b$点的$x$坐标为$0.6\tau$，于是 $b$ 点 $G^\prime$ 的固有时为 \[\tau^\prime = \sqrt{1-0.6^2} \tau = 0.8 \tau = \SI{4}{\micro\second}.\]
-	    	\item[(b)] 易求得$b$点在${t,x}$坐标系下的坐标为 $\displaystyle \left( \frac{3}{8} \tau ,\frac{5}{8} \tau \right)$，于是$c$点$G'$的固有时为 \[ \tau^{\prime\prime} = \sqrt{\left(\frac{5}{8}\right)^2-\left(\frac{3}{8}\right)^2} \tau = \frac{\tau}{2} = \SI{2.5}{\micro\second}. \]
+	    	\item[(b)] 易求得$c$点在${t,x}$坐标系下的坐标为 $\displaystyle \left( \frac{5}{8} \tau ,\frac{3}{8} \tau \right)$\footnote{$t$在前，$x$在后}，于是$c$点$G'$的固有时为 \[ \tau^{\prime\prime} = \sqrt{\left(\frac{5}{8}\right)^2-\left(\frac{3}{8}\right)^2} \tau = \frac{\tau}{2} = \SI{2.5}{\micro\second}. \]
 	    \end{enumerate}
 	\end{jie}
 	
@@ -61,7 +61,7 @@
 			\end{tikzpicture}
 			\caption{题2解答图}\label{pic-6.2}
 		\end{figure}
-	    记$c$点坐标为$\left(0,\tau\right)$，其中$\tau=\SI{5}{\day}$，则可算得$b_2$点坐标为 $\displaystyle \left(\frac{4}{9},\frac{5}{9}\right) \tau$，于是$b_1$到$b_2$星上观者经过的固有时$\displaystyle \tau^{\prime} = \sqrt{5^2-4^2} \frac{\tau}{9} = \frac{\tau}{3} = \frac{5}{3} \,\si{\day}.$
+	    记$c$点坐标为$\left(\tau,0\right)$，其中$\tau=\SI{5}{\day}$，则可算得$b_2$点坐标为 $\displaystyle \left(\frac{5}{9},\frac{4}{9}\right) \tau$，于是$b_1$到$b_2$星上观者经过的固有时$\displaystyle \tau^{\prime} = \sqrt{5^2-4^2} \frac{\tau}{9} = \frac{\tau}{3} = \frac{5}{3} \,\si{\day}.$
 	\end{jie}
 	
 	\item 把图~\hyperlink{6-20}{6-20}~的 $oa$ 段和 $oe$ 段线长分别记作 $\tau$ 和 $\tau^\prime$ 。(a) 用两钟的相对速率 $u$ 表出 $\tau^\prime/\tau$ ；(b) 在 $u=0.6c$ 和 $u=0.8c$ 两种情况下求出 $\tau^\prime/\tau$ 的数值。
@@ -149,13 +149,13 @@
 			\end{tikzpicture}
 			\caption{题4解答图}\label{pic-6.4}
 		\end{figure}
-		$oa$ 段长 $\displaystyle l=\SI{60}{\meter}$，则可算得 $a$ 的坐标为 $\displaystyle \left( \frac{5}{4} , \frac{3}{4} \right) l$，由 $ac$ 的斜率为 $\displaystyle \frac{1}{0.6 c}$，$oc$ 的斜率为 $\displaystyle \frac{1}{0.8c}$ 可求得 $c$ 点坐标为 $\displaystyle \left(\frac{16}{5},\frac{4}{c} \right) l$，即 $oc$ 在 $\mathscr{R}_A$ 看来的时间为 $\displaystyle \frac{4l}{c} = \frac{240}{299792458} \si{\second}$。
+		$oa$ 段长 $\displaystyle l=\SI{60}{\meter}$，则可算得 $a$ 的坐标为 $\displaystyle \left( \frac{3}{4} , \frac{5}{4} \right) l$，由 $ac$ 的斜率为 $\displaystyle \frac{1}{0.6}$，$oc$ 的斜率为 $\displaystyle \frac{1}{0.8}$ 可求得 $c$ 点坐标为 $\displaystyle \left(4,\frac{16}{5}\right) l$，即 $oc$ 在 $\mathscr{R}_A$ 看来的时间为 $\displaystyle \frac{4l}{c} = \frac{240}{299792458} \si{\second}$。
 	\end{jie}
 	
 	\item $A,B$ 是同一惯性系的两个惯性观者，他们互相发射中子，每一中子以相对速率 $0.6 c$ 离开中子枪。设 $B$ 测得 $B$ 枪的中子发射速率为 $\SI{e4}{s^{-1}}$ （即每秒发射 $10^4$ 个），求 $A$ 所发中子（根据中子自己的标准钟）测得的 $B$ 枪的中子发射率（要求画时空图求解）。
 	
 	\begin{jie}
-		如图~\ref{pic-6.5}，$oa$长为 $\Delta\tau_B$，则由对称性易知 $ob=ab=\frac{\Delta\tau_B}{2}$，则 $bc=0.3\Delta\tau_B$，故算得 $\Delta\tau=ac=0.4\Delta\tau_B$，因此 $A$ 发射的中子测得的 $B$ 的发射率为 $f=\frac{1}{\Delta\tau}=2.5f_B=\SI{2.5e4}{\per\second}$。
+		如图~\ref{pic-6.5}，$oa$长为 $\Delta\tau_B$，则由对称性易知 $\displaystyle ob=ab=\frac{\Delta\tau_B}{2}$，则 $bc=0.3\Delta\tau_B$，故算得 $\Delta\tau=ac=0.4\Delta\tau_B$，因此 $A$ 发射的中子测得的 $B$ 的发射率为 $\displaystyle f=\frac{1}{\Delta\tau}=2.5f_B=\SI{2.5e4}{\per\second}$。
 		\begin{figure}[htb!]
 			\centering
 			\begin{tikzpicture}
@@ -237,7 +237,7 @@
 			\end{figure}
 			\begin{enumerate}[label=(\alph*)]
 				\item 甲的世界线为 $oabd$；乙的世界线为 $oacd$；丙的世界线为 $obd$。
-				\item 由题干知线长 $oa=ac=ab=bd=cd$ 都是 $\tau=\SI{1}{\second}$，故 $\tau_{\text{甲}}=\tau_{\text{乙}}=\SI{3}{\second}$。$a$ 点位于 $(\frac{5}{3}s,s)$，$oa=\frac{4}{3}s$，故 $s=\frac{3}{4}\tau$，则 $ob=2\times \frac{5}{3}s = \frac{5}{2} \tau$，于是 $\tau_{\text{丙}}=\frac{7}{2}\tau=\SI{3.5}{\second}$。
+				\item 由题干知线长 $oa=ac=ab=bd=cd$ 都是 $\tau=\SI{1}{\second}$，故 $\displaystyle \tau_{\text{甲}}=\tau_{\text{乙}}=\SI{3}{\second}$。$a$ 点位于 $\displaystyle \left(\frac{5}{3}s,s\right)$，$\displaystyle oa=\frac{4}{3}s$，故 $\displaystyle s=\frac{3}{4}\tau$，则 $\displaystyle ob=2\times \frac{5}{3}s = \frac{5}{2} \tau$，于是 $\displaystyle \tau_{\text{丙}}=\frac{7}{2}\tau=\SI{3.5}{\second}$。
 			\end{enumerate}
 		\end{jie}
 
@@ -255,7 +255,7 @@
 	
 		\begin{jie}
 			\begin{enumerate}
-				\item 由 $u=0.6c$ 知 $\gamma=\frac{5}{4}$，故 $\Delta\tau_\text{A}=\SI{2}{\second}$ 对应 $\Delta t=\SI{5/2}{\second}$，由于 $B$ 钟在惯性系中静止，重逢时 $\tau_\text{B}=\SI{5}{\second}$，$\tau_{\text{A}}=\SI{4}{\second}$。
+				\item 由 $u=0.6c$ 知 $\displaystyle \gamma=\frac{5}{4}$，故 $\Delta\tau_\text{A}=\SI{2}{\second}$ 对应 $\displaystyle \Delta t=\SI{5/2}{\second}$，由于 $B$ 钟在惯性系中静止，重逢时 $\tau_\text{B}=\SI{5}{\second}$，$\tau_{\text{A}}=\SI{4}{\second}$。
 				\item 如图
 			\end{enumerate}
 			
