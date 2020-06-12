@@ -251,7 +251,31 @@
 			选 (1)。$A$ 走了测地线，而 $B$ 不是测地线。
 		\end{jie}
 
-	\item 暂略。
+	\item 标准钟 $A$，$B$ 静止于某惯性系中的同一空间点上。$A$ 钟从某时刻开始以速率 $u=0.6c$ 匀速直线飞出，$\SI{2}{\second}$（根据$A$ 钟）后以 $u=0.6c$ 匀速直线返航。已知分手时两钟皆指零。(1) 求重逢时两钟的读数；(2) 当 $A$ 钟指 $\SI{3}{\second}$ 时看见 $B$ 钟指多少？
+	
+		\begin{jie}
+			\begin{enumerate}
+				\item 由 $u=0.6c$ 知 $\gamma=\frac{5}{4}$，故 $\Delta\tau_\text{A}=\SI{2}{\second}$ 对应 $\Delta t=\SI{5/2}{\second}$，由于 $B$ 钟在惯性系中静止，重逢时 $\tau_\text{B}=\SI{5}{\second}$，$\tau_{\text{A}}=\SI{4}{\second}$。
+				\item 如图
+			\end{enumerate}
+			
+			\begin{figure}[htb!]
+				\centering
+				\begin{tikzpicture}[scale=0.6]
+					\draw[semithick,\myarrow] (0,0) -- (0,11);
+					\draw[semithick,\myarrow] (0,0) -- (4,0);
+					\node[below left] (o) at (0,0) {$o$};
+					\node[below left] (t) at (0,11) {$t$};
+					\node[below left] (x) at (4,0) {$x$};
+					\draw[very thick,purple] (0,0) -- (3,5) -- (0,10);
+					\node[right] (a) at (3,5) {$a$};
+					\node[left] (b) at (0,10) {$b$};
+					\node[above right] (c) at (1.5,7.5) {$c$};
+					\draw[blue,\myarrow] (0,6) node[left,black]{$d$} -- (1.5,7.5);
+				\end{tikzpicture}
+				\caption{题9解答图}\label{pic-6.9}
+			\end{figure}
+		\end{jie}
 
 	\item 暂略。
 
