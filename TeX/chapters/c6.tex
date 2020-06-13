@@ -488,5 +488,68 @@
 			\end{align*}
 		\end{yl}
 	\end{zm}
+
+	\item 设瞬时观者测 $\tensor{F}{_a_b}$ 所得电场和磁场分别为 $\tensor{E}{^a}$ 和 $\tensor{B}{^a}$（也记为 $\myvec{E}$ 和 $\myvec{B}$），试证：
+	\begin{enumerate}[label=(\alph*)]
+		\item $\tensor{F}{_a_b} \tensor{F}{^a^b} = 2 \left( B^2 - E^2 \right)$，
+		\item $\tensor{F}{_a_b} \tensor[^*]{F}{^a^b} = 4 \myvec{E} \vdot \myvec{B}$。提示：可利用惯性坐标基底把 $\tensor{F}{_a_b} \tensor[^*]{F}{^a^b}$ 写成分量表达式。
+	\end{enumerate}
+	注：本题表明，虽然 $\myvec{E}$ 和 $\myvec{B}$ 都是观者依赖的，$B^2-E^2$ 和 $\myvec{E} \vdot \myvec{B}$ 却同观者无关。事实上，由 $\tensor{F}{_a_b}$ 能构造的独立的不变量只有这两个。
+
+		\begin{zm}
+			我表示并不想用分量……用分量的话矩阵相乘求迹，看官自行计算。还是几何语言看着舒服，虽然看着计算更长……
+			\begin{Lemma}
+				对任意参考系有分解式
+				\begin{equation*}
+					\tensor{F}{_a_b} = \tensor{Z}{_a} \tensor{E}{_b} - \tensor{Z}{_b} \tensor{E}{_a} + \tensor{\varepsilon}{_a_b_c} \tensor{B}{^c},
+				\end{equation*}
+				其中
+				\begin{equation*}
+					\tensor{\varepsilon}{_a_b_c} = \tensor{\varepsilon}{_d_a_b_c} \tensor{Z}{^d}
+				\end{equation*}
+				是“空间体元”（因为 $\tensor{Z}{^a}$ 未必是某超曲面法矢故加引号）。
+			\end{Lemma}
+			\begin{Proof}
+				由
+				\begin{equation*}
+					\tensor{B}{_a} = - \tensor[^*]{F}{_a_b} \tensor{Z}{^b} = - \frac{1}{2} \tensor{\varepsilon}{_a_b_c_d} \tensor{F}{^c^d} \tensor{Z}{^b} = \frac{1}{2} \tensor{\varepsilon}{_a_c_d} \tensor{F}{^c^d},
+				\end{equation*}
+				知
+				\begin{equation*}
+					\tensor{\varepsilon}{_a_b_c} \tensor{B}{^c} = \frac{1}{2} \tensor{\varepsilon}{_a_b_c} \tensor{\varepsilon}{^c^d^e} \tensor{F}{_d_e} = \tensor{h}{^{d}_{[a}} \tensor{h}{^{e}_{b]}} \tensor{F}{_d_e} = \tensor{h}{^{d}_a} \tensor{h}{^{e}_b} \tensor{F}{_d_e},
+				\end{equation*}
+				其中 $\tensor{h}{^a^b} = \tensor{\delta}{^a_b} + \tensor{Z}{^a} \tensor{Z}{_b}$ 是空间投影，而即使 $\tensor{Z}{^a}$ 不是某超曲面法矢，也可以通过展开计算证明有 $\tensor{\varepsilon}{_a_b_c} \tensor{\varepsilon}{^c^d^e} = 2\tensor{h}{^{d}_{[a}} \tensor{h}{^{e}_{b]}}$。进一步展开得
+				\begin{equation*}
+					\tensor{\varepsilon}{_a_b_c} \tensor{B}{^c} = \left( \tensor{\delta}{^d_a} + \tensor{Z}{^d} \tensor{Z}{_a} \right) \left( \tensor{\delta}{^e_b} + \tensor{Z}{^e} \tensor{Z}{_b} \right) \tensor{F}{_d_e} = \tensor{F}{_a_b} - \tensor{Z}{_a} \tensor{E}{_b} + \tensor{Z}{_b} \tensor{E}{_a}.
+				\end{equation*}
+			\end{Proof}
+			由引理直接计算：
+			\begin{enumerate}[label=(\alph*)]
+				\item 
+				\begin{equation*}
+					\begin{split}
+						\tensor{F}{_a_b} \tensor{F}{^a^b} &= \left( \tensor{Z}{_a} \tensor{E}{_b} - \tensor{Z}{_b} \tensor{E}{_a} + \tensor{\varepsilon}{_a_b_c} \tensor{B}{^c} \right) \left( \tensor{Z}{^a} \tensor{E}{^b} - \tensor{Z}{^b} \tensor{E}{^a} + \tensor{\varepsilon}{^a^b^d} \tensor{B}{_d} \right)\\
+						&= -E^2 - E^2 + \tensor{\varepsilon}{_a_b_c} \tensor{\varepsilon}{^a^b^d} \tensor{B}{^c} \tensor{B}{_d}\\
+						&= 2 \left( B^2 - E^2 \right).
+					\end{split}
+				\end{equation*}
+				\item 易算得
+				\begin{equation*}
+					\begin{split}
+						\tensor[^*]{F}{_a_b} &= \frac{1}{2} \tensor{\varepsilon}{_a_b_c_d} \tensor{F}{^c^d}\\
+						&= \frac{1}{2} \tensor{\varepsilon}{_a_b_c_d} \left( \tensor{Z}{^c} \tensor{E}{^d} - \tensor{Z}{^d} \tensor{E}{^c} + \tensor{\varepsilon}{^c^d^e} \tensor{B}{_e} \right)\\
+						&= \tensor{Z}{_b}\tensor{B}{_a} - \tensor{Z}{_a} \tensor{B}{_b} + \tensor{\varepsilon}{_a_b_c} \tensor{E}{^c},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{F}{_a_b} \tensor[^*]{F}{^a^b} &=  \left( \tensor{Z}{_a} \tensor{E}{_b} - \tensor{Z}{_b} \tensor{E}{_a} + \tensor{\varepsilon}{_a_b_c} \tensor{B}{^c} \right) \left( \tensor{Z}{^b}\tensor{B}{^a} - \tensor{Z}{^a} \tensor{B}{^b} + \tensor{\varepsilon}{^a^b^d} \tensor{E}{_d} \right)\\
+						&= \tensor{E}{_b} \tensor{E}{^b} + \tensor{E}{_a} \tensor{B}{^a} + \tensor{\varepsilon}{_a_b_c} \tensor{\varepsilon}{^a^b^d} \tensor{B}{^c} \tensor{E}{_d}\\
+						&= 4 \tensor{E}{_a} \tensor{B}{^a}.
+					\end{split}
+				\end{equation*}
+			\end{enumerate}
+		\end{zm}
 	
 \end{xiti}

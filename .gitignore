@@ -3,6 +3,8 @@
 *.out
 *.toc
 
+*.thm
+
 *.bbl
 *.bcf
 *.blg

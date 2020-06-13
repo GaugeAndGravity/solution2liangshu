@@ -29,6 +29,7 @@
 \usepackage[backref=true,style=authoryear]{biblatex}
 \usepackage{hyperref}
 \usepackage{pgfplots}
+\usepackage[amsmath,hyperref,thmmarks,framed]{ntheorem}
 
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{decorations.pathreplacing}
@@ -68,7 +69,34 @@
 %	}{%
 %	\end{list}\normalfont}
 
-\newcommand{\myvec}[1]{\vb{#1}} %定制矢量格式
+{
+	\theoremstyle{nonumberplain}
+	\theoremheaderfont{\normalfont\bfseries}
+	\theorembodyfont{\slshape}
+	\theoremsymbol{\ensuremath{\diamondsuit}}
+	\theoremseparator{.}
+	% \theoremprework{\bigskip\hrule}
+	% \theorempostwork{\hrule\bigskip}
+	\newtheorem{Theorem}{定理}
+}
+{
+	\theoremstyle{nonumberplain}
+	\theorembodyfont{\normalfont\itshape}
+	% \theoremsymbol{\ensuremath{\heartsuit}}
+	% \theoremindent0.5cm
+	% \theoremnumbering{greek}
+	\newtheorem{Lemma}{引理}
+}
+{
+	\theoremheaderfont{\upshape\bfseries}
+	\theorembodyfont{\normalfont\mdseries\itshape}
+	\theoremstyle{nonumberplain}
+	\theoremseparator{}
+	\theoremsymbol{\mbox{$\square$}}
+	\newtheorem{Proof}{证明}
+}
+
+\newcommand{\myvec}[1]{\vec{#1}} %定制矢量格式
 \newcommand{\myvu}[1]{\vu*{#1}}%单位矢量
 %\providecommand{\dd}[0]{\mathrm{d}} 
 \newcommand{\e}[1]{\mathrm{e}^{#1}}
