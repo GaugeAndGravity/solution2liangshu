@@ -29,11 +29,14 @@
 \usepackage[backref=true,style=authoryear]{biblatex}
 \usepackage{hyperref}
 \usepackage{pgfplots}
+\usepackage[listings]{tcolorbox}
 \usepackage[amsmath,hyperref,thmmarks,framed]{ntheorem}
 
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{decorations.pathreplacing}
 \usetikzlibrary{3d}
+
+\tcbuselibrary{skins,breakable}
 
 \setmonofont{Consolas}
 
@@ -72,7 +75,7 @@
 {
 	\theoremstyle{nonumberplain}
 	\theoremheaderfont{\normalfont\bfseries}
-	\theorembodyfont{\slshape}
+	\theorembodyfont{\normalfont\slshape}
 	\theoremsymbol{\ensuremath{\diamondsuit}}
 	\theoremseparator{.}
 	% \theoremprework{\bigskip\hrule}
@@ -81,6 +84,16 @@
 }
 {
 	\theoremstyle{nonumberplain}
+	\theoremheaderfont{\normalfont\bfseries}
+	\theorembodyfont{\normalfont\ttfamily\small}
+	% \theoremsymbol{\ensuremath{\diamondsuit}}
+	\theoremseparator{}
+	% \theoremprework{\bigskip\hrule}
+	% \theorempostwork{\hrule\bigskip}
+	\newtheorem{Proposition}{命题}
+}
+{
+	\theoremstyle{plain}
 	\theorembodyfont{\normalfont\itshape\small}
 	% \theoremsymbol{\ensuremath{\heartsuit}}
 	% \theoremindent0.5cm
@@ -100,8 +113,8 @@
 \newcommand{\myvu}[1]{\vu*{#1}}%单位矢量
 %\providecommand{\dd}[0]{\mathrm{d}} 
 \newcommand{\e}[1]{\mathrm{e}^{#1}}
-\newcommand{\dvt}[2][]{\dv[#1]{#2}{t}} 
-\newcommand{\pdvt}[2][]{\pdv[#1]{#2}{t}} 
+\newcommand{\dvt}[2][]{\dv[#1]{#2}{t}}
+\newcommand{\pdvt}[2][]{\pdv[#1]{#2}{t}}
 \newcommand{\pd}[1]{\pdv*{}{#1}}
 \newcommand{\liej}[1]{\ensuremath{{#1}_1,\cdots,{#1}_n}}
 \newcommand{\qqiff}{\qq{iff}}
