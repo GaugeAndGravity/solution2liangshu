@@ -697,5 +697,68 @@
 				\end{equation*}
 			\end{tcolorbox}
 		\end{zm}
+
+	\item (a) 试证 4 电流密度为 $\tensor{J}{^a}$ 的电磁场 $\tensor{F}{_a_b}$ 的能动张量 $\tensor{T}{_a_b}$ 满足 $\tensor{\partial}{^a} \tensor{T}{_a_b} = - \tensor{F}{_b_c} \tensor{J}{^c}$（由此可知当 $\tensor{J}{^a}=0$ 时有 $\tensor{\partial}{^a} \tensor{T}{_a_b} = 0$）；(b) 试证上式在惯性系中的时间分量反映能量守恒，即\cite{guo1995} 40 页式(6.2)；空间分量反映3动量守恒，即郭书220页式(7.6)。提示：用4洛伦兹力表达式(6-6-20)\footnote{正文式 (6-6-20) 为 $\tensor{F}{^a} = q \tensor{F}{^a_b} \tensor{U}{^b}$。} 把 $\tensor{F}{_b_c} \tensor{J}{^c}$ 改写为洛伦兹力密度。
+	
+		\begin{zm}
+			\begin{enumerate}[label=(\alph*)]
+				\item 先计算
+				\begin{equation*}
+					\begin{split}
+						\tensor{\partial}{^a} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} \right) &= \tensor{F}{_b_c} \tensor{\partial}{_a} \tensor{F}{^a^c} + \tensor{F}{^a^c} \tensor{\partial}{_a} \tensor{F}{_b_c}\\
+						&= - 4\pi \tensor{F}{_b_c} \tensor{J}{^c} + \tensor{F}{^a^c} \tensor{\partial}{_a} \tensor{F}{_b_c},
+					\end{split}
+				\end{equation*}
+				注意到
+				\begin{equation*}
+					\tensor{\partial}{^a} \tensor[^*]{F}{_a_b} = \frac{1}{2} \tensor{\varepsilon}{_a_b_c_d} \tensor{\partial}{^a} \tensor{F}{^c^d} = 0,
+				\end{equation*}
+				有
+				\begin{equation*}
+					\begin{split}
+						\tensor{\partial}{^a} \left( \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \right) &= \tensor[^*]{F}{^a^c} \tensor{\partial}{_a} \tensor[^*]{F}{_b_c}\\
+						&= \frac{1}{4} \tensor{\varepsilon}{^a^c^d^e} \tensor{\varepsilon}{_b_c_m_n} \tensor{F}{_d_e} \tensor{\partial}{_a} \tensor{F}{^m^n}\\
+						&= - \frac{3!}{4} \tensor{\delta}{^a_{[b}} \tensor{\delta}{^d_m} \tensor{\delta}{^e_{n]}} \tensor{F}{_d_e} \tensor{\partial}{_a} \tensor{F}{^m^n}\\
+						&= - \frac{1}{2} \left( \tensor{F}{_d_e} \tensor{\partial}{_b} \tensor{F}{^d^e} + \tensor{F}{_d_b} \tensor{\partial}{_a} \tensor{F}{^a^d} + \tensor{F}{_b_e} \tensor{\partial}{_a} \tensor{F}{^e^a} \right)\\
+						&= - \frac{1}{2} \tensor{F}{_a_c} \tensor{\partial}{_b} \tensor{F}{^a^c} + 2 \pi \tensor{F}{_d_b} \tensor{J}{^d} - 2\pi \tensor{F}{_b_e} \tensor{J}{^e}\\
+						&= - 4 \pi \tensor{F}{_b_c} \tensor{J}{^c} - \frac{1}{2} \tensor{F}{^a^c} \tensor{\partial}{_b} \tensor{F}{_a_c},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{\partial}{^a} \tensor{T}{_a_b} &= \frac{1}{8\pi} \tensor{\partial}{^a} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} + \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \right)\\
+						&= - \tensor{F}{_b_c} \tensor{J}{^c} + \frac{1}{8\pi} \left( \tensor{F}{^a^c} \tensor{\partial}{_a} \tensor{F}{_b_c} - \frac{1}{2} \tensor{F}{^a^c} \tensor{\partial}{_b} \tensor{F}{_a_c} \right)\\
+						&= - \tensor{F}{_b_c} \tensor{J}{^c} + \frac{1}{16\pi} \tensor{F}{^a^c} \left( \tensor{\partial}{_a} \tensor{F}{_b_c} + \tensor{\partial}{_c} \tensor{F}{_a_b} + \tensor{\partial}{_b} \tensor{F}{_c_a} \right)\\
+						&= - \tensor{F}{_b_c} \tensor{J}{^c}.
+					\end{split}
+				\end{equation*}
+				\item 向时间方向投影：
+				\begin{equation*}
+					\begin{split}
+						&\tensor{\partial}{^a} \left( \tensor{T}{_a_b} \tensor{Z}{^b} \right) = \tensor{\partial}{^a} \left( -\varepsilon \tensor{Z}{_a} - \tensor{w}{_a} \right)\\
+						={}& - \tensor{Z}{^b} \tensor{F}{_b_c} \tensor{J}{^c} = \tensor{E}{_c} \tensor{j}{^c},
+					\end{split}
+				\end{equation*}
+				即
+				\begin{equation*}
+					\Partial{t} \varepsilon + \nabla \vdot \myvec{w} + \myvec{E} \vdot \myvec{j} = 0,
+				\end{equation*}
+				对形如 $(t_1,t_2) \times \Sigma$ 的时空区域积分，左边前两项的积分为 $t_2-t_1$ 时间内 $\Sigma$ 内场的能量增加量，第三项积分为对电荷做功，即电荷能量的增加量，故能量守恒。
+
+				向空间投影：
+				\begin{equation*}
+					\begin{split}
+						&\tensor{h}{^b_a} \tensor{\partial}{^c} \tensor{T}{_c_b} = -\tensor{\partial}{^t} \tensor{w}{_a} + \tensor{\partial}{^c} \tensor{s}{_c_a}=\tensor{\partial}{_t} \tensor{w}{_a} + \tensor{\partial}{^c} \tensor{s}{_c_a}\\
+						={}& -\tensor{h}{^b_a} \tensor{F}{_b} = -\tensor{f}{_a},
+					\end{split}
+				\end{equation*}
+				即
+				\begin{equation*}
+					\Partial{t} \tensor{w}{^i} + \Partial{j} \tensor{s}{^j^i} + \tensor{f}{^i} = 0,
+				\end{equation*}
+				对形如 $(t_1,t_2) \times \Sigma$ 的时空区域积分，左边前两项的积分为 $t_2-t_1$ 时间内 $\Sigma$ 内场的冲量增加量，第三项积分为对电荷所做冲量，即电荷动量的增加量，故动量守恒。
+			\end{enumerate}
+		\end{zm}
 	
 \end{xiti}
