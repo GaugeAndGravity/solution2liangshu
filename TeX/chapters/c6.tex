@@ -535,13 +535,13 @@
 					\end{split}
 				\end{equation*}
 				\item 易算得
-				\begin{equation*}
+				\begin{equation}
 					\begin{split}
 						\tensor[^*]{F}{_a_b} &= \frac{1}{2} \tensor{\varepsilon}{_a_b_c_d} \tensor{F}{^c^d}\\
 						&= \frac{1}{2} \tensor{\varepsilon}{_a_b_c_d} \left( \tensor{Z}{^c} \tensor{E}{^d} - \tensor{Z}{^d} \tensor{E}{^c} + \tensor{\varepsilon}{^c^d^e} \tensor{B}{_e} \right)\\
-						&= \tensor{Z}{_b}\tensor{B}{_a} - \tensor{Z}{_a} \tensor{B}{_b} + \tensor{\varepsilon}{_a_b_c} \tensor{E}{^c},
+						&= \tensor{Z}{_b}\tensor{B}{_a} - \tensor{Z}{_a} \tensor{B}{_b} + \tensor{\varepsilon}{_a_b_c} \tensor{E}{^c},\label{eq-*F}
 					\end{split}
-				\end{equation*}
+				\end{equation}
 				故
 				\begin{equation*}
 					\begin{split}
@@ -555,78 +555,147 @@
 
 	\item 试证命题 6-6-5 （只需证后两个麦氏方程）。
 	
-	\begin{zm}
-		命题 6-6-5 如下
-		\begin{Proposition}
-			对任一惯性系 $\left\{ t,x,y,z\right\}$，由式 (6-6-10)、(6-6-11)\footnote{正文 (6-6-10) 为 $\tensor{\partial}{^a} \tensor{F}{_a_b} = - 4\pi \tensor{J}{_b}$，正文 (6-6-11) 为 $\tensor{\partial}{_{[a}} \tensor{F}{_{bc]}} = 0$。} 可导出 3 维麦氏方程
-			\begin{align*}
-				(a) \nabla \vdot \myvec{E} &= 4\pi \rho, & (b) \nabla \cross \myvec{E} &= - \pdv{\myvec{B}}{t},\\
-				(c) \nabla \vdot \myvec{B} &= 0 , & (d) \nabla \cross \myvec{B} &= 4\pi \myvec{j} + \pdvt{\myvec{E}}.
-			\end{align*}
-			其中第一、四式对应于式 (6-6-10)，第二、三式对应于式 (6-6-11)。
-		\end{Proposition}
-		证明如下：式 (c)：
-		\begin{equation*}
-			\nabla\vdot\myvec{B} = \tensor{\partial}{_a} \tensor{B}{^a} = - \tensor{\partial}{_a} \tensor[^*]{F}{^a^b} \tensor{Z}{_b} = - \frac{1}{2} \tensor{\varepsilon}{^a^b^c^d} \tensor{Z}{_b} \tensor{\partial}{_a} \tensor{F}{_c_d} = 0,
-		\end{equation*}
-		式 (d)：
-		\begin{equation*}
-			\begin{split}
-				\tensor{\hat{\varepsilon}}{^a^b^c} \tensor{\partial}{_b} \tensor{B}{_c} &= - \tensor{Z}{_d} \tensor{\varepsilon}{^d^a^b^c} \tensor{\partial}{_b} \tensor[^*]{F}{_c_e} \tensor{Z}{^e}\\
-				&= \frac{1}{2} \tensor{Z}{_d} \tensor{Z}{^e} \tensor{\varepsilon}{^c^d^a^b} \tensor{\varepsilon}{_c_e_m_n} \tensor{\partial}{_b} \tensor{F}{^m^n}\\
-				&= - \frac{3!}{2} \tensor{Z}{_d} \tensor{Z}{^e} \tensor{\delta}{^d_{[e}} \tensor{\delta}{^a_m} \tensor{\delta}{^b_{n]}} \tensor{\partial}{_b} \tensor{F}{^m^n}\\
-				&= - \tensor{Z}{_d} \tensor{Z}{^e} \left( \tensor{\delta}{^d_e} \tensor{\delta}{^a_m} \tensor{\delta}{^b_n} + \tensor{\delta}{^d_m} \tensor{\delta}{^a_n} \tensor{\delta}{^b_e} + \tensor{\delta}{^d_n} \tensor{\delta}{^a_e} \tensor{\delta}{^b_m} \right) \tensor{\partial}{_b} \tensor{F}{^m^n}\\
-				&= \tensor{\partial}{_b} \tensor{F}{^a^b} - \tensor{Z}{^b} \tensor{Z}{_d} \tensor{\partial}{_b} \tensor{F}{^d^a} - \tensor{Z}{_d} \tensor{Z}{^a} \tensor{\partial}{_b} \tensor{F}{^b^d}\\
-				&= -\tensor{h}{^a_d} \tensor{\partial}{_b} \tensor{F}{^b^d} + \tensor{Z}{^b} \tensor{\partial}{_b} \tensor{E}{^a}\\
-				&= 4\pi \tensor{j}{^a} + \partial_t \tensor{E}{^a}.
-			\end{split}
-		\end{equation*}
-		\begin{tcolorbox}[breakable,title=补充]
-			笔者认为由引理~\ref{lemma-6.15} 计算更优雅，且4维麦氏方程与3维麦氏方程的等价性非常显然。计算如下：
+		\begin{zm}
+			命题 6-6-5 如下
+			\begin{Proposition}
+				对任一惯性系 $\left\{ t,x,y,z\right\}$，由式 (6-6-10)、(6-6-11)\footnote{正文 (6-6-10) 为 $\tensor{\partial}{^a} \tensor{F}{_a_b} = - 4\pi \tensor{J}{_b}$，正文 (6-6-11) 为 $\tensor{\partial}{_{[a}} \tensor{F}{_{bc]}} = 0$。} 可导出 3 维麦氏方程
+				\begin{align*}
+					(a) \nabla \vdot \myvec{E} &= 4\pi \rho, & (b) \nabla \cross \myvec{E} &= - \pdv{\myvec{B}}{t},\\
+					(c) \nabla \vdot \myvec{B} &= 0 , & (d) \nabla \cross \myvec{B} &= 4\pi \myvec{j} + \pdvt{\myvec{E}}.
+				\end{align*}
+				其中第一、四式对应于式 (6-6-10)，第二、三式对应于式 (6-6-11)。
+			\end{Proposition}
+			证明如下：式 (c)：
+			\begin{equation*}
+				\nabla\vdot\myvec{B} = \tensor{\partial}{_a} \tensor{B}{^a} = - \tensor{\partial}{_a} \tensor[^*]{F}{^a^b} \tensor{Z}{_b} = - \frac{1}{2} \tensor{\varepsilon}{^a^b^c^d} \tensor{Z}{_b} \tensor{\partial}{_a} \tensor{F}{_c_d} = 0,
+			\end{equation*}
+			式 (d)：
+			\begin{equation*}
+				\begin{split}
+					\tensor{\hat{\varepsilon}}{^a^b^c} \tensor{\partial}{_b} \tensor{B}{_c} &= - \tensor{Z}{_d} \tensor{\varepsilon}{^d^a^b^c} \tensor{\partial}{_b} \tensor[^*]{F}{_c_e} \tensor{Z}{^e}\\
+					&= \frac{1}{2} \tensor{Z}{_d} \tensor{Z}{^e} \tensor{\varepsilon}{^c^d^a^b} \tensor{\varepsilon}{_c_e_m_n} \tensor{\partial}{_b} \tensor{F}{^m^n}\\
+					&= - \frac{3!}{2} \tensor{Z}{_d} \tensor{Z}{^e} \tensor{\delta}{^d_{[e}} \tensor{\delta}{^a_m} \tensor{\delta}{^b_{n]}} \tensor{\partial}{_b} \tensor{F}{^m^n}\\
+					&= - \tensor{Z}{_d} \tensor{Z}{^e} \left( \tensor{\delta}{^d_e} \tensor{\delta}{^a_m} \tensor{\delta}{^b_n} + \tensor{\delta}{^d_m} \tensor{\delta}{^a_n} \tensor{\delta}{^b_e} + \tensor{\delta}{^d_n} \tensor{\delta}{^a_e} \tensor{\delta}{^b_m} \right) \tensor{\partial}{_b} \tensor{F}{^m^n}\\
+					&= \tensor{\partial}{_b} \tensor{F}{^a^b} - \tensor{Z}{^b} \tensor{Z}{_d} \tensor{\partial}{_b} \tensor{F}{^d^a} - \tensor{Z}{_d} \tensor{Z}{^a} \tensor{\partial}{_b} \tensor{F}{^b^d}\\
+					&= -\tensor{h}{^a_d} \tensor{\partial}{_b} \tensor{F}{^b^d} + \tensor{Z}{^b} \tensor{\partial}{_b} \tensor{E}{^a}\\
+					&= 4\pi \tensor{j}{^a} + \partial_t \tensor{E}{^a}.
+				\end{split}
+			\end{equation*}
+			\begin{tcolorbox}[breakable,title=补充,fonttitle=\normalfont\bfseries]
+				笔者认为由引理~\ref{lemma-6.15} 计算更优雅，且4维麦氏方程与3维麦氏方程的等价性非常显然。计算如下：
 
-			由引理~\ref{lemma-6.15} 知
-			% \begin{equation*}
-			% 	\begin{split}
-			% 		\tensor{\partial}{_a} \tensor{F}{_b_c} &= \tensor{\partial}{_a} \left( \tensor{Z}{_b} \tensor{E}{_c} - \tensor{Z}{_c} \tensor{E}{_b} + \tensor{\varepsilon}{_b_c_d} \tensor{B}{^d} \right)
-			% 	\end{split}
-			% \end{equation*}
-			% 知
-			% \begin{equation*}
-			% 	\tensor{\partial}{^a} \tensor{F}{_a_c} = \partial_t \tensor{E}{_c} 
-			% \end{equation*}
+				由引理~\ref{lemma-6.15} 知
+				% \begin{equation*}
+				% 	\begin{split}
+				% 		\tensor{\partial}{_a} \tensor{F}{_b_c} &= \tensor{\partial}{_a} \left( \tensor{Z}{_b} \tensor{E}{_c} - \tensor{Z}{_c} \tensor{E}{_b} + \tensor{\varepsilon}{_b_c_d} \tensor{B}{^d} \right)
+				% 	\end{split}
+				% \end{equation*}
+				% 知
+				% \begin{equation*}
+				% 	\tensor{\partial}{^a} \tensor{F}{_a_c} = \partial_t \tensor{E}{_c} 
+				% \end{equation*}
+				\begin{equation*}
+					\begin{split}
+						\tensor{\partial}{^a} \tensor{F}{_a_b} &= \tensor{\partial}{^a} \left( \tensor{Z}{_a} \tensor{E}{_b} - \tensor{Z}{_b} \tensor{E}{_a} + \tensor{\varepsilon}{_a_b_c} \tensor{B}{^c} \right) = {\color{blue}\Partial{t} \tensor{E}{_b}} {\color{green} {}-\tensor{Z}{_b} \tensor{\partial}{^a} \tensor{E}{_a}} {\color{blue}{}-\tensor{\varepsilon}{_b_a_c} \tensor{\partial}{^a} \tensor{B}{^c}}\\
+						&= -4\pi\tensor{J}{_b} = {\color{green} -4\pi \rho \tensor{Z}{_b}} {\color{blue}{}-4\pi\tensor{j}{_b}},
+					\end{split}
+				\end{equation*}
+				其中蓝色表示空间张量，绿色表示正比于 $\tensor{Z}{_a}$ 的时间部分，故可直接读出
+				\begin{equation*}
+					\tensor{\partial}{_a} \tensor{E}{^a} = 4\pi \rho , \qq{或} \nabla \vdot \myvec{E} = 4 \pi \rho,
+				\end{equation*}
+				以及
+				\begin{equation*}
+					\Partial{t} \tensor{E}{_a} - \tensor{\varepsilon}{_a_b_c} \tensor{\partial}{^b} \tensor{B}{^c} = - 4\pi \tensor{j}{_a}, \qq{或} \nabla\cross \myvec{B} = 4\pi \myvec{j} + \pdvt{\myvec{E}},
+				\end{equation*}
+				同样地，由
+				\begin{equation*}
+					\begin{split}
+						\tensor{\varepsilon}{^a^b^c^d} \tensor{\partial}{_{b}} \tensor{F}{_{cd}} &= \tensor{\varepsilon}{^a^b^c^d} \tensor{Z}{_c}\tensor{\partial}{_{b}}  \tensor{E}{_d} + \tensor{\varepsilon}{^a^b^c^d} \tensor{\varepsilon}{_f_c_d_e} \tensor{Z}{^f} \tensor{\partial}{_b} \tensor{B}{^e}\\
+						&= \tensor{\varepsilon}{^a^b^d} \tensor{\partial}{_b} \tensor{E}{_d} - \left( \tensor{\delta}{^a_f} \tensor{\delta}{^b_e}- \tensor{\delta}{^a_e} \tensor{\delta}{^b_f} \right) \tensor{Z}{^f} \tensor{\partial}{_b} \tensor{B}{^e}\\
+						&= {\color{blue} \tensor{\varepsilon}{^a^b^d} \tensor{\partial}{_b} \tensor{E}{_d}} {\color{green} {}-\tensor{Z}{^a}\tensor{\partial}{_b} \tensor{B}{^b}} {\color{blue}{}+\Partial{t} \tensor{B}{^a}}\\
+						&=0
+					\end{split}
+				\end{equation*}
+				直接读出
+				\begin{equation*}
+					\tensor{\partial}{_a} \tensor{B}{^a} = 0 \qq{或} \nabla \vdot \myvec{B} = 0,
+				\end{equation*}
+				及
+				\begin{equation*}
+					\tensor{\varepsilon}{^a^b^d} \tensor{\partial}{_b} \tensor{E}{_d} + \Partial{t} \tensor{B}{^a} = 0 \qq{或} \nabla \cross \myvec{B} = - \pdvt{\myvec{B}}.
+				\end{equation*}
+				这样不仅很快推出了四条三维麦氏方程，而且显然四条三麦氏方程包含了两条四维方程的所有信息。此外，以上计算容易推广到非惯性系乃至弯曲时空任意参考系的一般情况，看官读过中册 \S 14.1 后不妨尝试。
+			\end{tcolorbox}
+		\end{zm}
+
+	\item 试证瞬时观者测得的电磁场能量密度和3动量密度分别为 $\tensor{T}{_0_0} = \left( E^2 + B^2 \right)/8\pi$ 和 $\tensor{w}{_i} = - \tensor{T}{_i_0} = \tensor{\left( \myvec{E} \cross \myvec{B} \right)}{_i}/4\pi$，$i=1,2,3$。提示：用 $\tensor{F}{_a_b}$ 的对称表达式 (6-6-28')\footnote{正文(6-6-28')为$\displaystyle\tensor{T}{_a_b} = \frac{1}{8\pi} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} + \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \right)$。} 可简化 $\tensor{T}{_0_0}$ 的计算。
+	
+		\begin{zm}
+			% 吐槽：明明用6-6-28和6-6-28'没啥区别嘛……反正 $\tensor{F}{_a_b} \tensor{F}{^a^b}$ 在 15 题已经算过了……
+			直接计算
 			\begin{equation*}
 				\begin{split}
-					\tensor{\partial}{^a} \tensor{F}{_a_b} &= \tensor{\partial}{^a} \left( \tensor{Z}{_a} \tensor{E}{_b} - \tensor{Z}{_b} \tensor{E}{_a} + \tensor{\varepsilon}{_a_b_c} \tensor{B}{^c} \right) = {\color{blue}\Partial{t} \tensor{E}{_b}} {\color{green} {}-\tensor{Z}{_b} \tensor{\partial}{^a} \tensor{E}{_a}} {\color{blue}{}-\tensor{\varepsilon}{_b_a_c} \tensor{\partial}{^a} \tensor{B}{^c}}\\
-					&= -4\pi\tensor{J}{_b} = {\color{green} -4\pi \rho \tensor{Z}{_b}} {\color{blue}{}-4\pi\tensor{j}{_b}},
+					\tensor{T}{_0_0} &= \tensor{T}{_a_b} \tensor{Z}{^a} \tensor{Z}{^b}\\
+					&= \frac{1}{8\pi} \tensor{Z}{^a} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} + \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \right) \tensor{Z}{^b}\\
+					&= \frac{1}{8\pi} \left( E^2 + B^2 \right),
 				\end{split}
 			\end{equation*}
-			其中蓝色表示空间张量，绿色表示正比于 $\tensor{Z}{_a}$ 的时间部分，故可直接读出
-			\begin{equation*}
-				\tensor{\partial}{_a} \tensor{E}{^a} = 4\pi \rho , \qq{或} \nabla \vdot \myvec{E} = 4 \pi \rho,
-			\end{equation*}
-			以及
-			\begin{equation*}
-				\Partial{t} \tensor{E}{_a} - \tensor{\varepsilon}{_a_b_c} \tensor{\partial}{^b} \tensor{B}{^c} = - 4\pi \tensor{j}{_a}, \qq{或} \nabla\cross \myvec{B} = 4\pi \myvec{j} + \pdvt{\myvec{E}},
-			\end{equation*}
-			同样地，由
+			而
 			\begin{equation*}
 				\begin{split}
-					\tensor{\varepsilon}{^a^b^c^d} \tensor{\partial}{_{b}} \tensor{F}{_{cd}} &= \tensor{\varepsilon}{^a^b^c^d} \tensor{Z}{_c}\tensor{\partial}{_{b}}  \tensor{E}{_d} + \tensor{\varepsilon}{^a^b^c^d} \tensor{\varepsilon}{_f_c_d_e} \tensor{Z}{^f} \tensor{\partial}{_b} \tensor{B}{^e}\\
-					&= \tensor{\varepsilon}{^a^b^d} \tensor{\partial}{_b} \tensor{E}{_d} - \left( \tensor{\delta}{^a_f} \tensor{\delta}{^b_e}- \tensor{\delta}{^a_e} \tensor{\delta}{^b_f} \right) \tensor{Z}{^f} \tensor{\partial}{_b} \tensor{B}{^e}\\
-					&= {\color{blue} \tensor{\varepsilon}{^a^b^d} \tensor{\partial}{_b} \tensor{E}{_d}} {\color{green} {}-\tensor{Z}{^a}\tensor{\partial}{_b} \tensor{B}{^b}} {\color{blue}{}+\Partial{t} \tensor{B}{^a}}\\
-					&=0
+					\tensor{w}{_a} &= - \tensor{h}{^b_a} \tensor{Z}{^c} \tensor{T}{_b_c}\\
+					&= - \frac{1}{4\pi} \tensor{h}{^b_a} \tensor{Z}{^c} \left( \tensor{F}{_b_d} \tensor{F}{_c^d} - \frac{1}{4} \tensor{F}{_d_e} \tensor{F}{^d^e} \tensor{\eta}{_b_c} \right)\\
+					&= \frac{1}{4\pi} \tensor{h}{^b_a} \tensor{E}{^d} \tensor{F}{_b_d}\\
+					&= \frac{1}{4\pi} \tensor{\varepsilon}{_a_d_e} \tensor{E}{^d} \tensor{B}{^e},
 				\end{split}
 			\end{equation*}
-			直接读出
+			其中最后一个等号用了引理~\ref{lemma-6.15}，此式即三维语言的
 			\begin{equation*}
-				\tensor{\partial}{_a} \tensor{B}{^a} = 0 \qq{或} \nabla \vdot \myvec{B} = 0,
+				\myvec{w} = \frac{1}{4\pi} \myvec{E} \cross \myvec{B}.
 			\end{equation*}
-			及
-			\begin{equation*}
-				\tensor{\varepsilon}{^a^b^d} \tensor{\partial}{_b} \tensor{E}{_d} + \Partial{t} \tensor{B}{^a} = 0 \qq{或} \nabla \cross \myvec{B} = - \pdvt{\myvec{B}}.
-			\end{equation*}
-			这样不仅很快推出了四条三维麦氏方程，而且显然四条三麦氏方程包含了两条四维方程的所有信息。此外，以上计算容易推广到非惯性系乃至弯曲时空任意参考系的一般情况，看官读过中册 \S 14.1 后不妨尝试。
-		\end{tcolorbox}
-	\end{zm}
+
+			\begin{tcolorbox}[breakable,title=补充,fonttitle=\normalfont\bfseries]
+				由引理~\ref{lemma-6.15}，容易直接把 $\tensor{T}{_a_b}$ 算出来。首先，
+				\begin{equation*}
+					\begin{split}
+						\tensor{F}{_a_c} \tensor{F}{_b^c} &= \left( \tensor{Z}{_a} \tensor{E}{_c} - \tensor{Z}{_c} \tensor{E}{_a} + \tensor{\varepsilon}{_a_c_d} \tensor{B}{^d} \right) \left( \tensor{Z}{_b} \tensor{E}{^c} - \tensor{Z}{^c} \tensor{E}{_b} + \tensor{\varepsilon}{_b^c^e} \tensor{B}{_e} \right)\\
+						&= E^2 \tensor{Z}{_a} \tensor{Z}{_b} + \tensor{Z}{_a} \tensor{\varepsilon}{_b_c_e} \tensor{E}{^c} \tensor{B}{^e} - \tensor{E}{_a} \tensor{E}{_b} + \tensor{Z}{_b} \tensor{\varepsilon}{_a_c_d} \tensor{E}{^c} \tensor{B}{^d} + B^2 \tensor{\delta}{_a_b} - \tensor{B}{_a} \tensor{B}{_b}\\
+						&= E^2 \tensor{Z}{_a} \tensor{Z}{_b} + 2\tensor{Z}{_{(a}} \tensor{\varepsilon}{_{b)}_c_e} \tensor{E}{^c} \tensor{B}{^e} + B^2 \tensor{\delta}{_a_b} - \tensor{E}{_a} \tensor{E}{_b} - \tensor{B}{_a} \tensor{B}{_b},
+					\end{split}
+				\end{equation*}
+				由~\eqref{eq-*F} 知 $*$ 运算的效果为
+				\begin{equation*}
+					\tensor{E}{_a} \mapsto - \tensor{B}{_a} \qc \tensor{B}{_a} \mapsto \tensor{E}{_a},
+				\end{equation*}
+				故直接写出
+				\begin{equation*}
+					\begin{split}
+						\tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} &= B^2 \tensor{Z}{_a} \tensor{Z}{_b} - 2\tensor{Z}{_{(a}} \tensor{\varepsilon}{_{b)}_c_e} \tensor{B}{^c} \tensor{E}{^e} + E^2 \tensor{\delta}{_a_b} - \tensor{B}{_a} \tensor{B}{_b} - \tensor{E}{_a} \tensor{E}{_b}\\
+						&= B^2 \tensor{Z}{_a} \tensor{Z}{_b} + 2\tensor{Z}{_{(a}} \tensor{\varepsilon}{_{b)}_c_e} \tensor{E}{^c} \tensor{B}{^e} + E^2 \tensor{\delta}{_a_b} - \tensor{E}{_a} \tensor{E}{_b} - \tensor{B}{_a} \tensor{B}{_b},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{T}{_a_b} &= \frac{1}{8\pi} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} + \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \right)\\
+						&= \frac{1}{8\pi} \Big[ {\color{green} \left( E^2 + B^2 \right) \tensor{Z}{_a} \tensor{Z}{_b}} + {\color{orange} 4 \tensor{Z}{_{(a}} \tensor{\varepsilon}{_{b)}_c_d} \tensor{E}{^c} \tensor{B}{^d}} \\
+						&\qquad\qquad {}+ {\color{blue} \left( E^2 + B^2 \right) \tensor{\delta}{_a_b} - 2 \tensor{E}{_a} \tensor{E}{_b} - 2 \tensor{B}{_a} \tensor{B}{_b}} \Big],
+					\end{split}
+				\end{equation*}
+				容易读出能量密度
+				\begin{equation*}
+					\varepsilon = \tensor{Z}{^a} \tensor{Z}{^b} \tensor{T}{_a_b} = \frac{1}{8\pi} \left( E^2 + B^2 \right),
+				\end{equation*}
+				3动量密度或玻印亭矢量
+				\begin{equation*}
+					\tensor{w}{_a} = - \tensor{h}{^b_a} \tensor{Z}{^c} \tensor{T}{_b_c} = \frac{1}{4\pi} \tensor{\varepsilon}{_a_c_d} \tensor{E}{^c} \tensor{B}{^d},
+				\end{equation*}
+				及应力张量，或麦克斯韦张量
+				\begin{equation*}
+					\tensor{s}{_a_b} = \tensor{h}{^c_a} \tensor{h}{^d_b} \tensor{T}{_c_d} = \frac{1}{4\pi} \left[ \frac{1}{2} \left( E^2 + B^2 \right) \tensor{\delta}{_a_b} - \tensor{E}{_a} \tensor{E}{_b} - \tensor{B}{_a} \tensor{B}{_b} \right].
+				\end{equation*}
+			\end{tcolorbox}
+		\end{zm}
 	
 \end{xiti}
