@@ -789,5 +789,27 @@
 				\tensor{B}{^a} = \tensor{\varepsilon}{^a^b^c} \tensor{\hat{\partial}}{_b} \tensor{a}{_c} \qq{或} \myvec{B} = \nabla \cross \myvec{a}.
 			\end{equation*}
 		\end{zm}
+
+	\item 在选读 6-1-1 中，(a) 试证 $\Nabla{a} \tensor{\left( \dd{t} \right)}{_b} = 0$，其中 $t$ 为绝对时间，$\Nabla{a}$ 为牛顿时空的导数算符【提示：从式(5-7-2)\footnote{正文式(5-7-2) 为 $\displaystyle \tensor{\left( \pdv{x^\tau} \right)}{^b} \Nabla{b} \tensor{\left( \pdv{x^\mu} \right)}{^a} = \ChristoffelSymbol{\sigma}{\mu}{\tau} \tensor{\left( \pdv{x^\sigma} \right)}{^a}$。}出发。】；(b) 设 $\tensor{w}{^a}$ 为空间矢量（即切于绝对同时面的矢量），$\tensor{v}{^a}$ 为任一4维矢量，试证 $\tensor{v}{^a} \Nabla{a} \tensor{w}{^b}$ 仍为空间矢量【提示：注意$\Nabla{a} t$ 是绝对同时面的法余矢。】。
+	
+		\begin{zm}
+			\begin{enumerate}[label=(\alph*)]
+				\item 由 (5-7-2) 得
+				\begin{equation*}
+					\begin{split}
+						\Nabla{\mu} \tensor{\left( \dd{t} \right)}{_\nu} &= \tensor{\left( \pdv{x^\mu} \right)}{^a} \tensor{\left( \pdv{x^\nu} \right)}{^b} \Nabla{a} \tensor{\left( \dd{t} \right)}{_b}\\
+						&= - \tensor{\left( \dd{t} \right)}{_b} \tensor{\left( \pdv{x^\mu} \right)}{^a} \Nabla{a} \tensor{\left( \pdv{x^\nu} \right)}{^b}\\
+						&= - \tensor{\left( \dd{t} \right)}{_b} \ChristoffelSymbol{\sigma}{\mu}{\nu} \tensor{\left( \pdv{x^\sigma} \right)}{^b}\\
+						&= - \ChristoffelSymbol{0}{\mu}{\nu},
+					\end{split}
+				\end{equation*}
+				由 $\ChristoffelSymbol{\mu}{\nu}{\sigma}$ 在选定特定坐标系下的特殊形式，上式为零。
+				\item 由(a) 知 $\Nabla{a} \Nabla{b} t =0$，故
+				\begin{equation*}
+					\tensor{v}{^a} \left( \Nabla{a} \tensor{w}{^b} \right) \Nabla{b} t = \tensor{v}{^a} \Nabla{a} \left( \tensor{w}{^b} \Nabla{b} t \right) - \tensor{v}{^a} \tensor{w}{^b} \Nabla{a} \Nabla{b} t = 0,
+				\end{equation*}
+				故 $\tensor{v}{^a} \Nabla{a} \tensor{w}{^b}$ 是空间矢量。
+			\end{enumerate}
+		\end{zm}
 	
 \end{xiti}
