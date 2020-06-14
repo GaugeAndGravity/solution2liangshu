@@ -760,5 +760,34 @@
 				对形如 $(t_1,t_2) \times \Sigma$ 的时空区域积分，左边前两项的积分为 $t_2-t_1$ 时间内 $\Sigma$ 内场的冲量增加量，第三项积分为对电荷所做冲量，即电荷动量的增加量，故动量守恒。
 			\end{enumerate}
 		\end{zm}
+
+	\item 试证式 (6-6-29)\footnote{正文式 (6-6-29) 为 $\tensor{A}{_a} = - \phi \tensor{(\dd{t})}{_a} + \tensor{a}{_a}$。} 中的 $\tensor{a}{^a}$ 和 $\phi$ 满足 $\myvec{B} = \nabla \cross \myvec{a}$ 和 $\myvec{E} = -\nabla \phi - \pdv*{\myvec{a}}{t}$，因而的确是电动力学中的3矢势和标势。
+	
+		\begin{zm}
+			由 $\tensor{A}{_a} = \phi \tensor{Z}{_a} + \tensor{a}{_a}$ 得
+			\begin{equation*}
+				\begin{split}
+					\tensor{\partial}{_{a}} \tensor{A}{_b} &= \tensor{\delta}{^c_a} \tensor{\partial}{_c} \tensor{A}{_b}\\
+					&= \left( - \tensor{Z}{_a} \tensor{\partial}{_t} + \tensor{\hat{\partial}}{_a} \right) \left( \phi \tensor{Z}{_b} + \tensor{a}{_b} \right)\\
+					&= - \tensor{Z}{_a} \tensor{Z}{_b} \Partial{t} \phi - \tensor{Z}{_a} \Partial{t} \tensor{a}{_b} + \tensor{Z}{_b} \tensor{\hat{\partial}}{_a} \phi + \tensor{\hat{\partial}}{_a} \tensor{a}{_b},
+				\end{split}
+			\end{equation*}
+			故
+			\begin{equation*}
+				\begin{split}
+					\tensor{F}{_a_b} &= 2 \tensor{\partial}{_{[a}} \tensor{A}{_{b]}}\\
+					&= - 2\tensor{Z}{_{[a}} \tensor{\partial}{_t} \tensor{a}{_{b]}} - 2\tensor{Z}{_{[a}} \tensor{\hat{\partial}}{_{b]}} \phi +2 \tensor{\hat{\partial}}{_{[a}} \tensor{a}{_{b]}}\\
+					&= - 2\tensor{Z}{_{[a}} \tensor{\partial}{_t} \tensor{a}{_{b]}} - 2\tensor{Z}{_{[a}} \tensor{\hat{\partial}}{_{b]}} \phi + \tensor{\varepsilon}{_e_a_b} \tensor{\varepsilon}{^e^c^d} \tensor{\hat{\partial}}{_c} \tensor{a}{_d},
+				\end{split}
+			\end{equation*}
+			与引理~\ref{lemma-6.15} 对比，即知
+			\begin{equation*}
+				\tensor{E}{^a} = - \Partial{t} \tensor{a}{^a} - \tensor{\hat{\partial}}{^a} \phi \qq{或} \myvec{E} = - \pdvt{\myvec{a}} - \nabla \phi,
+			\end{equation*}
+			及
+			\begin{equation*}
+				\tensor{B}{^a} = \tensor{\varepsilon}{^a^b^c} \tensor{\hat{\partial}}{_b} \tensor{a}{_c} \qq{或} \myvec{B} = \nabla \cross \myvec{a}.
+			\end{equation*}
+		\end{zm}
 	
 \end{xiti}
