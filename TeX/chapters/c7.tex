@@ -26,10 +26,10 @@
     
     \begin{zm}
     	性质3如下：
-    	\begin{yl}{Prp}
+    	\begin{Property}
     		若 $\tensor{w}{^a}$ 是 $G(\tau)$ 上的空间矢量场(对线上各点 $\tensor{w}{^a} \tensor{Z}{_a} = 0$ )，则 \[ \Fdd{\tensor{w}{^a}} = \tensor{h}{^a_b} \left( \Ddd{\tensor{w}{^b}} \right), \] 其中 $\tensor{h}{^a_b} = \tensor{g}{_a_b} + \tensor{Z}{_a} \tensor{Z}{_b}$ ，$\tensor{h}{^a_b} = \tensor{g}{^a^c} \tensor{h}{_c_b}$ 是 $G(\tau)$ 上各点的投影映射。
-    	\end{yl}
-    	\begin{yl}{Prf}
+    	\end{Property}
+    	\begin{Proof}
     		$\tensor{h}{^a_b} = \tensor{g}{^a^c} \left( \tensor{g}{_c_b} + \tensor{Z}{_c} \tensor{Z}{_b} \right) = \tensor{\delta}{^a_b} + \tensor{Z}{^a} \tensor{Z}{_b},$
     		\begin{align*}
     		\tensor{h}{^a_b} \Dd{\tensor{w}{^b}} &= \left( \tensor{\delta}{^a_b} + \tensor{Z}{^a} \tensor{Z}{_b} \right) \Dd{\tensor{w}{^b}}\\
@@ -38,13 +38,28 @@
     		&= \Dd{\tensor{w}{^a}} + \left(\tensor{A}{^a} \tensor{Z}{^b} - \tensor{Z}{^a} \tensor{A}{^b}\right) \tensor{w}{_b}\\
     		&= \Fd{\tensor{w}{^a}}.
     		\end{align*}
-    	\end{yl}
+    	\end{Proof}
     \end{zm}
     
     \item 试证类时线 $G(\tau)$ 上长度不变(且非零)的矢量场必经受时空转动。提示：令 $\tensor{u}{^a} \equiv \Ddd{\tensor{v}{^a}}$，则 $\tensor{u}{_a} \tensor{v}{^a}=0$。先证：无论 $\tensor{v}{_a}\tensor{v}{^a}$ 为零与否，总有 $G(\tau)$ 上矢量场 $\tensor{{v'}}{^a}$ 使 $\tensor{{v'}}{_a} \tensor{v}{^a} = 1$ 。再验证 $\tensor{v}{^a}$ 经受以 $\tensor{\Omega}{_a_b} \equiv 2 \tensor{{v'}}{_{[a}} \tensor{u}{_{b]}}$ 为角速度 2 形式的时空转动。
     
-    \begin{zm}
-    	记 $\displaystyle \tensor{u}{^a} = \Dd{\tensor{v}{^a}}$ ，则 $\displaystyle \Dd{\left(\tensor{v}{_a}\tensor{v}{^a}\right)} = 2\tensor{u}{_a} \tensor{v}{^a}=0$ 。
+	\begin{zm}
+		\begin{enumerate}
+			\item 记 $\displaystyle \tensor{u}{^a} = \Dd{\tensor{v}{^a}}$ ，则 $\displaystyle \Dd{\left(\tensor{v}{_a}\tensor{v}{^a}\right)} = 2\tensor{u}{_a} \tensor{v}{^a}=0$ 。
+			\item 若 $\tensor{v}{^a} \tensor{v}{_a} \neq 0$，令
+			\begin{equation*}
+				\tensor{{v'}}{^a} = \frac{\tensor{v}{^a}}{\tensor{v}{^b} \tensor{v}{^b}},
+			\end{equation*}
+			若 $\tensor{v}{^a} \tensor{v}{_a} = 0$，则 $\tensor{Z}{^a} \tensor{v}{_a}$ 不为零，因为与类时矢量内积为零则为类空矢量。于是定义
+			\begin{equation*}
+				\tensor{{v'}}{^a} = \frac{\tensor{Z}{^a}}{\tensor{Z}{^b} \tensor{v}{_b}}.
+			\end{equation*}
+			\item 定义 $\tensor{\Omega}{_a_b} = 2 \tensor{{v'}}{_{[a}} \tensor{u}{_{b]}}$，则
+			\begin{equation*}
+				- \tensor{\Omega}{^a^b} \tensor{v}{_b} = \tensor{u}{^a} = \Dd{\tensor{v}{^a}},
+			\end{equation*}
+			故 $\tensor{v}{^a}$ 经受以 $\tensor{\Omega}{_a_b}$ 为角速度 2 形式的时空转动。
+		\end{enumerate}
     \end{zm}
     
 \end{xiti}
