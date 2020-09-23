@@ -11,6 +11,10 @@
 
 *.run.xml
 
+*.fdb_latexmk
+*.fls
+*.xdv
+
 *.synctex
 *.synctex(busy)
 *.synctex.gz

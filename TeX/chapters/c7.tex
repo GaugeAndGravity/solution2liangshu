@@ -22,7 +22,7 @@
     	\end{align*}
     \end{zm}
     
-    \item 试证费米导数性质3.
+    \item 试证费米导数性质3.\label{prob-7.3}
     
     \begin{zm}
     	性质3如下：
@@ -67,7 +67,84 @@
 		T = A^{-1} \sinh A\tau \qc X = A^{-1} \cosh A\tau \qc Y=Z=0 \qc \text{（其中$A$ 为常数）}
 	\end{equation*}
 	\begin{enumerate}[label=(\alph*)]
-		\item 试证 $G(\tau)$ 是类时双曲线（即图(6-43)\footnote{即本文档图~\hyperlink{t6}{6.13}} 中的 $G$）
+		\item 试证 $G(\tau)$ 是类时双曲线（即图(6-43)\footnote{即本文档图~\hyperlink{t6}{6.13}} 中的 $G$），$\tau$ 是固有时，$A$ 是 $G(\tau)$ 的 4 加速 $\tensor{A}{^a}$ 的长度。
+		\item 试证从 $\left\{ T,X,Y,Z \right\}$ 坐标系原点 $o$ 出发的与 $G(\tau)$ 有交的任一半直线 $\mu(s)$ 都与 $G(\tau)$ 正交。
+		\item 设(b)中的 $\mu(s)$ 的参数 $s$ 是 $\mu$ 的线长，随着 $\mu(s)$ 取遍所有从 $o$ 出发并与 $G(\tau)$ 有交的半直线，便得 $G(\tau)$ 上的一个空间矢量场 $\tensor{w}{^a} \equiv \tensor{\left( \pdv*{s} \right)}{^a}$，试证 $\tensor{w}{^a}$ 沿 $G(\tau)$ 费移。
+		\item 令 $\tensor{Z}{^a} \equiv \tensor{\left( \pdv*{s} \right)}{^a}$，选 $\left\{ \tensor{Z}{^a}, \tensor{w}{^a}, \tensor{\left( \pdv*{Y} \right)}{^a}, \tensor{\left( \pdv*{Z} \right)}{^a} \right\}$ 为 $G(\tau)$ 上的正交归一 4 标架场，求出 $G(\tau)$ 的固有坐标系 $\left\{ t, x, y, z \right\}$ 并指出其坐标域。
+		
+		答： $T=\left( A^{-1} + x \right) \sinh At \qc X= \left( A^{-1} + x \right) \cosh At \qc Y=y \qc Z=z$。
+
+		\item 写出闵氏时空在上述固有坐标系中的线元表达式。计算闵氏度规在该系的克氏符，验证它满足引理 7-4-3，即式 (7-4-10)\footnote{正文 (7-4-10) 为
+		\begin{equation*}
+			\begin{gathered}
+				\ChristoffelSymbol{0}{0}{0} = \ChristoffelSymbol{\sigma}{i}{j} = 0 \qc \ChristoffelSymbol{0}{0}{i} = \ChristoffelSymbol{0}{i}{0} = \ChristoffelSymbol{i}{0}{0} = \tensor{\hat{A}}{_i},\\
+				\ChristoffelSymbol{i}{0}{j} = \ChristoffelSymbol{i}{j}{0} = - \tensor{\omega}{^k} \tensor{\varepsilon}{_0_k_i_j} \qc \sigma = 0,1,2,3; \quad i,j,k = 1,2,3.
+			\end{gathered}
+		\end{equation*}
+		}。
 	\end{enumerate}
+
+		\begin{zm}
+			\begin{enumerate}[label=(\alph*)]
+				\item 由 $\cosh^2 x - \sinh^2 x = 1$ 知 $\left( A T \right)^2 - \left( A X \right)^2 = 1$，故这是渐近线为 $T=\pm X$ 的双曲线。
+				\item 与 $G$ 交于 $\tau$ 处的 $\mu$ 的方程为
+				\begin{equation*}
+					T = \tanh(A\tau) X,
+				\end{equation*}
+				故其在 $G(\tau)$ 处的切矢正比于
+				\begin{equation*}
+					\tensor{\left( \pdv{s} \right)}{^a} = \sinh(A\tau)\tensor{\left( \pdv{T} \right)}{^a} + \cosh(A\tau) \tensor{\left( \pdv{X} \right)}{^a},
+				\end{equation*}
+				而
+				\begin{equation*}
+					\tensor{\left( \pdv{\tau} \right)}{^a} = \cosh(A\tau) \tensor{\left( \pdv{T} \right)}{^a} + \sinh(A\tau) \tensor{\left( \pdv{X} \right)}{^a},
+				\end{equation*}
+				可算得
+				\begin{equation*}
+					\tensor{\left( \pdv{s} \right)}{^a} \tensor{\left( \pdv{\tau} \right)}{_a} = - \cosh(A\tau) \sinh(A\tau) + \cosh(A\tau) \sinh(A\tau) =0.
+				\end{equation*}
+				\item 在 (b) 中给出的 $\tensor{\left( \pdv*{s} \right)}{^a}$ 已经是归一的，因而就是 $\tensor{w}{^a}$。
+				由(b) 和习题~\hyperref[prob-7.3]{3}，知
+				\begin{equation*}
+					\begin{split}
+						\Fd{\tensor{w}{^a}} &= \tensor{h}{^a_b} \Dd{\tensor{w}{^b}}\\
+						&= \tensor{h}{^a_b} \tensor{Z}{^c} \Nabla{c} \tensor{w}{^b}\\
+						&= \tensor{h}{^a_b} \left( A \cosh(A\tau) \tensor{\left( \pdv{T} \right)}{^b} + A \sinh(A\tau) \tensor{\left( \pdv{X} \right)}{^b} \right)\\
+						&= A \tensor{h}{^a_b} \tensor{Z}{^b}\\
+						&= 0,
+					\end{split}
+				\end{equation*}
+				其中 $\tensor{Z}{^a} = \tensor{\left( \pdv*{\tau} \right)}{^a}$，故 $\tensor{w}{^a}$ 沿 $G(\tau)$ 费移。
+				\item 以 $G(0)$ 为坐标原点，$\left\{ t,0,0,0\right\}$ 对应的点为 $G(t)$，即
+				\begin{equation*}
+					T= A^{-1} \sinh A t \qc X= A^{-1} \cosh A t \qc Y = Z =0,
+				\end{equation*}
+				而此点处
+				\begin{equation*}
+					\begin{split}
+						&x\tensor{w}{^a} + y \tensor{\left( \pdv{Y} \right)}{^a} + z \tensor{\left( \pdv{Z} \right)}{^a}\\
+						={}& x \sinh(At) \tensor{\left( \pdv{T} \right)}{^a} + x \cosh(At) \tensor{\left( \pdv{X} \right)}{^a} + y \tensor{\left( \pdv{Y} \right)}{^a} + z \tensor{\left( \pdv{Z} \right)}{^a},
+					\end{split}
+				\end{equation*}
+				沿此矢量决定的测地线（直线）走参数为1的距离，即
+				\begin{equation*}
+					\Delta T = x \sinh(At) \qc \Delta X = x \cosh(At) \qc \Delta Y = y \qc \Delta Z = z \tensor{\left( \pdv{Z} \right)}{^a},
+				\end{equation*}
+				故 $\left\{ t,x,y,z \right\}$ 对应的点为
+				\begin{equation*}
+					T=\left( A^{-1} + x \right) \sinh At \qc X= \left( A^{-1} + x \right) \cosh At \qc Y=y \qc Z=z.
+				\end{equation*}
+				\item 反解得坐标变换
+				\begin{equation*}
+					t = A^{-1} \tan^{-1}\left( \frac{T}{X} \right)
+				\end{equation*}
+				计算得
+				% \begin{equation*}
+				% 	\begin{split}
+				% 		\dd{s}^2 &= 
+				% 	\end{split}
+				% \end{equation*}
+			\end{enumerate}
+		\end{zm}
     
 \end{xiti}

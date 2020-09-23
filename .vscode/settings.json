@@ -1,6 +1,80 @@
 {
-	"latex-workshop.view.pdf.external.viewer.command": "SumatraPDF.exe",
-	"latex-workshop.view.pdf.external.viewer.args": [
-		"%PDF%"
-	]
+	"latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+		},
+		{
+            "name": "latexmk with xelatex",
+            "tools": ["latexmk-xelatex"]
+        },
+        {
+            "name": "xelatex -> biber -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "texcount",
+            "tools": [
+                "texcount"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk-xelatex",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-file-line-error",
+                "-halt-on-error",
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape", /*不懂这个是干嘛的*/ /*现在知道了*/
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "texcount",
+            "command": "texcount",
+            "args": [
+                "%DOCFILE%.tex",
+                "-v",
+                "-html",
+                "-out=%DOCFILE%_count.html"
+            ]
+        }
+    ],
 }

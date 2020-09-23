@@ -32,6 +32,10 @@
 \usepackage[listings]{tcolorbox}
 \usepackage[amsmath,hyperref,thmmarks,framed]{ntheorem}
 
+%%%%%%%%%%%%%%%  biblatex v3.15a bug fixing  %%%%%%%%%%%%%
+\providetoggle{blx@lang@captions@english}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{decorations.pathreplacing}
 \usetikzlibrary{3d}
@@ -177,7 +181,7 @@
 
 \addbibresource{ref.bib}
 
-% \includeonly{chapters/c7}
+\includeonly{chapters/c7}
 
 \begin{document}
 	\input{xiti}
