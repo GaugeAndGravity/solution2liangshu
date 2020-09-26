@@ -215,5 +215,33 @@
 				满足引理，证毕。
 			\end{enumerate}
 		\end{zm}
+
+	\item 设 $G$ 是质点 $L$ 在 $p\in L$ 的瞬时静止自由下落观者（即 $G$ 的 4 速 $\tensor{Z}{^a}$ 与 $L$ 的 4 速 $\tensor{U}{^a}$ 在 $p$ 点相切），$\tensor{A}{^a}	$ 是 $L$ 在 $p$ 点的 4 加速，$\tensor{a}{^a}	$ 是 $L$ 在 $p$ 点相对于 $G$ 的 3 加速[由式 (7-4-3)\footnote{正文式 (7-4-3) 为
+	\begin{equation*}
+		\tensor{a}{^a} := \left[ \dv[2]{x^i(t)}{t} \right] \tensor{\left( \pdv{x^i} \right)}{^a}.
+	\end{equation*}}定义]，试证 $\tensor{a}{^a} = \tensor{A}{^a}$。\\
+	注：本题可视为命题 6-3-6 在弯曲时空的推广。
+
+		\begin{zm}
+			记 $G(t)$ 的固有坐标系为 $\left\{ t,x,y,z \right\}$。在 $p$ 点，有 $\tensor{U}{^a} = \tensor{Z}{^a} = \tensor{\left( \pdv{t} \right)}{^a}$。对 $\tensor{U}{^a}$ 做分解，有
+			\begin{equation*}
+				\tensor{U}{^a} = \tensor{\left( \pdv{\tau_L} \right)}{^a} = \dv{t}{\tau_L} \tensor{\left( \pdv{t} \right)}{^a} + \dv{x^i}{\tau_L} \tensor{\left( \pdv{x^i} \right)}{^a} = \gamma \tensor{Z}{^a} + \gamma \tensor{u}{^a},
+			\end{equation*}
+			则
+			\begin{equation*}
+				\gamma|_p = 1 \qc \tensor{u}{^a}|_{p} = 0,
+			\end{equation*}
+			而
+			\begin{equation*}
+				\begin{split}
+					\tensor{A}{^a}|_p &= \left( \tensor{Z}{^b} \Nabla{b} \tensor{U}{^a} \right)_p\\
+					&= \left( \Partial{0} \tensor{U}{^a} + \ChristoffelSymbol{0}{a}{b} \tensor{U}{^b} \right)_p\\
+					&= \Partial{0} \tensor{U}{^a} |_p\\
+					&= \dv{\gamma}{t} \tensor{Z}{^a} + \dv{\gamma}{t} \tensor{u}{^a} + \gamma \dv{\tensor{u}{^a}}{t}\\
+					&= \dv{\tensor{u}{^a}}{t},
+				\end{split}
+			\end{equation*}
+			其中最后一步用到 $\left.\dv{\gamma}{t}\right|_p = 0$，这是因为 $\gamma = - \tensor{U}{^a} \tensor{Z}{_a} \leqslant 1$，故在 $p$ 点 $\gamma|_p=1$ 取到了极值。而 $\dv{\tensor{u}{^a}}{t}$ 就是 $\tensor{a}{^a}$。
+		\end{zm}
     
 \end{xiti}
