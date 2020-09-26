@@ -261,5 +261,19 @@
 				故里奇平直。
 			\end{enumerate}
 		\end{zm}
-    
+	
+	\item 设 $\left( M,\tensor{g}{_a_b} \right)$ 为里奇平直时空（定义见上题），$\tensor{\xi}{^a}$ 是其中的一个 Killing 矢量场，试证 $\tensor{F}{_a_b} := \tensor{\left( \dd{\xi} \right)}{_a_b}$ 满足 $\left( M,\tensor{g}{_a_b} \right)$ 的无源（$\tensor{J}{_a} = 0$）麦氏方程。提示：利用 Killing 场 $\tensor{\xi}{^a}$ 满足的 $\Nabla{a}\tensor{\xi}{^a} = 0$（第4章习题~\hyperlink{xt4-11}{11} 的结果）。
+	
+		\begin{zm}
+			计算得
+			\begin{equation*}
+				\begin{split}
+					\tensor{\nabla}{^a} \tensor{F}{_a_b} &= \tensor{\nabla}{^a} \tensor{\nabla}{_{a}} \tensor{\xi}{_{b}} - \tensor{\nabla}{^a} \tensor{\nabla}{_b} \tensor{\xi}{_a}\\
+					&= - 2 \tensor{\nabla}{^a} \tensor{\nabla}{_b} \tensor{\xi}{_a}\\
+					&= - 2 \left( \Nabla{b} \tensor{\nabla}{^a} \tensor{\xi}{_a} + \tensor{R}{_b^c} \tensor{\xi}{_c} \right)\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			而第二个方程 $\Nabla{{[a}} \tensor{F}{_{bc]}} = 0$ 等价于 $\tensor{\left( \dd{F} \right)}{_a_b_c} = 0$，这是由 $F=\dd{\xi}$ 保证的。
+		\end{zm}
 \end{xiti}
