@@ -243,5 +243,23 @@
 			\end{equation*}
 			其中最后一步用到 $\left.\dv{\gamma}{t}\right|_p = 0$，这是因为 $\gamma = - \tensor{U}{^a} \tensor{Z}{_a} \leqslant 1$，故在 $p$ 点 $\gamma|_p=1$ 取到了极值。而 $\dv{\tensor{u}{^a}}{t}$ 就是 $\tensor{a}{^a}$。
 		\end{zm}
+
+	\item 度规 $\tensor{g}{_a_b}$ 叫 \textbf{里奇平直} 的，若 $\tensor{g}{_a_b}$ 的里奇张量为零。试证 $\tensor{g}{_a_b}$ 是真空爱因斯坦方程的解的充要条件是 $\tensor{g}{_a_b}$ 是里奇平直的。
+	
+		\begin{zm}
+			真空爱因斯坦方程为 $\tensor{R}{_a_b} - \frac{1}{2} R \tensor{g}{_a_b} = 0$。
+			\begin{enumerate}
+				\item 充分性：若 $\tensor{R}{_a_b} = 0$，则取迹得 $R=0$，故满足真空场方程。
+				\item 必要性：设 $\tensor{g}{_a_b}$ 满足真空场方程，即 $\tensor{R}{_a_b} - \frac{1}{2} R \tensor{g}{_a_b} = 0$，取迹得
+				\begin{equation*}
+					R - 2 R = -R = 0,
+				\end{equation*}
+				故
+				\begin{equation*}
+					\tensor{R}{_a_b} - \frac{1}{2} R \tensor{g}{_a_b} = \tensor{R}{_a_b} = 0,
+				\end{equation*}
+				故里奇平直。
+			\end{enumerate}
+		\end{zm}
     
 \end{xiti}
