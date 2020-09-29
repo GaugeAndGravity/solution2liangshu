@@ -276,4 +276,77 @@
 			\end{equation*}
 			而第二个方程 $\Nabla{{[a}} \tensor{F}{_{bc]}} = 0$ 等价于 $\tensor{\left( \dd{F} \right)}{_a_b_c} = 0$，这是由 $F=\dd{\xi}$ 保证的。
 		\end{zm}
+
+	\item 设 $\tensor{\xi}{_\mu}(\mu=0,1,2,3)$ 为方程 $\tensor{\partial}{^b} \tensor{\partial}{_b} \tensor{\xi}{_\mu} = 0$ 在初始条件式 (7-9-10) $\sim$ (7-9-13) \footnote{正文 (7-9-10) $\sim$ (7-9-13) 为
+	\begin{gather}
+		\left. 2 \left( \myvec{\nabla} \vdot \myvec{\xi} - \pdv*{\tensor{\xi}{_0}}{t} \right) \right|_{\Sigma_0} = - \left. \gamma \right|_{\Sigma_0}, \tag{7-9-10}\\
+		2 \left[ - \nabla^2 \tensor{\xi}{_0} + \myvec{\nabla} \vdot \left( \pdv*{\myvec{\xi}}{t} \right) \right]_{\Sigma_0} = - \left. \pdv*{\gamma}{t} \right|_{\Sigma_0}, \tag{7-9-11}\\
+		\left[ \left( \pdv*{\tensor{\gamma}{_i}}{t} \right) + \left( \pdv*{\tensor{\xi}{_0}}{x^i} \right) \right]_{\Sigma_0} = - \left. \tensor{\gamma}{_0_i} \right|_{\Sigma_0} \qc i = 1,2,3, \tag{7-9-12}\\
+		\left[ \nabla^2 \tensor{\xi}{_i} + \pdv{x^i}(\pdv{\tensor{\xi}{_0}}{t}) \right]_{\Sigma_0} = - \left. \pdv{\tensor{\gamma}{_0_i}}{t} \right|_{\Sigma_0} \qc i=1,2,3. \tag{7-9-13}
+	\end{gather}}下的解，试证由 $\tensor{\xi}{_a} = \tensor{\xi}{_\mu} \tensor{\left( \dd{x^\mu} \right)}{_a}$ 及 $\tensor{\gamma}{_a_b}$ 按式 (7-9-8) \footnote{正文式 (7-9-8) 为
+	\begin{equation}
+		\tensor{{\gamma'}}{_a_b} = \tensor{\gamma}{_a_b} + \Partial{a} \tensor{\xi}{_b} + \Partial{b} \tensor{\xi}{_a}, \tag{7-9-8}
+	\end{equation}
+	其中 $\tensor{\xi}{_a}$ 满足
+	\begin{equation}
+		\tensor{\partial}{^b} \Partial{b} \tensor{\xi}{_a} = 0. \tag{7-9-9}
+	\end{equation}} 构造的 $\tensor{{\gamma'}}{_a_b}$ 在无源区域既满足洛伦兹规范条件 $\tensor{\partial}{^a} \tensor{{{\bar{\gamma}}}}{^\prime_a_b} = 0$ 又满足 $\gamma'=0$ 和 $\tensor{{\gamma'}}{_0_i} = 0(i=1,2,3)$。提示：(1) 根据解的唯一性定理，只须证明 $\gamma'=0$ 和 $\tensor{{\gamma'}}{_0_i}=0$ 分别是方程 $\tensor{\partial}{^c} \tensor{\partial}{_c} \gamma = 0$ 和 $\tensor{\partial}{^c} \tensor{\partial}{_c} \tensor{{\gamma'}}{_0_i} = 0$ 的满足初始条件 $\left. \gamma' \right|_{\Sigma_0} = 0$，$\left. \pdv*{\gamma'}{t} \right|_{\Sigma_0} = 0$，$\left. \tensor{{\gamma'}}{_0_i} \right|_{\Sigma_0} = 0$ 和 $\left. \pdv*{\tensor{{\gamma'}}{_0_i}}{t} \right|_{\Sigma_0} = 0$ 的解。 (2) 由 $\tensor{\partial}{^b} \tensor{\partial}{_b} \tensor{\xi}{_\mu} = 0$ 可得 $\pdv*[2]{\tensor{\xi}{_\mu}}{t} = \nabla^2 \tensor{\xi}{_\mu}$。
+	
+		\begin{zm}
+			由 (7-9-8) 易知，
+			\begin{equation*}
+				\gamma' = \gamma + 2 \tensor{\partial}{^a} \tensor{\xi}{_a},
+			\end{equation*}
+			则
+			\begin{equation*}
+				\begin{split}
+					\tensor{\partial}{^a} \tensor{{\bar{\gamma}}}{^\prime_a_b} &= \tensor{\partial}{^a} \left( \tensor{{\gamma'}}{_a_b} - \frac{1}{2} \tensor{\eta}{_a_b} \gamma' \right)\\
+					&= \tensor{\partial}{^a} \left( \tensor{{\gamma}}{_a_b} + \Partial{a} \tensor{\xi}{_b} + \Partial{b} \tensor{\xi}{_a} - \frac{1}{2} \tensor{\eta}{_a_b} \gamma - \tensor{\eta}{_a_b} \tensor{\partial}{^c} \tensor{\xi}{_c} \right)\\
+					&= {\color{red} \tensor{\partial}{^a} \tensor{\gamma}{_a_b}} + 0 + \tensor{\partial}{^a} \tensor{\partial}{_b} \tensor{\xi}{_a}  {\color{red} {}-\frac{1}{2} \Partial{b} \gamma} - \Partial{b} \tensor{\partial}{^c} \tensor{\xi}{_c}\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			其中红色的两项加起来为 $\tensor{\partial}{^a} \tensor{\bar{\gamma}}{_a_b}$，故为零。
+
+			在无源区域，$\tensor{T}{_a_b} = 0$，则线性场方程为
+			\begin{equation*}
+				\tensor{\partial}{^c} \tensor{\partial}{_c} \tensor{\gamma}{_a_b} = 0,
+			\end{equation*}
+			取迹得
+			\begin{equation*}
+				\tensor{\partial}{^c} \tensor{\partial}{_c} \gamma = 0,
+			\end{equation*}
+			则
+			\begin{equation*}
+				\tensor{\partial}{^c} \tensor{\partial}{_c} \gamma' = \tensor{\partial}{^c} \tensor{\partial}{_c} \left( \gamma + 2 \tensor{\partial}{^a} \tensor{\xi}{_a} \right) = 0,
+			\end{equation*}
+			在边界上又有
+			\begin{equation*}
+				\begin{split}
+					\gamma'|_{\Sigma_0} &= \left( \gamma + 2 \tensor{\partial}{^a} \tensor{\xi}{_a} \right)_{\Sigma_0}\\
+					&= \left( \gamma - 2 \pdv{\tensor{\xi}{_0}}{t} + 2 \myvec{\nabla} \vdot \myvec{\xi} \right)_{\Sigma_0}\\
+					&= 0,\\
+					\left. \pdv{\gamma'}{t} \right|_{\Sigma_0} &= \left( \pdv{\gamma}{t} - 2 \pdv[2]{\tensor{\xi}{_0}}{t} + \myvec{\nabla} \vdot \pdv{\myvec{\xi}}{t} \right)_{\Sigma_0}\\
+					&= \left( \pdv{\gamma}{t} - 2 \nabla^2 \tensor{\xi}{_0} + \myvec{\nabla} \vdot \pdv{\myvec{\xi}}{t} \right)_{\Sigma_0}\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			故知在区域内 $\gamma'$ 必为零。
+
+			再考虑 $\tensor{\gamma}{^\prime_0_i}$，它也满足拉普拉斯方程
+			\begin{equation*}
+				\tensor{\partial}{^a} \tensor{\partial}{_a} \tensor{\gamma}{^\prime_0_i} = 0,
+			\end{equation*}
+			而在边界上
+			\begin{equation*}
+				\begin{split}
+					\left. \tensor{\gamma}{^\prime_0_i} \right|_{\Sigma_0} &= \left( \tensor{\gamma}{_0_i} + \pdv{\tensor{\xi}{_i}}{t} + \pdv{\tensor{\xi}{_0}}{x^i} \right)_{\Sigma_0}\\
+					&= 0,\\
+					\left. \pdv{\tensor{\gamma}{^\prime_0_i}}{t} \right|_{\Sigma_0} &= \left( \pdv{\tensor{\gamma}{_0_i}}{t} + \pdv[2]{\tensor{\xi}{_i}}{t} + \pdv{x^i}(\pdv{\tensor{\xi}{_0}}{t}) \right)_{\Sigma_0}\\
+					&= \left( \pdv{\tensor{\gamma}{_0_i}}{t} + \nabla^2 \tensor{\xi}{_i} + \pdv{x^i}(\pdv{\tensor{\xi}{_0}}{t}) \right)_{\Sigma_0}\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			则 $\tensor{\gamma}{^\prime_0_i}$ 在区域内也为零。
+		\end{zm}
 \end{xiti}
