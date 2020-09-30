@@ -349,4 +349,61 @@
 			\end{equation*}
 			则 $\tensor{\gamma}{^\prime_0_i}$ 在区域内也为零。
 		\end{zm}
+
+	\item 设 $\tensor{\gamma}{_a_b}$ 满足 (a) $\tensor{\partial}{^a} \tensor{\bar{\gamma}}{_a_b} = 0$；(b) $\gamma = 0$；(c) $\tensor{\gamma}{_0_i} = 0(i=1,2,3)$；(d) $\tensor{\gamma}{_0_0} = \text{常数}$。试找出一个“无限小”矢量场 $\tensor{\xi}{^a}$ 使 $\tensor{{\tilde{\gamma}}}{_a_b} \equiv \tensor{\gamma}{_a_b} + \tensor{\partial}{_a} \tensor{\xi}{_b} + \tensor{\partial}{_b} \tensor{\xi}{_a}$ 满足
+	
+	(a) $\tensor{\partial}{^a} \tensor{\bar{\tilde{\gamma}}}{_a_b} = 0$；(b) $\tilde{\gamma} = 0$；(c) $\tensor{\tilde{\gamma}}{_0_i} = 0$；(d) $\tensor{\tilde{\gamma}}{_0_0} = 0$。
+
+		\begin{zm}
+			计算得
+			\begin{equation*}
+				\begin{split}
+					\tensor{\partial}{^a} \tensor{\bar{\tilde{\gamma}}}{_a_b} &= \tensor{\partial}{^a} \left( \tensor{\tilde{\gamma}}{_a_b} - \frac{1}{2} \tensor{\eta}{_a_b} \tilde{\gamma} \right)\\
+					&= \tensor{\partial}{^a} \left( \tensor{\gamma}{_a_b} + \tensor{\partial}{_a} \tensor{\xi}{_b} + \tensor{\partial}{_b} \tensor{\xi}{_a} - \frac{1}{2} \tensor{\eta}{_a_b} \gamma - \tensor{\eta}{_a_b} \tensor{\partial}{^c} \tensor{\xi}{_c} \right)\\
+					&= \tensor{\partial}{^a} \tensor{\partial}{_a} \tensor{\xi}{_b},\\
+					\tilde{\gamma} &= \gamma + 2 \tensor{\partial}{^a} \tensor{\xi}{_a},\\
+					\tensor{\tilde{\gamma}}{_0_i} &= \tensor{\gamma}{_0_i} + \pdv{\tensor{\xi}{_i}}{t} + \pdv{\tensor{\xi}{_0}}{x^i}\\
+					&= \pdv{\tensor{\xi}{_i}}{t} + \pdv{\tensor{\xi}{_0}}{x^i},\\
+					\tensor{\tilde{\gamma}}{_0_0} &= \tensor{\gamma}{_0_0} + 2 \pdv{\tensor{\xi}{_0}}{t},
+				\end{split}
+			\end{equation*}
+			故得微分方程组
+			\begin{equation*}
+				\left\{
+					\begin{aligned}
+						\tensor{\partial}{^a} \tensor{\partial}{_a} \tensor{\xi}{_\mu} &= 0 \qc \mu=0,1,2,3,\\
+						\tensor{\partial}{^\mu} \tensor{\xi}{_\mu} &= 0,\\
+						\pdv{\tensor{\xi}{_i}}{t} + \pdv{\tensor{\xi}{_0}}{x^i} &= 0 \qc i=1,2,3,\\
+						\pdv{\tensor{\xi}{_0}}{t} &= - \frac{1}{2} \tensor{\gamma}{_0_0},
+					\end{aligned}
+				\right.
+			\end{equation*}
+			先关注 $\tensor{\xi}{_0}$，由
+			\begin{equation*}
+				\left\{
+					\begin{aligned}
+						\nabla^2 \tensor{\xi}{_0} &= 0,\\
+						\pdv{\tensor{\xi}{_0}}{t} &= - \frac{1}{2} \tensor{\gamma}{_0_0},
+					\end{aligned}
+				\right.
+			\end{equation*}
+			则最简单的解为
+			\begin{equation*}
+				\tensor{\xi}{_0} = - \frac{1}{2} \tensor{\gamma}{_0_0} t,
+			\end{equation*}
+			代回方程组得
+			\begin{equation*}
+				\left\{
+					\begin{aligned}
+						\tensor{\partial}{^a} \tensor{\partial}{_a} \tensor{\xi}{_i} &= 0 \qc i=1,2,3,\\
+						\myvec{\nabla} \vdot \myvec{\xi} &= 0,\\
+						\pdv{\tensor{\xi}{_i}}{t} &= 0 \qc i=1,2,3,
+					\end{aligned}
+				\right.
+			\end{equation*}
+			则取 $\myvec{\xi} = 0$ 即可，即
+			\begin{equation*}
+				\tensor{\xi}{^a} = \frac{1}{2} \tensor{\gamma}{_0_0} t \tensor{\left( \pdv{t} \right)}{^a}.
+			\end{equation*}
+		\end{zm}
 \end{xiti}
