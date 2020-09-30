@@ -396,14 +396,52 @@
 				\left\{
 					\begin{aligned}
 						\tensor{\partial}{^a} \tensor{\partial}{_a} \tensor{\xi}{_i} &= 0 \qc i=1,2,3,\\
-						\myvec{\nabla} \vdot \myvec{\xi} &= 0,\\
+						\tensor{\partial}{_i} \tensor{\xi}{^i} &= - \frac{1}{2} \tensor{\gamma}{_0_0},\\
 						\pdv{\tensor{\xi}{_i}}{t} &= 0 \qc i=1,2,3,
 					\end{aligned}
 				\right.
 			\end{equation*}
-			则取 $\myvec{\xi} = 0$ 即可，即
+			则取 $\tensor{\xi}{^i} = \frac{1}{6} \tensor{\gamma}{_0_0} x^i$ 即可，即
 			\begin{equation*}
-				\tensor{\xi}{^a} = \frac{1}{2} \tensor{\gamma}{_0_0} t \tensor{\left( \pdv{t} \right)}{^a}.
+				\tensor{\xi}{^a} = \frac{1}{2} \tensor{\gamma}{_0_0} t \tensor{\left( \pdv{t} \right)}{^a} - \frac{1}{6} \tensor{\gamma}{_0_0} x^i \tensor{\left( \pdv{x^i} \right)}{^a}.
 			\end{equation*}
+		\end{zm}
+
+	\item 试证命题 7-9-2。
+	
+		\begin{zm}
+			命题 7-9-2 为
+			\begin{Theorem}
+				\begin{equation*}
+					\begin{split}
+						\tensor{R}{_a_b_c_d} ={}& \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+						& {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d}.
+					\end{split}
+				\end{equation*}
+			\end{Theorem}
+			\begin{Proof}
+				式 (7-9-32) 为
+				\begin{equation*}
+					\begin{split}
+						\tensor{R}{_a_b_c^d} ={} & \tensor{R}{_a_b_1^3} \tensor{\left( e^1 \right)}{_c} \tensor{\left( e_3 \right)}{^d} + \tensor{R}{_a_b_2^3} \tensor{\left( e^2 \right)}{_c} \tensor{\left( e_3 \right)}{^d} + \tensor{R}{_a_b_4^1} \tensor{\left( e^4 \right)}{_c} \tensor{\left( e^1 \right)}{^d} + \tensor{R}{_a_b_4^2} \tensor{\left( e^4 \right)}{_c} \tensor{\left( e_2 \right)}{^d}\\
+						={}& \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left[ \tensor{\left( e^1 \right)}{_c} \tensor{\left( e_3 \right)}{^d} + \tensor{\left( e^4 \right)}{_c} \tensor{\left( e_1 \right)}{^d} \right]\\
+						&{}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left[ \tensor{\left( e^2 \right)}{_c} \tensor{\left( e_3 \right)}{^d} + \tensor{\left( e^4 \right)}{_c} \tensor{\left( e_2 \right)}{^d} \right],
+					\end{split}
+				\end{equation*}
+				由 (7-9-26) 知
+				\begin{equation*}
+					\tensor{g}{_a_b} = \tensor{\left( e^1 \right)}{_a} \tensor{\left( e^1 \right)}{_b} + \tensor{\left( e^2 \right)}{_a} \tensor{\left( e^2 \right)}{_b} - \tensor{\left( e^3 \right)}{_a} \tensor{\left( e^4 \right)}{_b} - \tensor{\left( e^4 \right)}{_a} \tensor{\left( e^3 \right)}{_b},
+				\end{equation*}
+				则
+				\begin{equation*}
+					\begin{split}
+						\tensor{R}{_a_b_c_d} ={}& \tensor{R}{_a_b_c^e} \tensor{g}{_e_d}\\
+						={}& \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left[ - \tensor{\left( e^1 \right)}{_c} \tensor{\left( e^4 \right)}{_d} + 0 \right]\\
+						&{}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left[ - \tensor{\left( e^2 \right)}{_c} \tensor{\left( e^4 \right)}{_d} + 0 \right]\\
+						={}& \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+						& {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d}.
+					\end{split}
+				\end{equation*}
+			\end{Proof}
 		\end{zm}
 \end{xiti}
