@@ -444,4 +444,155 @@
 				\end{equation*}
 			\end{Proof}
 		\end{zm}
+
+	\item 验证式 (7-9-41) 后的 (1)$\sim$(3)。
+	
+		\begin{zm}
+			\begin{enumerate}[label=(\arabic*)]
+				\item 
+				\begin{equation*}
+					\begin{split}
+						\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_1 \right)}{^b} ={}& %\left( \tensor{\eta}{_a_b} + 2 P \left( \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_b} \right) \left( \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_a} \right) \right)\\
+						% & {} \times \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} Z_1 \tensor{K}{^a} \right) \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} Z_1 \tensor{K}{^a} \right)\\
+						\tensor{g}{_a_b} \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} Z_1 \tensor{K}{^a} \right) \left( \tensor{\left( \pdv{x} \right)}{^b} + E^{-1} Z_1 \tensor{K}{^b} \right),
+					\end{split}
+				\end{equation*}
+				易知
+				\begin{align*}
+					\tensor{g}{_a_b} \tensor{K}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \left( \tensor{\left( \pdv{t} \right)}{^a} + \tensor{\left( \pdv{z} \right)}{^a} \right)\\ \displaybreak[2]
+					&= \tensor{\left( \dd{z} \right)}{_b} - \tensor{\left( \dd{t} \right)}{_b},\\
+					\tensor{g}{_a_b} \tensor{\left( \pdv{x} \right)}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \tensor{\left( \pdv{x} \right)}{^a}\\ \displaybreak[2]
+					&= \tensor{\left( \dd{x} \right)}{_b},\\
+					\tensor{g}{_a_b} \tensor{\left( \pdv{y} \right)}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \tensor{\left( \pdv{y} \right)}{^a}\\ \displaybreak[2]
+					&= \tensor{\left( \dd{y} \right)}{_b},\\
+					\tensor{g}{_a_b} \tensor{\left( \pdv{t} \right)}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \tensor{\left( \pdv{t} \right)}{^a}\\
+					&= - \tensor{\left( \dd{t} \right)}{_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right]\\ \displaybreak[2]
+					&= - \tensor{\left( \dd{t} \right)}{_b} - 2 P \tensor{K}{_b},\\
+					\tensor{g}{_a_b} \tensor{\left( \pdv{z} \right)}{^a} &= \left( \tensor{\eta}{_a_b} + 2 P \left[ \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_a} \right] \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \right) \tensor{\left( \pdv{z} \right)}{^a}\\ \displaybreak[2]
+					&= \tensor{\left( \dd{z} \right)}{_b} - 2 P \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right]\\
+					&= \tensor{\left( \dd{z} \right)}{_b} + 2 P \tensor{K}{_b},
+				\end{align*}
+				则
+				% \begin{equation*}
+				% 	\begin{split}
+				% 		\tensor{g}{_a_b} \tensor{\left( \pdv{x} \right)}{^a} \tensor{\left( \pdv{x} \right)}{^b} &= 1,\\
+				% 		\tensor{g}{_a_b} \tensor{\left( \pdv{x} \right)}{^a} \tensor{K}{^b} &= \tensor{\left( \dd{x} \right)}{_b} \tensor{K}{^b}\\
+				% 		&= 0,\\
+				% 		\tensor{g}{_a_b} \tensor{K}{^a} \tensor{K}{^b} &= \left[ \tensor{\left( \dd{z} \right)}{_b} - \tensor{\left( \dd{t} \right)}{_b} \right] \tensor{K}{^b}\\
+				% 		&= 0,
+				% 	\end{split}
+				% \end{equation*}
+				% 故
+				% \begin{equation*}
+				% 	\begin{split}
+				% 		\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_1 \right)}{^b} &= 1,
+				% 	\end{split}
+				% \end{equation*}
+				% 同理
+				\begin{equation*}
+					\begin{split}
+						\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} &= \tensor{\left( \dd{x} \right)}{_b} + E^{-1} Z_1 \tensor{K}{_b},\\
+						\tensor{g}{_a_b} \tensor{\left( E_2 \right)}{^a} &= \tensor{\left( \dd{y} \right)}{_b} + E^{-1} Z_2 \tensor{K}{_b},\\
+						\tensor{g}{_a_b} \tensor{\left( \tensor{E}{_3} \right)}{^a} &= E^{-1} \tensor{K}{_b} - \tensor{Z}{_b},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{align*}
+					\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_1 \right)}{^b} &= \left( \tensor{\left( \dd{x} \right)}{_b} + E^{-1} Z_1 \tensor{K}{_b} \right) \left( \tensor{\left( \pdv{x} \right)}{^b} + E^{-1} Z_1 \tensor{K}{^b} \right)\\ \displaybreak[2]
+					&= 1,\\
+					\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_2 \right)}{^b} &= \left( \tensor{\left( \dd{x} \right)}{_b} + E^{-1} Z_1 \tensor{K}{_b} \right) \left( \tensor{\left( \pdv{y} \right)}{^b} + E^{-1} Z_2 \tensor{K}{^b} \right)\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_3 \right)}{^b} &= \left( \tensor{\left( \dd{x} \right)}{_b} + E^{-1} Z_1 \tensor{K}{_b} \right) \left( E^{-1} \tensor{K}{^b} - \tensor{Z}{^b} \right)\\
+					&= - Z_1 + Z_1\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_2 \right)}{^a} \tensor{\left( E_1 \right)}{^b} &= \left( \tensor{\left( \dd{y} \right)}{_b} + E^{-1} Z_2 \tensor{K}{_b} \right) \left( \tensor{\left( \pdv{x} \right)}{^b} + E^{-1} Z_1 \tensor{K}{^b} \right)\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_2 \right)}{^a} \tensor{\left( E_2 \right)}{^b} &= \left( \tensor{\left( \dd{y} \right)}{_b} + E^{-1} Z_2 \tensor{K}{_b} \right) \left( \tensor{\left( \pdv{y} \right)}{^b} + E^{-1} Z_2 \tensor{K}{^b} \right)\\ \displaybreak[2]
+					&= 1,\\
+					\tensor{g}{_a_b} \tensor{\left( E_2 \right)}{^a} \tensor{\left( E_3 \right)}{^b} &= \left( \tensor{\left( \dd{y} \right)}{_b} + E^{-1} Z_2 \tensor{K}{_b} \right) \left( E^{-1} \tensor{K}{^b} - \tensor{Z}{^b} \right)\\
+					&= - Z_2 + Z_2\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_3 \right)}{^a} \tensor{\left( E_1 \right)}{^b} &= \left( E^{-1} \tensor{K}{_b} - \tensor{Z}{_b} \right) \left( \tensor{\left( \pdv{x} \right)}{^b} + E^{-1} Z_1 \tensor{K}{^b} \right)\\
+					&= - Z_1 + Z_1\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_3 \right)}{^a} \tensor{\left( E_2 \right)}{^b} &= \left( E^{-1} \tensor{K}{_b} - \tensor{Z}{_b} \right) \left( \tensor{\left( \pdv{y} \right)}{^b} + E^{-1} Z_2 \tensor{K}{^b} \right)\\
+					&= - Z_2 + Z_2\\ \displaybreak[2]
+					&= 0,\\
+					\tensor{g}{_a_b} \tensor{\left( E_3 \right)}{^a} \tensor{\left( E_3 \right)}{^b} &= \left( E^{-1} \tensor{K}{_b} - \tensor{Z}{_b} \right) \left( E^{-1} \tensor{K}{^b} - \tensor{Z}{^b} \right)\\
+					&= 1 + 1 - 1\\
+					&= 1.
+				\end{align*}
+
+				\item 先计算 $\tensor{h}{^a_b} \tensor{K}{^b} = \tensor{K}{^a} - E \tensor{Z}{^a}$ 的模方：
+				\begin{equation*}
+					\begin{split}
+						\left( \tensor{K}{^a} - E \tensor{Z}{^a} \right) \left( \tensor{K}{_a} - E \tensor{Z}{_a} \right) &= E^2 + E^2 - E^2\\
+						&= E^2,
+					\end{split}
+				\end{equation*}
+				故将其归一化得
+				\begin{equation*}
+					\frac{\tensor{K}{^a} - E \tensor{Z}{^a}}{E} = E^{-1} \tensor{K}{^a} - \tensor{Z}{^a} = \tensor{\left( E_3 \right)}{^a}.
+				\end{equation*}
+
+				\item 首先，由于 $\tensor{Z}{^a}$ 是测地观者，
+				\begin{equation*}
+					\begin{split}
+						\tensor{Z}{^a} \Nabla{a} E &= - \tensor{Z}{^a} \Nabla{a} \left( \tensor{Z}{^b} \tensor{K}{_b} \right)\\
+						&= - \left( \tensor{Z}{^a} \Nabla{a} \tensor{Z}{^b} \right) \tensor{K}{_b} - \tensor{Z}{^a} \tensor{Z}{_b} \Nabla{a} \tensor{K}{_b}\\
+						&= 0,
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{Z}{^b} \Nabla{b} \tensor{\left( E_3 \right)}{^a} &= \tensor{Z}{^b} \Nabla{b} \left( E^{-1} \tensor{K}{^a} - \tensor{Z}{^a} \right)\\
+						&= E^{-1} \tensor{Z}{^b} \Nabla{b} \tensor{K}{^a} - \tensor{Z}{^b} \Nabla{b} \tensor{Z}{^a}\\
+						&=0,
+					\end{split}
+				\end{equation*}
+				而 采用 (7-9-25) 的标架可算得
+				\begin{equation*}
+					\begin{split}
+						\Nabla{b} \tensor{\left( \pdv{x} \right)}{^a} &= \Nabla{b} \tensor{\left( e_1 \right)}{^a}\\
+						&= - \tensor{\omega}{_1^\nu_b} \tensor{\left( e_\nu \right)}{^a}\\
+						&= - \tensor{\omega}{_1^3_b} \tensor{\left( e_3 \right)}{^a}\\
+						&= - \left( fx+gy \right) \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \tensor{K}{^a}\\
+						&= \left( fx+gy \right) \tensor{K}{_b} \tensor{K}{^a},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{Z}{^b} \Nabla{b} \tensor{\left( E_1 \right)}{^a} &= \tensor{Z}{^b} \Nabla{b} \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} Z_1 \tensor{K}{^a} \right)\\
+						&= \tensor{Z}{^b} \Nabla{b} \left( \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} \tensor{Z}{_c} \tensor{\left( \pdv{x} \right)}{^c} \tensor{K}{^a} \right)\\
+						&= \tensor{Z}{^b} \Nabla{b} \tensor{\left( \pdv{x} \right)}{^a} + E^{-1} \tensor{Z}{^b} \tensor{Z}{_c} \tensor{K}{^a} \Nabla{b} \tensor{\left( \pdv{x} \right)}{^c}\\
+						&= \left( fz+gy \right) \left( \tensor{Z}{^b} \tensor{K}{_b} \tensor{K}{^a} + E^{-1} \tensor{Z}{^b} \tensor{Z}{_c} \tensor{K}{^a} \tensor{K}{_b} \tensor{K}{^c} \right)\\
+						&= \left( fx+gy \right) \left( - E + E \right) \tensor{K}{^a}\\
+						&= 0,
+					\end{split}
+				\end{equation*}
+				同理由于
+				\begin{equation*}
+					\begin{split}
+						\Nabla{b} \tensor{\left( \pdv{y} \right)}{^a} &= \Nabla{b} \tensor{\left( e_2 \right)}{^a}\\
+						&= - \tensor{\omega}{_2^\nu_b} \tensor{\left( e_\nu \right)}{^a}\\
+						&= - \tensor{\omega}{_2^3_b} \tensor{\left( e_3 \right)}{^a}\\
+						&= - \left( gx-fy \right) \left[ \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_b} \right] \tensor{K}{^a}\\
+						&= \left( gx-fy \right) \tensor{K}{_b} \tensor{K}{^a},
+					\end{split}
+				\end{equation*}
+				故
+				\begin{equation*}
+					\begin{split}
+						\tensor{Z}{^b} \Nabla{b} \tensor{\left( E_2 \right)}{^a} &= \tensor{Z}{^b} \Nabla{b} \left( \tensor{\left( \pdv{y} \right)}{^a} + E^{-1} Z_2 \tensor{K}{^a} \right)\\
+						&= \tensor{Z}{^b} \Nabla{b} \left( \tensor{\left( \pdv{y} \right)}{^a} + E^{-1} \tensor{Z}{_c} \tensor{\left( \pdv{y} \right)}{^c} \tensor{K}{^a} \right)\\
+						&= \tensor{Z}{^b} \Nabla{b} \tensor{\left( \pdv{y} \right)}{^a} + E^{-1} \tensor{Z}{^b} \tensor{Z}{_c} \tensor{K}{^a} \Nabla{b} \tensor{\left( \pdv{y} \right)}{^c}\\
+						&= \left( gx-fy \right) \left( \tensor{Z}{^b} \tensor{K}{_b} \tensor{K}{^a} + E^{-1} \tensor{Z}{^b} \tensor{Z}{_c} \tensor{K}{^a} \tensor{K}{_b} \tensor{K}{^c} \right)\\
+						&= \left( gx-fy \right) \left( - E + E \right) \tensor{K}{^a}\\
+						&= 0.
+					\end{split}
+				\end{equation*}
+			\end{enumerate}
+		\end{zm}
 \end{xiti}
