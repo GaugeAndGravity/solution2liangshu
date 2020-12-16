@@ -595,4 +595,101 @@
 				\end{equation*}
 			\end{enumerate}
 		\end{zm}
+
+	\item 试证式 (7-9-43)。\footnote{正文(7-9-43)为
+	\begin{equation*}
+		\left( \tensor{\psi}{^i_j} \right) = \mqty[
+			\alpha & \beta & 0 \\
+			\beta & -\alpha & 0\\
+			0 & 0 & 0
+		]
+		\qc \alpha \equiv - E^2 f \qc \beta \equiv - E^2 g. \tag{7-9-43}
+	\end{equation*}}
+	\begin{zm}
+		首先，注意到
+		\begin{equation*}
+			\begin{split}
+				\tensor{\left( E_1 \right)}{^a} &= \tensor{\left( e_1 \right)}{^a} + E^{-1} Z_1 \tensor{\left( e_3 \right)}{^a},\\
+				\tensor{\left( E_2 \right)}{^a} &= \tensor{\left( e_2 \right)}{^a} + E^{-1} Z_2 \tensor{\left( e_3 \right)}{^a},\\
+				\tensor{\left( E_3 \right)}{^a} &= E^{-1} \tensor{\left( e_3 \right)}{^a} - \tensor{Z}{^a},
+			\end{split}
+		\end{equation*}
+		且 $\tensor{\left( e^4 \right)}{_a} = \tensor{\left( \dd{u} \right)}{_a} = - \tensor{K}{_a}$，易得
+		\begin{equation*}
+			\mqty(
+				\tensor{\left( e^1 \right)}{_a} \tensor{\left( E_1 \right)}{^a} & \tensor{\left( e^1 \right)}{_a} \tensor{\left( E_2 \right)}{^a} & \tensor{\left( e^1 \right)}{_a} \tensor{\left( E_3 \right)}{^a}\\
+				\tensor{\left( e^2 \right)}{_a} \tensor{\left( E_1 \right)}{^a} & \tensor{\left( e^2 \right)}{_a} \tensor{\left( E_2 \right)}{^a} & \tensor{\left( e^2 \right)}{_a} \tensor{\left( E_3 \right)}{^a}\\
+				\tensor{\left( e^4 \right)}{_a} \tensor{\left( E_1 \right)}{^a} & \tensor{\left( e^4 \right)}{_a} \tensor{\left( E_2 \right)}{^a} & \tensor{\left( e^4 \right)}{_a} \tensor{\left( E_3 \right)}{^a}
+			)
+			=
+			\mqty(
+				1 & 0 & - Z_1\\
+				0 & 1 & - Z_2\\
+				0 & 0 & - E
+			),
+		\end{equation*}
+		并有
+		\begin{equation*}
+			\begin{split}
+				\tensor{\left( e^1 \right)}{_a} \tensor{Z}{^a} &= Z_1,\\
+				\tensor{\left( e^2 \right)}{_a} \tensor{Z}{^a} &= Z_2,\\
+				\tensor{\left( e^4 \right)}{_a} \tensor{Z}{^a} &= - \tensor{K}{_a} \tensor{Z}{^a}\\
+				&= E,
+			\end{split}
+		\end{equation*}
+		故
+		\begin{align*}
+			\tensor{\psi}{^1_1} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} + 0 \\
+			&= E \left( f E + 0 \right)\\
+			&= E^2 f\\
+			&= - \alpha\\
+			\tensor{\psi}{^1_2} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} + 0 \\
+			&= E^2 g\\
+			&= - \beta,\\
+			\tensor{\psi}{^1_3} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_1 \right)}{^d}\\
+			&= - \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} + 0 \\
+			&= 0,\\
+			\tensor{\psi}{^2_1} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_1 \right)}{^b}\\
+			&= g E^2\\
+			&= - \beta,\\
+			\tensor{\psi}{^2_2} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_2 \right)}{^b}\\
+			&= - f E^2\\
+			&= \alpha,\\
+			\tensor{\psi}{^2_3} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_2 \right)}{^d}\\
+			&= - \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] E \tensor{Z}{^a} \tensor{\left( E_3 \right)}{^b}\\
+			&= 0,\\
+			\tensor{\psi}{^3_i} &= - \tensor{R}{_a_b_c_d} \tensor{Z}{^a} \tensor{\left( E_i \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_3 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^1 \right)}{_d}\\
+			&\qquad {}+ \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \tensor{\left( e^4 \right)}{_c} \wedge \tensor{\left( e^2 \right)}{_d} \bigg) \tensor{Z}{^a} \tensor{\left( E_i \right)}{^b} \tensor{Z}{^c} \tensor{\left( E_3 \right)}{^d}\\
+			&= - \bigg( \left[ f \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} + g \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left( - E Z_1 + Z_1 E \right)\\
+			&\qquad {} + \left[ g \tensor{\left( e^1 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} - f \tensor{\left( e^2 \right)}{_a} \wedge \tensor{\left( e^4 \right)}{_b} \right] \left( - E Z_2 + Z_2 E \right) \bigg) \tensor{Z}{^a} \tensor{\left( E_i \right)}{^b}\\
+			&= 0,
+		\end{align*}
+		故
+		\begin{equation*}
+			\left[ \tensor{\psi}{^i_j} \right] = - \mqty(
+				\alpha & \beta & 0 \\
+				\beta & -\alpha & 0\\
+				0 & 0 & 0
+			)
+			\qc \alpha \equiv - E^2 f \qc \beta \equiv - E^2 g.
+		\end{equation*}
+		（好像差了个负号耶……）
+	\end{zm}
 \end{xiti}
