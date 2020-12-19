@@ -692,4 +692,63 @@
 		\end{equation*}
 		（好像差了个负号耶……）
 	\end{zm}
+
+	\item 试证式 (7-9-36)，即 $\tensor{\nabla}{^a} \tensor{\nabla}{_a} P = \left( \pdv*[2]{P}{x} \right) + \left( \pdv*[2]{P}{y} \right)$。
+	
+	\begin{zm}
+		首先，
+		\begin{equation*}
+			\begin{split}
+				\tensor{\nabla}{_a} P &= \tensor{\left( \dd{P} \right)}{_a}\\
+				&= \pdv{P}{u} \tensor{\left( \dd{u} \right)}{_a} + \pdv{P}{x} \tensor{\left( \dd{x} \right)}{_a} + \pdv{P}{y} \tensor{\left( \dd{y} \right)}{_a}\\
+				&= \pdv{P}{u} \tensor{\left( e^4 \right)}{_a} + \pdv{P}{x} \tensor{\left( e^1 \right)}{_a} + \pdv{P}{y} \tensor{\left( e^2 \right)}{_a},
+			\end{split}
+		\end{equation*}
+		则
+		\begin{equation*}
+			\begin{split}
+				\tensor{\nabla}{^a} \tensor{\nabla}{_a} P ={} & \tensor{\left( e^4 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{u} + \pdv{P}{u} \tensor{\nabla}{^a} \tensor{\left( e^4 \right)}{_a}\\
+				&{}+ \tensor{\left( e^1 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{x} + \pdv{P}{x} \tensor{\nabla}{^a} \tensor{\left( e^1 \right)}{_a}\\
+				&{}+ \tensor{\left( e^2 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{y} + \pdv{P}{y} \tensor{\nabla}{^a} \tensor{\left( e^2 \right)}{_a},
+			\end{split}
+		\end{equation*}
+		注意到
+		\begin{equation*}
+			\tensor{\nabla}{^a} \tensor{\left( e^\mu \right)}{_a} = \tensor{\left( e^\nu \right)}{^a} \tensor{\omega}{_\nu^\mu_a},
+		\end{equation*}
+		且
+		\begin{align*}
+			\tensor{\left( e^1 \right)}{^a} &= \tensor{g}{^1^\mu} \tensor{\left( e_\mu \right)}{^a}\\
+			&= \tensor{\left( e_1 \right)}{^a},\\
+			\tensor{\left( e^2 \right)}{^a} &= \tensor{g}{^2^\mu} \tensor{\left( e_\mu \right)}{^a}\\
+			&= \tensor{\left( e_2 \right)}{^a},\\
+			\tensor{\left( e^3 \right)}{^a} &= \tensor{g}{^3^\mu} \tensor{\left( e_\mu \right)}{^a}\\
+			&= -\tensor{\left( e_4 \right)}{^a},\\
+			\tensor{\left( e^4 \right)}{^a} &= \tensor{g}{^4^\mu} \tensor{\left( e_\mu \right)}{^a}\\
+			&= - \tensor{\left( e_3 \right)}{^a},
+		\end{align*}
+		可知
+		\begin{equation*}
+			\begin{split}
+				\tensor{\nabla}{^a} \tensor{\left( e^1 \right)}{_a} &= \tensor{\left( e^4 \right)}{^a} \tensor{\omega}{_4^1_a}\\
+				&= - \tensor{\left( e_3 \right)}{^a} \pdv{P}{x} \tensor{\left( e^4 \right)}{_a}\\
+				&= 0,\\
+				\tensor{\nabla}{^a} \tensor{\left( e^2 \right)}{_a} &= \tensor{\left( e^4 \right)}{^a} \tensor{\omega}{_4^2_a}\\
+				&= - \tensor{\left( e_3 \right)}{^a} \pdv{P}{y} \tensor{\left( e^4 \right)}{_a}\\
+				&= 0,\\
+				\tensor{\nabla}{^a} \tensor{\left( e^3 \right)}{_a} &= \tensor{\left( e^1 \right)}{^a} \tensor{\omega}{_1^3_a} + \tensor{\left( e^2 \right)}{^a} \tensor{\omega}{_2^3_a}\\
+				&= \tensor{\left( e_1 \right)}{^a} \pdv{P}{x} \tensor{\left( e^4 \right)}{_a} + \tensor{\left( e_2 \right)}{^a} \pdv{P}{y} \tensor{\left( e^4 \right)}{_a}\\
+				&= 0,\\
+				\tensor{\nabla}{^a} \tensor{\left( e^4 \right)}{_a} &= 0,
+			\end{split}
+		\end{equation*}
+		故
+		\begin{align*}
+			\tensor{\nabla}{^a} \tensor{\nabla}{_a} P =&= \tensor{\left( e^4 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{u} + \tensor{\left( e^1 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{x} + \tensor{\left( e^2 \right)}{_a} \tensor{\nabla}{^a} \pdv{P}{y}\\
+			&= - \tensor{\left( e_3 \right)}{^a} \tensor{\nabla}{_a} \pdv{P}{u} + \tensor{\left( e_1 \right)}{^a} \tensor{\nabla}{_a} \pdv{P}{x} + \tensor{\left( e_2 \right)}{^a} \tensor{\nabla}{_a} \pdv{P}{y}\\
+			&= - \left( \pdv{t} + \pdv{z} \right) \pdv{P}{u} + \pdv{x} \pdv{P}{x} + \pdv{y} \pdv{P}{y}\\
+			&= - \left( \pdv{u}{t} + \pdv{u}{z} \right) \pdv[2]{P}{u} + \pdv[2]{P}{x} + \pdv[2]{P}{y}\\
+			&= \pdv[2]{P}{x} + \pdv[2]{P}{y}.
+		\end{align*}
+	\end{zm}
 \end{xiti}
