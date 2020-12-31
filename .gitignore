@@ -19,3 +19,5 @@
 *.synctex(busy)
 *.synctex.gz
 *.synctex.gz(busy)
+
+TeX/document.pdf
