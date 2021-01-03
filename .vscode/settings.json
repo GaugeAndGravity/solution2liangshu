@@ -1,24 +1,24 @@
 {
 	"latex-workshop.latex.recipes": [
         {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
-            ]
-		},
-		{
             "name": "latexmk with xelatex",
             "tools": ["latexmk-xelatex"]
         },
-        {
-            "name": "xelatex -> biber -> xelatex*2",
-            "tools": [
-                "xelatex",
-                "biber",
-                "xelatex",
-                "xelatex"
-            ]
-        },
+        // {
+        //     "name": "xelatex",
+        //     "tools": [
+        //         "xelatex"
+        //     ]
+		// },
+        // {
+        //     "name": "xelatex -> biber -> xelatex*2",
+        //     "tools": [
+        //         "xelatex",
+        //         "biber",
+        //         "xelatex",
+        //         "xelatex"
+        //     ]
+        // },
         {
             "name": "texcount",
             "tools": [
@@ -48,7 +48,7 @@
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "-shell-escape", /*不懂这个是干嘛的*/ /*现在知道了*/
+                "-shell-escape",
                 "%DOC%"
             ]
         },
