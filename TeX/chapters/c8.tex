@@ -130,5 +130,59 @@
             故对于电磁真空时空，由于 $T=0$，知 $R = 0$。
         \end{enumerate}
     \end{zm}
+
+    \item 试证式 (8-4-7) 和 (8-4-28)\footnote{正文 (8-4-7) 为
+    \begin{equation*}
+        \tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} = 2 \left( \tensor{F}{_a_b} \tensor{F}{^a^b} + \ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \right), \tag{8-4-7}
+    \end{equation*}
+    正文 (8-4-28) 为
+    \begin{equation*}
+        \tensor{E}{^a} = \frac{Q}{r^2} \tensor{\left( e_1 \right)}{^a} \qc \tensor{B}{^a} = 0 \quad \text{[其中 $\tensor{\left( e_1 \right)}{^a} \equiv f^{1/2} \tensor{\left( \pdv*{r} \right)}{^a}$]}. \tag{8-4-28}
+    \end{equation*}}。
+
+    \begin{zm}
+        先证 (8-4-7) 式：
+        \begin{equation*}
+            \begin{split}
+                \tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} &= \left( \tensor{F}{_a_b} + \ii \tensor[^*]{F}{_a_b} \right) \left( \tensor{F}{^a^b} + \ii \tensor[^*]{F}{^a^b} \right)\\
+                &= \tensor{F}{_a_b} \tensor{F}{^a^b} - \tensor[^*]{F}{_a_b} \tensor[^*]{F}{^a^b} + 2\ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b},
+            \end{split}
+        \end{equation*}
+        而
+        \begin{equation*}
+            \begin{split}
+                \tensor[^*]{F}{_a_b} \tensor[^*]{F}{^a^b} &= \frac{1}{2} \tensor{F}{^c^d} \tensor{\varepsilon}{_c_d_a_b} \times \frac{1}{2} \tensor{F}{_e_f} \tensor{\varepsilon}{^e^f^a^b}\\
+                &= - \frac{1}{4} \times 2! \times 2! \tensor{\delta}{^{[e}_c} \tensor{\delta}{^{f]}_d} \tensor{F}{^c^d} \tensor{F}{_e_f}\\
+                &= - \tensor{F}{^a^b} \tensor{F}{_a_b},
+            \end{split}
+        \end{equation*}
+        故
+        \begin{equation*}
+            \begin{split}
+                \tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} = 2 \left( \tensor{F}{_a_b} \tensor{F}{^a^b} + \ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \right).
+            \end{split}
+        \end{equation*}
+        而由式 (8-4-27) 
+        \begin{equation*}
+            \tensor{F}{_a_b} = - \frac{Q}{r^2} \tensor{\left( \dd{t} \right)}{_a} \wedge \tensor{\left( \dd{r} \right)}{_b}
+        \end{equation*}
+        以及
+        \begin{equation*}
+            \tensor{Z}{^a} = f^{-1/2} \tensor{\left( \pdv*{t} \right)}{^a}
+        \end{equation*}
+        得
+        \begin{equation*}
+            \begin{split}
+                \tensor{E}{_a} &= \tensor{F}{_a_b} \tensor{Z}{^b}\\
+                &= \frac{Q}{r^2} \tensor{\left( \dd{r} \right)}{_a}\\
+                &= \frac{Q}{r^2} \tensor{\left( e^1 \right)}{_a},\\
+                \tensor{B}{_a} &= - \tensor[^*]{F}{_a_b} \tensor{Z}{^b}\\
+                &= \frac{1}{2} \tensor{F}{^c^d} \tensor{\varepsilon}{_c_d_a_b} \tensor{Z}{^b}\\
+                &= - \frac{Q}{r^2} \tensor{\varepsilon}{_c_d_a_b} \tensor{\left( e_0 \right)}{^c} \tensor{\left( e_1 \right)}{^d} \tensor{\left( e_0 \right)}{^b}\\
+                &= 0,
+            \end{split}
+        \end{equation*}
+        其中 $\tensor{\left( e_0 \right)}{^a} = \tensor{Z}{^a}$ 是归一化的第 0 基矢。
+    \end{zm}
     
 \end{xiti}
