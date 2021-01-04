@@ -106,5 +106,29 @@
             \end{align*}
         \end{enumerate}
     \end{zm}
+
+    \item 试证：(a) 电磁场能动张量的迹为零，即 $T\equiv \tensor{g}{^a^b} \tensor{T}{_a_b} = 0$；(b) 电磁真空时空的标量曲率 $R=0$。
+    
+    \begin{zm}
+        \begin{enumerate}
+            \item[(a)] 由
+            \begin{equation*}
+                \tensor{T}{_a_b} = \frac{1}{4\pi} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} - \frac{1}{4} \tensor{g}{_a_b} \tensor{F}{_c_d} \tensor{F}{^c^d} \right)
+            \end{equation*}
+            知
+            \begin{equation*}
+                \begin{split}
+                    T &= \tensor{g}{^a^b} \tensor{T}{_a_b}\\
+                    &= \frac{1}{4\pi} \left( \tensor{F}{_a_c} \tensor{F}{^a^c} - \tensor{F}{_c_d} \tensor{F}{^c^d} \right)\\
+                    &= 0.
+                \end{split}
+            \end{equation*}
+            \item[(b)] 对场方程取迹得
+            \begin{equation*}
+                8\pi T = R - 2 R = -R,
+            \end{equation*}
+            故对于电磁真空时空，由于 $T=0$，知 $R = 0$。
+        \end{enumerate}
+    \end{zm}
     
 \end{xiti}
