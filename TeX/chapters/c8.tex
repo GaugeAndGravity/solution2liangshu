@@ -25,7 +25,7 @@
         \end{Proof}  
     \end{zm}
     
-    \item 设 $\gamma(r)$ 是图 8-6 中 $\Sigma_{t}$ 上从 $p_1$ 到 $p_2$ 的、$\theta$ 和 $\varphi$ 都为常数的曲线（以径向坐标 $r$ 为曲线参数），试证 $\gamma(r)$ 是（非仿射参数化的）测地线。提示：用式(5-7-2)。
+    \item 设 $\gamma(r)$ 是图~\hyperlink{8-6}{8-6}~中 $\Sigma_{t}$ 上从 $p_1$ 到 $p_2$ 的、$\theta$ 和 $\varphi$ 都为常数的曲线（以径向坐标 $r$ 为曲线参数），试证 $\gamma(r)$ 是（非仿射参数化的）测地线。提示：用式(5-7-2)。
     
     \begin{figure}[htpb!]
         \centering
@@ -47,7 +47,33 @@
             \node[left] (xi1) at (2.1,1.5) {$\tensor{\xi}{^a}$};
             \node[right] (xi2) at (-2.05,1.5) {$\tensor{\xi}{^a}$};
         \end{tikzpicture}
-        \caption{正文图 8-6}
+        \caption{正文图 8-6}\hypertarget{8-6}{}
     \end{figure}
+
+    \begin{zm}
+        $\gamma(r)$ 即为 $r$ 坐标线，故切矢为 $\tensor{\dot{\gamma}}{^a} = \tensor{\left( \pdv{r} \right)}{^a}$。正文 (8-3-4) 列出了球对称度规 (8-3-2) 式
+        \begin{equation*}
+            {\dd{s}}^2 = - \e{2A(r)} \dd{t}^2 + \e{2B(r)} \dd{r}^2 + r^2 \left( \dd{\theta}^2 + \sin^2 \theta \dd{\varphi}^2 \right) \tag{8-3-2}
+        \end{equation*}
+        的所有非零克氏符为
+        \begin{equation*}
+            \begin{aligned}
+                \ChristoffelSymbol{0}{0}{1} &= \ChristoffelSymbol{0}{1}{0} = A', & \ChristoffelSymbol{1}{0}{0} &= A' \e{2(A-B)}, & \ChristoffelSymbol{1}{1}{1} &= B',\\
+                \ChristoffelSymbol{1}{2}{2} &= - r \e{-2B}, & \ChristoffelSymbol{1}{3}{3} &= - r \sin^2 \theta \e{-2B}, & \ChristoffelSymbol{2}{1}{2} &= \ChristoffelSymbol{2}{2}{1} = 1/r,\\
+                \ChristoffelSymbol{2}{3}{3} &= - \sin \theta \cos \theta, & \ChristoffelSymbol{3}{1}{3} &= \ChristoffelSymbol{3}{3}{1} = 1/r, & \ChristoffelSymbol{3}{2}{3} &= \ChristoffelSymbol{3}{3}{2} = \cot \theta,
+            \end{aligned}
+            \tag{8-3-4}
+        \end{equation*}
+        故
+        \begin{equation*}
+            \begin{split}
+                \tensor{\dot{\gamma}}{^a} \Nabla{a} \tensor{\dot{\gamma}}{^b} &= \tensor{\left( \pdv{r} \right)}{^a} \Nabla{a} \tensor{\left( \pdv{r} \right)}{^b}\\
+                &= \ChristoffelSymbol{\mu}{1}{1} \tensor{\left( \pdv{x^\mu} \right)}{^b}\\
+                &= \ChristoffelSymbol{1}{1}{1} \tensor{\left( \pdv{r} \right)}{^b}\\
+                &= \dv{B}{r} \tensor{\left( \pdv{r} \right)}{^b},
+            \end{split}
+        \end{equation*}
+        故 $\gamma(r)$ 是测地线。
+    \end{zm}
     
 \end{xiti}
