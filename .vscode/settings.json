@@ -71,6 +71,7 @@
             "command": "texcount",
             "args": [
                 "%DOCFILE%.tex",
+                "-merge",
                 "-v",
                 "-html",
                 "-out=%DOCFILE%_count.html"
