@@ -12,15 +12,15 @@
         \end{enumerate}
     \end{zm}
 
-    \item 试证命题 11-1-11(c)。提示：利用 $A \subset B \implies \ii{A} \subset \ii{B}$。
+    \item 试证命题 11-1-11(c)。提示：利用 $A \subset B \implies \inner{A} \subset \inner{B}$。
 
     \begin{zm}
         \begin{enumerate}
-            \item $\subset$ 的证明：由定义，$\I^+(S) \subset \J^+ (S)$，于是 $\I^+(S) = \ii{\I^+ (S)} \subset \ii{\J^+(S)}$。
-            \item $\supset$ 的证明：设 $p \in \ii{\J^+(S)}$，则意味着存在 $p$ 的邻域 $O$ 使 $O \subset \J^+(S)$。取 $q \in O \cap \I^-(p)$ ，则 $O \subset \J^+(S)$ 意味着存在 $r \in S$ 使得 $q\in \J^+(r)$ ，于是由“$J + I = I$” 知 $p \in \I^+(r)$，故 $p \in \I^+(S)$ 。
+            \item $\subset$ 的证明：由定义，$\I^+(S) \subset \J^+ (S)$，于是 $\I^+(S) = \inner{\I^+ (S)} \subset \inner{\J^+(S)}$。
+            \item $\supset$ 的证明：设 $p \in \inner{\J^+(S)}$，则意味着存在 $p$ 的邻域 $O$ 使 $O \subset \J^+(S)$。取 $q \in O \cap \I^-(p)$ ，则 $O \subset \J^+(S)$ 意味着存在 $r \in S$ 使得 $q\in \J^+(r)$ ，于是由“$J + I = I$” 知 $p \in \I^+(r)$，故 $p \in \I^+(S)$ 。
         \end{enumerate}
 
-        \paragraph{注} 可能会以为利用命题 11-1-11(b) 两边取内部可以直接推出命题 11-1-11(c)。（至少我这么以为过……）然而 $\ii{A}$ 和 $\ii{\bar{A}}$ 未必相同。例如，一个极端的例子是取 $A$ 为 $\left(\mathbb{R}^n,\TT_u\right)$ 中全体有理点的集合（即 $\mathbb{Q}^n$），则 $\ii{A}= \varnothing$，而 $\bar{A}$ 和 $\ii{\bar{A}}$ 是整个 $\mathbb{R}^n$！即使限制 $A$ 为开集也无济于事，例如在 $(\mathbb{R},\TT_u)$ 中令 $A = (a,b) \cup (b,c)$，则 $\bar{A} = [a,c]$，显然它们的内部不相同。
+        \paragraph{注} 可能会以为利用命题 11-1-11(b) 两边取内部可以直接推出命题 11-1-11(c)。（至少我这么以为过……）然而 $\inner{A}$ 和 $\inner{\bar{A}}$ 未必相同。例如，一个极端的例子是取 $A$ 为 $\left(\mathbb{R}^n,\TT_u\right)$ 中全体有理点的集合（即 $\mathbb{Q}^n$），则 $\inner{A}= \varnothing$，而 $\bar{A}$ 和 $\inner{\bar{A}}$ 是整个 $\mathbb{R}^n$！即使限制 $A$ 为开集也无济于事，例如在 $(\mathbb{R},\TT_u)$ 中令 $A = (a,b) \cup (b,c)$，则 $\bar{A} = [a,c]$，显然它们的内部不相同。
     \end{zm}
 
     \item 由时空背景流形的 $T_2$ 性出发按 \S 11.2 定义1证明任一指向未来因果线最多有一个未来端点。
