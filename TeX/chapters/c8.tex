@@ -75,5 +75,36 @@
         \end{equation*}
         故 $\gamma(r)$ 是测地线。
     \end{zm}
+
+    \item 设 $\tensor{\xi}{^a}$ 是稳态时空的类时 Killing 矢量场，$\chi \equiv \left( - \tensor{g}{_a_b} \tensor{\xi}{^a} \tensor{\xi}{^b} \right)^{1/2}$。
+    \begin{enumerate}
+        \item[(a)] 试证 $\chi$ 在 $\tensor{\xi}{^a}$ 的积分曲线上为常数；
+        \item[(b)] 试证稳态观者的 4 加速 $\tensor{A}{^a} = \tensor{\nabla}{^a} (\ln \chi)$。提示：利用 Killing 方程 $\tensor{\nabla}{^{(a}} \tensor{\xi}{^{b)}} = 0$ 和 (a) 的结果。
+    \end{enumerate}
+
+    \begin{zm}
+        \begin{enumerate}
+            \item[(a)] 易知
+            \begin{equation*}
+                \begin{split}
+                    \Ld{\xi} \chi^2 &= - \Ld{\xi} \left( \tensor{g}{_a_b} \tensor{\xi}{^a} \tensor{\xi}{^b} \right)\\
+                    &= - \left( \Ld{\xi} \tensor{g}{_a_b} \right) \tensor{\xi}{^a} \tensor{\xi}{^b} - 2 \tensor{g}{_a_b} \tensor{\xi}{^a} \left( \Ld{\xi} \tensor{\xi}{^b} \right)\\
+                    &= 0,
+                \end{split}
+            \end{equation*}
+            故 $\chi$ 沿 $\xi$ 积分曲线为定值。
+            \item[(b)] 稳态观者 $\tensor{Z}{^a} = \tensor{\xi}{^a}/\chi$，故
+            \begin{align*}
+                \tensor{A}{^a} &= \tensor{Z}{^b} \Nabla{b} \tensor{A}{^a}\\
+                &= \frac{1}{\chi} \tensor{\xi}{^b} \Nabla{b} \left( \frac{\tensor{\xi}{^a}}{\chi} \right)\\
+                &= \frac{1}{\chi^2} \tensor{\xi}{_b} \tensor{\nabla}{^b} \tensor{\xi}{^a}\\
+                &= - \frac{1}{\chi^2} \tensor{\xi}{_b} \tensor{\nabla}{^a} \tensor{\xi}{^b}\\
+                &= - \frac{1}{2 \chi^2} \tensor{\nabla}{^a} \left( \tensor{\xi}{_b} \tensor{\xi}{^b} \right)\\
+                &= \frac{1}{2 \chi^2} \tensor{\nabla}{^a} \chi^2\\
+                &= \frac{1}{\chi} \tensor{\nabla}{^a} \chi\\
+                &= \tensor{\nabla}{^a} \left( \ln \chi \right).
+            \end{align*}
+        \end{enumerate}
+    \end{zm}
     
 \end{xiti}
