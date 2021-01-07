@@ -3,186 +3,281 @@
 \chapter{爱因斯坦方程的求解}
 
 \begin{xiti}
-    \item 试证命题 8-1-1。
-    
-    \begin{zm}
-        正文命题8-1-1为
-        \begin{Proposition}
-            设 $\tensor{\xi}{^a} = \tensor{\left( \pdv*{t} \right)}{^a} $ 是 Killing 矢量场，$\Sigma_0 = \left\{ p \in M \mid t(p) = 0 \right\}$ 是处处与 $\tensor{\xi}{^a}$ 正交的超曲面，则 超曲面 $\Sigma_{t_1} = \left\{ p \in M \mid t(p) = t_1 \right\}$ 也处处与 $\tensor{\xi}{^a}$ 正交。
-        \end{Proposition}
+	\item 试证命题 8-1-1。
+	
+	\begin{zm}
+		正文命题8-1-1为
+		\begin{Proposition}
+			设 $\tensor{\xi}{^a} = \tensor{\left( \pdv*{t} \right)}{^a} $ 是 Killing 矢量场，$\Sigma_0 = \left\{ p \in M \mid t(p) = 0 \right\}$ 是处处与 $\tensor{\xi}{^a}$ 正交的超曲面，则 超曲面 $\Sigma_{t_1} = \left\{ p \in M \mid t(p) = t_1 \right\}$ 也处处与 $\tensor{\xi}{^a}$ 正交。
+		\end{Proposition}
 
-        \begin{Proof}
-            设矢量场 $\tensor{\xi}{^a}$ 生成的单参微分同胚群 为 $\phi_t$，则 $\Sigma_{t_1} = \phi_{t_1} \left[ \Sigma_0 \right]$，任取 $p \in \Sigma_0$，$q = \phi_{t_1}(p) \in \Sigma_{t_1}$，以及 $q$ 点处 $\Sigma_{t_1}$ 的任意切矢量 $\tensor{v}{^a} \in \TB[q]{\Sigma_{t_1}}$，则 $\tensor{u}{^a} = \left( \phi_{-t_1} \right)_* \tensor{v}{^a} \in \TBx[p]{\Sigma_0}$，故
-            \begin{equation*}
-                \begin{split}
-                    \left.\tensor{g}{_a_b}\right|_{q} \tensor{v}{^a} \left.\tensor{\xi}{^b}\right|_q &= \left( \phi_{t_1} \right)_* \left( \left. \tensor{g}{_a_b} \right|_{p} \right) \tensor{v}{^a} \left( \phi_{t_1} \right)_* \left( \left. \tensor{\xi}{^a} \right|_p \right)\\
-                    &= \left( \phi_{t_1} \right)_* \left( \left. \tensor{g}{_a_b} \right|_p \tensor{u}{^a} \left. \tensor{\xi}{^b} \right|_p \right)\\
-                    &= \left( \phi_{t_1} \right)_* 0\\
-                    &= 0,
-                \end{split}
-            \end{equation*}
-            故 $\Sigma_{t_1}$ 也与 $\tensor{\xi}{^a}$ 正交。
-        \end{Proof}  
-    \end{zm}
-    
-    \item 设 $\gamma(r)$ 是图~\hyperlink{8-6}{8-6}~中 $\Sigma_{t}$ 上从 $p_1$ 到 $p_2$ 的、$\theta$ 和 $\varphi$ 都为常数的曲线（以径向坐标 $r$ 为曲线参数），试证 $\gamma(r)$ 是（非仿射参数化的）测地线。提示：用式(5-7-2)。
-    
-    \begin{figure}[htpb!]
-        \centering
-        \begin{tikzpicture}[thick]
-            \draw (0,0) ellipse [x radius=1,y radius=.2];
-            \draw (0,0) ellipse [x radius=2.1, y radius=0.4];
-            \draw (0,0) ellipse [x radius=3, y radius=0.74];
-            \draw (0,0) ellipse [x radius=4, y radius=1.2];
-            \filldraw[fill=white,color=white] (-4.5,1.5) -- (4.5,1.5) -- (4.5,-1.5) -- (-4.5,-1.5) -- cycle (-2.5,1.11) -- (-4.1,-1.11) -- (4.1,-1.11) -- (2.5,1.09) -- cycle;
-            \draw (-2.5,1.11) -- (-4.1,-1.11) -- (4.1,-1.11) -- (2.5,1.09) -- cycle;
-            \draw[dashed] (0,0) -- (3.3,0);
-            \draw[-{Stealth[length=0.4cm,width'=0pt 0.3,inset=1pt]}] (1,0) -- (1.99,0);
-            \node (n) at (1.5,-0.32) {\colorbox{white}{$\smash[b]{\tensor{n}{^a}}$}};
-            \node (Sigma) at (3.3,-1.3) {$\Sigma$};
-            \fill[fill=white] (2.15,0.4) -- (2.15,1.2) -- (2.05,1.2) -- (2.05,0.4) -- cycle;
-            \fill[fill=white] (-2.15,0.4) -- (-2.15,1.2) -- (-2.05,1.2) -- (-2.05,0.4) -- cycle;
-            \draw[-{Stealth[length=0.5cm,width'=0pt 0.3,inset=1pt]}] (2.1,0) -- (2.1,1.7);
-            \draw[-{Stealth[length=0.5cm,width'=0pt 0.3,inset=1pt]}] (-2.1,0) -- (-2.1,1.7);
-            \node[left] (xi1) at (2.1,1.5) {$\tensor{\xi}{^a}$};
-            \node[right] (xi2) at (-2.05,1.5) {$\tensor{\xi}{^a}$};
-        \end{tikzpicture}
-        \caption{正文图 8-6}\hypertarget{8-6}{}
-    \end{figure}
+		\begin{Proof}
+			设矢量场 $\tensor{\xi}{^a}$ 生成的单参微分同胚群 为 $\phi_t$，则 $\Sigma_{t_1} = \phi_{t_1} \left[ \Sigma_0 \right]$，任取 $p \in \Sigma_0$，$q = \phi_{t_1}(p) \in \Sigma_{t_1}$，以及 $q$ 点处 $\Sigma_{t_1}$ 的任意切矢量 $\tensor{v}{^a} \in \TB[q]{\Sigma_{t_1}}$，则 $\tensor{u}{^a} = \left( \phi_{-t_1} \right)_* \tensor{v}{^a} \in \TBx[p]{\Sigma_0}$，故
+			\begin{equation*}
+				\begin{split}
+					\left.\tensor{g}{_a_b}\right|_{q} \tensor{v}{^a} \left.\tensor{\xi}{^b}\right|_q &= \left( \phi_{t_1} \right)_* \left( \left. \tensor{g}{_a_b} \right|_{p} \right) \tensor{v}{^a} \left( \phi_{t_1} \right)_* \left( \left. \tensor{\xi}{^a} \right|_p \right)\\
+					&= \left( \phi_{t_1} \right)_* \left( \left. \tensor{g}{_a_b} \right|_p \tensor{u}{^a} \left. \tensor{\xi}{^b} \right|_p \right)\\
+					&= \left( \phi_{t_1} \right)_* 0\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			故 $\Sigma_{t_1}$ 也与 $\tensor{\xi}{^a}$ 正交。
+		\end{Proof}  
+	\end{zm}
+	
+	\item 设 $\gamma(r)$ 是图~\hyperlink{8-6}{8-6}~中 $\Sigma_{t}$ 上从 $p_1$ 到 $p_2$ 的、$\theta$ 和 $\varphi$ 都为常数的曲线（以径向坐标 $r$ 为曲线参数），试证 $\gamma(r)$ 是（非仿射参数化的）测地线。提示：用式(5-7-2)。
+	
+	\begin{figure}[htpb!]
+		\centering
+		\begin{tikzpicture}[thick]
+			\draw (0,0) ellipse [x radius=1,y radius=.2];
+			\draw (0,0) ellipse [x radius=2.1, y radius=0.4];
+			\draw (0,0) ellipse [x radius=3, y radius=0.74];
+			\draw (0,0) ellipse [x radius=4, y radius=1.2];
+			\filldraw[fill=white,color=white] (-4.5,1.5) -- (4.5,1.5) -- (4.5,-1.5) -- (-4.5,-1.5) -- cycle (-2.5,1.11) -- (-4.1,-1.11) -- (4.1,-1.11) -- (2.5,1.09) -- cycle;
+			\draw (-2.5,1.11) -- (-4.1,-1.11) -- (4.1,-1.11) -- (2.5,1.09) -- cycle;
+			\draw[dashed] (0,0) -- (3.3,0);
+			\draw[-{Stealth[length=0.4cm,width'=0pt 0.3,inset=1pt]}] (1,0) -- (1.99,0);
+			\node (n) at (1.5,-0.32) {\colorbox{white}{$\smash[b]{\tensor{n}{^a}}$}};
+			\node (Sigma) at (3.3,-1.3) {$\Sigma$};
+			\fill[fill=white] (2.15,0.4) -- (2.15,1.2) -- (2.05,1.2) -- (2.05,0.4) -- cycle;
+			\fill[fill=white] (-2.15,0.4) -- (-2.15,1.2) -- (-2.05,1.2) -- (-2.05,0.4) -- cycle;
+			\draw[-{Stealth[length=0.5cm,width'=0pt 0.3,inset=1pt]}] (2.1,0) -- (2.1,1.7);
+			\draw[-{Stealth[length=0.5cm,width'=0pt 0.3,inset=1pt]}] (-2.1,0) -- (-2.1,1.7);
+			\node[left] (xi1) at (2.1,1.5) {$\tensor{\xi}{^a}$};
+			\node[right] (xi2) at (-2.05,1.5) {$\tensor{\xi}{^a}$};
+		\end{tikzpicture}
+		\caption{正文图 8-6}\hypertarget{8-6}{}
+	\end{figure}
 
-    \begin{zm}
-        $\gamma(r)$ 即为 $r$ 坐标线，故切矢为 $\tensor{\dot{\gamma}}{^a} = \tensor{\left( \pdv{r} \right)}{^a}$。正文 (8-3-4) 列出了球对称度规 (8-3-2) 式
-        \begin{equation*}
-            {\dd{s}}^2 = - \e{2A(r)} \dd{t}^2 + \e{2B(r)} \dd{r}^2 + r^2 \left( \dd{\theta}^2 + \sin^2 \theta \dd{\varphi}^2 \right) \tag{8-3-2}
-        \end{equation*}
-        的所有非零克氏符为
-        \begin{equation*}
-            \begin{aligned}
-                \ChristoffelSymbol{0}{0}{1} &= \ChristoffelSymbol{0}{1}{0} = A', & \ChristoffelSymbol{1}{0}{0} &= A' \e{2(A-B)}, & \ChristoffelSymbol{1}{1}{1} &= B',\\
-                \ChristoffelSymbol{1}{2}{2} &= - r \e{-2B}, & \ChristoffelSymbol{1}{3}{3} &= - r \sin^2 \theta \e{-2B}, & \ChristoffelSymbol{2}{1}{2} &= \ChristoffelSymbol{2}{2}{1} = 1/r,\\
-                \ChristoffelSymbol{2}{3}{3} &= - \sin \theta \cos \theta, & \ChristoffelSymbol{3}{1}{3} &= \ChristoffelSymbol{3}{3}{1} = 1/r, & \ChristoffelSymbol{3}{2}{3} &= \ChristoffelSymbol{3}{3}{2} = \cot \theta,
-            \end{aligned}
-            \tag{8-3-4}
-        \end{equation*}
-        故
-        \begin{equation*}
-            \begin{split}
-                \tensor{\dot{\gamma}}{^a} \Nabla{a} \tensor{\dot{\gamma}}{^b} &= \tensor{\left( \pdv{r} \right)}{^a} \Nabla{a} \tensor{\left( \pdv{r} \right)}{^b}\\
-                &= \ChristoffelSymbol{\mu}{1}{1} \tensor{\left( \pdv{x^\mu} \right)}{^b}\\
-                &= \ChristoffelSymbol{1}{1}{1} \tensor{\left( \pdv{r} \right)}{^b}\\
-                &= \dv{B}{r} \tensor{\left( \pdv{r} \right)}{^b},
-            \end{split}
-        \end{equation*}
-        故 $\gamma(r)$ 是测地线。
-    \end{zm}
+	\begin{zm}
+		$\gamma(r)$ 即为 $r$ 坐标线，故切矢为 $\tensor{\dot{\gamma}}{^a} = \tensor{\left( \pdv{r} \right)}{^a}$。正文 (8-3-4) 列出了球对称度规 (8-3-2) 式
+		\begin{equation*}
+			{\dd{s}}^2 = - \e{2A(r)} \dd{t}^2 + \e{2B(r)} \dd{r}^2 + r^2 \left( \dd{\theta}^2 + \sin^2 \theta \dd{\varphi}^2 \right) \tag{8-3-2}
+		\end{equation*}
+		的所有非零克氏符为
+		\begin{equation*}
+			\begin{aligned}
+				\ChristoffelSymbol{0}{0}{1} &= \ChristoffelSymbol{0}{1}{0} = A', & \ChristoffelSymbol{1}{0}{0} &= A' \e{2(A-B)}, & \ChristoffelSymbol{1}{1}{1} &= B',\\
+				\ChristoffelSymbol{1}{2}{2} &= - r \e{-2B}, & \ChristoffelSymbol{1}{3}{3} &= - r \sin^2 \theta \e{-2B}, & \ChristoffelSymbol{2}{1}{2} &= \ChristoffelSymbol{2}{2}{1} = 1/r,\\
+				\ChristoffelSymbol{2}{3}{3} &= - \sin \theta \cos \theta, & \ChristoffelSymbol{3}{1}{3} &= \ChristoffelSymbol{3}{3}{1} = 1/r, & \ChristoffelSymbol{3}{2}{3} &= \ChristoffelSymbol{3}{3}{2} = \cot \theta,
+			\end{aligned}
+			\tag{8-3-4}
+		\end{equation*}
+		故
+		\begin{equation*}
+			\begin{split}
+				\tensor{\dot{\gamma}}{^a} \Nabla{a} \tensor{\dot{\gamma}}{^b} &= \tensor{\left( \pdv{r} \right)}{^a} \Nabla{a} \tensor{\left( \pdv{r} \right)}{^b}\\
+				&= \ChristoffelSymbol{\mu}{1}{1} \tensor{\left( \pdv{x^\mu} \right)}{^b}\\
+				&= \ChristoffelSymbol{1}{1}{1} \tensor{\left( \pdv{r} \right)}{^b}\\
+				&= \dv{B}{r} \tensor{\left( \pdv{r} \right)}{^b},
+			\end{split}
+		\end{equation*}
+		故 $\gamma(r)$ 是测地线。
+	\end{zm}
 
-    \item 设 $\tensor{\xi}{^a}$ 是稳态时空的类时 Killing 矢量场，$\chi \equiv \left( - \tensor{g}{_a_b} \tensor{\xi}{^a} \tensor{\xi}{^b} \right)^{1/2}$。
-    \begin{enumerate}
-        \item[(a)] 试证 $\chi$ 在 $\tensor{\xi}{^a}$ 的积分曲线上为常数；
-        \item[(b)] 试证稳态观者的 4 加速 $\tensor{A}{^a} = \tensor{\nabla}{^a} (\ln \chi)$。提示：利用 Killing 方程 $\tensor{\nabla}{^{(a}} \tensor{\xi}{^{b)}} = 0$ 和 (a) 的结果。
-    \end{enumerate}
+	\item 设 $\tensor{\xi}{^a}$ 是稳态时空的类时 Killing 矢量场，$\chi \equiv \left( - \tensor{g}{_a_b} \tensor{\xi}{^a} \tensor{\xi}{^b} \right)^{1/2}$。
+	\begin{enumerate}[label = (\alph*)]
+		\item 试证 $\chi$ 在 $\tensor{\xi}{^a}$ 的积分曲线上为常数；
+		\item 试证稳态观者的 4 加速 $\tensor{A}{^a} = \tensor{\nabla}{^a} (\ln \chi)$。提示：利用 Killing 方程 $\tensor{\nabla}{^{(a}} \tensor{\xi}{^{b)}} = 0$ 和 (a) 的结果。
+	\end{enumerate}
 
-    \begin{zm}
-        \begin{enumerate}
-            \item[(a)] 易知
-            \begin{equation*}
-                \begin{split}
-                    \Ld{\xi} \chi^2 &= - \Ld{\xi} \left( \tensor{g}{_a_b} \tensor{\xi}{^a} \tensor{\xi}{^b} \right)\\
-                    &= - \left( \Ld{\xi} \tensor{g}{_a_b} \right) \tensor{\xi}{^a} \tensor{\xi}{^b} - 2 \tensor{g}{_a_b} \tensor{\xi}{^a} \left( \Ld{\xi} \tensor{\xi}{^b} \right)\\
-                    &= 0,
-                \end{split}
-            \end{equation*}
-            故 $\chi$ 沿 $\xi$ 积分曲线为定值。
-            \item[(b)] 稳态观者 $\tensor{Z}{^a} = \tensor{\xi}{^a}/\chi$，故
-            \begin{align*}
-                \tensor{A}{^a} &= \tensor{Z}{^b} \Nabla{b} \tensor{A}{^a}\\
-                &= \frac{1}{\chi} \tensor{\xi}{^b} \Nabla{b} \left( \frac{\tensor{\xi}{^a}}{\chi} \right)\\
-                &= \frac{1}{\chi^2} \tensor{\xi}{_b} \tensor{\nabla}{^b} \tensor{\xi}{^a}\\
-                &= - \frac{1}{\chi^2} \tensor{\xi}{_b} \tensor{\nabla}{^a} \tensor{\xi}{^b}\\
-                &= - \frac{1}{2 \chi^2} \tensor{\nabla}{^a} \left( \tensor{\xi}{_b} \tensor{\xi}{^b} \right)\\
-                &= \frac{1}{2 \chi^2} \tensor{\nabla}{^a} \chi^2\\
-                &= \frac{1}{\chi} \tensor{\nabla}{^a} \chi\\
-                &= \tensor{\nabla}{^a} \left( \ln \chi \right).
-            \end{align*}
-        \end{enumerate}
-    \end{zm}
+	\begin{zm}
+		\begin{enumerate}[label = (\alph*)]
+			\item 易知
+			\begin{equation*}
+				\begin{split}
+					\Ld{\xi} \chi^2 &= - \Ld{\xi} \left( \tensor{g}{_a_b} \tensor{\xi}{^a} \tensor{\xi}{^b} \right)\\
+					&= - \left( \Ld{\xi} \tensor{g}{_a_b} \right) \tensor{\xi}{^a} \tensor{\xi}{^b} - 2 \tensor{g}{_a_b} \tensor{\xi}{^a} \left( \Ld{\xi} \tensor{\xi}{^b} \right)\\
+					&= 0,
+				\end{split}
+			\end{equation*}
+			故 $\chi$ 沿 $\xi$ 积分曲线为定值。
+			\item 稳态观者 $\tensor{Z}{^a} = \tensor{\xi}{^a}/\chi$，故
+			\begin{align*}
+				\tensor{A}{^a} &= \tensor{Z}{^b} \Nabla{b} \tensor{A}{^a}\\
+				&= \frac{1}{\chi} \tensor{\xi}{^b} \Nabla{b} \left( \frac{\tensor{\xi}{^a}}{\chi} \right)\\
+				&= \frac{1}{\chi^2} \tensor{\xi}{_b} \tensor{\nabla}{^b} \tensor{\xi}{^a}\\
+				&= - \frac{1}{\chi^2} \tensor{\xi}{_b} \tensor{\nabla}{^a} \tensor{\xi}{^b}\\
+				&= - \frac{1}{2 \chi^2} \tensor{\nabla}{^a} \left( \tensor{\xi}{_b} \tensor{\xi}{^b} \right)\\
+				&= \frac{1}{2 \chi^2} \tensor{\nabla}{^a} \chi^2\\
+				&= \frac{1}{\chi} \tensor{\nabla}{^a} \chi\\
+				&= \tensor{\nabla}{^a} \left( \ln \chi \right).
+			\end{align*}
+		\end{enumerate}
+	\end{zm}
 
-    \item 试证：(a) 电磁场能动张量的迹为零，即 $T\equiv \tensor{g}{^a^b} \tensor{T}{_a_b} = 0$；(b) 电磁真空时空的标量曲率 $R=0$。
-    
-    \begin{zm}
-        \begin{enumerate}
-            \item[(a)] 由
-            \begin{equation*}
-                \tensor{T}{_a_b} = \frac{1}{4\pi} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} - \frac{1}{4} \tensor{g}{_a_b} \tensor{F}{_c_d} \tensor{F}{^c^d} \right)
-            \end{equation*}
-            知
-            \begin{equation*}
-                \begin{split}
-                    T &= \tensor{g}{^a^b} \tensor{T}{_a_b}\\
-                    &= \frac{1}{4\pi} \left( \tensor{F}{_a_c} \tensor{F}{^a^c} - \tensor{F}{_c_d} \tensor{F}{^c^d} \right)\\
-                    &= 0.
-                \end{split}
-            \end{equation*}
-            \item[(b)] 对场方程取迹得
-            \begin{equation*}
-                8\pi T = R - 2 R = -R,
-            \end{equation*}
-            故对于电磁真空时空，由于 $T=0$，知 $R = 0$。
-        \end{enumerate}
-    \end{zm}
+	\item 试证：(a) 电磁场能动张量的迹为零，即 $T\equiv \tensor{g}{^a^b} \tensor{T}{_a_b} = 0$；(b) 电磁真空时空的标量曲率 $R=0$。
+	
+	\begin{zm}
+		\begin{enumerate}[label = (\alph*)]
+			\item 由
+			\begin{equation*}
+				\tensor{T}{_a_b} = \frac{1}{4\pi} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} - \frac{1}{4} \tensor{g}{_a_b} \tensor{F}{_c_d} \tensor{F}{^c^d} \right)
+			\end{equation*}
+			知
+			\begin{equation*}
+				\begin{split}
+					T &= \tensor{g}{^a^b} \tensor{T}{_a_b}\\
+					&= \frac{1}{4\pi} \left( \tensor{F}{_a_c} \tensor{F}{^a^c} - \tensor{F}{_c_d} \tensor{F}{^c^d} \right)\\
+					&= 0.
+				\end{split}
+			\end{equation*}
+			\item 对场方程取迹得
+			\begin{equation*}
+				8\pi T = R - 2 R = -R,
+			\end{equation*}
+			故对于电磁真空时空，由于 $T=0$，知 $R = 0$。
+		\end{enumerate}
+	\end{zm}
 
-    \item 试证式 (8-4-7) 和 (8-4-28)\footnote{正文 (8-4-7) 为
-    \begin{equation*}
-        \tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} = 2 \left( \tensor{F}{_a_b} \tensor{F}{^a^b} + \ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \right), \tag{8-4-7}
-    \end{equation*}
-    正文 (8-4-28) 为
-    \begin{equation*}
-        \tensor{E}{^a} = \frac{Q}{r^2} \tensor{\left( e_1 \right)}{^a} \qc \tensor{B}{^a} = 0 \quad \text{[其中 $\tensor{\left( e_1 \right)}{^a} \equiv f^{1/2} \tensor{\left( \pdv*{r} \right)}{^a}$]}. \tag{8-4-28}
-    \end{equation*}}。
+	\item 试证式 (8-4-7) 和 (8-4-28)\footnote{正文 (8-4-7) 为
+	\begin{equation*}
+		\tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} = 2 \left( \tensor{F}{_a_b} \tensor{F}{^a^b} + \ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \right), \tag{8-4-7}
+	\end{equation*}
+	正文 (8-4-28) 为
+	\begin{equation*}
+		\tensor{E}{^a} = \frac{Q}{r^2} \tensor{\left( e_1 \right)}{^a} \qc \tensor{B}{^a} = 0 \quad \text{[其中 $\tensor{\left( e_1 \right)}{^a} \equiv f^{1/2} \tensor{\left( \pdv*{r} \right)}{^a}$]}. \tag{8-4-28}
+	\end{equation*}}。
 
-    \begin{zm}
-        先证 (8-4-7) 式：
-        \begin{equation*}
-            \begin{split}
-                \tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} &= \left( \tensor{F}{_a_b} + \ii \tensor[^*]{F}{_a_b} \right) \left( \tensor{F}{^a^b} + \ii \tensor[^*]{F}{^a^b} \right)\\
-                &= \tensor{F}{_a_b} \tensor{F}{^a^b} - \tensor[^*]{F}{_a_b} \tensor[^*]{F}{^a^b} + 2\ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b},
-            \end{split}
-        \end{equation*}
-        而
-        \begin{equation*}
-            \begin{split}
-                \tensor[^*]{F}{_a_b} \tensor[^*]{F}{^a^b} &= \frac{1}{2} \tensor{F}{^c^d} \tensor{\varepsilon}{_c_d_a_b} \times \frac{1}{2} \tensor{F}{_e_f} \tensor{\varepsilon}{^e^f^a^b}\\
-                &= - \frac{1}{4} \times 2! \times 2! \tensor{\delta}{^{[e}_c} \tensor{\delta}{^{f]}_d} \tensor{F}{^c^d} \tensor{F}{_e_f}\\
-                &= - \tensor{F}{^a^b} \tensor{F}{_a_b},
-            \end{split}
-        \end{equation*}
-        故
-        \begin{equation*}
-            \begin{split}
-                \tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} = 2 \left( \tensor{F}{_a_b} \tensor{F}{^a^b} + \ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \right).
-            \end{split}
-        \end{equation*}
-        而由式 (8-4-27) 
-        \begin{equation*}
-            \tensor{F}{_a_b} = - \frac{Q}{r^2} \tensor{\left( \dd{t} \right)}{_a} \wedge \tensor{\left( \dd{r} \right)}{_b}
-        \end{equation*}
-        以及
-        \begin{equation*}
-            \tensor{Z}{^a} = f^{-1/2} \tensor{\left( \pdv*{t} \right)}{^a}
-        \end{equation*}
-        得
-        \begin{equation*}
-            \begin{split}
-                \tensor{E}{_a} &= \tensor{F}{_a_b} \tensor{Z}{^b}\\
-                &= \frac{Q}{r^2} \tensor{\left( \dd{r} \right)}{_a}\\
-                &= \frac{Q}{r^2} \tensor{\left( e^1 \right)}{_a},\\
-                \tensor{B}{_a} &= - \tensor[^*]{F}{_a_b} \tensor{Z}{^b}\\
-                &= \frac{1}{2} \tensor{F}{^c^d} \tensor{\varepsilon}{_c_d_a_b} \tensor{Z}{^b}\\
-                &= - \frac{Q}{r^2} \tensor{\varepsilon}{_c_d_a_b} \tensor{\left( e_0 \right)}{^c} \tensor{\left( e_1 \right)}{^d} \tensor{\left( e_0 \right)}{^b}\\
-                &= 0,
-            \end{split}
-        \end{equation*}
-        其中 $\tensor{\left( e_0 \right)}{^a} = \tensor{Z}{^a}$ 是归一化的第 0 基矢。
-    \end{zm}
-    
+	\begin{zm}
+		先证 (8-4-7) 式：
+		\begin{equation*}
+			\begin{split}
+				\tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} &= \left( \tensor{F}{_a_b} + \ii \tensor[^*]{F}{_a_b} \right) \left( \tensor{F}{^a^b} + \ii \tensor[^*]{F}{^a^b} \right)\\
+				&= \tensor{F}{_a_b} \tensor{F}{^a^b} - \tensor[^*]{F}{_a_b} \tensor[^*]{F}{^a^b} + 2\ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b},
+			\end{split}
+		\end{equation*}
+		而
+		\begin{equation}
+			\begin{split}
+				\tensor[^*]{F}{_a_b} \tensor[^*]{F}{^a^b} &= \frac{1}{2} \tensor{F}{^c^d} \tensor{\varepsilon}{_c_d_a_b} \times \frac{1}{2} \tensor{F}{_e_f} \tensor{\varepsilon}{^e^f^a^b}\\
+				&= - \frac{1}{4} \times 2! \times 2! \tensor{\delta}{^{[e}_c} \tensor{\delta}{^{f]}_d} \tensor{F}{^c^d} \tensor{F}{_e_f}\\
+				&= - \tensor{F}{^a^b} \tensor{F}{_a_b},
+			\end{split}\label{eq-F*F*}
+		\end{equation}
+		故
+		\begin{equation}
+			\begin{split}
+				\tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} = 2 \left( \tensor{F}{_a_b} \tensor{F}{^a^b} + \ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \right).\label{eq-SS}
+			\end{split}
+		\end{equation}
+		而由式 (8-4-27) 
+		\begin{equation*}
+			\tensor{F}{_a_b} = - \frac{Q}{r^2} \tensor{\left( \dd{t} \right)}{_a} \wedge \tensor{\left( \dd{r} \right)}{_b}
+		\end{equation*}
+		以及
+		\begin{equation*}
+			\tensor{Z}{^a} = f^{-1/2} \tensor{\left( \pdv*{t} \right)}{^a}
+		\end{equation*}
+		得
+		\begin{equation*}
+			\begin{split}
+				\tensor{E}{_a} &= \tensor{F}{_a_b} \tensor{Z}{^b}\\
+				&= \frac{Q}{r^2} \tensor{\left( \dd{r} \right)}{_a}\\
+				&= \frac{Q}{r^2} \tensor{\left( e^1 \right)}{_a},\\
+				\tensor{B}{_a} &= - \tensor[^*]{F}{_a_b} \tensor{Z}{^b}\\
+				&= \frac{1}{2} \tensor{F}{^c^d} \tensor{\varepsilon}{_c_d_a_b} \tensor{Z}{^b}\\
+				&= - \frac{Q}{r^2} \tensor{\varepsilon}{_c_d_a_b} \tensor{\left( e_0 \right)}{^c} \tensor{\left( e_1 \right)}{^d} \tensor{\left( e_0 \right)}{^b}\\
+				&= 0,
+			\end{split}
+		\end{equation*}
+		其中 $\tensor{\left( e_0 \right)}{^a} = \tensor{Z}{^a}$ 是归一化的第 0 基矢。
+	\end{zm}
+
+	\item 设 $\tensor{F}{_a_b}$ 是任意时空中的2形式场，$\tensor[^*]{F}{_a_b}$ 是 $\tensor{F}{_a_b}$ 的对偶 2 形式场， $\alpha \in \left[ 0,2\pi \right]$ 为常实数，则 $\tensor{{F'}}{_a_b} \equiv \tensor{F}{_a_b} \cos \alpha - \tensor[^*]{F}{_a_b} \sin \alpha$ 称为 $\tensor{F}{_a_b}$ 的、角度为 $\alpha$ 的一个\textbf{对偶转动}(duality rotation)。
+	\begin{enumerate}[label = (\alph*)]
+		\item 试证 $\tensor{F}{_a_b}$ 为无源电磁场当且仅当 $\tensor{{F'}}{_a_b}$ 为无源电磁场[证明很易。若用麦氏方程的外微分表达式 (7-2-7') 和 (7-2-8') \footnote{这里为typo，应为 (7-2-4') 和 (7-2-5')：
+		\begin{gather*}
+			\dd{\tensor[^*]{\!\form{F}}{}} = 4 \pi \tensor[^*]{\!\form{J}}{}, \tag{7-2-4'}\\
+			\dd{\form{F}} = 0. \tag{7-2-5'}
+		\end{gather*}}甚至一望便知。]。
+		\item 试证电磁场 $\tensor{F}{_a_b}$ 和 $\tensor{{F'}}{_a_b}$ 有相同能动张量。提示：用 $\tensor{T}{_a_b}$ 的对称表示式 (6-6-24') \footnote{
+			这里为typo，应为 (6-6-28')：
+			\begin{equation*}
+				\tensor{T}{_a_b} = \frac{1}{8\pi} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} + \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \right). \tag{6-6-28'}
+			\end{equation*}
+		}可简化证明。
+		\item 令 $M\equiv 2 \tensor{F}{_a_b} \tensor{F}{^a^b}$，$N\equiv 2 \tensor{F}{_a_b} \tensor[^*]{F}{^a^b}$ ，$M' \equiv 2 \tensor{{F'}}{_a_b} \tensor{{F'}}{^a^b}$，$N' \equiv 2 \tensor{{F'}}{_a_b} \tensor[^*]{{F'}}{^a^b}$，试证
+		\begin{equation*}
+			M' = M \cos 2\alpha - N \sin 2\alpha \qc N' = M \sin 2\alpha + N \cos 2\alpha.
+		\end{equation*}
+		\item 令 $\tensor{\Sigma}{_a_b} \equiv \tensor{F}{_a_b} + \ii \tensor[^*]{F}{_a_b}$，$\tensor{{\Sigma'}}{_a_b} \equiv \tensor{{F'}}{_a_b} + \ii \tensor[^*]{{F'}}{_a_b}$，则 $K \equiv \tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b}$ 和 $K' \equiv \tensor{{\Sigma'}}{_a_b} \tensor{{\Sigma'}}{^a^b}$ 为复标量场，故在每一时空点的 $K$ 和 $K'$ 相当于复平面上的两个矢量。试用 (c) 的结果证明矢量 $K'$ 是矢量 $K$ 逆时针转 $2\alpha$ 角的结果（即 $\abs{K} = \abs{K'}$，$K'$ 和 $K$ 的辐角差为 $2\alpha$。）。
+		\item 设 $\left( \myvec{E}, \myvec{B} \right)$ 和 $\left( \myvec{E}' , \myvec{B}' \right)$ 是瞬时观者分别测 $\tensor{F}{_a_b}$ 和 $\tensor{{F'}}{_a_b}$ 所得的电场和磁场，试证
+		\begin{equation*}
+			\myvec{E}' = \myvec{E} \cos \alpha + \myvec{B} \sin \alpha \qc \myvec{B}' = - \myvec{E} + \myvec{B} \cos \alpha.
+		\end{equation*}
+	\end{enumerate}
+	注：对偶转动的进一步物理意义见本书下册及 \cite{Jackson1975}。
+
+	\begin{zm}
+		\begin{enumerate}[label = (\alph*)]
+			\item 无源麦氏方程为
+			\begin{gather*}
+				\dd{\tensor[^*]{\!\form{F}}{}} = 0,\\
+				\dd{\form{F}} = 0,
+			\end{gather*}
+			则结论显然。
+			\item 由
+			\begin{equation*}
+				\tensor[^*^*]{\form{F}}{} = - \form{F}
+			\end{equation*}
+			知
+			\begin{equation*}
+				\begin{split}
+					\tensor{{T'}}{_a_b} ={}& \frac{1}{8\pi} \left( \tensor{{F'}}{_a_c} \tensor{{F'}}{_b^c} + \tensor[^*]{{F'}}{_a_c} \tensor[^*]{{F'}}{_b^c} \right)\\
+					={}& \frac{1}{8\pi} \big[ \left( \tensor{F}{_a_c} \cos \alpha - \tensor[^*]{F}{_a_c} \sin \alpha \right) \left( \tensor{F}{_b^c} \cos \alpha - \tensor[^*]{F}{_b^c} \sin \alpha \right)\\
+					&\phantom{\frac{1}{8\pi} \big[} {}+ \left( \tensor[^*]{F}{_a_c} \cos \alpha + \tensor{F}{_a_c} \sin \alpha \right) \left( \tensor[^*]{F}{_b^c} \cos \alpha + \tensor{F}{_b^c} \sin \alpha \right) \big]\\
+					={}& \frac{1}{8\pi} \big( \tensor{F}{_a_c} \tensor{F}{_b^c} \cos^2 \alpha - \tensor{F}{_{(a|c|}} \tensor[^*]{F}{_{b)}^c} \sin 2 \alpha + \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \sin^2 \alpha\\
+					&\phantom{\frac{1}{8\pi} \big(} {}+ \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \cos^2 \alpha + \tensor{F}{_{(a|c|}} \tensor[^*]{F}{_{b)}^c} \sin 2 \alpha + \tensor{F}{_a_c} \tensor{F}{_b^c} \sin^2 \alpha \big)\\
+					={}& \frac{1}{8\pi} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} + \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \right)\\
+					={}& \tensor[]{T}{_a_b}.
+				\end{split}
+			\end{equation*}
+			\item 由第5 题计算过程~\eqref{eq-F*F*} 知
+			\begin{equation}
+					\tensor[^*]{F}{_a_b} \tensor[^*]{F}{^a^b} = - \tensor{F}{_a_b} \tensor{F}{^a^b},
+			\end{equation}
+			故
+			\begin{align*}
+					M' &= 2 \tensor[]{{F'}}{_a_b} \tensor[]{{F'}}{^a^b}\\
+					&= 2 \left( \tensor{F}{_a_b} \cos \alpha - \tensor[^*]{F}{_a_b} \sin \alpha \right) \left( \tensor{F}{^a^b} \cos \alpha - \tensor[^*]{F}{^a^b} \sin \alpha \right)\\
+					&= 2 \left( \tensor[]{F}{_a_b} \tensor[]{F}{^a^b} \cos^2 \alpha - 2 \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \cos \alpha \sin \alpha + \tensor[^*]{F}{_a_b} \tensor[^*]{F}{^a^b} \sin^2 \alpha \right)\\
+					&= 2 \left( \tensor[]{F}{_a_b} \tensor[]{F}{^a^b} \cos^2 \alpha - 2 \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \cos \alpha \sin \alpha - \tensor{F}{_a_b} \tensor{F}{^a^b} \sin^2 \alpha \right)\\
+					&= M \cos 2\alpha - N \sin 2 \alpha,\\
+					N' &= 2 \tensor{{F'}}{_a_b} \tensor[^*]{{F'}}{^a^b}\\
+					&= 2 \left( \tensor{F}{_a_b} \cos \alpha - \tensor[^*]{F}{_a_b} \sin \alpha \right) \left( \tensor[^*]{F}{^a^b} \cos \alpha + \tensor{F}{^a^b} \sin \alpha \right)\\
+					&= 2 \left( \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \cos^2 \alpha + \tensor{F}{_a_b} \tensor{F}{^a^b} \cos \alpha \sin \alpha - \tensor[^*]{F}{_a_b} \tensor[^*]{F}{^a^b} \cos \alpha \sin \alpha - \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \sin^2 \alpha \right)\\
+					&= 2 \left( \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \cos^2 \alpha + \tensor{F}{_a_b} \tensor{F}{^a^b} \cos \alpha \sin \alpha + \tensor{F}{_a_b} \tensor{F}{^a^b} \cos \alpha \sin \alpha - \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \sin^2 \alpha \right)\\
+					&= M \sin 2 \alpha + N \cos 2\alpha.
+			\end{align*}
+			\item 由第 5 题~\eqref{eq-SS} 知
+			\begin{equation*}
+				\begin{split}
+					K &= \tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b}\\
+					&= 2 \left( \tensor{F}{_a_b} \tensor{F}{^a^b} + \ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \right)\\
+					&= M + \ii N,
+				\end{split}
+			\end{equation*}
+			故
+			\begin{equation*}
+				\begin{split}
+					K' &= M' + \ii N'\\
+					&= \left( M \cos 2\alpha - N \sin 2 \alpha \right) + \ii \left( M \sin 2 \alpha + N \cos 2\alpha \right)\\
+					&= M \left( \cos 2\alpha + \ii \sin 2 \alpha \right) + \ii N \left( \cos 2 \alpha + \ii \sin 2 \alpha \right)\\
+					&= K \e{2\ii \alpha}.
+				\end{split}
+			\end{equation*}
+			\item 由定义知，设观者为 $\tensor{Z}{^a}$，
+			\begin{align*}
+				\tensor{{E'}}{_a} &= \tensor{{F'}}{_a_b} \tensor{Z}{^b}\\
+				&= \left( \tensor{F}{_a_b} \cos \alpha - \tensor[^*]{F}{_a_b} \sin \alpha \right) \tensor{Z}{^b}\\
+				&= \tensor{E}{_a} \cos \alpha + \tensor{B}{_a} \sin \alpha,\\
+				\tensor{{B'}}{_a} &= - \tensor[^*]{{F'}}{_a_b} \tensor{Z}{^b}\\
+				&= - \left( \tensor[^*]{F}{_a_b} \cos \alpha + \tensor{F}{_a_b} \sin \alpha \right) \tensor{Z}{^a}\\
+				&= \tensor{B}{_a} \cos \alpha - \tensor{E}{_a} \sin \alpha.
+			\end{align*}
+		\end{enumerate}
+	\end{zm}
+	
 \end{xiti}
