@@ -31,6 +31,7 @@
 \usepackage{pgfplots}
 \usepackage[listings]{tcolorbox}
 \usepackage[amsmath,hyperref,thmmarks,framed]{ntheorem}
+\usepackage{ifplatform}
 
 %%%%%%%%%%%%%%%  biblatex v3.15a bug fixing  %%%%%%%%%%%%%
 \providetoggle{blx@lang@captions@english}
@@ -45,7 +46,8 @@
 \tcbuselibrary{skins,breakable}
 
 % \setmonofont{DejaVuSansMono Nerd Font}
-\newfontfamily\codefont{DejaVuSansMono Nerd Font}
+\ifwindows\newfontfamily\codefont{DejaVuSansMono Nerd Font}\fi
+\iflinux\newfontfamily\codefont{DejaVuSansMono}\fi
 
 \geometry{
 	a4paper,
