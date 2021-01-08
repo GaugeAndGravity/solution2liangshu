@@ -31,6 +31,9 @@
 \usepackage{pgfplots}
 \usepackage[listings]{tcolorbox}
 \usepackage[amsmath,hyperref,thmmarks,framed]{ntheorem}
+\usepackage{pdftexcmds}
+\usepackage{catchfile}
+\usepackage{ifluatex}
 \usepackage{ifplatform}
 
 %%%%%%%%%%%%%%%  biblatex v3.15a bug fixing  %%%%%%%%%%%%%
@@ -46,8 +49,12 @@
 \tcbuselibrary{skins,breakable}
 
 % \setmonofont{DejaVuSansMono Nerd Font}
-\ifwindows\newfontfamily\codefont{DejaVuSansMono Nerd Font}\fi
-\iflinux\newfontfamily\codefont{DejaVuSansMono}\fi
+\ifwindows
+	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
+\fi
+\iflinux
+	\newfontfamily\codefont{DejaVuSansMono}
+\fi
 
 \geometry{
 	a4paper,
