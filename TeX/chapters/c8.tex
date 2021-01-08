@@ -293,5 +293,92 @@
 		\end{equation*}
 		故 $\tensor{F}{_a_b} = 0$，与电磁场非零矛盾。
 	\end{zm}
+
+	\item 考虑 Taub 的平面对称真空解 (8-6-1')\footnote{正文(8-6-1')为
+	\begin{equation*}
+		\dd{s}^2 = z^{-1/2} \left( -\dd{t}^2 + \dd{z}^2 \right) + z \left( \dd{x}^2 + \dd{y}^2 \right). \tag{8-6-1'}
+	\end{equation*}
+	}。
+	\begin{enumerate}[label=(\alph*)]
+		\item 写出静态观者的4速用坐标基矢的表达式；
+		\item 设两静态观者的空间坐标分别为 $(x,y,z_1)$ 和 $(x,y,z_2)$，求他们的空间距离。
+	\end{enumerate}
+
+	\begin{jie}
+		\begin{enumerate}[label=(\alph*)]
+			\item 由于 Taub 解
+			\begin{equation*}
+				\dd{s}^2 = z^{-1/2} \left( -\dd{t}^2 + \dd{z}^2 \right) + z \left( \dd{x}^2 + \dd{y}^2 \right)
+			\end{equation*}
+			不含 $t$ 坐标，故 $\tensor{\left( \pdv{t} \right)}{^a}$ 是 Killing 矢量场，且易知与 $x$-$y$ 平面正交，而
+			\begin{equation*}
+				\tensor{g}{_a_b} \tensor{\left( \pdv{t} \right)}{^a} \tensor{\left( \pdv{t} \right)}{^b} = \tensor{g}{_0_0} = - z^{-1/2},
+			\end{equation*}
+			故
+			\begin{equation*}
+				\tensor{Z}{^a} = z^{1/4} \tensor{\left( \pdv{t} \right)}{^a}
+			\end{equation*}
+			是归一化的静态观者。
+			\item 空间诱导度规为
+			\begin{equation*}
+				\dd{\hat{s}}^2 = z\left( \dd{x}^2 + \dd{y}^2 \right) + z^{-1/2} \dd{z}^2,
+			\end{equation*}
+			用第三章的代码让麦酱算得非零克氏符为
+			\begin{equation*}
+				\ChristoffelSymbol{1}{1}{3} = \ChristoffelSymbol{1}{3}{1} = \ChristoffelSymbol{2}{2}{3} = \ChristoffelSymbol{2}{3}{2} = \frac{1}{2z} \qc \ChristoffelSymbol{3}{1}{1} = \ChristoffelSymbol{3}{2}{2} = - \frac{\sqrt{z}}{2} \qc \ChristoffelSymbol{3}{3}{3} = - \frac{1}{4z},
+			\end{equation*}
+			故测地线方程为
+			\begin{equation*}
+				\left\{
+					\begin{aligned}
+						\ddot{x} &= - \frac{1}{z} \dot{x} \dot{z},\\
+						\ddot{y} &= - \frac{1}{z} \dot{y} \dot{z},\\
+						\ddot{z} &= \frac{\sqrt{z}}{2} \left( \dot{x}^2 + \dot{y}^2 \right) + \frac{1}{4z} \dot{z}^2,
+					\end{aligned}
+				\right.
+			\end{equation*}
+			此方程组的通解不易解，但容易猜测 $z$ 坐标线是解，将 $\dot{x} = \dot{y} = 0$ 代入，前两式成立，第三式为
+			\begin{equation*}
+				\ddot{z} = \frac{1}{4z} \dot{z}^2,
+			\end{equation*}
+			% 令 $u=\dot{z}$，则
+			% \begin{equation*}
+			% 	\ddot{z} = \dvt{\dot{z}} = \dv{\dot{z}}{z} \dv{z}{t} = u \dv{u}{z},
+			% \end{equation*}
+			% 故
+			% \begin{align*}
+			% 	u \dv{u}{z} &= \frac{u^2}{4z}\\
+			% 	\implies \frac{\dd{u}}{u} &= \frac{\dd{z}}{4z}\\
+			% 	\implies \ln{u} &= \frac{1}{4} \ln{z} + C\\
+			% 	\implies u &= C_1 z^{1/4},
+			% \end{align*}
+			% 即
+			% \begin{gather*}
+			% 	\dv{z}{t} = C_1 z^{1/4}\\
+			% 	\implies \frac{\dd{z}}{z^{1/4}} = C_1 \dd{t}\\
+			% 	\implies z = \left( \frac{3}{4} \left( C_1 t + C_2 \right) \right)^{4/3} = (a t + b)^{4/3},
+			% \end{gather*}
+			% 故 $z$ 坐标线重参数化是解。
+			显然必有解，故 $z$ 坐标线重参数化的确是解。
+			\begin{tcolorbox}[breakable,title=另一验证方法,fonttitle=\normalfont\bfseries]
+				除了观察ODEs，也可直接计算
+				\begin{equation*}
+					\begin{split}
+						\tensor{\left( \pdv{z} \right)}{^a} \Nabla{a} \tensor{\left( \pdv{z} \right)}{^b} &= \ChristoffelSymbol{\mu}{3}{3} \tensor{\left( \pdv{x^\mu} \right)}{^b}\\
+						&= -\frac{1}{4z} \tensor{\left( \pdv{z} \right)}{^b},
+					\end{split}
+				\end{equation*}
+				故知是测地线。
+			\end{tcolorbox}
+			由于
+			\begin{equation*}
+				\tensor{h}{_a_b} \tensor{\left( \pdv{z} \right)}{^a} \tensor{\left( \pdv{z} \right)}{^b} = \tensor{h}{_3_3} = z^{-1/2},
+			\end{equation*}
+			故从 $\left( x,y,z_1 \right)$ 到 $(x,y,z_2)$ 的线长为
+			\begin{equation*}
+				\int_{z_1}^{z_2} \sqrt{\tensor{h}{_a_b} \tensor{\left( \pdv{z} \right)}{^a} \tensor{\left( \pdv{z} \right)}{^b}} \dd{z} = \int_{z_1}^{z_2} z^{-1/4} \dd{z} = \frac{4}{3} \left( z_2^{3/4} - z_1^{3/4} \right).
+			\end{equation*}
+		\end{enumerate}
+	\end{jie}
 	
 \end{xiti}
