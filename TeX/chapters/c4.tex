@@ -3,16 +3,16 @@
 \chapter{李导数、Killing场和超曲面}
 \begin{xiti}
 	\item 试证由式(4-1-1)定义的$\tensor{\left(\phi_* v\right)}{^a}$满足\S 2.2定义2对矢量的两个要求，从而的确是$\phi(p)$点的矢量。
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item $\left(\phi_* v\right) (f+g)= v(\phi^*(f+g))=v(\phi^* f)+ v(\phi^* g)= \left(\phi_* v\right)(f)+ \left(\phi_* v\right)(g) $；
 			\item $\left(\phi_* v\right)(fg)= v(\phi^*(fg))= v(\phi^*(f)\phi^*(g))= \left.\phi^*(f)\right|_p v(\phi^* g)+ \left.\phi^*(g)\right|_p v(\phi^* f)= \left. f \right|_{\phi(p)}\left(\phi_* v\right)(g)+ \left. g \right|_{\phi(p)}\left(\phi_* v\right)(f) $。
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 试证定理4-1-1、4-1-2和4-1-3.
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item[(1)] 定理4-1-1如下：
@@ -53,7 +53,7 @@
             	&=\left(\phi^* v\right) ({x^\prime}^\mu)\\
             	&=v(\phi_* {x^\prime}^\mu)\\
             	&=v(y^\mu)\\
-            	&=\left.\tensor{\left(\dd{y^\mu}\right)}{_a} \right|_{\phi(p)} \tensor{v}{^a} 
+            	&=\left.\tensor{\left(\dd{y^\mu}\right)}{_a} \right|_{\phi(p)} \tensor{v}{^a}
             	\end{align*}
             	故\[ \phi_* \left[ \left. \tensor{\left(\dd{{x^\prime}^\mu}\right)}{_a} \right|_p \right]=\left.\tensor{\left(\dd{y^\mu}\right)}{_a} \right|_{\phi(p)}, \]于是对任意张量场$T\in\F_M(k,l) $，
             	\begin{align*}
@@ -65,32 +65,32 @@
             \end{yl}
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 设$\phi\colon M\rightarrow N$ 为光滑映射，$p \in M $，$\{ y^\mu \}$是$\phi(p)$点某邻域上的坐标，试证
 	\begin{displaymath}
 	\tensor{\left(\phi_* v\right)}{^a}= v \left( \phi^* y^\mu \right) \tensor{\left(\pd{y^\mu}\right)}{^a}\qc \forall \tensor{v}{^a} \in V_p.
 	\end{displaymath}
-	
+
 	\begin{zm}
 		\begin{align*}
 		\tensor{\left(\phi_* v\right)}{^a}&= \left(\phi_* v\right) (y^\mu) \tensor{\left(\pdv{y^\mu}\right)}{^a}\\
 		&=v \left(\phi^* y^\mu\right) \tensor{\left(\pdv{y^\mu}\right)}{^a}
 		\end{align*}
 	\end{zm}
-	
+
 	\item 设$M$，$N$是流形，$\phi\colon M\rightarrow N$是微分同胚，$p\in M$，$q\equiv \phi(p)$，试证推前映射$\phi_* \colon V_p \rightarrow V_q $是同构映射。
-	
+
 	\begin{zm}
 	由定理~\hyperlink{thm4.1.1}{4-1-1}~知$\phi_*$为线性映射，又知其有逆映射$\phi^*$，故为线性同构。
 	\end{zm}
-	
+
 	\item 设$M$，$N$，$Q$是流形，$\phi\colon M \rightarrow N $和$\psi \colon N \rightarrow Q $是光滑映射。
 	\begin{enumerate}
 		\item[(a)] 试证$\left( \psi \circ \phi \right)^* f= \left(\phi^* \circ \psi^* \right) f $，$\forall f\in \F_Q $。
 		\item[(b)] 试证$\left(\psi \circ \phi \right)_* \tensor{v}{^a}= \psi_*\left( \phi_* \tensor{v}{^a} \right) \qc \forall p\in M,\tensor{v}{^a}\in V_p $。
 		\item[(c)] \hypertarget{4.5.c}{}把$\left( \psi \circ \phi \right)^* $和$\phi^* \circ \psi^* $都看作由$\F_Q(0,l) $到$\F_M(0,l) $的映射，试证\[ \left( \psi \circ \phi \right)^*= \phi^* \circ \psi^*. \]
 	\end{enumerate}
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item[(a)] 按照拉回映射的定义，
@@ -114,9 +114,9 @@
 			\end{align*}
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 设$\phi\colon M \rightarrow N $是微分同胚，$\tensor{v}{^a}$，$\tensor{u}{^a}$是$M$上的矢量场，试证$\phi_*\left( \tensor{\left[ v,u \right]}{^a} \right)= \tensor{\left[\phi_* v,\phi_* u \right]}{^a}$，其中$\tensor{\left[v,u \right]}{^a}$代表对易子。
-	
+
 	\begin{zm}
 		首先验证一个等式：$\forall v \in \F_M(1,0),f\in \F_N $，有$v(\phi^* f)=\phi^*\left[ (\phi_* v)f \right] $（即把逐点定义的切矢的推前映射表述成场的形式）。$\forall p \in M $，
 		\begin{align*}
@@ -134,9 +134,9 @@
 		&= \left. \left[\phi_* v,\phi_* u\right] \right|_{\phi(p)} (f).
 		\end{align*}
 	\end{zm}
-	
+
 	\item 试证定理4-2-4.
-	
+
 	\begin{zm}
 		定理4-2-4如下：
 		\begin{yl}{Thm}
@@ -162,9 +162,9 @@
 	    	\end{gather*}
 	    \end{yl}
 	\end{zm}
-	
+
 	\item 设$\tensor{v}{^a} \in \F_M(1,0) $，$\tensor{\omega}{_a} \in \F_M(0,1) $，试证对任一坐标系$\{x^\mu \}$有\[ \tensor{\left(\Ld{v} \omega \right)}{_\mu} = \tensor{v}{^\nu} \pdv*{\tensor{\omega}{_\mu}}{x^\nu} + \tensor{\omega}{_\nu} \pdv*{\tensor{v}{^\nu}}{x^\mu}. \]提示：用式(4-2-7)并令其$\Nabla{a}$为$\Partial{a}$。
-	
+
 	\begin{zm}
 		式(4-2-7)为（也就是定理~\hyperlink{thm4.2.4}{4-2-4}）：\[\Ld{v} \tensor{\omega}{_a}= \tensor{v}{^b} \Nabla{b} \tensor{\omega}{_a} + \tensor{\omega}{_b} \Nabla{a} \tensor{v}{^b}\qc \forall \tensor{v}{^a} \in \F(1,0),\omega\in \F(0,1)\]于是
 		\begin{align*}
@@ -175,7 +175,7 @@
 	\end{zm}
 
 	\item \hypertarget{4.9}{}设$\tensor{u}{^a},\tensor{v}{^a} \in \F_M(1,0) $，则下式作用于任意张量场都成立\[ \left[ \Ld{v},\Ld{u} \right]= \Ld{\left[v,u\right]}\qq{（其中$\left[ \Ld{v},\Ld{u} \right] \equiv \Ld{v}\Ld{u}-\Ld{u}\Ld{v} $）.} \]试就作用对象为$f \in \F_M $和$\tensor{w}{^a}\in \F_M(1,0) $的情况给出证明。提示：当作用对象为$\tensor{w}{^a}$时可用雅可比恒等式（第2章习题~\hyperlink{ykb}{8}）。
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item 作用于标量场：
@@ -195,9 +195,9 @@
 			\end{align*}
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 设$\tensor{F}{_a_b}$是4维闵氏空间上的反称张量场，其在洛伦兹坐标系$\{t,x,y,z \}$的分量为$\tensor{F}{_0_1}=-\tensor{F}{_1_3}=x \rho^{-1} $，$\tensor{F}{_0_2}=-\tensor{F}{_2_3}=y \rho^{-1} $，$\tensor{F}{_0_3}=\tensor{F}{_1_2}=0 $，其中$\rho\equiv \left(x^2+y^2\right)^{1/2} $。试证$\tensor{F}{_a_b}$有旋转对称性，即$\Ld{v} \tensor{F}{_a_b}=0 $，其中$\tensor{v}{^a}=-y \tensor{\left(\pd{x}\right)}{^a}+x \tensor{\left(\pd{y}\right)}{^a} $。
-	
+
 	\begin{zm}
 		由\[\Ld{v} \tensor{F}{_a_b} = \tensor{v}{^c} \Nabla{c} \tensor{F}{_a_b} + \tensor{F}{_a_c} \Nabla{b} \tensor{v}{^c} + \tensor{F}{_c_b} \Nabla{a} \tensor{v}{^c},\]取$\Nabla{a}$为$\Partial{a}$，有\[  \tensor{\left(\Ld{v} F\right)}{_\mu_\nu} = \tensor{v}{^\sigma} \Partial{\sigma} \tensor{F}{_\mu_\nu} + \tensor{F}{_\mu_\sigma} \Partial{\nu} \tensor{v}{^\sigma} + \tensor{F}{_\sigma_\nu} \Partial{\mu} \tensor{v}{^\sigma}  \]其中第一项求和只对$\sigma=1,2$取，第二三项求和只对$\sigma=1,2$且$\sigma\neq\mu,\nu$取，且$\nu\neq1,2$时第二项不存在，$\mu\neq1,2$时第三项不存在。又易看出$\Ld{v} \tensor{F}{_a_b} $反称，于是
 		\begin{align*}
@@ -220,9 +220,9 @@
 		\end{align*}
 		故$\Ld{v} \tensor{F}{_a_b}=0 $。
 	\end{zm}
-	
+
 	\item 设$ \tensor{\xi}{^a} $是$\left( M,\tensor{g}{_a_b} \right)$中的 Killing 矢量场，$\Nabla{a}$与$\tensor{g}{_a_b}$相适配，试证$\Nabla{a} \tensor{\xi}{^a}=0 $。\hypertarget{xt4-11}{}
-	
+
 	\begin{zm}
 		由 Killing 方程，
 		\begin{align*}
@@ -231,9 +231,9 @@
 		&=0.
 		\end{align*}
 	\end{zm}
-	
+
 	\item 设$\tensor{\xi}{^a}$是$\left(M,\tensor{g}{_a_b} \right)$中的 Killing 矢量场，$\phi\colon M\rightarrow M $是等度规映射，试证$\phi_* \tensor{\xi}{^a} $也是$\left( M,\tensor{g}{_a_b} \right) $中的 Killing 矢量场。提示：利用习题~\hyperlink{4.5.c}{5(c)}~中的结论。
-	
+
 	\begin{zm}
 		记$\tensor{\xi}{^a}$的积分曲线为$C(t)$，它诱导出的单参微分同胚群为$\{\psi_t\}$，则$\phi_* \tensor{\xi}{^a} $的积分曲线是$\phi\circ C(t)$，其诱导出的单参微分同胚群为$\psi^\prime_t=\phi\circ\psi_t \circ \phi^{-1} $。由定义，
 		\begin{align*}
@@ -254,13 +254,13 @@
     	&=0.
     	\end{align*}
     \end{zm}
-	
+
 	\item 设$\tensor{\xi}{^a}$是广义黎曼空间$\left(M, \tensor{g}{_a_b} \right)$的 Killing 矢量场，$\tensor{R}{_a_b_c^d}$是$\tensor{g}{_a_b}$的黎曼曲率张量。
 	\begin{enumerate}
 		\item[(a)] 试证$\Nabla{a}\Nabla{b}\tensor{\xi}{_c} = - \tensor{R}{_b_c_a^d}\tensor{\xi}{_d} $。注：此式对证明定理4-3-4有重要用处。提示：由$\tensor{R}{_a_b_c^d}$的定义以及 Killing 方程(4-3-1)可知$\Nabla{a} \Nabla{b} \tensor{\xi}{_c} + \Nabla{b} \Nabla{c} \tensor{\xi}{_a} = \tensor{R}{_a_b_c^d} \tensor{\xi}{_d} $。此式称为第一式。作指标替换$a\mapsto b$，$b\mapsto c$，$c\mapsto a$得第二式，再替换一次得第三式。以第一、第二式之和减第三式并利用(3-4-7)便得证。
 		\item[(b)] 利用(a)的结果证明$\tensor{\nabla}{^a} \Nabla{a} \tensor{\xi}{_c} = - \tensor{R}{_c_d} \tensor{\xi}{^d} $，其中$\tensor{R}{_c_d}$是里奇张量。
 	\end{enumerate}
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item[(a)] 由黎曼张量的定义，
@@ -287,9 +287,9 @@
 			\end{displaymath}
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 验证式(4-3-3)中的$ \tensor{\left(\pd{\eta}\right)}{^a}$的确满足 Killing 方程(4-3-1)。
-	
+
 	\begin{zm}
 		由$\displaystyle \tensor{\left(\pdv{\eta}\right)}{^a} = x \tensor{\left(\pdv{t}\right)}{^a} + t\tensor{\left(\pdv{x}\right)}{^a} $升指标得
 		\begin{displaymath}
@@ -301,9 +301,9 @@
 		\end{displaymath}
 		这是一个反称张量，故满足$\displaystyle \Nabla{(a} \tensor{\left(\pd{\eta}\right)}{_{b)}}=0 $。
 	\end{zm}
-	
+
 	\item 找出2维欧氏空间中由$\tensor{R}{^a} = x \tensor{\left(\pd{y}\right)}{^a} - y \tensor{\left(\pd{x}\right)}{^a} $生出的单参等度规群的任一元素$\phi_\alpha$诱导的坐标变换。
-	
+
 	\begin{zm}
 		积分曲线的参数式满足微分方程
 		\begin{displaymath}
@@ -342,9 +342,9 @@
 		\right.
 		\end{displaymath}
 	\end{zm}
-	
+
 	\item 设时空$\left(M,\tensor{g}{_a_b}\right)$中的超曲面$\phi[S]$上每点都有类光切矢而无类时切矢（“切矢”指切于$\phi[S]$），试证它必为类光超曲面。提示：\circled{1}证明与类时矢量$\tensor{t}{^a}$正交的矢量必类空[选正交归一基底$\{ \tensor{\left(e_\mu\right)}{^a} \}$使$ \tensor{\left(e_0\right)}{^a}= \tensor{t}{^a} $]；\circled{2}证明类时超曲面上每点都有类时切矢；\circled{3}由以上两点证明本命题。
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item[\circled{1}] 设$\tensor{t}{^a} $为类时矢量，选一组正交归一基$ \{ \tensor{\left(e_\mu\right)}{^a} \} $使得$ \tensor{\left(e_0\right)}{^a}=\tensor{t}{^a} $，则$\tensor{g}{_a_b} $在这组基下被对角化且$\tensor{g}{_0_0}= \tensor{g}{_a_b} \tensor{(e_0)}{^a} \tensor{(e_0)}{^b} <0 $，由惯性定理知$\tensor{g}{_1_1},\tensor{g}{_2_2} , \tensor{g}{_3_3}>0 $。设$\tensor{v}{^a} $与$ \tensor{t}{^a} $正交，则
@@ -359,12 +359,5 @@
 			\item[\circled{2}] 根据定义，类时超曲面的每一点的法矢类空。在超曲面任意一点$p$的切空间$W_p $取一组正交基，则连同法矢一起得到$M$上$p$点切空间$V_p$的一组正交基，其中类空法矢不属于$W_p$，根据惯性定理这组基中有一个类时矢量，且它属于$W_p$。
 			\item[\circled{3}] 若$\phi[S] $为类空超曲面，则其切矢与类时法矢正交，由\circled{1}知所有切矢类空，矛盾；若$\phi[S] $为类时超曲面，由\circled{2}知每一点都有类时切矢，矛盾。故$\phi[S] $为类光超曲面。
 		\end{enumerate}
-		
 	\end{zm}
-	
-	
-	
-	
-	
-	
 \end{xiti}

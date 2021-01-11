@@ -11,7 +11,7 @@
 		提示：令$\tensor{{\tilde{\nabla}}}{_a} $为无挠算符，模仿定理3-1-4证明中的推导。
 		\item[(2)] 试证$\tensor{T}{^c_a_b}\tensor{u}{^a}\tensor{v}{^b}=u^a\Nabla{a}v^c-v^a\Nabla{a}u^c-{[u,v]}^c\quad \forall u^a,v^a\in\F(1,0) $。
 	\end{enumerate}
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item[(1)] 去掉无挠性条件仍有$\Nabla{a}\tensor{\omega}{_b}=\tensor{\tilde{\nabla}}{_a}\tensor{\omega}{_b}-\tensor{C}{^c_a_b}\tensor{\omega}{_c} $成立，于是令$\tensor{\omega}{_a}=\tensor{\left(\dd{f}\right)}{_a}=\Nabla{a}f=\tensor{\tilde{\nabla}}{_a}f $，得
@@ -27,7 +27,7 @@
 			\Nabla{a}\Nabla{b}f-\Nabla{b}\Nabla{a}f=\left(\tensor{C}{^c_b_a}-\tensor{C}{^c_a_b} \right)\Nabla{c}f
 			\end{displaymath}
 			于是得挠率张量$\tensor{T}{^c_a_b}=\tensor{C}{^c_a_b}-\tensor{C}{^c_b_a} $。
-			\item[(2)] 
+			\item[(2)]
 			\begin{align*}
 			[u,v](f)=&\; u(v(f))-v(u(f))\\
 			=&\; u^b\Nabla{b}\left( v^a\Nabla{a}f \right)-v^a\Nabla{a}\left( u^b\Nabla{b}f \right)\\
@@ -38,9 +38,9 @@
 			故$\tensor{T}{^c_a_b}\tensor{u}{^a}\tensor{v}{^b}=u^a\Nabla{a}v^c-v^a\Nabla{a}u^c-{[u,v]}^c $。
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 设$v^a$为矢量场，$v^\mu $和${v^\prime}^\mu$为$v^a$在坐标系$\{x^\nu\}$和$\{{x^\prime}^\nu \} $的分量，$\tensor{A}{^\nu_\mu}\equiv \pdv*{v^\nu}{x^\mu} $，$\tensor{{A^\prime}}{^\nu_\mu}\equiv \pdv*{{v^\prime}^\nu}{{x^\prime}^\mu} $，试证$\tensor{A}{^\nu_\mu}$和$\tensor{{A^\prime}}{^\nu_\mu}$的关系一般而言不满足张量分量变换律。提示：利用$v^\nu $与${v^\prime}^\nu $之间的变换规律。
-	
+
 	\begin{zm}
 		\begin{align*}
 		\tensor{{A^\prime}}{^\nu_\mu}=&\;\pdv{{v^\prime}^\nu}{{x^\prime}^\mu}\\
@@ -50,9 +50,9 @@
 		\end{align*}
 		可以看到相比于张量分量变换律多出了第一项。
 	\end{zm}
-	
+
 	\item 试证定理3-1-7。
-	
+
 	\begin{zm}
 		\begin{align*}
 		\tensor{v}{^\nu_{;\mu}}=&\; \Nabla{a}\tensor{v}{^b}\tensor{\left(\dd{x^\nu}\right)}{_b}\tensor{\left(\pdv{x^\mu}\right)}{^a}\\
@@ -63,13 +63,13 @@
 		=&\; \tensor{\omega}{_\nu_{,\mu}}-\ChristoffelSymbol{\sigma}{\mu}{\nu}\tensor{\omega}{_\sigma}.
 		\end{align*}
 	\end{zm}
-	
+
 	\item \hypertarget{3.4}{} 用下式定义$\ChristoffelSymbol{\sigma}{\mu}{\nu}$：$\displaystyle\tensor{\left(\pdv{x^\nu}\right)}{^b}\Nabla{b}\tensor{\left(\pdv{x^\mu}\right)}{^a}=\ChristoffelSymbol{\sigma}{\mu}{\nu}\tensor{\left(\pdv{x^\sigma}\right)}{^a} $，试证
 	\begin{enumerate}
 		\item[(a)] $\ChristoffelSymbol{\sigma}{\mu}{\nu}=\ChristoffelSymbol{\sigma}{\nu}{\mu}$（提示：利用$\Nabla{a}$的无挠性和坐标基矢间的对易性。）；
 		\item[(b)] $\tensor{v}{^\nu_{;\mu}}=\tensor{v}{^\nu_{,\mu}}+\ChristoffelSymbol{\nu}{\mu}{\beta}\tensor{v}{^\beta} $（注：这其实是克氏符的等价定义。）。
 	\end{enumerate}
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item[(a)] 交换指标$\mu,\nu$得
@@ -85,7 +85,7 @@
 			故$\ChristoffelSymbol{\sigma}{\mu}{\nu}=\ChristoffelSymbol{\sigma}{\nu}{\mu} $。
 			\item[(b)] 由$$\tensor{\left(\pdv{x^\nu}\right)}{^b}\Nabla{b}\tensor{\left(\pdv{x^\mu}\right)}{^a}=\ChristoffelSymbol{\sigma}{\mu}{\nu}\tensor{\left(\pdv{x^\sigma}\right)}{^a}$$知$$\Nabla{b}\tensor{\left(\pdv{x^\mu}\right)}{^a}=\ChristoffelSymbol{\sigma}{\mu}{\nu}\tensor{\left(\dd{x^\nu}\right)}{_b} \tensor{\left(\pdv{x^\sigma}\right)}{^a}, $$于是
 			\begin{align*}
-			\Nabla{a} \tensor{v}{^b} 
+			\Nabla{a} \tensor{v}{^b}
 			=&\; \Nabla{a} \left[ \tensor{v}{^\mu} \tensor{\left(\pdv{x^\mu}\right)}{^b} \right] \\
 			=&\tmu \tensor{\left(\dd{v^\mu}\right)}{_a} \tensor{\left(\pdv{x^\mu}\right)}{^b} + \tensor{v}{^\mu} \Nabla{a} \tensor{\left(\pdv{x^\mu}\right)}{^b}\\
 			=&\; \pdv{\tensor{v}{^\mu}}{x^\nu} \tensor{\left(\dd{x^\nu}\right)}{_a} \tensor{\left(\pdv{x^\mu}\right)}{^b} + \tensor{v}{^\mu} \ChristoffelSymbol{\sigma}{\mu}{\nu} \tensor{\left(\dd{x^\nu}\right)}{_a} \tensor{\left(\pdv{x^\sigma}\right)}{^b}\\
@@ -94,7 +94,7 @@
 			于是$\Nabla{a}\tensor{v}{^b}$的分量$\tensor{v}{^\nu_{;\mu}}=\tensor{v}{^\nu_{,\mu}}+\ChristoffelSymbol{\nu}{\mu}{\sigma} \tensor{v}{^\sigma} $。
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 判断是非：
 	\begin{enumerate}
 		\item[(1)] \hypertarget{3.5.1}{}$\Nabla{a} \tensor{\left(\dd{x^\mu}\right)}{_b} =0 $；
@@ -103,7 +103,7 @@
 		\item[(4)] \hypertarget{3.5.4}{} $\tensor{v}{^\nu_{;\mu}}=\tensor{\left(\pd{x^\mu}\right)}{^a} \Nabla{a} \tensor{v}{^\nu} $；
 		\item[(5)] $\tensor{v}{^\nu_{,\mu}}=\tensor{\left(\pd{x^\mu}\right)}{^a} \Nabla{a} \tensor{v}{^\nu} $。
 	\end{enumerate}
-	
+
 	\begin{jie}
 		\begin{enumerate}
 			\item[(1)] 错。
@@ -130,12 +130,12 @@
 			\end{align*}
 		\end{enumerate}
 	\end{jie}
-	
+
 	\item 设$C(t) $是$\{x^\mu\}$的坐标域内的曲线，$x^\mu (t)$是$C(t)$在该系的参数表达式，$\tensor{v}{^a}$是$C(t)$上的矢量场，令$\mathrm{D}\tensor{v}{^\mu} / \dd{t} \equiv \tensor{\left(\dd{x^\mu}\right)}{_a} \tensor{\left(\pd{t}\right)}{^b} \Nabla{b} \tensor{v}{^a} $，试证
 	\begin{displaymath}
 	\mathrm{D} \tensor{v}{^\mu} / \dd{t} \equiv \dv*{\tensor{v}{^\mu}}{t} + \ChristoffelSymbol{\mu}{\nu}{\sigma} \tensor{v}{^\sigma} \dv*{x^\nu (t)}{t}.
 	\end{displaymath}
-	
+
 	\begin{zm}
 		由定理3-2-1，$\displaystyle \tensor{\left(\pdv{t}\right)}{^b} \Nabla{b} \tensor{v}{^a} = \tensor{\left(\pdv{x^\mu}\right)}{^a} \left( \dv{\tensor{v}{^\mu}}{t} + \ChristoffelSymbol{\mu}{\nu}{\sigma} \dv{x^\mu(t)}{t} \tensor{v}{^\sigma} \right) $，于是
 		\begin{align*}
@@ -144,9 +144,9 @@
 		&= \dv{\tensor{v}{^\mu}}{t} + \ChristoffelSymbol{\mu}{\nu}{\sigma} \tensor{v}{^\sigma} \dv{x^\mu(t)}{t}  .
 		\end{align*}
 	\end{zm}
-	
+
 	\item \hypertarget{3.7}{}求出3维欧氏空间中球坐标系的全部非零$\ChristoffelSymbol{\sigma}{\mu}{\nu} $。
-	
+
 	\begin{jie}
 		由\hyperlink{2.19a}{第二章19(a)}知，球坐标系下欧氏度规分量$\tensor{g}{_\mu_\nu}$排成的矩阵为：
 		\begin{displaymath}
@@ -223,7 +223,7 @@
 	\end{jie}
 
 	\item 设$I$是$\mathbb{R}$的一个区间，$C\colon I\rightarrow M $是$\left( M,\Nabla{a} \right)$中的曲线，试证$\forall s,t\in I $，平移映射$\psi\colon V_{C(s)}\rightarrow V_{C(t)} $（见图3-2）是同构映射。
-	
+
 	\begin{zm}
 		对每个$v\in V_{C(s)}$，有唯一一个$C(t)$上的平移矢量场$\bar{v}(t)$满足$\bar{v}(s)=v$，$\psi(v)=v(t)$。首先易验证$\psi$为线性映射，下面论证$\ker\psi=\{0\}$。设$\psi(v)= \bar{v}(t)=0$，于是由正文(3-2-5)式：
 		\begin{displaymath}
@@ -233,7 +233,7 @@
 	\end{zm}
 
 	\item 试证定理3-3-2、3-3-3和3-3-5。
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item[(1)] \hypertarget{3.9.1}{}定理3-3-2如下：
@@ -279,12 +279,12 @@
             于是$\tensor{g}{_a_b} \tensor{T}{^a} \tensor{T}{^b} $沿线为常数$T$，弧长按定义与$t$的关系为$ \dd{l} = \sqrt{ \abs{ \tensor{g}{_a_b} \tensor{T}{^a} \tensor{T}{^b} }} \dd{t}=T\dd{t} $，由定理~\hyperlink{th3-3-3}{3-3-3}~知$l$为仿射参数。
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item \begin{enumerate}
 		\item[(a)] \hypertarget{2.10}{}写出球面度规$\dd{s}^2=R^2 \left( \dd{\theta}^2 +\sin^2 \theta \dd{\phi}^2 \right) $（$R$为常数）的测地线方程；
 		\item[(b)] 验证任一大圆弧（配以适当参数）满足测地线方程。提示：选球面坐标系$\{\theta,\phi \} $使所给大圆弧为赤道的一部分，并以$\phi$为仿射参数。
 	\end{enumerate}
-    
+
     \begin{jie}
     	\begin{enumerate}
     		\item[(a)] 首先求克氏符，度规分量$\tensor{g}{_\mu_\nu}$排成的矩阵为
@@ -292,7 +292,7 @@
     		\left[g\right]=\left(
     		\begin{array}{cc}
     		R^2&0\\
-    		0&R^2 \sin^2\theta 
+    		0&R^2 \sin^2\theta
     		\end{array}
     		\right)
     		\end{displaymath}
@@ -301,7 +301,7 @@
     		\left[g\right]^{-1}=\left(
     		\begin{array}{cc}
     		\dfrac{1}{R^2}&0\\
-    		0&\dfrac{1}{R^2 \sin^2\theta} 
+    		0&\dfrac{1}{R^2 \sin^2\theta}
     		\end{array}
     		\right)
     		\end{displaymath}
@@ -338,9 +338,9 @@
     		\item[(b)] 由于测地线方程具有坐标系无关的形式$\tensor{T}{^b} \Nabla{b} \tensor{T}{^a}=0 $，可选择球坐标系使得大圆弧落在赤道$\theta=\dfrac{\pi}{2} $上，于是$\cos \theta=0 $，满足测地线方程。
     	\end{enumerate}
     \end{jie}
-	
+
 	\item 试证定理3-4-2.
-	
+
 	\begin{zm}
 		在某坐标系下展开即得
 		\begin{align*}
@@ -350,9 +350,9 @@
 		\end{align*}
 		可见只与$\omega$在$p$点的值有关，证毕。
 	\end{zm}
-	
+
 	\item 试证式(3-4-10)。
-	
+
 	\begin{zm}
 		首先，$\tensor{R}{_{[abc]}_d}= \tensor{g}{_d_e} \tensor{R}{_{[abc]}^e} =0 $，而
 		\begin{align*}
@@ -371,9 +371,9 @@
 		\end{align*}
 		于是$\tensor{R}{_b_d_a_c}- \tensor{R}{_a_c_b_d}=0$。
 	\end{zm}
-	
+
 	\item \hypertarget{2.13}{}求出球面度规（见题~\hyperlink{2.10}{10}~）的黎曼张量在坐标系$(\theta,\phi)$的全部分量。
-	
+
 	\begin{jie}
 		由~\hyperlink{2.10}{10}~得，克氏符的全部非零分量为$ \ChristoffelSymbol{\theta}{\phi}{\phi}=-\sin \theta \cos \theta,\ChristoffelSymbol{\phi}{\phi}{\theta}=\ChristoffelSymbol{\phi}{\theta}{\phi}=\cot \theta $，由$\tensor{R}{_{\mu\nu\sigma}^\rho}= \tensor{\Gamma}{^\rho_\mu_\sigma_{,\nu}}- \tensor{\Gamma}{^\rho_\nu_\sigma_{,\mu}}+ \ChristoffelSymbol{\lambda}{\sigma}{\mu} \ChristoffelSymbol{\rho}{\nu}{\lambda}- \ChristoffelSymbol{\lambda}{\sigma}{\nu} \ChristoffelSymbol{\rho}{\mu}{\lambda} $得，非零分量或者满足$\rho=\theta$且$\mu\nu\sigma $中有两个为$ \phi$，或者满足$\rho=\phi $且$\mu \nu \sigma $中至少有一个为$\theta$，且前两个指标反称，前两个指标相同的分量为零，并且前三个指标只需考虑偶排列，奇排列只需对调前两个指标。
 		\begin{align*}
@@ -387,7 +387,7 @@
 		=&\mspace{1mu}-\mspace{-4mu}1
 		\end{align*}
 		于是非零分量仅有$\tensor{R}{_\theta_\phi_\phi^\theta}=-\tensor{R}{_\phi_\theta_\phi^\theta}=-\sin\theta, \tensor{R}{_\phi_\theta_\theta^\phi} = - \tensor{R}{_\theta_\phi_\theta^\phi}=-1 $。
-		
+
 		与愚蠢的人类相比，麦酱可以更快地计算（并且不会抄错分量\wl{12}）。将以下函数定义写入一个Mathematica程序包文件(.m)或者放在笔记本文件的开头：
 		\begin{lstlisting}[language=Mathematica]
 '\mma christoffelsymbol'['\mmacs g\_','\mmacs x\_','\mmacs i\_','\mmacs j\_','\mmacs k\_']:=
@@ -415,9 +415,9 @@ RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs
 			\caption{将第13题扔给麦酱计算}\label{f3.1}
 		\end{figure}
 	\end{jie}
-	
+
 	\item \hypertarget{3.14}{}求度规$\dd{s}^2 = \Omega^2(t,x) \left(-\dd{t}^2 + \dd{x}^2\right) $的黎曼张量在$\{t,x\}$系的全部分量（在结果中以$\dot{\Omega} $和$ \Omega^\prime$ 分别代表函数 $\Omega$对$t$和$x$的偏导数）。
-	
+
 	\begin{jie}
 		先求克氏符。
 		\begin{align*}
@@ -450,7 +450,7 @@ RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs
 		&=0
 		\end{align*}
 		故所有非零分量为$\displaystyle \tensor{R}{_t_x_x^t}= -\tensor{R}{_x_t_x^t}=\tensor{R}{_t_x_t^x}= -\tensor{R}{_x_t_t^x}= \frac{\Omega \left( \Omega^{\prime\prime}- \ddot{\Omega} \right)+ \dot{\Omega}^2 - {\Omega^\prime}^2 }{\Omega^2} $。
-		
+
 		本题用上述Mathematica代码解决如图~\ref{f3.2}：
 		\begin{figure}[htb]
 			\centering
@@ -458,9 +458,9 @@ RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs
 			\caption{将第14题扔给麦酱}\label{f3.2}
 		\end{figure}
 	\end{jie}
-	
+
 	\item \hypertarget{3.15}{}求度规$\dd{s}^2=z^{-1/2} \left(-\dd{t}^2+\dd{z}^2\right)+ z\left(\dd{x}^2+\dd{y}^2\right)$的黎曼张量在$\{t,x,y,z\}$系的全部分量。
-	
+
 	\begin{jie}
 		先求克氏符分量。由度规分量的非对角元均为零，克氏符分量\[\ChristoffelSymbol{\sigma}{\mu}{\nu}=\christoffelSymbol{\sigma}{\mu}{\nu}{\sigma}\]。非零分量至少应该满足：$\sigma\mu\nu$至少有两个相等；$\sigma\mu\nu$中至少有一个为$z$（否则导数项全为零）。进一步地，若两个相等，则第三个必为$z$（否则导数项为零）；若三个相等，则为$zzz$。即，非零分量满足三个指标中一个为$z$其余两个相同。
 		\begin{align*}
@@ -480,7 +480,7 @@ RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs
 		&=-\frac{1}{4z}
 		\end{align*}
 		于是所有非零克氏符分量为$\displaystyle \ChristoffelSymbol{t}{t}{z}= \ChristoffelSymbol{t}{z}{t}= -\frac{1}{4z}$，$\displaystyle \ChristoffelSymbol{x}{x}{z}= \ChristoffelSymbol{x}{z}{x} = \ChristoffelSymbol{y}{y}{z}= \ChristoffelSymbol{y}{z}{y}= \frac{1}{z} $，$\displaystyle \ChristoffelSymbol{z}{t}{t}= -\frac{1}{4z}$， $\displaystyle \ChristoffelSymbol{z}{x}{x}= \ChristoffelSymbol{z}{y}{y}= -\frac{\sqrt{z}}{2} $， $\displaystyle \ChristoffelSymbol{z}{z}{z}= -\frac{1}{4z} $。
-		
+
 		由黎曼曲率张量分量表达式$\displaystyle \tensor{R}{_\mu_\nu_\sigma^\rho}= \ChristoffelSymbol{\rho}{\sigma}{{\mu,\nu}}- \ChristoffelSymbol{\rho}{\nu}{{\sigma,\mu}}+ \ChristoffelSymbol{\lambda}{\sigma}{\mu} \ChristoffelSymbol{\rho}{\nu}{\lambda}- \ChristoffelSymbol{\lambda}{\nu}{\sigma} \ChristoffelSymbol{\rho}{\mu}{\lambda} $，注意到上述克氏符非零项的规律，黎曼张量的非零分量至少应该满足 $\mu \neq \nu$并且：
 		\begin{enumerate}
 			\item $\rho$不为$z$时，导数项非零的条件是$\mu\nu$中有一个为$z$另一个和$\rho$相同且$\sigma=z$；下面分类讨论后两项。
@@ -489,7 +489,7 @@ RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs
 				\item $\mu\nu$均不为$z$时，求导项为零，$\displaystyle \tensor{R}{_\mu_\nu_\sigma^\rho}=  \ChristoffelSymbol{\lambda}{\sigma}{\mu} \ChristoffelSymbol{\rho}{\nu}{\lambda}- \ChristoffelSymbol{\lambda}{\nu}{\sigma} \ChristoffelSymbol{\rho}{\mu}{\lambda} $，第一项中$\rho\nu\lambda$的组合要求$\lambda=z $且$\nu=\rho $，第二项中$\rho\mu\lambda$的组合要求$\lambda=z$且$\mu=\rho$，于是$\displaystyle \tensor{R}{_\mu_\nu_\sigma^\rho}=  \ChristoffelSymbol{z}{\sigma}{\mu} \ChristoffelSymbol{\rho}{\nu}{z}- \ChristoffelSymbol{z}{\nu}{\sigma} \ChristoffelSymbol{\rho}{\mu}{z} $，$\mu\nu$中至少一个与$\rho$相同。不妨设$\mu=\rho$，则$\displaystyle \tensor{R}{_\rho_\nu_\sigma^\rho}=- \ChristoffelSymbol{z}{\nu}{\sigma} \ChristoffelSymbol{\rho}{\rho}{z} $，非零项为$\displaystyle \tensor{R}{_\rho_\nu_\nu^\rho}=- \ChristoffelSymbol{z}{\nu}{\nu} \ChristoffelSymbol{\rho}{\rho}{z} $。
 			\end{enumerate}
 			\item $\rho$为$z$时，则后两项中$\lambda$应分别取$\nu$和$\mu$，即$\displaystyle \tensor{R}{_\mu_\nu_\sigma^z}= \ChristoffelSymbol{z}{\sigma}{{\mu,\nu}}- \ChristoffelSymbol{z}{\nu}{{\sigma,\mu}}+ \ChristoffelSymbol{\nu}{\sigma}{\mu} \ChristoffelSymbol{z}{\nu}{\nu}- \ChristoffelSymbol{\mu}{\nu}{\sigma} \ChristoffelSymbol{z}{\mu}{\mu} $，若$\mu\nu$均不为$z$，则导数项为零，而后两项中$\ChristoffelSymbol{\nu}{\sigma}{\mu}$和$ \ChristoffelSymbol{\mu}{\nu}{\sigma} $无论$\sigma$如何取都不能满足克氏符非零项“一个为$z$其余两个相同”的特征，故$\mu \nu$中有一个为$z$，考虑到指标$\mu \nu$反称只需计算偶排列，于是我们有$\nu=z$，非零项为$\displaystyle \tensor{R}{_\mu_z_\sigma^z}= \ChristoffelSymbol{z}{\sigma}{{\mu,z}}+ \ChristoffelSymbol{z}{\sigma}{\mu} \ChristoffelSymbol{z}{z}{z}- \ChristoffelSymbol{\mu}{z}{\sigma} \ChristoffelSymbol{z}{\mu}{\mu} $，又看出必须有$\mu= \sigma$，于是非零项为$\displaystyle \tensor{R}{_\mu_z_\mu^z}= \ChristoffelSymbol{z}{\mu}{{\mu,z}}+ \ChristoffelSymbol{z}{\mu}{\mu} \ChristoffelSymbol{z}{z}{z}- \ChristoffelSymbol{\mu}{z}{\mu} \ChristoffelSymbol{z}{\mu}{\mu} $。
-		\end{enumerate} 
+		\end{enumerate}
 	综上，可能非零项为
 	\begin{align*}
 	\tensor{R}{_\rho_z_z^\rho}&= \ChristoffelSymbol{\rho}{z}{{\rho,z}}+ \ChristoffelSymbol{\rho}{z}{\rho} \ChristoffelSymbol{\rho}{z}{\rho}- \ChristoffelSymbol{z}{z}{z} \ChristoffelSymbol{\rho}{\rho}{z}, & \rho&=t,x,y\\
@@ -526,9 +526,9 @@ RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs
 	\end{align*}
 	PS：我第一遍手算的算了几个小时（论经常抄错指标的悲惨……）所以还是分析一番，分类讨论分量非零条件顺便化简的好……当然最省事的还是交给麦酱，秒出结果……
 	\end{jie}
-	
+
 	\item \hypertarget{3.16}{}设$\alpha(z)$，$\beta(z)$，$\gamma(z)$为任意函数，$h=t+ \alpha(z)x+\beta(z)y+\gamma(z) $，求度规\[ \dd{s}^2= -\dd{t}^2 + \dd{x}^2 +\dd{y}^2 +h^2\dd{z}^2 \] 的黎曼张量在$\{t,x,y,z\}$系的全部分量。
-	
+
 	\begin{jie}
 		首先求克氏符分量，由于度规分量矩阵的非对角元全为零，\[\displaystyle \ChristoffelSymbol{\sigma}{\mu}{\nu}=\christoffelSymbol{\sigma}{\mu}{\nu}{\sigma}\]，导数项非零要求$\sigma\mu\nu$中有两个取$z$。
 		\begin{align*}
@@ -582,9 +582,9 @@ RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs
 		\caption{Mathematica验证第16题}\label{f3.3}
 	\end{figure}
 	\end{jie}
-	
+
 	\item 试证2维广义黎曼空间的爱因斯坦张量为零。提示：2维广义黎曼空间的黎曼张量只有一个独立分量。
-	
+
 	\begin{zm}
 		记$r\equiv\tensor{R}{_1_2_1_2} $，则
 		\begin{align*}
@@ -609,7 +609,7 @@ RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs
 		\end{align*}
 		其中$g=\det [g]$为度规分量矩阵的行列式。注意到，里奇张量分量排成的矩阵为
 		\begin{align*}
-		\left[R\right]&=\left( 
+		\left[R\right]&=\left(
 		\begin{array}{cc}
 		r\tensor{g}{^2^2}&-r\tensor{g}{^2^1}\\
 		-r\tensor{g}{^1^2}&r\tensor{g}{^1^1}
@@ -625,7 +625,5 @@ RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs
 		&=0.
 		\end{align*}
 	\end{zm}
-	
-	
-	
+
 \end{xiti}

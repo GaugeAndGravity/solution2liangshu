@@ -3,15 +3,15 @@
 \chapter{广义相对论基础}
 \begin{xiti}
 	\item 试证弯曲时空麦氏方程 $\tensor{\nabla}{^a} \tensor{F}{_a_b} = - 4\pi \tensor{J}{_b}$ 蕴含电荷守恒定律，即 $\Nabla{a} \tensor{J}{^a} = 0$ 。注：$\tensor{\nabla}{^a} \tensor{F}{_a_b} = - 4\pi \tensor{J}{_b}$ 等价于式 (7-2-8) 而非 (7-2-9) ，故本题表明式 (7-2-8) 而非式 (7-2-9) 可推出电荷守恒。
-	
+
 	\begin{zm}
 		\begin{equation*}
 		-4 \pi \Nabla{a} \tensor{J}{^a} = \Nabla{a} \Nabla{b} \tensor{F}{^b^a} = 0.
 		\end{equation*}
 	\end{zm}
-    
+
     \item 试证 $\displaystyle \Fd{\tensor{\omega}{_a}} = \Dd{\tensor{\omega}{_a}} + \left(\tensor{A}{_a} \wedge \tensor{Z}{_b}\right) \tensor{\omega}{^b} \quad \forall \tensor{\omega}{_a} \in \F_{G}(0,1).$
-    
+
     \begin{zm}
     	$\forall \tensor{v}{^a} \in \F_{G}(1,0),$
     	\begin{align*}
@@ -21,9 +21,9 @@
     	    &= \tensor{v}{^a} \left( \Dd{\tensor{\omega}{_a}} + \tensor{A}{_{a}} \wedge \tensor{Z}{_{b}} \tensor{\omega}{^b} \right).
     	\end{align*}
     \end{zm}
-    
+
     \item 试证费米导数性质3.\label{prob-7.3}
-    
+
     \begin{zm}
     	性质3如下：
     	\begin{Property}
@@ -40,9 +40,9 @@
     		\end{align*}
     	\end{Proof}
     \end{zm}
-    
+
     \item 试证类时线 $G(\tau)$ 上长度不变(且非零)的矢量场必经受时空转动。提示：令 $\tensor{u}{^a} \equiv \Ddd{\tensor{v}{^a}}$，则 $\tensor{u}{_a} \tensor{v}{^a}=0$。先证：无论 $\tensor{v}{_a}\tensor{v}{^a}$ 为零与否，总有 $G(\tau)$ 上矢量场 $\tensor{{v'}}{^a}$ 使 $\tensor{{v'}}{_a} \tensor{v}{^a} = 1$ 。再验证 $\tensor{v}{^a}$ 经受以 $\tensor{\Omega}{_a_b} \equiv 2 \tensor{{v'}}{_{[a}} \tensor{u}{_{b]}}$ 为角速度 2 形式的时空转动。
-    
+
 	\begin{zm}
 		\begin{enumerate}
 			\item 记 $\displaystyle \tensor{u}{^a} = \Dd{\tensor{v}{^a}}$ ，则 $\displaystyle \Dd{\left(\tensor{v}{_a}\tensor{v}{^a}\right)} = 2\tensor{u}{_a} \tensor{v}{^a}=0$ 。
@@ -61,7 +61,7 @@
 			故 $\tensor{v}{^a}$ 经受以 $\tensor{\Omega}{_a_b}$ 为角速度 2 形式的时空转动。
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 设 $\left\{ T,X,Y,Z \right\}$ 为闵氏时空的洛伦兹坐标系，曲线 $G(\tau)$ 的参数表达式为
 	\begin{equation*}
 		T = A^{-1} \sinh A\tau \qc X = A^{-1} \cosh A\tau \qc Y=Z=0 \qc \text{（其中$A$ 为常数）}
@@ -71,7 +71,7 @@
 		\item 试证从 $\left\{ T,X,Y,Z \right\}$ 坐标系原点 $o$ 出发的与 $G(\tau)$ 有交的任一半直线 $\mu(s)$ 都与 $G(\tau)$ 正交。
 		\item 设(b)中的 $\mu(s)$ 的参数 $s$ 是 $\mu$ 的线长，随着 $\mu(s)$ 取遍所有从 $o$ 出发并与 $G(\tau)$ 有交的半直线，便得 $G(\tau)$ 上的一个空间矢量场 $\tensor{w}{^a} \equiv \tensor{\left( \pdv*{s} \right)}{^a}$，试证 $\tensor{w}{^a}$ 沿 $G(\tau)$ 费移。
 		\item 令 $\tensor{Z}{^a} \equiv \tensor{\left( \pdv*{\tau} \right)}{^a}$，选 $\left\{ \tensor{Z}{^a}, \tensor{w}{^a}, \tensor{\left( \pdv*{Y} \right)}{^a}, \tensor{\left( \pdv*{Z} \right)}{^a} \right\}$ 为 $G(\tau)$ 上的正交归一 4 标架场，求出 $G(\tau)$ 的固有坐标系 $\left\{ t, x, y, z \right\}$ 并指出其坐标域。
-		
+
 		答： $T=\left( A^{-1} + x \right) \sinh At \qc X= \left( A^{-1} + x \right) \cosh At \qc Y=y \qc Z=z$。
 
 		\item 写出闵氏时空在上述固有坐标系中的线元表达式。计算闵氏度规在该系的克氏符，验证它满足引理 7-4-3，即式 (7-4-10)\footnote{正文 (7-4-10) 为
@@ -87,7 +87,7 @@
 		\begin{zm}
 			\begin{enumerate}[label=(\alph*)]
 				\item 由 $\cosh^2 x - \sinh^2 x = 1$ 知 $\left( A X \right)^2 - \left( A T \right)^2 = 1$，故这是渐近线为 $T=\pm X$ 的双曲线。
-				
+
 				以 $\tau$ 为参数，
 				\begin{equation*}
 					\tensor{\left( \pdv{\tau} \right)}{^a} = \cosh(A\tau) \tensor{\left( \pdv{T} \right)}{^a} + \sinh(A\tau) \tensor{\left( \pdv{X} \right)}{^a},
@@ -245,7 +245,7 @@
 		\end{zm}
 
 	\item 度规 $\tensor{g}{_a_b}$ 叫 \textbf{里奇平直} 的，若 $\tensor{g}{_a_b}$ 的里奇张量为零。试证 $\tensor{g}{_a_b}$ 是真空爱因斯坦方程的解的充要条件是 $\tensor{g}{_a_b}$ 是里奇平直的。
-	
+
 		\begin{zm}
 			真空爱因斯坦方程为 $\tensor{R}{_a_b} - \frac{1}{2} R \tensor{g}{_a_b} = 0$。
 			\begin{enumerate}
@@ -261,9 +261,9 @@
 				故里奇平直。
 			\end{enumerate}
 		\end{zm}
-	
+
 	\item 设 $\left( M,\tensor{g}{_a_b} \right)$ 为里奇平直时空（定义见上题），$\tensor{\xi}{^a}$ 是其中的一个 Killing 矢量场，试证 $\tensor{F}{_a_b} := \tensor{\left( \dd{\xi} \right)}{_a_b}$ 满足 $\left( M,\tensor{g}{_a_b} \right)$ 的无源（$\tensor{J}{_a} = 0$）麦氏方程。提示：利用 Killing 场 $\tensor{\xi}{^a}$ 满足的 $\Nabla{a}\tensor{\xi}{^a} = 0$（第4章习题~\hyperlink{xt4-11}{11} 的结果）。
-	
+
 		\begin{zm}
 			计算得
 			\begin{equation*}
@@ -291,7 +291,7 @@
 	\begin{equation}
 		\tensor{\partial}{^b} \Partial{b} \tensor{\xi}{_a} = 0. \tag{7-9-9}
 	\end{equation}} 构造的 $\tensor{{\gamma'}}{_a_b}$ 在无源区域既满足洛伦兹规范条件 $\tensor{\partial}{^a} \tensor{{{\bar{\gamma}}}}{^\prime_a_b} = 0$ 又满足 $\gamma'=0$ 和 $\tensor{{\gamma'}}{_0_i} = 0(i=1,2,3)$。提示：(1) 根据解的唯一性定理，只须证明 $\gamma'=0$ 和 $\tensor{{\gamma'}}{_0_i}=0$ 分别是方程 $\tensor{\partial}{^c} \tensor{\partial}{_c} \gamma = 0$ 和 $\tensor{\partial}{^c} \tensor{\partial}{_c} \tensor{{\gamma'}}{_0_i} = 0$ 的满足初始条件 $\left. \gamma' \right|_{\Sigma_0} = 0$，$\left. \pdv*{\gamma'}{t} \right|_{\Sigma_0} = 0$，$\left. \tensor{{\gamma'}}{_0_i} \right|_{\Sigma_0} = 0$ 和 $\left. \pdv*{\tensor{{\gamma'}}{_0_i}}{t} \right|_{\Sigma_0} = 0$ 的解。 (2) 由 $\tensor{\partial}{^b} \tensor{\partial}{_b} \tensor{\xi}{_\mu} = 0$ 可得 $\pdv*[2]{\tensor{\xi}{_\mu}}{t} = \nabla^2 \tensor{\xi}{_\mu}$。
-	
+
 		\begin{zm}
 			由 (7-9-8) 易知，
 			\begin{equation*}
@@ -351,7 +351,7 @@
 		\end{zm}
 
 	\item 设 $\tensor{\gamma}{_a_b}$ 满足 (a) $\tensor{\partial}{^a} \tensor{\bar{\gamma}}{_a_b} = 0$；(b) $\gamma = 0$；(c) $\tensor{\gamma}{_0_i} = 0(i=1,2,3)$；(d) $\tensor{\gamma}{_0_0} = \text{常数}$。试找出一个“无限小”矢量场 $\tensor{\xi}{^a}$ 使 $\tensor{{\tilde{\gamma}}}{_a_b} \equiv \tensor{\gamma}{_a_b} + \tensor{\partial}{_a} \tensor{\xi}{_b} + \tensor{\partial}{_b} \tensor{\xi}{_a}$ 满足
-	
+
 	(a) $\tensor{\partial}{^a} \tensor{\bar{\tilde{\gamma}}}{_a_b} = 0$；(b) $\tilde{\gamma} = 0$；(c) $\tensor{\tilde{\gamma}}{_0_i} = 0$；(d) $\tensor{\tilde{\gamma}}{_0_0} = 0$。
 
 		\begin{zm}
@@ -408,7 +408,7 @@
 		\end{zm}
 
 	\item 试证命题 7-9-2。
-	
+
 		\begin{zm}
 			命题 7-9-2 为
 			\begin{Theorem}
@@ -446,10 +446,10 @@
 		\end{zm}
 
 	\item 验证式 (7-9-41) 后的 (1)$\sim$(3)。
-	
+
 		\begin{zm}
 			\begin{enumerate}[label=(\arabic*)]
-				\item 
+				\item
 				\begin{equation*}
 					\begin{split}
 						\tensor{g}{_a_b} \tensor{\left( E_1 \right)}{^a} \tensor{\left( E_1 \right)}{^b} ={}& %\left( \tensor{\eta}{_a_b} + 2 P \left( \tensor{\left( \dd{t} \right)}{_a} - \tensor{\left( \dd{z} \right)}{_b} \right) \left( \tensor{\left( \dd{t} \right)}{_b} - \tensor{\left( \dd{z} \right)}{_a} \right) \right)\\
@@ -694,7 +694,7 @@
 	\end{zm}
 
 	\item 试证式 (7-9-36)，即 $\tensor{\nabla}{^a} \tensor{\nabla}{_a} P = \left( \pdv*[2]{P}{x} \right) + \left( \pdv*[2]{P}{y} \right)$。
-	
+
 	\begin{zm}
 		首先，
 		\begin{equation*}

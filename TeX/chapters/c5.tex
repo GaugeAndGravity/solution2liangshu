@@ -4,7 +4,7 @@
 
 \begin{xiti}
 	\item 在定理5-1-3中补证$\{ \tensor{\left(e^1\right)}{_a} \wedge \tensor{\left(e^2\right)}{_b}, \tensor{\left(e^2\right)}{_a} \wedge \tensor{\left(e^3\right)}{_b} , \tensor{\left(e^3\right)}{_a} \wedge \tensor{\left(e^1\right)}{_b} \}$线性独立。
-	
+
 	\begin{zm}
 		设$\alpha \tensor{\left(e^1 \right)}{_a} \wedge \tensor{\left(e^2\right)}{_b} + \beta \tensor{\left(e^2\right)}{_a} \wedge \tensor{\left(e^3\right)}{_b} + \gamma \tensor{\left(e^3\right)}{_a} \wedge \tensor{\left(e^1\right)}{_b}=0 $，将$\wedge $展开，有
 		\begin{align*}
@@ -15,9 +15,9 @@
 		\end{align*}
 		而$\left\{ \tensor{\left(e^i\right)}{_a} \tensor{\left(e^j\right)}{_b} \right\} $是$\F(0,2) $的一组基，故必有$\alpha=\beta=\gamma=0 $。
 	\end{zm}
-	
+
 	\item 设$V$为矢量空间，$\{ \tensor{\left(e^1\right)}{_a} , \tensor{\left(e^2\right)}{_a} , \tensor{\left(e^3\right)}{_a}, \tensor{\left(e^4\right)}{_a} \}$是$V^*$的基底，写出$\tensor{\omega}{_a}\in \varLambda(1) $，$ \tensor{\omega}{_a_b_c} \in \varLambda(3) $ 和 $ \tensor{\omega}{_a_b_c_d} \in \varLambda(4) $在此基底的展开式，说明展开系数（如$\tensor{\omega}{_1_2}$）的定义。
-	
+
 	\begin{jie}
 		\begin{enumerate}
 			\item $ \tensor{\omega}{_a} = \tensor{\omega}{_1} \tensor{\left(e^1\right)}{_a} + \tensor{\omega}{_2} \tensor{\left(e^2\right)}{_a} + \tensor{\omega}{_3} \tensor{\left(e^3\right)}{_a} + \tensor{\omega}{_4} \tensor{\left(e^4\right)}{_a} $，其中$\tensor{\omega}{_\mu}= \tensor{\omega}{_a} \tensor{\left(e_\mu\right)}{^a} $。
@@ -25,9 +25,9 @@
 			\item $\tensor{\omega}{_{abcd}} = \tensor{\omega}{_{1234}} \tensor{\left(e^1\right)}{_a} \wedge \tensor{\left(e^2\right)}{_b} \wedge \tensor{\left(e^3\right)}{_c} \wedge \tensor{\left(e^4\right)}{_d} $，其中$\tensor{\omega}{_{1234}}= \tensor{\omega}{_{abcd}} \tensor{\left(e_1\right)}{^a} \tensor{\left(e_2\right)}{^b} \tensor{\left(e_3\right)}{^c} \tensor{\left(e_4\right)}{^d} $。
 		\end{enumerate}
 	\end{jie}
-	
+
 	\item 用数学归纳法证明$ \tensor{\left( \omega^1 \right)}{_{a_1}} \wedge \cdots \wedge \tensor{\left( \omega^l \right)}{_{a_l}} = l! \tensor{\left( \omega^1 \right)}{_{[a_1}} \cdots \tensor{\left( \omega^l \right)}{_{a_l]}} $，其中$ \tensor{\left( \omega^1 \right)}{_{a_1}}, \cdots , \tensor{\left( \omega^l \right)}{_{a_l}} $是任意对偶矢量。
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item $l=1$时 trivial； $l=2 $时，按照定义，\[ \tensor{\left(\omega^1\right)}{_{a_1}} \wedge \tensor{\left(\omega^2\right)}{_{a_2}} = 2 \tensor{\left(\omega^1\right)}{_{[a_1}} \tensor{\left(\omega^2\right)}{_{a_2 ]}}; \]
@@ -39,9 +39,9 @@
 			综上所述，$\forall l \in \mathbb{N}^+ $，$\tensor{\left( \omega^1 \right)}{_{a_1}} \wedge \cdots \wedge \tensor{\left( \omega^l \right)}{_{a_l}} = l! \tensor{\left( \omega^1 \right)}{_{[a_1}} \cdots \tensor{\left( \omega^l \right)}{_{a_l]}}$。
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 试证定理5-1-4。
-	
+
 	\begin{zm}
 		定理5-1-4为
 		\begin{yl}{Thm}
@@ -58,9 +58,9 @@
 	    	\end{align*}
 	    \end{yl}
 	\end{zm}
-	
+
 	\item 设$\boldsymbol{\omega} $是1形式场，$u,v$是矢量场，试证$\dd{\boldsymbol{\omega}} \left(u,v\right) = u\left(\boldsymbol{\omega}(v)\right) - v\left(\boldsymbol{\omega}(u)\right) - \boldsymbol{\omega}\left([u,v]\right) $。等式左边代表$\dd{\boldsymbol{\omega}}$对$u,v$的作用结果，即$ \tensor{\left( \dd{\boldsymbol{\omega}} \right)}{_a_b} \tensor{u}{^a} \tensor{v}{^b} $。
-	
+
 	\begin{zm}
 		\begin{align*}
 		\dd{\bm{\omega}} (u,v) &= \tensor{u}{^a} \tensor{v}{^b} \left( \Nabla{a} \tensor{\omega}{_b} - \Nabla{b} \tensor{\omega}{_a} \right)\\
@@ -68,15 +68,15 @@
 		&= u\left( \bm{\omega} (v) \right) - v \left( \bm{\omega} (u) \right) - \bm{\omega} \left( [u,v] \right).
 		\end{align*}
 	\end{zm}
-	
+
 	\item 设$\tensor{v}{^b} $和$\tensor{\omega}{_{a_1 \cdots a_l}} $分别是流形$M$上的矢量场和$l$形式场，试证
 	\begin{enumerate}
 		\item[(a)] \hypertarget{5.6.a}{}$\Ld{v} \tensor{\omega}{_{a_1 \cdots a_l}} = \dd\indices{_{a_1}} \left( \tensor{v}{^b} \tensor{\omega}{_{ba_2 \cdots a_l}} \right) + \tensor{\left( \dd{\omega} \right)}{_{ba_1 \cdots a_l}} \tensor{v}{^b}. $
-		
+
 		注：令$\tensor{\mu}{_{a_2 \cdots a_l}} \equiv \tensor{v}{^b} \tensor{\omega}{_{ba_2 \cdots a_l}} $，则$\dd\indices{_{a_1}} \tensor{\mu}{_{a_2 \cdots a_l}} $是指$\tensor{\left(\dd{\mu}\right)}{_{a_1 a_2 \cdots a_l }} $。
 		\item[(b)] $\Ld{v} \dd{\boldsymbol{\omega}} = \dd{\Ld{v}\boldsymbol{\omega}} $（这本身就是一个很有用的命题）。
 	\end{enumerate}
-    
+
     提示：
     \begin{enumerate}
     	\item[(1)] 证(a)时可先证$l=2$时的特例，找到感觉后不难推广至一般情况。
@@ -102,12 +102,12 @@
     		&= \tensor{v}{^b} \left( \Nabla{b} \tensor{\omega}{_{a_1 a_2}} + {\color{red} \Nabla{a_1} \tensor{\omega}{_{a_2 b}}} + {\color{blue} \Nabla{a_2} \tensor{\omega}{_{b a_1}} } \right)
     		\end{align*}
     		可以看到，红色项和蓝色项分别消去，余下的项与左边相等。
-    		
+
     		对于一般情况，左边为
     		\begin{displaymath}
     		\Ld{v} \tensor{\omega}{_{a_1 \cdots a_l}} = \tensor{v}{^b} \Nabla{b} \tensor{\omega}{_{a_1 \cdots a_l}} + \sum_{i} \tensor{\omega}{_{a_1 \cdots b \cdots a_l}} \Nabla{a_i} \tensor{v}{^b}
     		\end{displaymath}
-    		
+
     		右边第一项为
     		\begin{align*}
     		\dd\indices{_{a_1}} \left( \tensor{v}{^b} \tensor{\omega}{_{b a_2 \cdots a_l }} \right) &= l \Nabla{[a_1} \left( \tensor{v}{^b} \tensor{\omega}{_{|b|a_2 \cdots a_l]}} \right)\\
@@ -141,13 +141,13 @@
     		\end{displaymath}
     	\end{enumerate}
     \end{zm}
-	
+
 	\item 设$O$是$n$维流形$M$上的坐标系$\{x^\mu \} $的坐标域（且$O$同胚于$\mathbb{R}^n $），$\tensor{\omega}{_a} $是$O$上的1形式场，试证
 	\begin{displaymath}
 	\pdv*{\tensor{\omega}{_\mu}}{x^\nu}= \pdv*{\tensor{\omega}{_\nu}}{x^\mu} (\mu,\nu=1,\cdots n) \text{当且仅当存在} f\colon O \rightarrow \mathbb{R} \text{使} \Nabla{a} f= \tensor{\omega}{_a}.
 	\end{displaymath}
 	提示：仿照 \S 5.1 推论 5-1-6 的证明。
-	
+
 	\begin{zm}
 		设$\tensor{\omega}{_a} = \tensor{\omega}{_\mu} \tensor{\left(\dd{x^\mu}\right)}{_a} $，则
 		\begin{align*}
@@ -160,9 +160,9 @@
 			\item 若$\displaystyle \pdv{\tensor{\omega}{_\mu}}{x^\nu} - \pdv{\tensor{\omega}{_\nu}}{x^\mu}=0 $，则$\dd{\bm{\omega}}=0 $，$\bm{\omega}$是闭的，而$O$同胚于$\mathbb{R}^n$，由于上同调群是拓扑不变量，故$H^1 (O)={0} $，$O$上的闭形式必恰当，故$\exists f\colon O\rightarrow \mathbb{R}^n \qq{s.t.} \bm{\omega} = \dd{f}. $
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 设$ \{ x,y,z \} $和$\{r,\theta,\phi \} $分别为3维欧氏空间的笛卡尔坐标系和球坐标系，写出$ \dd{r} \wedge \dd{\theta} \wedge \dd{\phi} $用 $\dd{x} \wedge \dd{y} \wedge \dd{z} $的表达式。
-	
+
 	\begin{jie}
 		球坐标与笛卡尔系的变换关系为：
 		\begin{displaymath}
@@ -197,11 +197,11 @@
 		&= \frac{1}{\sqrt{\left(x^2+y^2+z^2\right) \left(x^2+y^2\right)}} \dd{x} \wedge \dd{y} \wedge \dd{z}.
 		\end{align*}
 	\end{jie}
-	
+
 	\item 连通流形$M$配以洛伦兹号差的度规场$\tensor{g}{_a_b} $叫\textbf{时空}（spacetime）。设$\tensor{F}{_a_b} $是任意4维时空的2形式场（第6章将看到电磁场张量$\tensor{F}{_a_b} $就是一个2形式场），试证
 	\[ \frac{1}{2} \left( \tensor{F}{_a_c}\tensor{F}{_b^c} + \tensor[^*]{F}{_a_c} \tensor[^*]{F}{_b^c} \right) = \tensor{F}{_a_c} \tensor{F}{_b^c} - \frac{1}{4} \tensor{g}{_a_b} \tensor{F}{_c_d} \tensor{F}{^c^d}, \]
 	其中$\tensor[^*]{F}{_a_c} \equiv \tensor{\left(\tensor[^*]{F}{}\right)}{_a_c} $，$\tensor[^*]{F}{_b^c}= \tensor{g}{^a^c} \tensor[^*]{F}{_b_a} $（此式对研究电磁场很有帮助）。
-	
+
 	\begin{zm}
 		按照定义，
 		\begin{displaymath}
@@ -226,9 +226,9 @@
 		&= \tensor{F}{_a_c} \tensor{F}{^a^c} - \frac{1}{4} \tensor{g}{_a_b} \tensor{F}{_c_d} \tensor{F}{^c^d}.
 		\end{align*}
 	\end{zm}
-	
+
 	\item 试证$\tensor{\hat{\varepsilon}}{_{a_1\cdots a_{n-1}}} \equiv \pm \tensor{n}{^b} \tensor{\varepsilon}{_{b a_1 \cdots a_{n-1}}} $是$\partial N $上与诱导度规场$\tensor{h}{_a_b} $相适配的体元。
-	
+
 	\begin{zm}
 		需要证明的是
 		\begin{displaymath}
@@ -246,7 +246,7 @@
 		&= \tensor{\delta}{^a_b} \mp \tensor{n}{^a} \tensor{n}{_b},
 		\end{align*}
 		可以验证上面这个张量 $\tensor{\bar{\delta}}{^a_b} \colon \F_N(1,0) \rightarrow \F_N(0,1) $ 在 $\F_{\partial N}(1,0) $ 上的限制(restriction)就是 $\F_{\partial N}(1,0) $ 上的恒等映射，而在 $\F_N(1,0) - \F_{\partial N}(1,0) $ 上的限制为零，故用 $\tensor{g}{^a^c} \tensor{g}{^b^d} \tensor{\bar{h}}{_b_d}$ 代替 $\tensor{h}{^a^b}$ 是没有问题的。
-		
+
 		于是
 		\begin{align*}
 		\tensor{\hat{\varepsilon}}{^{a_1 \cdots a_{n-1} }} \tensor{\hat{\varepsilon}}{_{ a_1 \cdots a_{n-1} }} &= \tensor{h}{^{a_1 b_1}} \cdots \tensor{h}{^{a_{n-1} b_{n-1} }} \tensor{n}{^c} \tensor{\varepsilon}{_{c b_1 \cdots b_{n-1} }} \tensor{n}{^d} \tensor{\varepsilon}{_{ d a_1 \cdots a_{n-1} }}\\
@@ -277,9 +277,9 @@
 		\end{displaymath}
 		于是 $(-1)^s \tensor{n}{^c} \tensor{n}{_c} = (-1)^{\hat{s}} $，证毕。
 	\end{zm}
-	
+
 	\item 试证定理5-6-1和5-6-2。
-	
+
 	\begin{zm}
 		\begin{enumerate}
 			\item 定理5-6-1 如下
@@ -315,7 +315,7 @@
             \end{yl}
 		\end{enumerate}
 	\end{zm}
-	
+
 	\item 设$x,y,z $是3维欧氏空间的笛卡尔坐标，试证
 	\begin{enumerate}
 		\item[(a)] $\tensor[^*]{\dd{x}}{} = \dd{y} \wedge \dd{z} $；
@@ -324,23 +324,23 @@
 
     \begin{zm}
     	\begin{enumerate}
-    		\item[(a)] 
+    		\item[(a)]
     		\begin{align*}
     		\displaybreak[1] \tensor{\left(\tensor[^*]{\dd{x}}{}\right)}{_a_b}&= \tensor{\left(\dd{x}\right)}{^c} \tensor{\left(\dd{x}\right)}{_c} \wedge \tensor{\left(\dd{y}\right)}{_a} \wedge \tensor{\left(\dd{z}\right)}{_b}\\ \displaybreak[1]
     		&= \tensor{\left(\dd{x}\right)}{^c} \left( \tensor{\left(\dd{x}\right)}{_c} \tensor{\left(\dd{y}\right)}{_a} \tensor{\left(\dd{z}\right)}{_b} - \tensor{\left(\dd{x}\right)}{_c} \tensor{\left(\dd{y}\right)}{_b} \tensor{\left(\dd{z}\right)}{_a} + \cdots \right)\\ \displaybreak[1]
     		&= \tensor{\left(\dd{y}\right)}{_a} \tensor{\left(\dd{z}\right)}{_b} -  \tensor{\left(\dd{y}\right)}{_b} \tensor{\left(\dd{z}\right)}{_a}\\
     		&= \tensor{\left(\dd{y}\wedge\dd{z}\right)}{_a_b}.
     		\end{align*}
-    		\item[(b)] 
+    		\item[(b)]
     		\begin{align*}
     		\tensor[^*]{\left(\dd{x}\wedge\dd{y} \wedge \dd{z} \right)}{} &= \frac{1}{6} \tensor{\left(\dd{x}\wedge\dd{y}\wedge\dd{z} \right)}{^a^b^c} \tensor{\left(\dd{x}\wedge\dd{y}\wedge\dd{z} \right)}{_a_b_c}\\
     		&= 1.
     		\end{align*}
     	\end{enumerate}
     \end{zm}
-	
+
 	\item 设$\{r,\theta, \phi \} $是3维欧氏空间的球坐标系，试证$\tensor[^*]{\dd{r}}{} = \left(r^2 \sin\theta \right) \dd{\theta} \wedge \dd{\phi} $。
-	
+
 	\begin{zm}
 		由第2章~\hyperlink{2.19a}{19(a)}~知
 		\begin{displaymath}
@@ -358,9 +358,9 @@
 		&= r^2 \sin\theta \tensor{\left(\dd{\theta}\wedge\dd{\phi}\right)}{_a_b}.
 		\end{align*}
 	\end{zm}
-	
+
 	\item 设$\myvec{A},\myvec{B} $为$\mathbb{R}^3 $上的矢量场，$\grad $为$\mathbb{R}^3$上与欧氏度规相适配的导数算符，试证\[ \curl(\myvec{A}\cp\myvec{B}) = \left( \myvec{B} \vdot \grad \right) \myvec{A} + \left( \div{\myvec{B}} \right) \myvec{A} - \left( \myvec{A} \vdot \grad \right) \myvec{B} - \left( \div{\myvec{A}} \right) \myvec{B}. \]
-	
+
 	\begin{zm}
 		\begin{align*}
 		\tensor{\varepsilon}{^a^b^c} \Partial{a} \left( \tensor{\varepsilon}{_d_e_b} \tensor{A}{^d} \tensor{B}{^e} \right) &= -\tensor{\varepsilon}{^b^a^c} \tensor{\varepsilon}{_b_d_e} \Partial{a} \left(  \tensor{A}{^d} \tensor{B}{^e} \right)\\
@@ -368,7 +368,7 @@
 		&= \tensor{A}{^a} \Partial{a} \tensor{B}{^c} - \tensor{A}{^c} \Partial{a} \tensor{B}{^a} + \tensor{B}{^c} \Partial{a} \tensor{A}{^a} - \tensor{B}{^a} \Partial{a} \tensor{A}{^c}.
 		\end{align*}
 	\end{zm}
-	
+
 	\item 用微分形式证明3维欧氏空间场论中并不易证的下列熟知命题：
 	\begin{enumerate}
 		\item[(a)] 无旋矢量场必可表为梯度；
@@ -381,9 +381,9 @@
     		\item[(b)] 设 $\div{\myvec{B}}=0$，则 $\tensor[^*]{\dd(\tensor[^*]{\bm{B}}{})}{}=0$，于是 $\tensor[^*]{\bm{B}}{}$ 是闭2形式，在 $\mathbb{R}^3$ 中必恰当，于是存在1形式 $\bm{C}$ 使得 $\tensor[^*]{\bm{B}}{} = \dd{\bm{C}}$，即 $\bm{B} = \tensor[^*]{\dd{\bm{C}}}{}$，$\myvec{B}=\curl{\myvec{C}}$。
     	\end{enumerate}
     \end{zm}
-    
+
     \item 设$\Nabla{a} $是广义黎曼空间$\left(M,\tensor{g}{_a_b} \right) $上的适配导数算符（即$\Nabla{a} \tensor{g}{_b_c}=0 $），$\bm{\varepsilon} $是适配体元（即$\Nabla{a} \tensor{\varepsilon}{_{b_1 \cdots b_n}}=0 $），$\tensor{v}{^a} $是$M$上的矢量场，$\tensor{v}{_a} \equiv \tensor{g}{_a_b} \tensor{v}{^b} $是$\tensor{v}{^a} $相应的1形式场，$\tensor[^*]{\bm{v}}{} $是$\tensor{v}{_a} $的对偶形式场，试证$\left( \Nabla{a} \tensor{v}{^a} \right) \bm{\varepsilon} = \dd{\tensor[^*]{\bm{v}}{}} $。注：这个结论可做如下推广：设$\tensor{F}{_{a_1 \cdots a_k}} $是$k$形式场($k\leqslant n $)，简记作$\bm{F} $，把$k-1$形式场$\tensor{\nabla}{^{a_k}} \tensor{F}{_{a_1 \cdots a_k}} $记作$\ddiv \bm{F} $，则$\tensor[^*]{\left(\ddiv\bm{F} \right)}{} = \dd{\tensor[^*]{\bm{F}}{}} $。电磁场的麦氏方程[式(12-6-2)]就是一例。
-    
+
     \begin{zm}
     	由第 \hyperlink{5.6.a}{6} 题(a)知，
     	\begin{align*}
@@ -399,15 +399,15 @@
     	\end{align*}
     	于是 $h=\Nabla{b} \tensor{v}{^b}$ ，即 $\dd{\tensor[^*]{\bm{v}}{}} = \left(\Nabla{b} \tensor{v}{^b}\right) \bm{\varepsilon}$。
     \end{zm}
-    
+
     \item 试证由式(5-7-2)定义的$\ChristoffelSymbol{\sigma}{\mu}{\tau} $正是 \S 3.1定义的克氏符$\ChristoffelSymbol{c}{a}{b} $在式(5-7-2)涉及的坐标基底的分量。
-    
+
     \begin{zm}
     	这个……和 \hyperlink{3.4}{第三章第4题} 重了吧……
     \end{zm}
-    
+
     \item 用正交归一标架分别求第3章习题$\hyperlink{3.14}{14} \sim \hyperlink{3.16}{16}$所给度规的曲率张量的全部标架分量，并验证所得结果与用坐标基底法求得的曲率张量相同。为与$\tensor{R}{_a_b_c^d} $的坐标分量$\tensor{R}{_\mu_\nu_\sigma^\rho} $区别，在求得$\tensor{R}{_a_b_c^d}$的全部标架分量后宜改用符号$\tensor{R}{_{(\mu)}_{(\nu)}_{(\sigma)}^{(\rho)}} $代表标架分量。
-	
+
 	\begin{jie}
 		\begin{enumerate}
 			\item \hyperlink{3.14}{第三章第14题}：
@@ -446,7 +446,7 @@
 					&= - \frac{\Omega^\prime}{\Omega^2}\\
 					\tensor{\Lambda}{_0_1_1} &= \left[ \tensor{\left(e_1\right)}{_{0,1}} - \tensor{\left(e_1\right)}{_{1,0}} \right] \tensor{\left(e_0\right)}{^0} \tensor{\left(e_1\right)}{^1}\\
 					&= \frac{1}{\Omega^2} \left( 0- \dot{\Omega} \right) \\
-					&= -\frac{\dot{\Omega}}{\Omega^2}		
+					&= -\frac{\dot{\Omega}}{\Omega^2}
 					\end{align*}
 					故所有非零项：
 					\begin{displaymath}
@@ -544,7 +544,7 @@
 	        		\tensor{\left(e^0\right)}{_a} &= \frac{1}{\sqrt[4]{z}} \tensor{\left(\dd{t}\right)}{_a} \\
 	        		\tensor{\left(e^1\right)}{_a} &= \sqrt{z} \tensor{\left(\dd{x}\right)}{_a} \\
 	        		\tensor{\left(e^2\right)}{_a} &= \sqrt{z} \tensor{\left(\dd{y}\right)}{_a} \\
-	        		\tensor{\left(e^3\right)}{_a} &= \frac{1}{\sqrt[4]{z}} \tensor{\left(\dd{z}\right)}{_a} 
+	        		\tensor{\left(e^3\right)}{_a} &= \frac{1}{\sqrt[4]{z}} \tensor{\left(\dd{z}\right)}{_a}
 	        		\end{align*}
 	        		于是标架基矢为
 	        		\begin{align*}
@@ -665,7 +665,7 @@
 	        	    \tensor{\left(e^0\right)}{_a} &= \frac{1}{\sqrt[4]{z}} \tensor{\left(\dd{t}\right)}{_a} \\
 	        	    \tensor{\left(e^1\right)}{_a} &= \sqrt{z} \tensor{\left(\dd{x}\right)}{_a} \\
 	        	    \tensor{\left(e^2\right)}{_a} &= \sqrt{z} \tensor{\left(\dd{y}\right)}{_a} \\
-	        	    \tensor{\left(e^3\right)}{_a} &= \frac{1}{\sqrt[4]{z}} \tensor{\left(\dd{z}\right)}{_a} 
+	        	    \tensor{\left(e^3\right)}{_a} &= \frac{1}{\sqrt[4]{z}} \tensor{\left(\dd{z}\right)}{_a}
 	        	    \end{align*}
 	        	    和
 	        	    \begin{align*}
