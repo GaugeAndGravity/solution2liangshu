@@ -3,7 +3,7 @@
 \chapter{流形和张量场}
 \begin{xiti}
 	\item 试证 \S 2.1例2定义的拓扑同胚映射$\psi_i^{\pm}$在$O_i^{\pm}$的所有交叠区域上满足相容性条件，从而证实$S^1$确是1维流形。
-	
+
 	\begin{zm}
 		首先，易知$O_i^+ \cap O_i^- =\varnothing$，故只需考虑$O_1^+\cap O_2^+ $及$O_i^+ \cap O_j^- $。
 		以$$O_1^+ \cap O_2^+ =\left\lbrace \left(x^1,x^2\right)\in S^1 \mid x^1>0,x^2>0 \right\rbrace  $$为例，根据定义，
@@ -14,7 +14,7 @@
 	\end{zm}
 
 	\item 说明$n$维矢量空间可看作$n$维平庸流形。
-	
+
 	\begin{zm}
 		为$n$维矢量空间$V$任取拓扑，再取定一组基$\mathcal{B}= \{ e_i \}_{i=1}^n $ ，则在基$\mathcal{B}$下，$\forall v \in V$，$v$可展开为
 		\begin{equation*}
@@ -40,7 +40,7 @@
     \end{zm}
 
     \item 设$(x,y)$是$\mathbb{R}^2$的自然坐标，$C(t)$是曲线，参数表达式为$x=\cos t,\quad y=\sin t,\quad t\in (0,\pi)$。若$p=C(\pi/3)$，写出曲线在$p$的切矢在自然坐标基的分量，并画图表示出该曲线及该切矢。
-    
+
     \begin{jie}
     	记$p$点切矢为$T$，则
     	\begin{align*}
@@ -71,7 +71,7 @@
     \end{jie}
 
     \item 设曲线$C(t)$和$C^{\prime}(t)\equiv C(2t_0-t) $在$ C(t_0)=C^\prime(t_0) $点的切矢分别为$v$和$v^\prime$，试证$v+v^\prime=0$。
-    
+
     \begin{zm}
     	记$t^\prime=2t_0-t$，依定义，$\forall f\in \F_M$，
     	\begin{equation*}
@@ -86,18 +86,18 @@
     	\end{equation*}
     	$\therefore v^{\prime}=-v,\quad v+v^{\prime}=0$
     \end{zm}
-    
+
     \item 设$O$为坐标系$\{x^{\mu}\}$的坐标域，$p\in O$，$v\in V_p$，$v^\mu$是$v$的坐标分量，把坐标$x^\mu$看作$O$上的$C^\infty$函数，试证$v^\mu=v(x^\mu)$。提示：用$v=v^\nu X_\nu $两边作用于函数$x^\mu$。
-    
+
     \begin{zm}
     	由$v=v^\nu X_\nu$，
     	\begin{equation*}
     	v(x^\mu)=v^\nu X_\nu(x^\mu)=v^\nu \eval{\pdv{x^\mu}{x^\nu}}_p=v^\nu \tensor{\delta}{^\mu_\nu}=v^\mu.
     	\end{equation*}
     \end{zm}
-    
+
     \item 设$M$是二维流形，$(O,\psi)$和$(O^\prime,\psi^\prime)$是$M$上的两个坐标系，坐标分别为$\{x,y\}$和$\{x^\prime,y^\prime\}$，在$O\cap O^\prime$上的坐标变换为$x^\prime=x\qc y^\prime=y-\Omega x(\Omega=\text{常数})$，试分别写出坐标基矢$\pd{x},\pd{y}$用坐标基矢$\pd{x^\prime},\pd{y^\prime}$的展开式。
-    
+
     \begin{jie}
     	坐标基矢逐点的变换关系为$\displaystyle  X_\mu=\eval{\pdv{x^{\prime\nu}}{x^\mu}}_p X_\nu $，故
     	\begin{equation*}
@@ -109,7 +109,7 @@
     	\end{split}
     	\end{equation*}
     \end{jie}
-    
+
     \item \begin{enumerate}
     	\item[(a)] 试证式(2-2-9)的$[u,v]$在每点满足矢量定义（\S2.2定义2）的两个条件，从而的确是矢量场。
     	\item[(b)] 设$u,v,w$为流形$M$上的光滑矢量场，试证$$ \left[\left[u,v\right],w\right]+\left[\left[w,u\right],v\right]+\left[\left[v,w\right],u\right]=0 $$\hypertarget{ykb}{}（此式称为\textbf{雅可比恒等式}）。
@@ -117,7 +117,7 @@
 
     \begin{zm}
     	\begin{enumerate}
-    		\item[(a)] 
+    		\item[(a)]
     		\begin{enumerate}
     			\item[(i)] 线性性：显然；
     			\item[(ii)] 莱布尼兹律：显然。证毕\footnote{皮这一下非常开心\textasciitilde \hj{11}}。
@@ -136,14 +136,14 @@
     	    \end{equation*}
     	\end{enumerate}
     \end{zm}
-    
+
     \item 设$\{r,\phi\}$为$\mathbb{R}^n$中某开集（坐标域）上的极坐标，$\{x,y\}$为自然坐标，
     \begin{enumerate}
     	\item[(a)] 写出极坐标系的坐标基矢$\pd{r}$和$\pd{\phi}$（作为坐标域上的矢量场）用$\pd{x},\ \pd{y}$展开的表达式。
     	\item[(b)] 求矢量场$[\pd{r},\pd{x}]$用$\pd{x},\pd{y}$展开的表达式。
     	\item[(c)] 令$\hat{e}_r\equiv\pd{r},\hat{e}_\phi=r^{-1}\pd{\phi}$，求$[\hat{e}_r,\hat{e}_\phi]$用$\pd{x},\pd{y}$展开的表达式。
     \end{enumerate}
-    
+
     \begin{jie}
     	\begin{enumerate}
     		\item[(a)] 坐标变换为
@@ -216,7 +216,7 @@
     \end{jie}
 
     \item 设$u$，$v$为$M$上的矢量场，试证$[u,v]$在任何坐标基底的分量满足$$[u,v]^\mu = v^\nu \pdv*{v^\mu}{x^\nu}-v^\nu \pdv*{u^\mu}{x^\nu} .\quad \text{提示：用式(2-2-$3'$)和(2-2-3)} $$
-    
+
     \begin{zm}
     	$\forall f \in \F_M$，
     	\begin{align*}
@@ -231,9 +231,9 @@
     	&[u,v]^\mu=\left(u^\nu \pdv{v^\mu}{x^\nu}-v^\nu \pdv{u^\mu}{x^\nu} \right).
     	\end{align*}
     \end{zm}
-    
+
     \item 设$\{e_{\mu}\}$为$V$的基底，$\{e^{\mu*}\}$为其对偶基底，$v\in V$，$\omega\in V^*$，试证$$ \omega=\omega(e_\mu)e^{\mu*}\qc v=e^{\mu*}(v)e_\mu. $$
-    
+
     \begin{zm}
     	设$\omega=\tensor{\omega}{_\mu} e^{\mu *}$，则
     	\begin{align*}
@@ -241,7 +241,7 @@
     	=&\;\tensor{\omega}{_\mu} \tensor{\delta}{^{\mu}_\nu}\\
     	=&\;\tensor{\omega}{_\nu},
     	\end{align*}
-    	$\therefore \omega=\omega(e_mu)e^{\mu*}.$同理设$v=v^\mu e_\mu $，
+    	$\therefore \omega=\omega(e_\mu)e^{\mu*}.$同理设$v=v^\mu e_\mu $，
     	\begin{align*}
     	e^{\nu*}(v)=&\; v^\mu e^{\nu*}(e_\mu)\\
     	=&\; v^\mu \tensor{\delta}{^\nu_\mu}\\
@@ -249,9 +249,9 @@
     	\end{align*}
     	$\therefore v=e^{\mu*}e_\mu .$
     \end{zm}
-    
+
     \item 试证$\displaystyle\tensor{{\omega^\prime}}{_\mu} =\pdv{x^\mu}{x^{\prime \nu}} \tensor{\omega}{_\mu} $（定理2-3-4）。
-    
+
     \begin{zm}
     	由上题，
     	\begin{align*}
@@ -265,15 +265,15 @@
     	&=\pdv{x^\mu}{x^{\prime\nu}}\tensor{\omega}{_\mu}.
     	\end{align*}
     \end{zm}
-    
+
     \item 试证由式(2-3-5)定义的映射$v\mapsto v^{**}$是同构映射。提示：可利用线性代数的结论，即同维矢量空间之间的一一线性映射必到上。
-    
+
     \begin{zm}
     	留作习题答案略，读者自证不难（逃$-\!=\equiv $Σ(((つ \!\!\! •̀ω$\upomega$•́) \!\!\! つ）
     \end{zm}
-    
+
     \item 设$C^1_1 T$和$(C^1_1 T)^\prime$分别是$(2,1)$型张量$T$借两个基底$\{e_\mu\}$和$\{ {e^\prime}_\mu \}$定义的缩并，试证$\left(C_1^1 T\right)^{\prime}=C_1^1 T$。
-    
+
     \begin{zm}
     	记基$ \{{e^\prime}_\mu \} $在基$\{e_\mu \}$下的展开式为${e^\prime}_\mu = \tensor{A}{^{\nu}_{\mu}}e_\nu $ ，则$${e^\prime}^{\mu*}=\tensor{\left(\tilde{A}^{-1} \right)}{_{\nu}^{\mu} } e^{\nu *} ,$$于是$\forall \omega\in V^* $，
     	\begin{align*}
@@ -288,7 +288,7 @@
     \end{zm}
 
     \item 设$g$为$V$的度规，试证$ g\colon V\rightarrow V^* $是同构映射（可参见第13题的提示）。
-    
+
     \begin{zm}
     	线性空间的同构映射指的是可逆线性映射。这里证一个更普遍的结论，首先我们定义一个线性映射$T\colon V\rightarrow W $的kernel为$$ \ker T:=\{ v\in V\mid T(v)=0 \}, $$我们有如下claim：
     	\begin{yl}{claim}
@@ -299,12 +299,12 @@
         	若$\ker T=\{0\}$，假设存在$u,v\in V$，使得$T(u)=T(v)$，则由于$T$是线性映射，$T(u-v)=T(u)-T(v)=0$，于是$u-v \in \ker T $，即$u=v $，于是$T$是单射。
         \end{yl}
         易证任取一组基$e_i\in V $， $T(e_i)\in W$线性无关当且仅当$\ker T=\{0\} $，若$\dim V=\dim W $，则这告诉我们$T(e_i) $构成$W$的基，于是$T(v^i e_i)=v^i T(e_i)$将取遍整个$W$。于是我们证明了，若$\dim V=\dim W$，则线性映射$T\colon V\rightarrow W$为一一到上的（等价于可逆）当且仅当$\ker T=\{0\}$。
-        
+
         对于度规$g$，由于非退化性，知$\ker g=\{0\}$，故$g$为线性同构。
     \end{zm}
-    
+
     \item 试证线长与曲线的参数化无关。
-    
+
     \begin{zm}
     	设有重参数化$C^\prime(t^\prime)=C(t)$，线长为
     	\begin{align*}
@@ -315,9 +315,9 @@
     	=&\;l.
     	\end{align*}
     \end{zm}
-    
+
     \item 设$(x,y)$是二维欧氏空间的笛卡尔坐标系，试证由式(2-5-14)定义的$\{x^\prime,y^\prime \}$也是笛卡尔系。
-    
+
     \begin{zm}
     	式(2-5-14)为
     	\begin{equation*}
@@ -359,9 +359,9 @@
     	\end{align*}
     	$\therefore \{x^\prime,y^\prime\}$是笛卡尔系。
     \end{zm}
-    
+
     \item 设$\{t,x\}$是二维闵氏空间的洛伦兹坐标系，试证由式(2-5-20)定义的$\left\{t^\prime,x^\prime \right\}$也是洛伦兹系。
-    
+
     \begin{zm}
     	式(2-5-20)为
     	\begin{equation*}
@@ -402,7 +402,7 @@
     	\end{align*}
     	$\therefore \{t^\prime,x^\prime\}$是洛伦兹系。
     \end{zm}
-    
+
     \item \begin{enumerate}
     	\item[(a)] \hypertarget{2.19a}{} 用张量变换律求出3维欧氏度规在球坐标系中的全部分量$\tensor{{g^\prime}}{_{\mu\nu}}$。
     	\item[(b)] 已知4维闵氏度规$g$在洛伦兹系中的线元表达式为$\dd{s}^2=-\dd{t}^2+\dd{x}^2+\dd{y}^2+\dd{z}^2 $，求$g$及其逆$g^{-1}$在新坐标系$\{t^\prime,x^\prime,y^\prime,z^\prime\}$的全部分量$\tensor{{g^\prime}}{_{\mu\nu}}$以及$\tensor{{g^\prime}}{^{\mu\nu}} $，该新坐标系定义如下：
@@ -412,7 +412,7 @@
     	\end{gather*}
     	其中$\phi$满足$\cos \phi=y(x^2+y^2)^{1/2}\qc \sin \phi=x(x^2+y^2)^{1/2}$。提示：先求$\tensor{{g^\prime}}{_{\mu\nu}}$再求$\tensor{{g^\prime}}{^{\mu\nu}}$。
     \end{enumerate}
-    
+
     \begin{jie}
     	\begin{enumerate}
     		\item[(a)] 球坐标与笛卡尔系的变换关系为：
@@ -535,9 +535,9 @@
     		此即$g$在带撇坐标系下的分量$\tensor{{g^\prime}}{_{\mu\nu}} $排成的矩阵。
     	\end{enumerate}
     \end{jie}
-    
+
     \item 试证3维欧氏空间中球坐标基矢$\pd{r},\pd{\theta},\pd{\phi}$的长度依次为$1,r,	r\sin\theta$。
-    
+
     \begin{zm}
     	由~\hyperlink{2.19a}{19(a)}~知，
     	\begin{align*}
@@ -546,9 +546,9 @@
     	\norm{\pdv{\phi}}&=\sqrt{\abs{\tensor{{g^\prime}}{_{\phi\phi}}}}=r\sin\theta.
     	\end{align*}
     \end{zm}
-    
+
     \item 用抽象指标记号证明$\displaystyle\tensor{{T^\prime}}{^\mu_\nu}=\pdv{{x^\prime}^\mu}{x^\rho}\pdv{x^\sigma}{{x^\prime}^\nu}\tensor{T}{^\rho_\sigma} $。
-    
+
     \begin{zm}
     	\begin{align*}
     	\tensor{{T^\prime}}{^\mu_\nu}=&\;\tensor{T}{^a_b}\tensor{\left(\dd{{x^\prime}^\mu}\right)}{_a}\left(\pdv{{x^\prime}^\nu}\right)^b\\
@@ -556,13 +556,13 @@
     	=&\;\pdv{{x^\prime}^\mu}{x^\rho}\pdv{x^\sigma}{{x^\prime}^\nu}\tensor{T}{^\rho_\sigma}.
     	\end{align*}
     \end{zm}
-    
+
     \item 以$g$和$g^\prime$分别代表度规$\tensor{g}{_{ab}}$在坐标系$\{x^\mu\}$和$\{{x^\prime}^\mu\}$的分量$\tensor{g}{_{\mu\nu}}$和$\tensor{{g^\prime}}{_{\mu\nu}}$组成的两个$n\times n$矩阵的行列式，试证$g^\prime=\abs{\pdv*{x^\rho}{{x^\prime}^\sigma}}^2 g$，其中$\abs{\pdv*{x^\rho}{{x^\prime}^\sigma}}$是坐标变换$\{x^\mu\}\mapsto \{{x^\prime}^\mu \} $的雅可比行列式，即由$\pdv*{x^\rho}{{x^\prime}^\sigma} $组成的$n\times n$行列式。注：本题表明度规的行列式在坐标变换下不是不变量。提示：取等式$\tensor{{g^\prime}}{_{\rho\sigma}}=\left( \pdv*{x^\mu}{{x^\prime}^\rho}\right)\left(\pdv*{x^\nu}{{x^\prime}^\sigma} \right)\tensor{g}{_{\mu\nu}}  $的行列式。
-    
+
     \begin{zm}
     	……梁爷爷你提示都把题写完了我还写啥(˘•$\upomega$•˘)
     \end{zm}
-    
+
     \item 设$\{x^\mu \}$是流形上的任一局域坐标系，试判断下列等式的是非：
     \begin{enumerate}
     	\item[(1)] $\left(\pd{x^\mu} \right)^a\tensor{\left(\pd{x^\nu} \right)}{_a}=\tensor{g}{_\mu_\nu} $，其中$\tensor{\left(\pd{x^\mu} \right)}{_a} \equiv \tensor{g}{_a_b}\left(\pd{x^\nu} \right)^a $；
@@ -574,7 +574,7 @@
     	\item[(7)] $v^au^b=v^bu^a$；
     	\item[(8)] $v^au^b=u^bv^a$。
     \end{enumerate}
-    
+
     \begin{jie}
     	\begin{enumerate}
     		\item[(1)] 正确。这是标量等式。根据(0,2)型张量分量的定义即知正确。
@@ -616,9 +616,9 @@
     		$\therefore$该式恒成立。
     	\end{enumerate}
     \end{jie}
-    
+
     \item 设$\tensor{T}{_a_b}$是矢量空间$V$上的(0,2)型张量，试证$\tensor{T}{_a_b}v^a v^b=0\qc \forall v^a \in V\implies \tensor{T}{_a_b}=\tensor{T}{_{[ab]}} $。提示：把$v^a$表为任意两个矢量$u^a $和$w^a$之和。
-    
+
     \begin{zm}
     	做任意拆分$v^a=u^a+w^a$，注意到$\tensor{T}{_a_b}u^a u^b=0 $以及$\tensor{T}{_a_b}w^a w^b=0$，有：
     	\begin{align*}
@@ -633,9 +633,9 @@
     	\tensor{T}{_{\left(ab\right)}}=0\qc \tensor{T}{_a_b}=\tensor{T}{_{\left[ab\right]}}.
     	\end{displaymath}
     \end{zm}
-    
+
     \item 试证$\tensor{T}{_a_b_c_d}=\tensor{T}{_{a\left[bc\right]d}}=\tensor{T}{_{ab\left[cd\right]}}\implies \tensor{T}{_{abcd}}=\tensor{T}{_{a\left[bcd\right]}} $。
-    
+
     \begin{yl}{注}
     	\begin{enumerate}
     		\item[(1)] 推广至一般的结论是
@@ -646,7 +646,7 @@
     		\item[(2)] 把前提和结论中的方括号改为圆括号，则推广前后的命题仍成立。
     	\end{enumerate}
     \end{yl}
-    
+
     \begin{zm}
     	此命题等价于$\tensor{T}{_{a\left(bc\right)d}}=\tensor{T}{_{ab\left(cd\right)}}=0\implies \tensor{T}{_{a\left(bcd\right)}}=0 $。反正只有四阶，不妨暴力展开\hj{11}
     	\begin{align*}
@@ -658,8 +658,8 @@
     	\end{align*}
     	其中${\color{blue}=} $表示根据$\tensor{T}{_{a\left(bc\right)d}}=0$交换指标次序，${\color{green}=}$表示根据$\tensor{T}{_{ab\left(cd\right)}}=0$交换指标次序。
     \end{zm}
-    
-    
-    
-    
+
+
+
+
 \end{xiti}
