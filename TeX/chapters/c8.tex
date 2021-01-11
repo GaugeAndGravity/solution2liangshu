@@ -392,4 +392,23 @@
 	\begin{zm}
 		由于坐标系 $\left\{ t,x,y,z \right\}$ 是 $\tensor{\left( \pdv*{x} \right)}{^a}$、$\tensor{\left( \pdv*{y} \right)}{^a}$ 的适配坐标系，而 $\tensor{F}{_\mu_\nu}$ 不含 $x,y$ 坐标，结论显然。
 	\end{zm}
+
+	\item 推出有源麦氏方程在 NP 形式中的表达式。答案：在式 (8-8-3) 的每式右边各加一项，依次为 $-4\pi \tensor{J}{_4}$ ，$-4\pi\tensor{J}{_2}$，$-4\pi\tensor{J}{_1}$，$-4\pi\tensor{J}{_3}$（$\tensor{J}{_1}$，$\tensor{J}{_2}$，$\tensor{J}{_3}$，$\tensor{J}{_4}$ 是 $\tensor{J}{_a}$ 在类光标架的分量）。
+	
+	\begin{jie}
+		有源麦氏方程为
+		\begin{gather}
+			\tensor{\nabla}{^a} \tensor{F}{_a_b} = - 4 \pi \tensor{J}{_b},\label{eq-c8_Me1}\\
+			\tensor{\nabla}{_{[a}} \tensor{F}{_{bc]}} = 0,\label{eq-c8_Me2}
+		\end{gather}
+		% 先改写~\eqref{eq-c8_Me1}，用
+		% \begin{equation*}
+		% 	\tensor{\delta}{^a_b} = \tensor{m}{^a} \tensor{\bar{m}}{_b} + \tensor{\bar{m}}{^a} \tensor{m}{_b} - \tensor{l}{^a} \tensor{k}{_b} - \tensor{k}{^a} \tensor{l}{_b}
+		% \end{equation*}
+		% 缩并得
+		由
+		\begin{equation*}
+			\tensor{F}{_a_b} = \tensor{F}{_\mu_\nu} \tensor{\left( \varepsilon^\mu \right)}{_a} \tensor{\left( \varepsilon^\nu \right)}{_b}
+		\end{equation*}
+	\end{jie}
 \end{xiti}
