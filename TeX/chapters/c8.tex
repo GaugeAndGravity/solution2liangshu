@@ -410,5 +410,123 @@
 		\begin{equation*}
 			\tensor{F}{_a_b} = \tensor{F}{_\mu_\nu} \tensor{\left( \varepsilon^\mu \right)}{_a} \tensor{\left( \varepsilon^\nu \right)}{_b}
 		\end{equation*}
+		得
+		% \begin{align*}
+		% 	\tensor{F}{_a_b} ={} & 2 \tensor{F}{_2_1} \tensor{m}{_{[a}} \tensor{\bar{m}}{_{b]}} - 2 \tensor{F}{_3_1} \tensor{k}{_{[a}} \tensor{\bar{m}}{_{b]}} - 2 \tensor{F}{_4_1} \tensor{l}{_{[a}} \tensor{\bar{m}}{_{b]}}\\
+		% 	& {} - 2 \tensor{F}{_2_3} \tensor{m}{_{[a}} \tensor{k}{_{b]}} - 2 \tensor{F}{_4_2} \tensor{l}{_{[a}} \tensor{m}{_{b]}} + 2 \tensor{F}{_4_3} \tensor{l}{_{[a}} \tensor{k}{_{b]}}\\
+		% 	={} & - 4 \ii \Im \Phi_1 \tensor{m}{_{[a}} \tensor{\bar{m}}{_{b]}} + 2 \bar{\Phi}_2 \tensor{k}{_{[a}} \tensor{\bar{m}}{_{b]}} - 2 \Phi_0 \tensor{l}{_{[a}} \tensor{\bar{m}}{_{b]}}\\
+		% 	& {} - 2 \Phi_2 \tensor{m}{_{[a}} \tensor{k}{_{b]}} - 2 \bar{\Phi}_0 \tensor{l}{_{[a}} \tensor{m}{_{b]}} + 4 \Re \Phi_1 \tensor{l}{_{[a}} \tensor{k}{_{b]}},
+		% \end{align*}
+		% 故
+		% \begin{align*}
+		% 	\tensor{\nabla}{^a} \tensor{F}{_a_b} ={} & -4 \ii \tensor{m}{_{[a}} \tensor{\bar{m}}{_{b]}} \Im \tensor{\nabla}{^a} \Phi_1 - 2 \ii \Im \Phi_1 \tensor{\bar{m}}{_{[b}} \tensor{\nabla}{^a} \tensor{m}{_{a]}} - 2 \ii \Im \Phi_1 \tensor{m}{_{[a}} \tensor{\nabla}{^a} \tensor{\bar{m}}{_{b]}}\\
+		% 	&{} + 2 \tensor{k}{_{[a}} \tensor{\bar{m}}{_{b]}} \tensor{\nabla}{^a} \bar{\Phi}_2 + \bar{\Phi}_2 \tensor{\bar{m}}{_{[b}} \tensor{\nabla}{^a} \tensor{k}{_{a]}} + \bar{\Phi}_2 \tensor{k}{_{[a}} \tensor{\nabla}{^a} \tensor{\bar{m}}{_{b]}}
+		% \end{align*}
+		\begin{align*}
+			\tensor{\left( \varepsilon_\mu \right)}{^b} \tensor{\nabla}{^a} \tensor{F}{_a_b} &= \tensor{\left( \varepsilon_\mu \right)}{^b} \tensor{\nabla}{^a} \left( \tensor{F}{_\nu_\sigma} \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\left( \varepsilon^\sigma \right)}{_b} \right)\\
+			&= \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\nabla}{^a} \tensor{F}{_\nu_\mu} + \tensor{F}{_\nu_\mu} \tensor{\nabla}{^a} \tensor{\left( \varepsilon^\nu \right)}{_a} + \tensor{F}{_\nu_\sigma} \tensor{\left( \varepsilon_\mu \right)}{^b} \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\nabla}{^a} \tensor{\left( e^\sigma \right)}{_b}\\
+			&= \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\nabla}{^a} \tensor{F}{_\nu_\mu} + \tensor{F}{_\nu_\mu} \tensor{\omega}{_\sigma^\nu^\sigma} + \tensor{F}{_\nu_\sigma} \tensor{\omega}{_\mu^\sigma^\nu}\\
+			&= \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\nabla}{^a} \tensor{F}{_\nu_\mu} + \tensor{g}{^\sigma^\rho} \tensor{F}{_\nu_\mu} \tensor{\omega}{_\sigma^\nu_\rho} + \tensor{g}{^\nu^\rho} \tensor{F}{_\nu_\sigma} \tensor{\omega}{_\mu^\sigma_\rho}\\
+			&= \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\nabla}{^a} \tensor{F}{_\nu_\mu} + \tensor{g}{^\sigma^\rho} \tensor{F}{_\nu_\mu} \tensor{\omega}{_\sigma^\nu_\rho} + \tensor{g}{^\sigma^\rho} \tensor{F}{_\sigma_\nu} \tensor{\omega}{_\mu^\nu_\rho}\\
+			&= \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\nabla}{^a} \tensor{F}{_\nu_\mu} + 2 \tensor{F}{_\nu_{[\mu}} \tensor{\omega}{_{\sigma]}^\nu_\rho} \tensor{g}{^\sigma^\rho},
+		\end{align*}
+		又因
+		\begin{align*}
+			&\tensor{\left( \varepsilon_\mu \right)}{^a} \tensor{\left( \varepsilon_\nu \right)}{^b} \tensor{\left( \varepsilon_\sigma \right)}{^c} \tensor{\nabla}{_{[a}} \tensor{F}{_{bc]}}\\
+			={}& \tensor{\left( \varepsilon_\mu \right)}{^{[a}} \tensor{\left( \varepsilon_\nu \right)}{^b} \tensor{\left( \varepsilon_\sigma \right)}{^{c]}} \left( \tensor{\left( \varepsilon^\rho \right)}{_b} \tensor{\left( \varepsilon^\lambda \right)}{_c} \tensor{\nabla}{_a} \tensor{F}{_\rho_\lambda} + 2 \tensor{F}{_\rho_\lambda} \tensor{\left( \varepsilon^\rho \right)}{_{[b}} \tensor{\left( \varepsilon^\tau \right)}{_{c]}} \tensor{\omega}{_\tau^\lambda_a} \right)\\
+			={}& \tensor{\nabla}{_{[\mu}} \tensor{F}{_{\nu \sigma]}} + 2 \tensor{\omega}{_{[\sigma}^\lambda_\mu} \tensor{F}{_{\nu]}_\lambda}\\
+			={}& 0,
+		\end{align*}
+		由正文 (8-7-3) 知
+		% \begin{align*}
+		% 	\tensor{\omega}{_1^1^1} &= \bar{\beta} - \alpha, & \tensor{\omega}{_1^3^1} &= \rho, & \tensor{\omega}{_1^4^1} &= - \bar{\mu}, & \tensor{\omega}{_2^3^1} &= \bar{\sigma}, & \tensor{\omega}{_2^4^1} &= - \lambda, & \tensor{\omega}{_3^3^1} &= \alpha + \bar{\beta},\\
+		% 	\tensor{\omega}{_1^1^2} &= \bar{\alpha} - \beta, & \tensor{\omega}{_1^3^2} &= \sigma, & \tensor{\omega}{_1^4^2} &= - \bar{\lambda}, & \tensor{\omega}{_2^3^2} &= \bar{\rho}, & \tensor{\omega}{_2^4^2} &= - \mu, & \tensor{\omega}{_3^3^2} &= \bar{\alpha} + \beta,\\
+		% 	\tensor{\omega}{_1^1^3} &= \varepsilon - \bar{\varepsilon} , & \tensor{\omega}{_1^3^3} &= - \kappa, & \tensor{\omega}{_1^4^3} &= \bar{\pi}, & \tensor{\omega}{_2^3^3} &= - \bar{\kappa}, & \tensor{\omega}{_2^4^3} &= \pi, & \tensor{\omega}{_3^3^3} &= - \left( \varepsilon + \bar{\varepsilon} \right),\\
+		% 	\tensor{\omega}{_1^1^4} &= \gamma - \bar{\gamma}, & \tensor{\omega}{_1^3^4} &= - \tau, & \tensor{\omega}{_1^4^4} &= \bar{\nu}, & \tensor{\omega}{_2^3^4} &= - \bar{\tau}, & \tensor{\omega}{_2^4^4} &= \nu, & \tensor{\omega}{_3^3^4} &= - \left( \gamma + \bar{\gamma} \right),
+		% \end{align*}
+		\begin{align*}
+			\tensor{\omega}{_1^1_1} &= - \tensor{\omega}{_2^2_1} = \bar{\alpha} - \beta,
+			& \tensor{\omega}{_1^3_1} &= \tensor{\omega}{_4^2_1} = \sigma,
+			& \tensor{\omega}{_1^4_1} &= \tensor{\omega}{_3^2_1} = - \bar{\lambda},
+			\\
+			\tensor{\omega}{_1^1_2} &= - \tensor{\omega}{_2^2_2} = \bar{\beta} - \alpha,
+			& \tensor{\omega}{_1^3_2} &= \tensor{\omega}{_4^2_2} = \rho,
+			& \tensor{\omega}{_1^4_2} &= \tensor{\omega}{_3^2_2} = - \bar{\mu},
+			\\
+			\tensor{\omega}{_1^1_3} &= - \tensor{\omega}{_2^2_3} = \bar{\gamma} - \gamma,
+			& \tensor{\omega}{_1^3_3} &= \tensor{\omega}{_4^2_3} = \tau,
+			& \tensor{\omega}{_1^4_3} &= \tensor{\omega}{_3^2_3} = - \bar{\nu},
+			\\
+			\tensor{\omega}{_1^1_4} &= - \tensor{\omega}{_2^2_4} = \bar{\varepsilon} - \varepsilon,
+			& \tensor{\omega}{_1^3_4} &= \tensor{\omega}{_4^2_4} = \kappa,
+			& \tensor{\omega}{_1^4_4} &= \tensor{\omega}{_3^2_4} = - \bar{\pi},
+			\\
+			\tensor{\omega}{_2^3_1} &= \tensor{\omega}{_4^1_1} = \bar{\rho},
+			& \tensor{\omega}{_2^4_1} &= \tensor{\omega}{_3^1_1} = - \mu,
+			& \tensor{\omega}{_3^3_1} &= - \tensor{\omega}{_4^4_1} = \bar{\alpha} + \beta,
+			\\
+			\tensor{\omega}{_2^3_2} &= \tensor{\omega}{_4^1_2} = \bar{\sigma},
+			& \tensor{\omega}{_2^4_2} &= \tensor{\omega}{_3^1_2} = - \lambda,
+			& \tensor{\omega}{_3^3_2} &= - \tensor{\omega}{_4^4_2} = \alpha + \bar{\beta},
+			\\
+			\tensor{\omega}{_2^3_3} &= \tensor{\omega}{_4^1_3} = \bar{\tau},
+			& \tensor{\omega}{_2^4_3} &= \tensor{\omega}{_3^1_3} = - \nu,
+			& \tensor{\omega}{_3^3_3} &= - \tensor{\omega}{_4^4_3} = \gamma + \bar{\gamma},
+			\\
+			\tensor{\omega}{_2^3_4} &= \tensor{\omega}{_4^1_4} = \bar{\kappa},
+			& \tensor{\omega}{_2^4_4} &= \tensor{\omega}{_3^1_4} = - \pi,
+			& \tensor{\omega}{_3^3_4} &= - \tensor{\omega}{_4^4_4} = \varepsilon + \bar{\varepsilon},
+		\end{align*}
+		% \begin{align*}
+		% 	\tensor{\omega}{_1^1^1} &= - \tensor{\omega}{_2^2^1} = \bar{\beta} - \alpha, & \tensor{\omega}{_1^3^1} &= \tensor{\omega}{_4^2^1} = \rho, & \tensor{\omega}{_1^4^1} &= \tensor{\omega}{_3^2^1} = - \bar{\mu},\\
+		% 	\tensor{\omega}{_1^1^2} &= - \tensor{\omega}{_2^2^2} = \bar{\alpha} - \beta, & \tensor{\omega}{_1^3^2} &= \tensor{\omega}{_4^2^2} = \sigma, & \tensor{\omega}{_1^4^2} &= \tensor{\omega}{_3^2^2} = - \bar{\lambda},\\
+		% 	\tensor{\omega}{_1^1^3} &= - \tensor{\omega}{_2^2^3} = \varepsilon - \bar{\varepsilon} , & \tensor{\omega}{_1^3^3} &= \tensor{\omega}{_4^2^3} = - \kappa, & \tensor{\omega}{_1^4^3} &= \tensor{\omega}{_3^2^3} = \bar{\pi},\\
+		% 	\tensor{\omega}{_1^1^4} &= - \tensor{\omega}{_2^2^4} = \gamma - \bar{\gamma}, & \tensor{\omega}{_1^3^4} &= \tensor{\omega}{_4^2^4} = - \tau, & \tensor{\omega}{_1^4^4} &= \tensor{\omega}{_3^2^4} = \bar{\nu},\\
+		% 	\tensor{\omega}{_2^3^1} &= \tensor{\omega}{_4^1^1} = \bar{\sigma}, & \tensor{\omega}{_2^4^1} &= \tensor{\omega}{_3^1^1} = - \lambda, & \tensor{\omega}{_3^3^1} &= - \tensor{\omega}{_4^4^1} = \alpha + \bar{\beta},\\
+		% 	\tensor{\omega}{_2^3^2} &= \tensor{\omega}{_4^1^2} = \bar{\rho}, & \tensor{\omega}{_2^4^2} &= \tensor{\omega}{_3^1^2} = - \mu, & \tensor{\omega}{_3^3^2} &= - \tensor{\omega}{_4^4^2} = \bar{\alpha} + \beta,\\
+		% 	\tensor{\omega}{_2^3^3} &= \tensor{\omega}{_4^1^3} = - \bar{\kappa}, & \tensor{\omega}{_2^4^3} &= \tensor{\omega}{_3^1^3} = \pi, & \tensor{\omega}{_3^3^3} &= - \tensor{\omega}{_4^4^3} = - \left( \varepsilon + \bar{\varepsilon} \right),\\
+		% 	\tensor{\omega}{_2^3^4} &= \tensor{\omega}{_4^1^4} = - \bar{\tau}, & \tensor{\omega}{_2^4^4} &= \tensor{\omega}{_3^1^4} = \nu, & \tensor{\omega}{_3^3^4} &= - \tensor{\omega}{_4^4^4} = - \left( \gamma + \bar{\gamma} \right),
+		% \end{align*}
+		% 于是算得
+		% \begin{align*}
+		% 	\tensor{\omega}{_\mu^1^\mu} &= \bar{\beta} - \alpha + \pi - \bar{\tau},\\
+		% 	\tensor{\omega}{_\mu^2^\mu} &= \beta - \bar{\alpha} + \bar{\pi} - \tau,\\
+		% 	\tensor{\omega}{_\mu^3^\mu} &= \rho + \bar{\rho} - \varepsilon - \bar{\varepsilon},\\
+		% 	\tensor{\omega}{_\mu^4^\mu} &= - \bar{\mu} - \mu + \gamma + \bar{\gamma},
+		% \end{align*}
+		故
+		% \begin{align*}
+		% 	\tensor{\left( \varepsilon_1 \right)}{^b} \tensor{\nabla}{^a} \tensor{F}{_a_b} ={}& \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\nabla}{^a} \tensor{F}{_\nu_1} + \tensor{F}{_\nu_1} \tensor{\omega}{_\mu^\nu^\mu} + \tensor{F}{_\nu_\sigma} \tensor{\omega}{_1^\sigma^\nu}\\
+		% 	={}& \tensor{m}{_a} \tensor{\nabla}{^a} \tensor{F}{_2_1} - \tensor{k}{_a} \tensor{\nabla}{^a} \tensor{F}{_3_1} - \tensor{l}{_a} \tensor{\nabla}{^a} \tensor{F}{_4_1}\\
+		% 	&{} + \tensor{F}{_2_1} \left( \beta - \bar{\alpha} + \bar{\pi} - \tau \right) + \tensor{F}{_3_1} \left( \rho + \bar{\rho} - \varepsilon - \bar{\varepsilon} \right) + \tensor{F}{_4_1} \left( - \bar{\mu} - \mu + \gamma + \bar{\gamma} \right)\\
+		% 	&{} + \tensor{F}{_1_3} \rho - \tensor{F}{_1_4} \bar{\mu} + \tensor{F}{_2_1} \left( \bar{\alpha} - \beta \right) + \tensor{F}{_2_3} \sigma - \tensor{F}{_2_4} \bar{\lambda}\\
+		% 	&{} + \tensor{F}{_3_1} \left( \varepsilon - \bar{\varepsilon} \right) + \tensor{F}{_3_4} \bar{\pi} + \tensor{F}{_4_1} \left( \gamma - \bar{\gamma} \right) - \tensor{F}{_4_3} \tau\\
+		% 	={} & \delta \left( \Phi_1 - \bar{\Phi}_1 \right) + D \bar{\Phi}_2 - \Delta \Phi_0\\
+		% 	&{} + \left( \Phi_1 - \bar{\Phi}_1 \right) \left( \bar{\pi} - \tau \right) - \bar{\Phi}_2 \left( \bar{\rho} - 2 \bar{\varepsilon} \right) + \Phi_0 \left( - \mu + 2 \gamma \right)\\
+		% 	&{} + \Phi_2 \sigma + \bar{\Phi}_0 \bar{\lambda} - \left( \Phi_1 + \bar{\Phi}_1 \right) \left( \bar{\pi} + \tau \right)\\
+		% 	={} & \delta \left( \Phi_1 - \bar{\Phi}_1 \right) + D \bar{\Phi}_2 - \Delta \Phi_0\\
+		% 	&{} -2 \Phi_1 \tau -2 \bar{\Phi}_1 \bar{\pi} - \bar{\Phi}_2 \left( \bar{\rho} - 2 \bar{\varepsilon} \right) + \Phi_0 \left( - \mu + 2 \gamma \right) + \Phi_2 \sigma + \bar{\Phi}_0 \bar{\lambda},\\
+		% 	\tensor{\left( \varepsilon_2 \right)}{^b} \tensor{\nabla}{^a} \tensor{F}{_a_b} ={}& \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\nabla}{^a} \tensor{F}{_\nu_2} + \tensor{F}{_\nu_2} \tensor{\omega}{_\mu^\nu^\mu} + \tensor{F}{_\nu_\sigma} \tensor{\omega}{_2^\sigma^\nu}\\
+		% 	={}& \tensor{\bar{m}}{_a} \tensor{\nabla}{^a} \tensor{F}{_1_2} - \tensor{k}{_a} \tensor{\nabla}{^a} \tensor{F}{_3_2} - \tensor{l}{_a} \tensor{\nabla}{^a} \tensor{F}{_4_2}\\
+		% 	&{}+ \tensor{F}{_1_2} \left( \bar{\beta} - \alpha + \pi - \bar{\tau} \right) + \tensor{F}{_3_2} \left( \rho + \bar{\rho} - \varepsilon - \bar{\varepsilon} \right) + \tensor{F}{_4_2} \left( - \bar{\mu} - \mu + \gamma + \bar{\gamma} \right)\\
+		% 	&{} + \tensor{F}{_1_2} \left( \alpha - \bar{\beta} \right) + \tensor{F}{_1_3} \bar{\sigma} - \tensor{F}{_1_4} \lambda + \tensor{F}{_2_3} \bar{\rho} - \tensor{F}{_2_4} \mu\\
+		% 	&{} + \tensor{F}{_3_2} \left( \bar{\varepsilon} - \varepsilon \right) + \tensor{F}{_3_4} \pi + \tensor{F}{_4_2} \left( \bar{\gamma} - \gamma \right) - \tensor{F}{_4_3} \bar{\tau}\\
+		% 	={} & \bar{\delta} \left( \bar{\Phi}_1 - \Phi_1 \right) + D \Phi_2 - \Delta \bar{\Phi}_0\\
+		% 	&{} - \left( \Phi_1 - \bar{\Phi}_1 \right) \left( \pi - \bar{\tau} \right) - \Phi_2 \left( \rho - 2 \varepsilon \right) + \bar{\Phi}_0 \left( - \mu - \bar{\mu} + 2 \bar{\gamma} \right)\\
+		% 	&{} + \bar{\Phi}_2 \bar{\sigma} - \left( \Phi_1 + \bar{\Phi}_1 \right) \bar{\tau}\\
+		% 	={} & \bar{\delta} \left( \bar{\Phi}_1 - \Phi_1 \right) + D \Phi_2 - \Delta \bar{\Phi}_0\\
+		% 	&{} + \bar{\Phi}_0 \lambda + \bar{\Phi}_0 \left( - \bar{\mu} + 2 \bar{\gamma} \right) - 2 \Phi_1 \pi -2 \bar{\Phi}_1 \bar{\tau} - \Phi_2 \left( \rho - 2 \varepsilon \right) + \bar{\Phi}_2 \bar{\sigma},\\
+		% 	\tensor{\left( \varepsilon_3 \right)}{^b} \tensor{\nabla}{^a} \tensor{F}{_a_b} ={}& \tensor{\left( \varepsilon^\nu \right)}{_a} \tensor{\nabla}{^a} \tensor{F}{_\nu_3} + \tensor{F}{_\nu_3} \tensor{\omega}{_\mu^\nu^\mu} + \tensor{F}{_\nu_\sigma} \tensor{\omega}{_3^\sigma^\nu}
+		% \end{align*}
+		\begin{align*}
+			\tensor{\left( \varepsilon_1 \right)}{^b} \tensor{\nabla}{^a} \tensor{F}{_a_b} ={} & \tensor{g}{^\nu^\sigma} \tensor{\nabla}{_\sigma} \tensor{F}{_\nu_1} + \tensor{g}{^\sigma^\rho} \tensor{F}{_\nu_1} \tensor{\omega}{_\sigma^\nu_\rho} + \tensor{g}{^\sigma^\rho} \tensor{F}{_\sigma_\nu} \tensor{\omega}{_1^\nu_\rho}\\
+			={} & \tensor{\nabla}{_1} \tensor{F}{_2_1} - \Nabla{4} \tensor{F}{_3_1} - \Nabla{3} \tensor{F}{_4_1} + \tensor{F}{_2_1} \left( \tensor{\omega}{_2^2_1} - \tensor{\omega}{_3^2_4} - \tensor{\omega}{_4^2_3} \right)\\
+			&{} + \tensor{F}{_3_1} \left( \tensor{\omega}{_1^3_2} + \tensor{\omega}{_2^3_1} - \tensor{\omega}{_3^3_4} \right) + \tensor{F}{_4_1} \left( \tensor{\omega}{_1^4_2} + \tensor{\omega}{_2^4_1} - \tensor{\omega}{_4^4_3} \right)\\
+			&{} + \tensor{F}{_1_3} \tensor{\omega}{_1^3_2} + \tensor{F}{_1_4} \tensor{\omega}{_1^4_2} + \tensor{F}{_2_1} \tensor{\omega}{_1^1_1} + \tensor{F}{_2_3} \tensor{\omega}{_1^3_1} + \tensor{F}{_2_4} \tensor{\omega}{_1^4_1}\\
+			&{} - \tensor{F}{_3_1} \tensor{\omega}{_1^1_4} - \tensor{F}{_3_4} \tensor{\omega}{_1^4_4} - \tensor{F}{_4_1} \tensor{\omega}{_1^1_4} - \tensor{F}{_4_3} \tensor{\omega}{_1^3_4}\\
+			={}&
+		\end{align*}
 	\end{jie}
+
+	\item 试证式 (8-8-7) 和 (8-8-10)。
 \end{xiti}
