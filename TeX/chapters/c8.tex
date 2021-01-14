@@ -526,7 +526,75 @@
 			&{} - \tensor{F}{_3_1} \tensor{\omega}{_1^1_4} - \tensor{F}{_3_4} \tensor{\omega}{_1^4_4} - \tensor{F}{_4_1} \tensor{\omega}{_1^1_4} - \tensor{F}{_4_3} \tensor{\omega}{_1^3_4}\\
 			={}&
 		\end{align*}
+		我先放弃了……
 	\end{jie}
 
 	\item 试证式 (8-8-7) 和 (8-8-10)。
+
+	\begin{zm}
+		由正文 (7-2-6)
+		\begin{equation*}
+			\tensor{T}{_a_b} = \frac{1}{4\pi} \left( \tensor{F}{_a_c} \tensor{F}{_b^c} - \frac{1}{4} \tensor{g}{_a_d} \tensor{F}{_c_d} \tensor{F}{^c^d} \right) \tag{7-2-6}
+		\end{equation*}
+		知
+		\begin{equation*}
+			\tensor{T}{_a_b} = \frac{1}{4\pi} \left( \tensor{g}{^c^d} \tensor{F}{_a_c} \tensor{F}{_b_d} - \frac{1}{4} \tensor{g}{_a_b} \tensor{F}{_c_d} \tensor{F}{^c^d} \right),
+		\end{equation*}
+		而
+		\begin{align*}
+			\tensor{F}{_a_b} \tensor{F}{^a^b} &= \tensor{g}{^\mu^\sigma} \tensor{g}{^\nu^\rho} \tensor{F}{_\mu_\nu} \tensor{F}{_\sigma_\rho}\\
+			&= 2 \tensor{g}{^\nu^\rho} \tensor{F}{_1_\nu} \tensor{F}{_2_\rho} - 2 \tensor{g}{^\nu^\rho} \tensor{F}{_3_\nu} \tensor{F}{_4_\rho}\\
+			&= 2 \tensor{F}{_1_2} \tensor{F}{_2_1} - 2 \tensor{F}{_1_3} \tensor{F}{_2_4} - 2 \tensor{F}{_1_4} \tensor{F}{_2_3} - 2 \tensor{F}{_3_1} \tensor{F}{_4_2} - 2 \tensor{F}{_3_2} \tensor{F}{_4_1} + 2 \tensor{F}{_3_4} \tensor{F}{_4_3}\\
+			&= 2 \left( -\tensor{F}{_1_2}^2 - \tensor{F}{_3_4}^2 + 2 \tensor{F}{_1_3} \tensor{F}{_4_2} + 2 \tensor{F}{_4_1} \tensor{F}{_2_3} \right)\\
+			&= -2 \left( \Phi_1 - \bar{\Phi}_1 \right)^2 - 2 \left( \Phi_1 + \bar{\Phi}_1 \right)^2 + 4 \bar{\Phi}_2 \bar{\Phi}_0 + 4 \Phi_0 \Phi_2\\
+			&= 4 \left( - \Phi_1^2 - \bar{\Phi}_1^2 + \Phi_0 \Phi_2 + \bar{\Phi}_0 \bar{\Phi}_2 \right),
+		\end{align*}
+		故
+		\begin{align*}
+			4 \pi \tensor{T}{_1_1} &= - 2 \tensor{F}{_1_3} \tensor{F}{_1_4}\\
+			&= 2 \Phi_0 \bar{\Phi}_2,\\
+			4 \pi \tensor{T}{_1_2} &= \tensor{F}{_1_2} \tensor{F}{_2_1} - \tensor{F}{_1_3} \tensor{F}{_2_4} - \tensor{F}{_1_4} \tensor{F}{_2_3} - \frac{1}{4} \tensor{F}{_c_d} \tensor{F}{^c^d}\\
+			&= - \left( \Phi_1 - \bar{\Phi}_1 \right)^2 + \bar{\Phi}_2 \bar{\Phi}_0 + \Phi_0 \Phi_2 + \Phi_1^2 + \bar{\Phi}_1^2 - \Phi_0 \Phi_2 - \bar{\Phi}_0 \bar{\Phi}_2\\
+			&= 2 \Phi_1 \bar{\Phi}_1,\\
+			4 \pi \tensor{T}{_1_3} &= \tensor{F}{_1_2} \tensor{F}{_3_1} - \tensor{F}{_1_3} \tensor{F}{_3_4}\\
+			&= \tensor{F}{_1_3} \left( \tensor{F}{_4_3} + \tensor{F}{_2_1} \right)\\
+			&= 2 \Phi_1 \bar{\Phi}_2,\\
+			4 \pi \tensor{T}{_1_4} &= \tensor{F}{_1_2} \tensor{F}{_4_1} - \tensor{F}{_1_4} \tensor{F}{_4_3}\\
+			&= \tensor{F}{_4_1} \left( \tensor{F}{_4_3} - \tensor{F}{_2_1} \right)\\
+			&= 2 \Phi_0 \bar{\Phi}_1,\\
+			4 \pi \tensor{T}{_2_2} &= - 2 \tensor{F}{_2_3} \tensor{F}{_2_4}\\
+			&= 2 \bar{\Phi}_0 \Phi_2,\\
+			4 \pi \tensor{T}{_2_3} &= \tensor{F}{_2_1} \tensor{F}{_3_2} - \tensor{F}{_2_3} \tensor{F}{_3_4}\\
+			&= \tensor{F}{_2_3} \left( \tensor{F}{_4_3} - \tensor{F}{_2_1} \right)\\
+			&= 2 \bar{\Phi}_1 \Phi_2,\\
+			4 \pi \tensor{T}{_2_4} &= \tensor{F}{_2_1} \tensor{F}{_4_2} - \tensor{F}{_2_4} \tensor{F}{_4_3}\\
+			&= \tensor{F}{_4_2} \left( \tensor{F}{_4_3} + \tensor{F}{_2_1} \right)\\
+			&= 2 \bar{\Phi}_0 \Phi_1,\\
+			4 \pi \tensor{T}{_3_3} &= 2 \tensor{F}{_3_1} \tensor{F}{_3_2}\\
+			&= 2 \Phi_2 \bar{\Phi}_2,\\
+			4 \pi \tensor{T}{_3_4} &= \tensor{F}{_3_1} \tensor{F}{_4_2} + \tensor{F}{_3_2} \tensor{F}{_4_1} - \tensor{F}{_3_4} \tensor{F}{_4_3} + \frac{1}{4} \tensor{F}{_c_d} \tensor{F}{^c^d}\\
+			&= - \bar{\Phi}_2 \bar{\Phi}_0 - \Phi_2 \Phi_0 + \left( \Phi_1 + \bar{\Phi}_1 \right)^2 - \Phi_1^2 - \bar{\Phi}_1^2 + \Phi_0 \Phi_2 + \bar{\Phi}_0 \bar{\Phi}_2\\
+			&= 2 \Phi_1 \bar{\Phi}_1,\\
+			4 \pi \tensor{T}{_4_4} &= 2 \tensor{F}{_4_1} \tensor{F}{_4_2}\\
+			&= 2 \Phi_0 \bar{\Phi}_0,
+		\end{align*}
+		(8-8-7) 证毕。
+
+		按~\eqref{eq-SS}，
+		\begin{align*}
+			\tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} &= 2 \left( \tensor{F}{_a_b} \tensor{F}{^a^b} + \ii \tensor{F}{_a_b} \tensor[^*]{F}{^a^b} \right),
+		\end{align*}
+		而
+		\begin{align*}
+			\tensor{F}{_a_b} \tensor[^*]{F}{^a^b} &= \frac{1}{2} \tensor{\varepsilon}{_\mu_\nu_\sigma_\rho} \tensor{F}{^\mu^\nu} \tensor{F}{^\sigma^\rho}\\
+			&= 4 \ii \tensor{F}{_1_2} \tensor{F}{_3_4} - 4 \ii \tensor{F}{_1_3} \tensor{F}{_2_4} + 4 \ii \tensor{F}{_1_4} \tensor{F}{_2_3}\\
+			&= 4 \ii \Phi_1^2 - 4 \ii \bar{\Phi}_1^2 - 4 \ii \Phi_0 \Phi_2 + 4 \ii \bar{\Phi}_0 \bar{\Phi}_2,
+		\end{align*}
+		故
+		\begin{align*}
+			\tensor{\Sigma}{_a_b} \tensor{\Sigma}{^a^b} &= -8 \Phi_1^2 - 8 \bar{\Phi}_1^2 + 8 \Phi_0 \Phi_2 + 8 \bar{\Phi}_0 \bar{\Phi}_2 - 8 \Phi_1^2 + 8 \bar{\Phi}_1^2 + 8 \Phi_0 \Phi_2 - 8 \bar{\Phi}_0 \bar{\Phi}_2\\
+			&= 16 \left( \Phi_0 \Phi_2 - \Phi_1^2 \right),
+		\end{align*}
+		(8-8-10) 证毕。
+	\end{zm}
 \end{xiti}
