@@ -155,4 +155,27 @@
 		\end{align*}
 		这是 boost 矢量场。事实上，这个矢量场在正文 (4-3-3) 出现过了。
 	\end{jie}
+
+	\item 求施瓦西时空中静态观者的 4 加速的长度 $A = \left( \tensor{A}{^a} \tensor{A}{_a} \right)^{1/2}$ 。提示：可借用\hyperlink{prob-8.3}{第 8 章习题 3} 的结论，即 $\tensor{A}{_a} = \Nabla{a} \ln{\chi}$。
+
+	\begin{jie}
+		对施瓦西时空，$\tensor{\xi}{^a} = \tensor{\left( \pdv*{t} \right)}{^a}$，
+		\begin{equation*}
+			\chi = \sqrt{- \tensor{\xi}{_a} \tensor{\xi}{^a}} = \sqrt{1 - \frac{2M}{r}},
+		\end{equation*}
+		知
+		\begin{align*}
+			\tensor{A}{_a} &= \Nabla{a} \ln{\chi}\\
+			&= \frac{1}{2} \Nabla{a} \ln(1 - \frac{2M}{r})\\
+			&= \frac{1}{2} \left( 1 - \frac{2M}{r} \right)^{-1} \Nabla{a} \left( 1 - \frac{2M}{r} \right)\\
+			&= \left( 1 - \frac{2M}{r} \right)^{-1} \frac{M}{r^2} \tensor{\left( \dd{r} \right)}{_a},
+		\end{align*}
+		故
+		\begin{align*}
+			A &= \sqrt{\tensor{g}{^a^b} \tensor{A}{_a} \tensor{A}{_b}}\\
+			&= \left( 1 - \frac{M}{r^2} \right)^{-1} \frac{2M}{r} \sqrt{\tensor{g}{^1^1}}\\
+			&= \left( 1 - \frac{M}{r^2} \right)^{-1/2} \frac{2M}{r}.
+		\end{align*}
+		吐槽：这不是 (8-3-23) 算过的么……
+	\end{jie}
 \end{xiti}
