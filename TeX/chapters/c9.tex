@@ -44,4 +44,36 @@
 			可以仿照命题 9-1-1 ，通过 $\mathrm{SE}(2)$ 对称性使得 $\left. y \right|_{\tau=0} = \left. \dv*{y}{\tau} \right|_{\tau=0} = 0$，则整条测地线上有 $y=0$。不过这里 $x$、$y$ 自动是解耦的，因此无需费这番口舌。
 		\end{tcolorbox}
 	\end{jie}
+
+	\item 用牛顿引力论借图 9-8 直接推出式 (9-3-18)。
+
+	\begin{figure}[!htbp]
+		\centering
+		\begin{tikzpicture}[scale=1.3]
+			\draw[semithick] (0,0) circle (2);
+			\draw[semithick] (0,0) circle (1.3);
+			\draw[semithick] (0,0) circle (1.5);
+			\filldraw (0,0) circle (1pt);
+			\draw[semithick] (0:1.3) -- (0:1.5);
+			\draw[semithick] (12:1.3) -- (12:1.5);
+			\draw[thick,-{Latex[length=2pt 6,width'=0pt 0.4]}] (6:1) -- (6:1.3);
+			\draw[thick,-{Latex[length=1pt 6,width'=0pt 0.4]}] (6:1.7) -- (6:1.5);
+			\node[below left] (O) at (0,0) {$O$};
+			\node[above] (p) at (6:1) {$p$};
+			\draw (8:1.65) -- (1.8,1.6);
+			\node[above] (dp) at (1.9,1.6) {$p+\dd{p}<p$};
+			\draw (4:1.43) -- (2.2,-0.4);
+			\node[below right] (dV) at (2.2,-0.4) {$\dd{V}$};
+		\end{tikzpicture}
+		\caption{正文图 9-8}\label{pic-9-9-8}
+	\end{figure}
+
+	\begin{jie}
+		如图~\ref{pic-9-9-8}，取厚度 $\dd{r}$ 的球壳上截面积为 $\dd{S}$ 的体积元 $\dd{V} = \dd{r} \dd{S}$，则由受力平衡知
+		\begin{gather*}
+			p \dd{S} = (p+\dd{p}) \dd{S} + \frac{1}{r^2} m(r) \rho \dd{V},\\
+			\implies \dd{p} \dd{S} = - \frac{1}{r^2} m(r) \rho \dd{V},\\
+			\implies \dv{p}{r} = - \frac{1}{r^2} m(r) \rho.
+		\end{gather*}
+	\end{jie}
 \end{xiti}
