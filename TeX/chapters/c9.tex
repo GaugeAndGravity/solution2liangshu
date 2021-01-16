@@ -1,3 +1,47 @@
 % !TeX root = ../document.tex
 
 \chapter{施瓦西时空}
+
+\begin{xiti}
+	\item 考虑 Taub 的平面对称时空，其线元为式 (8-6-1')\footnote{正文(8-6-1')为
+	\begin{equation*}
+		\dd{s}^2 = z^{-1/2} \left( - \dd{t}^2 + \dd{z}^2 \right) + z \left( \dd{x}^2 + \dd{y}^2 \right). \tag{8-6-1'}
+	\end{equation*}}，试借助 Killing 矢量场写出类时测地线 $\gamma(\tau)$ 的参数表达式 $t(\tau)$, $x(\tau)$, $y(\tau)$, $z(\tau)$ 所满足的解耦方程 （参考 \S 9.1）。
+
+	\begin{jie}
+		对类时测地线，有
+		\begin{equation}
+			\begin{split}
+				-1 &= \tensor{g}{_a_b} \tensor{\left( \pdv{\tau} \right)}{^a} \tensor{\left( \pdv{\tau} \right)}{^b}\\
+				&= - z^{-1/2} \left( \dv{t}{\tau} \right)^2 - z^{-1/2} \left( \dv{z}{\tau} \right)^2 + z \left( \dv{x}{\tau} \right)^2 + z \left( \dv{y}{\tau} \right)^2,\label{eq-9--1}
+			\end{split}
+		\end{equation}
+		由于有 $\tensor{{\xi_0}}{^a} = \tensor{\left( \pdv*{t} \right)}{^a}$、$\tensor{{\xi_1}}{^a} = \tensor{\left( \pdv*{x} \right)}{^a}$、$\tensor{{\xi_2}}{^a} = \tensor{\left( \pdv*{y} \right)}{^a}$、$\tensor{{\xi_3}}{^a} = - y \tensor{\left( \pdv*{x} \right)}{^a} + x \tensor{\left( \pdv*{y} \right)}{^a}$ 四个 Killing 矢量场，故有以下守恒量
+		\begin{align*}
+			E :={}& - \tensor{g}{_a_b} \tensor{\left( \pdv{\tau} \right)}{^a} \tensor{\left( \pdv{t} \right)}{^b}\\
+			={} & z^{-1/2} \dv{t}{\tau},\\
+			P_1 :={} & \tensor{g}{_a_b} \tensor{\left( \pdv{\tau} \right)}{^a} \tensor{\left( \pdv{x} \right)}{^b}\\
+			={} & z \dv{x}{\tau},\\
+			P_2 :={} & \tensor{g}{_a_b} \tensor{\left( \pdv{\tau} \right)}{^a} \tensor{\left( \pdv{y} \right)}{^b}\\
+			={} & z \dv{y}{\tau},\\
+			L := {} & \tensor{g}{_a_b} \tensor{\left( \pdv{\tau} \right)}{^a} \tensor{{\xi_3}}{^a}\\
+			={}& z \left( -y \dv{x}{\tau} + z \dv{y}{\tau} \right),
+		\end{align*}
+		则
+		\begin{equation}
+			\begin{split}
+				\dv{t}{\tau} &= \sqrt{z} E,\\
+				\dv{x}{\tau} &= \frac{1}{z} P_1,\\
+				\dv{y}{\tau} &= \frac{1}{z} P_2,
+			\end{split}\label{eq-9-eq_txy}
+		\end{equation}
+		代入~\eqref{eq-9--1} 知
+		\begin{equation*}
+			-1 = - \sqrt{z} E^2 + \frac{1}{z} \left( P_1^2 + P_2^2 \right) - \frac{1}{\sqrt{z}} \left( \dv{z}{\tau} \right)^2,
+		\end{equation*}
+		由此式可解得 $z(\tau)$，再代入~\eqref{eq-9-eq_txy} 即可解得 $t(\tau)$、$x(\tau)$、$y(\tau)$。
+		\begin{tcolorbox}[breakable,title=补充,fonttitle=\normalfont\bfseries]
+			可以仿照命题 9-1-1 ，通过 $\mathrm{SE}(2)$ 对称性使得 $\left. y \right|_{\tau=0} = \left. \dv*{y}{\tau} \right|_{\tau=0} = 0$，则整条测地线上有 $y=0$。不过这里 $x$、$y$ 自动是解耦的，因此无需费这番口舌。
+		\end{tcolorbox}
+	\end{jie}
+\end{xiti}
