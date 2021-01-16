@@ -76,4 +76,37 @@
 			\implies \dv{p}{r} = - \frac{1}{r^2} m(r) \rho.
 		\end{gather*}
 	\end{jie}
+
+	\item 试证 OV 流体静力学平衡方程可改写为
+	\begin{equation*}
+		\left[ 1- \frac{2m(r)}{r} \right]^{1/2} \dv{p}{r} = - \left( \rho + p \right) g, \tag{9-4-60}
+	\end{equation*}
+	其中 $g$ 代表流体质点的 4 加速 $\tensor{U}{^b} \Nabla{b} \tensor{U}{^a}$ 的大小。
+
+	\begin{yl}{注}
+		在牛顿近似下 $\left[ 1 - 2 m(r) / r \right]^{1/2} \cong 1$, $p \cong 0$, 式 (9-4-60) 成为 $\dv*{p}{r} \cong - \rho g$。而 $g \cong m(r)/r^2$，故得式 (9-3-18)，即 $\dv*{p}{r} \cong - \rho m(r)/r^2$。
+	\end{yl}
+
+	\begin{zm}
+		由于 $\tensor{U}{^a} = \e{-A} \tensor{\left( \pdv*{t} \right)}{^a}$，有
+		\begin{align*}
+			\tensor{U}{^b} \tensor{\nabla}{_b} \tensor{U}{^a} &= \tensor{U}{^b} \tensor{\left( \pdv{t} \right)}{^a} \Nabla{b} \e{-A} + \e{-2A} \tensor{\left( \pdv{t} \right)}{^b} \Nabla{b} \tensor{\left( \pdv{t} \right)}{^a}\\
+			&= 0 + \e{-2A} \ChristoffelSymbol{\mu}{0}{0} \tensor{\left( \pdv{x^\mu} \right)}{^a}\\
+			&= \dv{A}{r} \e{-2B} \tensor{\left( \pdv{r} \right)}{^a}\\
+			&= \left( 1- \frac{2m(r)}{r} \right) \dv{A}{r} \tensor{\left( \pdv{r} \right)}{^a}\\
+			&= \frac{r - 2m(r)}{r} \frac{m(r) + 4 \pi p r^3}{r \left( r - 2 m(r) \right)} \tensor{\left( \pdv{r} \right)}{^a}\\
+			&= \frac{m(r) + 4 \pi p r^3}{r^2} \tensor{\left( \pdv{r} \right)}{^a},
+		\end{align*}
+		故
+		\begin{align*}
+			g &= \sqrt{\tensor{g}{_1_1} \left( \frac{m(r) + 4 \pi p r^3}{r^2} \right)^2}\\
+			&= \left( 1 - \frac{2 m(r)}{r} \right)^{-1/2} \frac{m(r) + 4 \pi p r^3}{r^2},
+		\end{align*}
+		于是
+		\begin{align*}
+			\left( 1 - \frac{2 m(r)}{r} \right)^{1/2} \dv{p}{r} &= - \left( 1 - \frac{2 m(r)}{r} \right)^{1/2} \left( \rho + p \right) \frac{m(r) + 4 \pi p r^3}{r^2 \left( 1 - \frac{2 m(r)}{r} \right)}\\
+			&= - \left( 1 - \frac{2 m(r)}{r} \right)^{-1/2} \left( \rho + p \right) \frac{m(r) + 4 \pi p r^3}{r^2}\\
+			&= - \left( \rho + p \right) g.
+		\end{align*}
+	\end{zm}
 \end{xiti}
