@@ -55,6 +55,9 @@
 \iflinux
 	\newfontfamily\codefont{DejaVuSansMono}
 \fi
+\ifmacosx
+	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
+\fi
 
 \geometry{
 	a4paper,
@@ -200,7 +203,7 @@
 
 \addbibresource{ref.bib}
 
-\includeonly{chapters/c9}
+% \includeonly{chapters/c9}
 
 \begin{document}
 	\input{xiti}
