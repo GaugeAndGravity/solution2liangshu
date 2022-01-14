@@ -390,22 +390,21 @@
 
 		与愚蠢的人类相比，麦酱可以更快地计算（并且不会抄错分量\wl{12}）。将以下函数定义写入一个Mathematica程序包文件(.m)或者放在笔记本文件的开头：
 		\begin{lstlisting}[language=Mathematica]
-'\mma christoffelsymbol'['\mmacs g\_','\mmacs x\_','\mmacs i\_','\mmacs j\_','\mmacs k\_']:=
-   1/2
-     '\mma Plus'@@
+'\mmaundef christoffelsymbol'['\mmacs g\_','\mmacs x\_','\mmacs i\_','\mmacs j\_','\mmacs k\_']:=
+   1/2 '\mma Plus'@@
        ((Inverse['\mmacs g'][['\mmacs i','\mmacs \#']](D['\mmacs g'[['\mmacs \#','\mmacs j']],'\mmacs x'[['\mmacs k']]]+D['\mmacs g'[['\mmacs k','\mmacs \#']],'\mmacs x'[['\mmacs j']]]-
               D['\mmacs g'[['\mmacs j','\mmacs k']],'\mmacs x'[['\mmacs \#']]]))&)/@'\mma Range'[Length['\mmacs x']];
-'\mma ChristoffelSymbol'['\mmacs g\_','\mmacs x\_']:=
-   Table[christoffelsymbol['\mmacs g','\mmacs x','\mmab i','\mmab j','\mmab k'],{'\mmab i',1,Length['\mmacs x']},
+'\mmaundef ChristoffelSymbol'['\mmacs g\_','\mmacs x\_']:=
+   Table['\mmaundef christoffelsymbol'['\mmacs g','\mmacs x','\mmab i','\mmab j','\mmab k'],{'\mmab i',1,Length['\mmacs x']},
       {'\mmab j',1,Length['\mmacs x']},{'\mmab k',1,Length['\mmacs x']}];
-'\mma riemanntensor'['\mmacs g\_','\mmacs x\_','\mmacs i\_','\mmacs j\_','\mmacs k\_','\mmacs l\_']:=
-   D[christoffelsymbol['\mmacs g','\mmacs x','\mmacs l','\mmacs i','\mmacs k'],'\mmacs x'[['\mmacs j']]]-
-    D[christoffelsymbol['\mmacs g','\mmacs x','\mmacs l','\mmacs j','\mmacs k'],'\mmacs x'[['\mmacs i']]]+
+'\mmaundef riemanntensor'['\mmacs g\_','\mmacs x\_','\mmacs i\_','\mmacs j\_','\mmacs k\_','\mmacs l\_']:=
+   D['\mmaundef christoffelsymbol'['\mmacs g','\mmacs x','\mmacs l','\mmacs i','\mmacs k'],'\mmacs x'[['\mmacs j']]]-
+    D['\mmaundef christoffelsymbol'['\mmacs g','\mmacs x','\mmacs l','\mmacs j','\mmacs k'],'\mmacs x'[['\mmacs i']]]+
     '\mma Plus'@@
-      ((christoffelsymbol['\mmacs g','\mmacs x','\mmacs \#','\mmacs k','\mmacs i'] christoffelsymbol['\mmacs g','\mmacs x','\mmacs l','\mmacs j','\mmacs \#']-
-          christoffelsymbol['\mmacs g','\mmacs x','\mmacs \#','\mmacs k','\mmacs j']
-           christoffelsymbol['\mmacs g','\mmacs x','\mmacs l','\mmacs i','\mmacs \#'])&)/@Range[Length['\mmacs x']];
-RiemannTensor['\mmacs g\_','\mmacs x\_']:=Table[riemanntensor['\mmacs g','\mmacs x','\mmab i','\mmab j','\mmab k','\mmab l'],
+      (('\mmaundef christoffelsymbol'['\mmacs g','\mmacs x','\mmacs \#','\mmacs k','\mmacs i'] '\mmaundef christoffelsymbol'['\mmacs g','\mmacs x','\mmacs l','\mmacs j','\mmacs \#']-
+          '\mmaundef christoffelsymbol'['\mmacs g','\mmacs x','\mmacs \#','\mmacs k','\mmacs j']
+           '\mmaundef christoffelsymbol'['\mmacs g','\mmacs x','\mmacs l','\mmacs i','\mmacs \#'])&)/@'\mma Range'[Length['\mmacs x']];
+'\mmaundef RiemannTensor'['\mmacs g\_','\mmacs x\_']:=Table['\mmaundef riemanntensor'['\mmacs g','\mmacs x','\mmab i','\mmab j','\mmab k','\mmab l'],
     {'\mmab i',1,Length['\mmacs x']},{'\mmab j',1,Length['\mmacs x']},{'\mmab k',1,Length['\mmacs x']},{'\mmab l',1,Length['\mmacs x']}];
 		\end{lstlisting}
 		运行如图~\ref{f3.1}。

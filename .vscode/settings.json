@@ -79,4 +79,7 @@
             ]
         }
     ],
+    "editor.unicodeHighlight.allowedCharacters": {
+        "：": true
+    }
 }
