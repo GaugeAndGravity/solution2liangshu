@@ -79,7 +79,7 @@
             ]
         }
     ],
-    "editor.unicodeHighlight.allowedCharacters": {
-        "：": true
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hant": true
     }
 }
