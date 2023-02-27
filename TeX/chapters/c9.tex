@@ -266,6 +266,70 @@
 		\end{enumerate}
 	\end{zm}
 
+	\item 引入与 Kruskal 坐标类似的坐标消除下列线元的坐标奇性 $r = R$:
+	\begin{equation*}
+		\dd s^2 = - \left( 1 - r^2/R^2 \right) \dd t^2 + \left( 1 - r^2/R^2 \right)^{-1} \dd{r}^2 + r^2 \left( \dd{\theta}^2 + \sin^2 \theta \dd{\phi}^2 \right) \qc R=\text{常数}.
+	\end{equation*}
+	\begin{jie}
+		只考虑前两维，并取 $0<r<R$，
+		\begin{equation*}
+			\dd \hat{s}^2 = - \left( 1 - r^2/R^2 \right) \left( \dd t^2 + \left( 1 - r^2/R^2 \right)^{-2} \dd{r}^2 \right),
+		\end{equation*}
+		令
+		\begin{equation*}
+			r_* = \int_0^r \left( 1 - \frac{{r'}^2}{R^2} \right)^{-1} \dd{r'} = R \arctanh\left(\frac{r}{R}\right) \in (0, \infty),
+		\end{equation*}
+		则
+		\begin{equation*}
+			\dd{\hat{s}}^2 = \left( 1 - r^2/R^2 \right) \left( - \dd t^2 + \dd{r_*}^2 \right),
+		\end{equation*}
+		再令
+		\begin{equation*}
+			u := t - r_* \qc v := t + r_*,
+		\end{equation*}
+		其取值范围为
+		\begin{equation*}
+			v > u,
+		\end{equation*}
+		得
+		\begin{equation*}
+			\dd \hat{s}^2 = - \left( 1 - \frac{r^2}{R^2} \right) \dd{u} \dd{v},
+		\end{equation*}
+		令
+		\begin{equation*}
+			U := \e{-\beta u} \qc V := \e{\beta v},
+		\end{equation*}
+		其中 $\beta$ 是待定常数，则取值范围是
+		\begin{equation*}
+			U,V > 0 \qc UV > 1,
+		\end{equation*}
+		且
+		\begin{align*}
+			\dd \hat{s}^2 &= - \beta^{-2} \left( 1 - \frac{r^2}{R^2} \right) \e{\beta(u-v)} \dd{U}\dd{V}\\
+			&= - \beta^{-2} \left( 1 - \frac{r^2}{R^2} \right) \left( \frac{R+r}{R-r} \right)^{-\beta R} \dd{U} \dd{V},
+		\end{align*}
+		若选择 $\beta = -1/R$，则
+		\begin{align*}
+			\dd \hat{s}^2 = - \left( R+r \right)^2 \dd{U} \dd{V}，
+		\end{align*}
+		坐标奇性已被消除，只需将 $r$ 视作函数
+		\begin{equation*}
+			r = \frac{1 - U V}{1 + U V} R,
+		\end{equation*}
+		即可允许 $U, V$ 除 $U V = - 1$ 外任意取值，则 $U V > -1$ 定义了一个连通的延拓。还可进一步令
+		\begin{equation*}
+			T := \frac{1}{2} \left( V + U \right) \qc X := \frac{1}{2} \left( V - U \right),
+		\end{equation*}
+		则得到完整的延拓后度规
+		\begin{equation*}
+			\dd s^2 = \left( R + r \right)^2 \left( - \dd{T}^2 + \dd{X}^2 \right) + r^2 \left( \dd \theta^2 + \sin^2 \theta \dd \phi^2 \right),
+		\end{equation*}
+		其中
+		\begin{equation*}
+			r = \frac{1 - T^2 + X^2}{1 + T^2 - X^2} R.
+		\end{equation*}
+	\end{jie}
+
 	\item 试证最大延拓施瓦西时空有 s.p. 曲率奇性。提示：利用式 (8-3-21)\footnote{正文(8-3-21)为
 	\begin{equation}
 		\left.
