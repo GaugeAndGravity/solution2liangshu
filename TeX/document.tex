@@ -46,6 +46,7 @@
 
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{3d}
 
 \tcbuselibrary{skins,breakable}
@@ -181,6 +182,9 @@
 
 \newcommand{\form}[1]{\bm{#1}}
 
+\newcommand{\tensord}[2]{\tensor{\left( \dd{#1} \right)}{_{#2}}}
+\newcommand{\tensorp}[2]{\tensor{\left( \pdv{#1} \right)}{^{#2}}}
+
 \newcommand{\TB}[2][{}]{\mathrm{T}_{#1}\!{#2}}
 \newcommand{\TBx}[2][{}]{\mathrm{T}_{#1} {#2}}
 \newcommand{\CTB}[2][{}]{\mathrm{T}^*_{#1}\!{#2}}
@@ -205,7 +209,7 @@
 
 \addbibresource{ref.bib}
 
-% \includeonly{chapters/c9}
+\includeonly{chapters/c9}
 
 \begin{document}
 	\input{xiti}

@@ -178,4 +178,91 @@
 		\end{align*}
 		吐槽：这不是 (8-3-23) 算过的么……
 	\end{jie}
+
+	\item 把图 9-13(a) 的 $N_1$ （或 $N_2$） 所代表的径向类光测地线简称为 $N_1$ (或 $N_2$) ，试证：(1) 坐标 $V$ （或 $U$ ）是类光测地线 $N_1$ （或 $N_2$） 的仿射参数；(2) 坐标 $r$ 是除 $N_1$ 和 $N_2$ 外的径向类光测地线的仿射参数。
+
+	\begin{figure}[htbp!]
+		\centering
+		\begin{tikzpicture}[decoration={snake,segment length=5,amplitude=1}, semithick]
+			\draw[\myarrow, very thick] (-4,0) -- (4,0);
+			\draw[\myarrow, very thick] (0,-4) -- (0,4);
+			\draw[\myarrow, very thick] (-2.828427,-2.828427) -- (2.828427, 2.828427);
+			\draw[\myarrow, very thick] (2.828427, -2.828427) -- (-2.828427, 2.828427);
+			% \draw[domain=-1:1,variable=\t] plot ({2*cosh(\t)},{2*sinh(\t)});
+			\draw[domain=-1.1:1.1,variable=\t,decorate] plot ({1.7*sinh(\t)},{1.7*cosh(\t)});
+			\draw[domain=-1.1:1.1,variable=\t,decorate] plot ({1.7*sinh(\t)},{-1.7*cosh(\t)});
+			% \draw[domain=-1.3:1.3,variable=\t] plot ({1*sinh(\t)},{1*cosh(\t)});
+			\node[right] (X) at (4, 0) {$X$};
+			\node[left] (T) at (0, 4) {$T$};
+			\node[above left] (U) at (-2.828427, 2.828427) {$U$};
+			\node[above right] (V) at (2.828427, 2.828427) {$V$};
+			\node (A) at (2,0) {\colorbox{white}{$\mathrm{A}$}};
+			\node (Ap) at (-2, 0) {\colorbox{white}{$\mathrm{A'}$}};
+			\node (B) at (0,1) {\colorbox{white}{$\mathrm{B}$}};
+			\node (W) at (0, -1) {\colorbox{white}{$\mathrm{W}$}};
+			\node (N1p) at (1.4, 1.4) {\colorbox{white}{$N_1^+$}};
+			\node (N1m) at (-1.4, -1.4) {\colorbox{white}{$N_1^-$}};
+			\node (N2p) at (-1.4, 1.4) {\colorbox{white}{$N_2^+$}};
+			\node (N2m) at (1.4, -1.4) {\colorbox{white}{$N_2^-$}};
+			\draw (2,2) -- (2.5,1.7);
+			\node[right] (U0) at (2.4,1.7) {\colorbox{white}{$U=0$}};
+			\draw (2,-2) -- (2.5,-1.7);
+			\node[right] (V0) at (2.4,-1.7) {\colorbox{white}{$V=0$}};
+			\draw (0,0) -- (-1.5, -0.75);
+			\node[below] (UV0) at (-1.9, -0.55) {\colorbox{white}{\small $V=U=0$}};
+			\draw (0.7, 1.83848) -- (0.6, 2.1);
+			\node[above] (r1) at (0.7, 2.05) {\footnotesize $r=0$};
+			\draw (0.7, -1.83848) -- (0.6, -2.1);
+			\node[below] (r2) at (0.7, -2.05) {\footnotesize $r=0$};
+		\end{tikzpicture}
+		\caption{正文图 9-13(a)}
+	\end{figure}
+	\begin{zm}
+		\begin{enumerate}[label = (\arabic*)]
+			\item 对 $N_1$，
+				\begin{align*}
+					\tensorp{V}{^a} \Nabla{a} \tensorp{V}{^b} &= \frac{1}{4} \left( \tensorp{T}{^a} + \tensorp{X}{^a} \right) \Nabla{a} \left( \tensorp{T}{^b} + \tensorp{X}{^b} \right)\\
+					&= \frac{1}{4} \left( \ChristoffelSymbol{\mu}{T}{T} + 2 \ChristoffelSymbol{\mu}{T}{X} + \ChristoffelSymbol{\mu}{X}{X} \right) \tensorp{x^\mu}{^b},
+				\end{align*}
+				显然 $x^\mu$ 只能取 $T$, $X$ 而不能取 $\theta, \phi$。易从 Kruskal 度规算得\footnote{如果懒得手搓，请参考第三章习题解答中的 Mathematica 代码}：
+				\begin{align*}
+					\ChristoffelSymbol{T}{T}{T} &= - \frac{r + 2M}{4Mr} \pdv{r}{T}, & \ChristoffelSymbol{T}{T}{X} &= - \frac{r + 2M}{4Mr} \pdv{r}{X}, & \ChristoffelSymbol{T}{X}{X} &= - \frac{r + 2M}{4Mr} \pdv{r}{T},\\
+					\ChristoffelSymbol{X}{T}{T} &= - \frac{r + 2M}{4Mr} \pdv{r}{X}, & \ChristoffelSymbol{X}{T}{X} &= - \frac{r + 2M}{4Mr} \pdv{r}{T}, & \ChristoffelSymbol{X}{X}{X} &= - \frac{r + 2M}{4Mr} \pdv{r}{X},
+				\end{align*}
+				故
+				\begin{align*}
+					\tensorp{V}{^a} \Nabla{a} \tensorp{V}{^b} &= -\frac{r + 2M}{8Mr} \left( \pdv{r}{T} + \pdv{r}{X} \right) \left( \tensorp{T}{^b} + \tensorp{X}{^b} \right)\\
+					&= - \frac{r + 2M}{4Mr} \left( \pdv{r}{T} + \pdv{r}{X} \right) \tensorp{V}{^a},
+				\end{align*}
+				而 $r = f(X^2 - T^2)$，故
+				\begin{align*}
+					\pdv{r}{T} + \pdv{r}{X} &= -2 T f' + 2X f' = - 2 U f'
+				\end{align*}
+				在 $N_1$ 上为零，故得证。同理可知 $U$ 是 $N_2$ 的仿射参数。
+
+			\item 其余径向类光测地线在 Kruskal 坐标图示下也必须为倾斜 $\frac{\pi}{2}$ 的直线，即 $U$ 坐标线或 $V$ 坐标线。不妨考虑直线 $U = U_0$，其中 $U_0 \neq 0$，则以 $\lambda=r$ 为参数\footnote{这里多设一个参数 $\lambda$ 而不是直接写作 $r$ 是为避免测地线切矢的记号与 $r$ 坐标基矢引起混淆。}，由于 $r = f(X^2 - T^2) = f(UV)$，其中 $f$ 的逆是
+			\begin{equation*}
+				f^{-1}(r) = \frac{r-2M}{2M} \e{r/2M},
+			\end{equation*}
+			则在测地线上有
+			\begin{equation*}
+				V = \frac{1}{U_0} f^{-1}(r),
+			\end{equation*}
+			切矢为
+				\begin{align*}
+					\tensorp{\lambda}{^a} &= \dv{V}{\lambda} \tensorp{V}{^a}\\
+					&= \frac{r}{4M^2} \e{r/2M} \tensorp{V}{^a},
+				\end{align*}
+				故在曲线上，
+				\begin{align*}
+					\tensorp{\lambda}{^a} \Nabla{a} \tensorp{\lambda}{^b} &= \dv[2]{V}{\lambda} \tensorp{V}{^b} + \left( \dv{V}{\lambda} \right)^2 \tensorp{V}{^a} \Nabla{a} \tensorp{V}{^b}\\
+					&= \left( \frac{r+2M}{8M^3} \e{r/2M} - \left( \dv{V}{\lambda} \right)^2 \frac{r+2M}{4Mr} \left( \pdv{r}{T} + \pdv{r}{X} \right) \right) \tensorp{V}{^b}\\
+					&= \left( \frac{r+2M}{8M^3} \e{r/2M} - \left( \dv{V}{\lambda} \right)^2 \frac{r+2M}{2Mr} \dv{\lambda}{V} \right) \tensorp{V}{^b}\\
+					&= \left( \frac{r+2M}{8M^3} \e{r/2M} - \dv{V}{\lambda} \frac{r+2M}{2Mr} \right) \tensorp{V}{^b}\\
+					&= \left( \frac{r+2M}{8M^3} \e{r/2M} - \frac{r}{4M^2} \e{r/2M} \times \frac{r+2M}{2 Mr} \right) \tensorp{V}{^b}\\
+					&= 0.
+				\end{align*}
+				若为测地线 $V = V_0$，同理可证。
+		\end{enumerate}
+	\end{zm}
 \end{xiti}
