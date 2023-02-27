@@ -265,4 +265,25 @@
 				若为测地线 $V = V_0$，同理可证。
 		\end{enumerate}
 	\end{zm}
+
+	\item 试证最大延拓施瓦西时空有 s.p. 曲率奇性。提示：利用式 (8-3-21)\footnote{正文(8-3-21)为
+	\begin{equation}
+		\left.
+			\begin{gathered}
+				\tensor{R}{_0_1_0_1} = -\frac{2M}{r^3} \qc \tensor{R}{_0_2_0_2} = \frac{M}{r} \left( 1 - 2M/r \right) \qc \tensor{R}{_0_3_0_3} = \frac{M}{r}\left( 1 - 2M/r \right) \sin^2\theta,\\
+				\tensor{R}{_1_2_1_2} = - \frac{M}{r} \left( 1 - 2M/r \right)^{-1} \qc \tensor{R}{_1_3_1_3} = - \frac{M}{r} \left( 1 - 2M/r \right)^{-1} \sin^2 \theta \qc \tensor{R}{_2_3_2_3} = 2 M r \sin^2 \theta.
+			\end{gathered}
+		\right\}
+		\tag{8-3-21}
+	\end{equation}}。
+	\begin{zm}
+		由于 $B$ 区仍可使用施瓦西坐标，直接利用 (8-3-21) 得
+		\begin{align*}
+			\tensor{R}{^a^b^c^d} \tensor{R}{_a_b_c_d} &= \tensor{g}{^\mu^\alpha} \tensor{g}{^\nu^\beta} \tensor{g}{^\sigma^\gamma} \tensor{g}{^\rho^\delta} \tensor{R}{_\mu_\nu_\sigma_\rho} \tensor{R}{_\alpha_\beta_\gamma_\delta}\\
+			&= \sum_{\mu,\nu,\sigma,\rho} \tensor{g}{^\mu^\mu} \tensor{g}{^\nu^\nu} \tensor{g}{^\sigma^\sigma} \tensor{g}{^\rho^\rho} \left( \tensor{R}{_\mu_\nu_\sigma_\rho} \right)^2\\
+			&= \frac{4M^2}{r^6} + \frac{M^2}{r^6} + \frac{M^2}{r^6} + \frac{M^2}{r^6} + \frac{M^2}{r^6} + \frac{4M^2}{r^6}\\
+			&= \frac{12 M}{r^6},
+		\end{align*}
+		故当不完备测地线（例如上题中以 $r$ 为仿射参数的径向类光测地线）趋于 $r=0$ 时，具有 s.p. 曲率奇性。
+	\end{zm}
 \end{xiti}
