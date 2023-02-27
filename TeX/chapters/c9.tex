@@ -360,4 +360,46 @@
 		\end{align*}
 		其中 $\tensor{g}{^U^U}$ 指 $\tensor{g}{^a^b}$ 在 $\{ U, V, \theta, \phi \}$ 坐标系中的 $UU$ 分量。
 	\end{zm}
+
+	\item 试由式 (9-4-50)\footnote{
+		正文 (9-4-50) 为
+		\begin{equation}
+			\dd \hat{s}^2 = - \left( 1 - 2M/r \right) \dd t^2 + \left( 1 - 2M/r \right)^{-1} \dd r^2 \tag{9-4-50}
+		\end{equation}
+	} 推出式 (9-4-51)\footnote{
+		正文 (9-4-51) 为
+		\begin{equation}
+			\dd \hat{s}^2 = - \left( 1 - 2M/r \right) \dd v^2 + 2 \dd v \dd r. \tag{9-4-51}
+		\end{equation}
+	}，再推出式 (9-4-54)\footnote{
+		正文 (9-4-54) 为
+		\begin{equation}
+			\dd \hat{s}^2 = - \left( 1 - 2M/r \right) \dd{\tilde{t}}^2 + \left( 4M/r \right) \dd{\tilde{t}} \dd{r} + \left( 1 + 2M/r \right) \dd{r}^2. \tag{9-4-54}
+		\end{equation}
+	}。
+	\begin{zm}
+		\begin{enumerate}
+			\item $t,r$ 与 $v,r$ 的变换为
+				\begin{equation*}
+					t = v-r_* \qc r = r,
+				\end{equation*}
+				故
+				\begin{align*}
+					\dd \hat{s}^2 &= - \left( 1 - \frac{2M}{r} \right) \dd t^2 + \left( 1 - \frac{2M}{r} \right)^{-1} \dd{r}^2\\
+					&= - \left( 1 - \frac{2M}{r} \right) \left( \dd{v} - \dd{r_*} \right)^2 + \left( 1 - \frac{2M}{r} \right)^{-1} \dd{r}^2\\
+					&= - \left( 1 - \frac{2M}{r} \right) \left( \dd{v} - \left( 1 - \frac{2M}{r} \right)^{-1} \dd{r} \right)^2 + \left( 1 - \frac{2M}{r} \right)^{-1} \dd{r}^2\\
+					&= - \left( 1 - \frac{2M}{r} \right) \dd{v}^2 + 2 \dd{v} \dd{r}.
+				\end{align*}
+			\item $v, r$ 与 $\tilde{t}, r$ 的变换为
+				\begin{equation*}
+					v = \tilde{t} + r \qc r =r,
+				\end{equation*}
+				故
+				\begin{align*}
+					\dd \hat{s}^2 &= - \left( 1 - \frac{2M}{r} \right) \dd{v}^2 + 2 \dd{v} \dd{r}\\
+					&= - \left( 1 - \frac{2M}{r} \right) \left( \dd{\tilde{t}} + \dd{r} \right)^2 + 2 \left( \dd{\tilde{t}} + \dd{r} \right) \dd{r}\\
+					&= - \left( 1 - \frac{2M}{r} \right) \dd{\tilde{t}}^2 + \frac{4M}{r} \dd{\tilde{t}} \dd{r} + \left( 1 + \frac{2M}{r} \right) \dd{r}^2.
+				\end{align*}
+		\end{enumerate}
+	\end{zm}
 \end{xiti}
