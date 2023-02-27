@@ -2,6 +2,8 @@ main = TeX/document
 latexmk = latexmk -xelatex -cd
 outdir = .
 
+.PHONY : main clean cleanall
+
 main: $(main).tex
 	$(latexmk) $<
 
