@@ -224,7 +224,7 @@
 					\tensorp{V}{^a} \Nabla{a} \tensorp{V}{^b} &= \frac{1}{4} \left( \tensorp{T}{^a} + \tensorp{X}{^a} \right) \Nabla{a} \left( \tensorp{T}{^b} + \tensorp{X}{^b} \right)\\
 					&= \frac{1}{4} \left( \ChristoffelSymbol{\mu}{T}{T} + 2 \ChristoffelSymbol{\mu}{T}{X} + \ChristoffelSymbol{\mu}{X}{X} \right) \tensorp{x^\mu}{^b},
 				\end{align*}
-				显然 $x^\mu$ 只能取 $T$, $X$ 而不能取 $\theta, \phi$。易从 Kruskal 度规算得\footnote{如果懒得手搓，请参考第三章习题解答中的 Mathematica 代码}：
+				显然 $x^\mu$ 只能取 $T$, $X$ 而不能取 $\theta, \varphi$。易从 Kruskal 度规算得\footnote{如果懒得手搓，请参考第三章习题解答中的 Mathematica 代码}：
 				\begin{align*}
 					\ChristoffelSymbol{T}{T}{T} &= - \frac{r + 2M}{4Mr} \pdv{r}{T}, & \ChristoffelSymbol{T}{T}{X} &= - \frac{r + 2M}{4Mr} \pdv{r}{X}, & \ChristoffelSymbol{T}{X}{X} &= - \frac{r + 2M}{4Mr} \pdv{r}{T},\\
 					\ChristoffelSymbol{X}{T}{T} &= - \frac{r + 2M}{4Mr} \pdv{r}{X}, & \ChristoffelSymbol{X}{T}{X} &= - \frac{r + 2M}{4Mr} \pdv{r}{T}, & \ChristoffelSymbol{X}{X}{X} &= - \frac{r + 2M}{4Mr} \pdv{r}{X},
@@ -268,7 +268,7 @@
 
 	\item 引入与 Kruskal 坐标类似的坐标消除下列线元的坐标奇性 $r = R$:
 	\begin{equation*}
-		\dd s^2 = - \left( 1 - r^2/R^2 \right) \dd t^2 + \left( 1 - r^2/R^2 \right)^{-1} \dd{r}^2 + r^2 \left( \dd{\theta}^2 + \sin^2 \theta \dd{\phi}^2 \right) \qc R=\text{常数}.
+		\dd s^2 = - \left( 1 - r^2/R^2 \right) \dd t^2 + \left( 1 - r^2/R^2 \right)^{-1} \dd{r}^2 + r^2 \left( \dd{\theta}^2 + \sin^2 \theta \dd{\varphi}^2 \right) \qc R=\text{常数}.
 	\end{equation*}
 	\begin{jie}
 		只考虑前两维，并取 $0<r<R$，
@@ -322,7 +322,7 @@
 		\end{equation*}
 		则得到完整的延拓后度规
 		\begin{equation*}
-			\dd s^2 = \left( R + r \right)^2 \left( - \dd{T}^2 + \dd{X}^2 \right) + r^2 \left( \dd \theta^2 + \sin^2 \theta \dd \phi^2 \right),
+			\dd s^2 = \left( R + r \right)^2 \left( - \dd{T}^2 + \dd{X}^2 \right) + r^2 \left( \dd \theta^2 + \sin^2 \theta \dd \varphi^2 \right),
 		\end{equation*}
 		其中
 		\begin{equation*}
@@ -358,7 +358,7 @@
 			&= \tensor{g}{^U^U}\\
 			&= 0,
 		\end{align*}
-		其中 $\tensor{g}{^U^U}$ 指 $\tensor{g}{^a^b}$ 在 $\{ U, V, \theta, \phi \}$ 坐标系中的 $UU$ 分量。
+		其中 $\tensor{g}{^U^U}$ 指 $\tensor{g}{^a^b}$ 在 $\{ U, V, \theta, \varphi \}$ 坐标系中的 $UU$ 分量。
 	\end{zm}
 
 	\item 试由式 (9-4-50)\footnote{
@@ -403,7 +403,7 @@
 		\end{enumerate}
 	\end{zm}
 
-	\item 写出施瓦西度规在外向 Eddington 坐标系 $\{ u,r, \theta, \phi \}(u \equiv t - r_*)$ 的线元表达式。
+	\item 写出施瓦西度规在外向 Eddington 坐标系 $\{ u,r, \theta, \varphi \}(u \equiv t - r_*)$ 的线元表达式。
 
 	\begin{jie}
 		先考察前两维，$t,r$ 与 $u,r$ 的变换为
