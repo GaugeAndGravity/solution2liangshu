@@ -402,4 +402,24 @@
 				\end{align*}
 		\end{enumerate}
 	\end{zm}
+
+	\item 写出施瓦西度规在外向 Eddington 坐标系 $\{ u,r, \theta, \phi \}(u \equiv t - r_*)$ 的线元表达式。
+
+	\begin{jie}
+		先考察前两维，$t,r$ 与 $u,r$ 的变换为
+		\begin{equation*}
+			t = v + r_* \qc r = r,
+		\end{equation*}
+		故
+		\begin{align*}
+			\dd \hat{s}^2 &= - \left( 1 - \frac{2M}{r} \right) \dd t^2 + \left( 1 - \frac{2M}{r} \right)^{-1} \dd{r}^2\\
+			&= - \left( 1 - \frac{2M}{r} \right) \left( \dd{u} + \dd{r_*} \right)^2 + \left( 1 - \frac{2M}{r} \right)^{-1} \dd{r}^2\\
+			&= - \left( 1 - \frac{2M}{r} \right) \left( \dd{u} + \left( 1 - \frac{2M}{r} \right)^{-1} \dd{r} \right)^2 + \left( 1 - \frac{2M}{r} \right)^{-1} \dd{r}^2\\
+			&= - \left( 1 - \frac{2M}{r} \right) \dd{u}^2 - 2 \dd{u} \dd{r},
+		\end{align*}
+		补全得
+		\begin{equation*}
+			\dd s^2 = - \left( 1 - \frac{2M}{r} \right) \dd{u}^2 - 2 \dd{u} \dd{r} + r^2 \left( \dd{\theta}^2 + \sin^2 \theta \dd{\varphi}^2 \right).
+		\end{equation*}
+	\end{jie}
 \end{xiti}
