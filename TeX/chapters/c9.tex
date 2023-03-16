@@ -422,4 +422,49 @@
 			\dd s^2 = - \left( 1 - \frac{2M}{r} \right) \dd{u}^2 - 2 \dd{u} \dd{r} + r^2 \left( \dd{\theta}^2 + \sin^2 \theta \dd{\varphi}^2 \right).
 		\end{equation*}
 	\end{jie}
+
+	\item 试证用 $\tensor{\left( \pdv*{V} \right)}{^a}$ 和 $\tensor{\left( \pdv*{U} \right)}{^a}$ 定义的 $\tensor{\xi}{^a}$ [见式 (9-4-40)] 在 $N_1$ 和 $N_2$ 上是类光 Killing 矢量场。
+	\begin{jie}
+		\begin{enumerate}
+			\item 类光：
+			\begin{align*}
+				\tensor{g}{_a_b} \tensor{\xi}{^a} \tensor{\xi}{^b} &= \frac{1}{16M^2} \tensor{g}{_a_b} \left( V \tensorp{V}{^a} - U \tensorp{U}{^a} \right) \left( V \tensorp{V}{^b} - U \tensorp{U}{^b} \right)\\
+				&= \frac{1}{16 M^2} \left( V^2 \tensor{g}{_V_V} -2UV \tensor{g}{_U_V} + U^2 \tensor{g}{_U_U} \right)\\
+				&= - \frac{1}{8 M^2} UV \tensor{g}{_U_V},
+			\end{align*}
+			然而 $N_1$, $N_2$ 由 $U=0$ 或 $V=0$ 定义，故在 $N_1$, $N_2$ 上有 $UV=0$， $\tensor{\xi}{^a}$ 类光。
+			\item Killing:
+			\begin{align*}
+				\Nabla{a} \tensor{\xi}{^b} &= \frac{1}{4M} \Nabla{a} \left( V \tensorp{V}{^b} - U \tensorp{U}{^b} \right)\\
+				&= \frac{1}{4M} \left( \tensord{V}{_a} \tensorp{V}{^b} + V \ChristoffelSymbol{\mu}{\nu}{V} \tensord{x^\nu}{_a} \tensorp{x^\mu}{^b} \right.\\
+				&\qquad\qquad \left. {}- \tensord{U}{_a} \tensorp{U}{^b} - U \ChristoffelSymbol{\mu}{\nu}{U} \tensord{x^\nu}{_a} \tensorp{x^\mu}{^b} \right),
+			\end{align*}
+			在 $\{U,V,\theta,\varphi\}$ 系下，易算得上式中涉及的非零克氏符为
+			\begin{gather*}
+				\ChristoffelSymbol{U}{U}{U} = - \frac{1+2M/r}{2M} \pdv{r}{U} \qc \ChristoffelSymbol{V}{V}{V} = - \frac{1+2M/r}{2M} \pdv{r}{V},\\
+				\ChristoffelSymbol{\theta}{\theta}{U} = \ChristoffelSymbol{\varphi}{\varphi}{U} = \frac{1}{r} \pdv{r}{U} \qc \ChristoffelSymbol{\theta}{\theta}{V} = \ChristoffelSymbol{\varphi}{\varphi}{V} = \frac{1}{r} \pdv{r}{V},
+			\end{gather*}
+			由于
+			\begin{equation*}
+				r = f(X^2 - T^2) = f(UV),
+			\end{equation*}
+			其中 $f$ 的逆是
+			\begin{equation*}
+				f^{-1}(r) = \frac{r-2M}{2M} \e{r/2M},
+			\end{equation*}
+			可以算出
+			\begin{align*}
+				\pdv{r}{U} &= V \times \frac{1}{{\left(f^{-1}\right)}'(r)}\\
+				&= \frac{4M^2}{r} V \e{-r/2M},\\
+				\pdv{r}{V} &= U \times \frac{1}{{\left( f^{-1} \right)}'(r)}\\
+				&= \frac{4M^2}{r} U \e{-r/2M},
+			\end{align*}
+			故以上 $V \ChristoffelSymbol{\mu}{\nu}{V}$ 项及 $U \ChristoffelSymbol{\mu}{\nu}{U}$ 项均含 $UV$，于是在 $N_1$ 和 $N_2$ 上为零。于是得
+			\begin{align*}
+				4M \Nabla{a} \tensor{\xi}{_b} &= \tensor{g}{_b_c} \left( \tensord{V}{_a} \tensorp{V}{^c} - \tensord{U}{_a} \tensorp{U}{^c} \right)\\
+				&= \tensor{g}{_U_V} \left( \tensord{V}{_a} \tensord{U}{_b} - \tensord{U}{_a} \tensord{V}{_b} \right)
+			\end{align*}
+			为反称张量，故 $\Nabla{(a} \tensor{\xi}{_{b)}} = 0$。
+		\end{enumerate}
+	\end{jie}
 \end{xiti}
