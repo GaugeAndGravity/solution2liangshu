@@ -423,8 +423,13 @@
 		\end{equation*}
 	\end{jie}
 
-	\item 试证用 $\tensor{\left( \pdv*{V} \right)}{^a}$ 和 $\tensor{\left( \pdv*{U} \right)}{^a}$ 定义的 $\tensor{\xi}{^a}$ [见式 (9-4-40)] 在 $N_1$ 和 $N_2$ 上是类光 Killing 矢量场。
-	\begin{jie}
+	\item 试证用 $\tensor{\left( \pdv*{V} \right)}{^a}$ 和 $\tensor{\left( \pdv*{U} \right)}{^a}$ 定义的 $\tensor{\xi}{^a}$ [见式 (9-4-40)\footnote{
+		正文 (9-4-40) 为
+		\begin{equation}
+			\tensor{\xi}{^a} = \tensor{\left( \pdv*{t} \right)}{^a} = \frac{1}{4M} \left[ V \tensor{\left( \pdv*{V} \right)}{^a} - U \tensor{\left( \pdv*{U} \right)}{^a} \right] \tag{9-4-40}
+		\end{equation}
+	}] 在 $N_1$ 和 $N_2$ 上是类光 Killing 矢量场。
+	\begin{zm}
 		\begin{enumerate}
 			\item 类光：
 			\begin{align*}
@@ -466,5 +471,7 @@
 			\end{align*}
 			为反称张量，故 $\Nabla{(a} \tensor{\xi}{_{b)}} = 0$。
 		\end{enumerate}
-	\end{jie}
+	\end{zm}
+
+	\item 把图 9-21 改画为图 9-23。 试通过计算图中的 $\Delta \tau'/\Delta \tau$ 给出式 (9-4-58) 的另一推导。提示：(1) $U \equiv -\e{(r_* - t)/4M}$ 在每条外向类光测地线上为常数。先后沿外部静态观者世界线和星面自由下落观者世界线求得同一 $\dd{U}$ 的两个表达式（分别含 $\dd{\tau'}$ 和 $\dd{\tau}$ ），在两式之间画等号便得式 (9-4-58)。(2) 在写出用 $\dd{\tau}$ 表出 $\dd{U}$ 的式子时要用到以能量 $E$ 表达 $\dv*{t}{\tau}$ 和 $\dv*{r}{\tau}$ 的公式，这可借 \S 9.1 的手法求得。
 \end{xiti}
