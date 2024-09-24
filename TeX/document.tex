@@ -52,15 +52,16 @@
 \tcbuselibrary{skins,breakable}
 
 % \setmonofont{DejaVuSansMono Nerd Font}
-\ifwindows
-	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
-\fi
-\iflinux
-	\newfontfamily\codefont{DejaVuSansMono}
-\fi
-\ifmacosx
-	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
-\fi
+% \ifwindows
+% 	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
+% \fi
+% \iflinux
+% 	\newfontfamily\codefont{DejaVuSansMono}
+% \fi
+% \ifmacosx
+% 	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
+% \fi
+\def\codefont\ttfamily
 
 \geometry{
 	a4paper,
