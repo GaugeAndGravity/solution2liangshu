@@ -474,4 +474,53 @@
 	\end{zm}
 
 	\item 把图 9-21 改画为图 9-23。 试通过计算图中的 $\Delta \tau'/\Delta \tau$ 给出式 (9-4-58) 的另一推导。提示：(1) $U \equiv -\e{(r_* - t)/4M}$ 在每条外向类光测地线上为常数。先后沿外部静态观者世界线和星面自由下落观者世界线求得同一 $\dd{U}$ 的两个表达式（分别含 $\dd{\tau'}$ 和 $\dd{\tau}$ ），在两式之间画等号便得式 (9-4-58)。(2) 在写出用 $\dd{\tau}$ 表出 $\dd{U}$ 的式子时要用到以能量 $E$ 表达 $\dv*{t}{\tau}$ 和 $\dv*{r}{\tau}$ 的公式，这可借 \S 9.1 的手法求得。
+	\begin{figure}[htbp!]
+		\centering
+		\tikzexternalenable
+		\begin{tikzpicture}[scale=0.4]
+			\draw[very thick] (1,0) -- (0,0) -- (0,1);
+			\draw[\myarrow, very thick] (0,0) -- (12,0);
+			\draw[\myarrow, very thick] (0,0) -- (0,29.5);
+			\node[right] at (12,0) {$r$};
+			\node[above] at (0,29.5) {$\tilde{t}$};
+			\fill[pattern=horizontal lines] (0,0) -- plot[domain=0:2.6] (\x^2,{10.08 - 2.82843*\x - 0.471405*\x^3 + 4*ln(sqrt(2)+\x)}) -- (6.76,0) -- cycle;
+			\draw[very thick,postaction={decorate,decoration={raise=5,text along path,
+			text={星\ 表\ 面\ \ },text align=right}}] plot[domain=0:2.6] (\x^2,{10.08 - 2.82843*\x - 0.471405*\x^3 + 4*ln(sqrt(2)+\x)});
+			\draw[very thick] (2,8.9055) -- (2,29) node[pos=0.85,right] {\parbox{1em}{事件视界}};
+			\draw[semithick,blue] plot[domain=2.4:10.6] (\x,{9.55598 + \x + 4*ln(\x-2)});
+			\draw[semithick,blue,postaction={decorate,decoration={raise=4,text along path,
+			text={|\color{blue}|外\ 向\ 光\ 子},text align=center}}] plot[domain=3.4:10.6] (\x,{1.88793 + \x + 4*ln(\x-2)});
+			\draw[semithick,blue] plot[domain=4.4:10.6] (\x,{-3.08117 + \x + 4*ln(\x-2)});
+			\draw[semithick,blue] (12, 13.58) -- (0,24.53);
+			\draw[semithick] (10.6,28.763) -- +(2,0);
+			\draw[semithick] (10.6,21.095) -- +(2,0);
+			\draw[semithick] (10.6,16.1259) -- +(2,0);
+			\draw[{Latex[length=5pt 6,width'=0pt 0.3]}-{Latex[length=5pt 6,width'=0pt 0.3]}] (11.6,28.763) -- (11.6,21.095) node[midway,sloped,fill=white] {$\Delta \tau_2^\prime$};
+			\draw[{Latex[length=5pt 6,width'=0pt 0.3]}-{Latex[length=5pt 6,width'=0pt 0.3]}] (11.6,21.095) -- (11.6,16.1259) node[midway,sloped,fill=white] {$\Delta \tau_1^\prime$};
+			\draw[very thick,purple] (10.6,0) -- (10.6,29) node[fill=white,pos=0.2,right] {\parbox{1em}{外部观者}};
+			\node[rotate=-55] (t2) at (3.2,8.1) {$\Delta \tau_2$};
+			\node[rotate=-57] (t1) at (4.3,6.2) {$\Delta \tau_1$};
+			\draw (9.97,16) circle [x radius=0.55, y radius=0.1, rotate=5];
+			\draw (7.95,17.85) circle [x radius=0.55, y radius=0.1, rotate=7];
+			\draw (5.16,20.45) circle [x radius=0.55, y radius=0.1, rotate=11];
+			\draw (1.4,23.93) circle [x radius=0.55, y radius=0.1, rotate=15];
+			\node[fill=white] at (2,4) {\parbox{1em}{坍缩星}};
+			\draw (2,0) -- (2,0.3);
+			\node[below] at (2,0) {$2M$};
+			\node[below left] at (0,0) {$0$};
+		\end{tikzpicture}
+		\tikzexternaldisable
+		\caption{正文图 9-21}
+	\end{figure}
+	\begin{figure}[htbp!]
+		\centering
+		\tikzexternalenable
+		\begin{tikzpicture}[scale=0.4]
+			\draw[\myarrow, very thick] (0,0) -- (12,0);
+			\draw[\myarrow, very thick] (0,-5) -- (0,12);
+			\draw[very thick] (0,0) -- (10,10);
+		\end{tikzpicture}
+		\tikzexternaldisable
+		\caption{正文图 9-23}
+	\end{figure}
 \end{xiti}
