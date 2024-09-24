@@ -5,7 +5,7 @@
 \usepackage{mathrsfs} %定义了类似铜版体的\mathscr
 \usepackage{upgreek}
 %\usepackage{textcomp}
-\usepackage{xparse,physics}
+\usepackage{physics}
 \usepackage{cancel}
 \usepackage{geometry}
 \usepackage{booktabs}
@@ -19,7 +19,7 @@
 \usepackage{tensor}
 \usepackage{tikz}
 \usepackage{listings}
-\usepackage{fontspec}
+% \usepackage{fontspec}
 %\usepackage{minted}
 \usepackage{pifont}
 \usepackage{bm}
@@ -35,8 +35,10 @@
 \usepackage[amsmath,hyperref,thmmarks,framed]{ntheorem}
 \usepackage{pdftexcmds}
 \usepackage{catchfile}
-\usepackage{ifluatex}
-\usepackage{ifplatform}
+% \usepackage{ifluatex}
+% \usepackage{ifplatform}
+\usepackage{DejaVuSansMono}
+\usepackage[T1]{fontenc}
 
 %%%%%%%%%%%%%%%  biblatex v3.15a bug fixing  %%%%%%%%%%%%%
 % \providetoggle{blx@lang@captions@english}
@@ -52,15 +54,16 @@
 \tcbuselibrary{skins,breakable}
 
 % \setmonofont{DejaVuSansMono Nerd Font}
-\ifwindows
-	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
-\fi
-\iflinux
-	\newfontfamily\codefont{DejaVu Sans Mono}
-\fi
-\ifmacosx
-	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
-\fi
+% \ifwindows
+% 	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
+% \fi
+% \iflinux
+% 	\newfontfamily\codefont{DejaVuSansMono}
+% \fi
+% \ifmacosx
+% 	\newfontfamily\codefont{DejaVuSansMono Nerd Font}
+% \fi
+\def\codefont\ttfamily
 
 \geometry{
 	a4paper,
@@ -71,7 +74,7 @@
 
 \lstset{
 	backgroundcolor=\color[gray]{0.95},
-	basicstyle=\codefont,
+	basicstyle=\ttfamily,
 	stringstyle=\sffamily,
 	flexiblecolumns,
 	escapechar='
@@ -172,10 +175,10 @@
 \newcommand{\riemannR}[5]{\tensor{\Gamma}{^{#4}_{#1}_{#3}_{,#2}}- \tensor{\Gamma}{^{#4}_{#2}_{#3}_{,#1}}+ \ChristoffelSymbol{#5}{#3}{#1} \ChristoffelSymbol{#4}{#2}{#5}- \ChristoffelSymbol{#5}{#3}{#2} \ChristoffelSymbol{#4}{#1}{#5}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \newcommand{\tmu}{\mspace{2mu}}
-\newcommand{\mmacs}{\bfseries\codefont\itshape\color[RGB]{67,137,88}}%mma局部变量字体
-\newcommand{\mmab}{\bfseries\codefont\color[RGB]{60,125,145}}%mma变量字体
-\newcommand{\mmaundef}{\bfseries\codefont\color[RGB]{0,44,195}}%mma未定义
-\newcommand{\mma}{\bfseries\codefont}%mma代码字体
+\newcommand{\mmacs}{\bfseries\ttfamily\itshape\color[RGB]{67,137,88}}%mma局部变量字体
+\newcommand{\mmab}{\bfseries\ttfamily\color[RGB]{60,125,145}}%mma变量字体
+\newcommand{\mmaundef}{\bfseries\ttfamily\color[RGB]{0,44,195}}%mma未定义
+\newcommand{\mma}{\bfseries\ttfamily}%mma代码字体
 \newcommand{\myarrow}{-{Latex[length=5pt 6,width'=0pt 0.3]}}
 \newcommand{\SO}[1]{\ensuremath{\mathrm{SO}\left(#1\right)}}
 \newcommand{\OO}[1]{\ensuremath{\mathrm{O}\left(#1\right)}}
@@ -210,7 +213,7 @@
 
 \addbibresource{ref.bib}
 
-\includeonly{chapters/c9}
+% \includeonly{chapters/c9}
 
 \begin{document}
 	\input{xiti}
